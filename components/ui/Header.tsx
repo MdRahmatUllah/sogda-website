@@ -15,7 +15,9 @@ export const NAV = ['day', 'features', 'screens', 'faq'] as const;
 export async function Header({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: 'header' });
   const nav = await getTranslations({ locale, namespace: 'nav' });
-  const links = NAV.map((id) => ({ href: `#${id}`, label: nav(id) }));
+  // Full paths, so the links work from the legal pages too (on the home page
+  // they just scroll).
+  const links = NAV.map((id) => ({ href: `/${locale}#${id}`, label: nav(id) }));
   // The site's languages (BRIEF §7): in the bar on wider screens, in the
   // menu on a phone.
   const switcher = (className: string) =>
@@ -46,7 +48,7 @@ export async function Header({ locale }: { locale: string }) {
         <div className="ml-auto flex items-center gap-1 sm:gap-2">
           {switcher('hidden sm:inline-flex')}
           <ThemeToggle label={t('darkTheme')} />
-          <a href="#get" className="btn hidden sm:inline-flex">
+          <a href={`/${locale}#get`} className="btn hidden sm:inline-flex">
             {t('getApp')}
           </a>
           <button
@@ -60,7 +62,7 @@ export async function Header({ locale }: { locale: string }) {
         </div>
       </div>
       <MobileMenu
-        links={[...links, { href: '#get', label: t('getApp') }]}
+        links={[...links, { href: `/${locale}#get`, label: t('getApp') }]}
         label={t('nav')}
         closeLabel={t('closeMenu')}
       >

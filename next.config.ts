@@ -1,7 +1,15 @@
 import type { NextConfig } from 'next';
+import { execFileSync } from 'node:child_process';
 import createNextIntlPlugin from 'next-intl/plugin';
 
 const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
+
+// sogda.de can't go live without a complete Impressum (BRIEF §8): Vercel's
+// production build stops here while content/legal.json has a placeholder.
+// Previews and local builds go on.
+if (process.env.VERCEL_ENV === 'production') {
+  execFileSync(process.execPath, ['scripts/check-launch.mjs'], { stdio: 'inherit' });
+}
 
 const config: NextConfig = {
   // Static files only (CLAUDE.md, Hard rules): no server, no API routes.
