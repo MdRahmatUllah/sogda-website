@@ -8,3 +8,5 @@ test-results/
 .lighthouseci/
 *.log
 .DS_Store
+next-env.d.ts
+tsconfig.tsbuildinfo
