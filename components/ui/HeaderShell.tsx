@@ -7,6 +7,9 @@ import { useEffect, useState, type ReactNode } from 'react';
 export function HeaderShell({ children }: { children: ReactNode }) {
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
+    // The page's JS arrives after load (scripts/defer-hydration.mjs); this
+    // marks that it has, for the e2e tests that click what JS drives.
+    document.documentElement.dataset.hydrated = '';
     const update = () => setScrolled(window.scrollY > 8);
     update();
     window.addEventListener('scroll', update, { passive: true });

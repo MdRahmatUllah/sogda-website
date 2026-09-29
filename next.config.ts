@@ -9,6 +9,9 @@ const config: NextConfig = {
   // next/image can't optimise in a static export; the screenshots are pre-built.
   images: { unoptimized: true },
   poweredByHeader: false,
+  // The CSS (6 KB) goes into the page: no render-blocking request before the
+  // hero can paint.
+  experimental: { inlineCss: true },
   // The component gallery (app/[locale]/gallery/page.gallery.tsx) exists in
   // `pnpm dev`, and in a build only with SOGDA_GALLERY=1 (its own check).
   pageExtensions: [

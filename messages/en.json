@@ -4,6 +4,7 @@
     "description": "Learn German, one clear day at a time: a complete, offline German course from A1 to C2, with meanings in English or Bangla."
   },
   "header": {
+    "skip": "Skip to content",
     "home": "Sogda, home",
     "nav": "Sections",
     "menu": "Menu",
@@ -31,8 +32,11 @@
     "trademark": "Google Play and the Google Play logo are trademarks of Google LLC.",
     "copyright": "© {year} Sogda"
   },
-  "home": {
+  "hero": {
     "kicker": "The road to a new language",
-    "headline": "Learn German, one clear day at a time."
+    "headline": "Learn German, one clear day at a time.",
+    "subline": "A complete, offline German course from A1 to C2, with meanings in English or Bangla.",
+    "pause": "Pause the animation",
+    "play": "Play the animation"
   }
 }

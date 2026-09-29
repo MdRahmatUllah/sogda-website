@@ -1,3 +1,4 @@
+import { preload } from 'react-dom';
 import config from '@/content/screenshots.json';
 import generatedJson from '@/content/screens.generated.json';
 
@@ -38,6 +39,17 @@ function Picture({
     );
   const srcSet = (ext: string) =>
     g.widths.map((w) => `/screens/${file}-${w}.${ext} ${w}w`).join(', ');
+  // The first view's screen is fetched from <head>, before the parser, CSS
+  // and scripts get to it (LCP).
+  if (priority) {
+    preload(`/screens/${file}-${g.widths[1] ?? g.widths[0]}.avif`, {
+      as: 'image',
+      type: 'image/avif',
+      imageSrcSet: srcSet('avif'),
+      imageSizes: sizes,
+      fetchPriority: 'high',
+    });
+  }
   return (
     <picture className={className}>
       <source type="image/avif" srcSet={srcSet('avif')} sizes={sizes} />

@@ -1,20 +1,22 @@
 import AxeBuilder from '@axe-core/playwright';
 import { expect, test } from '@playwright/test';
+import { gotoReady } from './ready';
 
 test.describe('header and footer', () => {
   test('the theme toggle switches to dark, and the pick survives a reload', async ({ page }) => {
     await page.emulateMedia({ colorScheme: 'light' });
-    await page.goto('/en');
+    await gotoReady(page, '/en');
     const toggle = page.getByRole('button', { name: 'Dark theme' });
     await expect(toggle).toHaveAttribute('aria-pressed', 'false');
     await toggle.click();
     await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
     await page.reload();
+    await expect(page.locator('html')).toHaveAttribute('data-hydrated', '');
     await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
     await expect(toggle).toHaveAttribute('aria-pressed', 'true');
-    // Dark swaps the lockup.
-    await expect(page.locator('img[src$="lockup-horizontal-tiles-dark.svg"]')).toBeVisible();
-    await expect(page.locator('img[src$="lockup-horizontal-tiles-light.svg"]')).toBeHidden();
+    // The wordmark is live text in the theme's ink.
+    const logo = page.getByRole('link', { name: 'Sogda, home' });
+    await expect(logo).toHaveCSS('color', 'rgb(244, 241, 255)');
   });
 
   test('the system dark scheme applies without a pick', async ({ page }) => {
@@ -28,7 +30,7 @@ test.describe('header and footer', () => {
 
   test('on a phone, the menu opens, and choosing a link closes it', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
-    await page.goto('/en');
+    await gotoReady(page, '/en');
     const menu = page.locator('#menu');
     await expect(menu).toBeHidden();
     await page.getByRole('button', { name: 'Menu' }).click();
