@@ -35,19 +35,35 @@ export function SnapCarousel({
   const items = Children.toArray(children);
   const track = useRef<HTMLUListElement>(null);
   const [active, setActive] = useState(0);
+  // The current item is the one nearest the middle of the track (several
+  // can be in view at once on a wide screen).
   useEffect(() => {
     const el = track.current;
     if (!el) return;
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const e of entries) {
-          if (e.isIntersecting) setActive(Number((e.target as HTMLElement).dataset.index));
-        }
-      },
-      { root: el, threshold: 0.6 },
-    );
-    el.querySelectorAll('[data-index]').forEach((item) => observer.observe(item));
-    return () => observer.disconnect();
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const middle = el.getBoundingClientRect().left + el.clientWidth / 2;
+      let best = 0;
+      let distance = Infinity;
+      el.querySelectorAll<HTMLElement>('[data-index]').forEach((item, i) => {
+        const box = item.getBoundingClientRect();
+        const d = Math.abs(box.left + box.width / 2 - middle);
+        if (d < distance) [best, distance] = [i, d];
+      });
+      setActive(best);
+    };
+    const schedule = () => {
+      if (!frame) frame = requestAnimationFrame(update);
+    };
+    update();
+    el.addEventListener('scroll', schedule, { passive: true });
+    addEventListener('resize', schedule);
+    return () => {
+      el.removeEventListener('scroll', schedule);
+      removeEventListener('resize', schedule);
+      cancelAnimationFrame(frame);
+    };
   }, []);
   const go = (i: number) => {
     const el = track.current;

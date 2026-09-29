@@ -107,6 +107,14 @@
 }
 
 @layer base {
+  /* No natively painted controls: every one here is drawn by the site, and
+     in Chrome on Windows a native one (Tailwind's reset asks for
+     appearance: button) held the page's first paint by ~2 s. */
+  button,
+  summary,
+  input:where([type='button'], [type='submit'], [type='radio'], [type='checkbox']) {
+    appearance: none;
+  }
   html {
     background: var(--bg);
     color: var(--fg);
@@ -504,4 +512,13 @@
 .look-option:has(.look-input:focus-visible) {
   outline: 3px solid var(--focus);
   outline-offset: 3px;
+}
+
+/* Below the hero, a section is laid out only as it nears the view: less
+   work before the first paint, and its fonts (Bangla) and lazy screens
+   aren't fetched ahead of the hero's image (LCP). `auto` remembers each
+   section's real height once it has been drawn. */
+main > section:not(#hero) {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px;
 }

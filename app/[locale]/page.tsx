@@ -1,5 +1,6 @@
 import { setRequestLocale } from 'next-intl/server';
 import { use } from 'react';
+import { Faq, FinalCta, Gallery } from '@/components/sections/Closing';
 import { DayStory } from '@/components/sections/DayStory';
 import { FeatureGrid, Languages, Looks, Practice } from '@/components/sections/Features';
 import { Hero } from '@/components/sections/Hero';
@@ -19,6 +20,9 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
       <FeatureGrid locale={locale} />
       <Looks locale={locale} />
       <Languages locale={locale} />
+      <Gallery locale={locale} />
+      <Faq locale={locale} />
+      <FinalCta locale={locale} />
     </main>
   );
 }

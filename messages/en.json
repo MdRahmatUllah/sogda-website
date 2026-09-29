@@ -150,5 +150,51 @@
     "title": "Meanings in English, Bangla, or both.",
     "body": "Every word comes with its meaning in English, Bangla, or both, and its pronunciation written in Bangla letters. Russian and Polish meanings are coming.",
     "soon": "soon"
+  },
+  "gallery": {
+    "eyebrow": "Screens",
+    "title": "See it for yourself.",
+    "tablet": "Today’s plan on a tablet",
+    "carousel": "App screens",
+    "item": "Screen {n} of {total}",
+    "prev": "Previous screen",
+    "next": "Next screen",
+    "captions": {
+      "welcome": "A welcome that says what Sogda is",
+      "placement": "A placement check to find your step",
+      "learn": "Your course, step by step",
+      "step-detail": "Every word of a step",
+      "word-detail": "A word in full, with examples",
+      "compare": "Near-synonyms side by side",
+      "search": "Search that forgives typos",
+      "progress": "Your progress, week by week"
+    }
+  },
+  "faq": {
+    "eyebrow": "Questions",
+    "title": "Questions, answered.",
+    "internet": {
+      "q": "Do I need internet?",
+      "a": "No. Sogda works fully offline. Only the optional natural voice is a download, once, over Wi-Fi."
+    },
+    "android": {
+      "q": "Which Android version do I need?",
+      "a": "Android 8.0 or newer."
+    },
+    "iphone": {
+      "q": "Is there an iPhone version?",
+      "a": "It’s coming soon."
+    },
+    "data": {
+      "q": "Is my data shared?",
+      "a": "No. There’s no account, and your progress stays on your phone."
+    },
+    "exams": {
+      "q": "Which exams does it prepare me for?",
+      "a": "The Goethe and telc levels from A1 to C2. Each step has three mock exams that follow their sections: vocabulary, grammar, listening, writing and speaking. They are generated from the step’s words and grammar, not official Goethe or telc papers."
+    }
+  },
+  "cta": {
+    "title": "Start your road to German today."
   }
 }
