@@ -108,7 +108,7 @@ export async function Memory({ locale }: { locale: string }) {
               {gaps.map((g, k) => (
                 <li
                   key={g}
-                  className="memory-chip grid size-11 place-items-center rounded-full border-2 border-line bg-sun text-xs font-bold text-ink"
+                  className="memory-chip grid h-11 min-w-11 place-items-center rounded-full border-2 border-line bg-sun px-2 text-xs font-bold whitespace-nowrap text-ink"
                   style={{ '--at': at(REVIEWS[k + 1]!) } as CSSProperties}
                 >
                   {t('gapShort', { days: g })}

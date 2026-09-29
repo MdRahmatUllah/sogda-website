@@ -45,6 +45,7 @@ export async function Gallery({ locale }: { locale: string }) {
         </figure>
       </div>
       <SnapCarousel
+        locale={locale}
         className="mt-10"
         label={t('carousel')}
         itemLabel={t('item')}

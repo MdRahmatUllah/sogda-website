@@ -30,6 +30,14 @@ export async function generateMetadata({ params }: Omit<Props, 'children'>): Pro
       apple: '/apple-touch-icon.png',
     },
     manifest: '/manifest.webmanifest',
+    // Every language's version of the page, and English for everyone else.
+    alternates: {
+      canonical: `/${locale}`,
+      languages: {
+        ...Object.fromEntries(routing.locales.map((l) => [l, `/${l}`])),
+        'x-default': `/${routing.defaultLocale}`,
+      },
+    },
   };
 }
 

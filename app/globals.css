@@ -111,6 +111,7 @@
      in Chrome on Windows a native one (Tailwind's reset asks for
      appearance: button) held the page's first paint by ~2 s. */
   button,
+  select,
   summary,
   input:where([type='button'], [type='submit'], [type='radio'], [type='checkbox']) {
     appearance: none;
@@ -521,4 +522,11 @@
 main > section:not(#hero) {
   content-visibility: auto;
   contain-intrinsic-size: auto 900px;
+}
+/* The footer too: its language links carry Bangla, and shaping a script no
+   loaded font covers sends Chrome through the system's fonts, which on a
+   cold start (Lighthouse's fresh profile) held the first paint by ~2 s. */
+body > footer {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 320px;
 }

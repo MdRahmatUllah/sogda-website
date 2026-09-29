@@ -1,6 +1,7 @@
 'use client';
 
 import { X } from 'lucide-react';
+import type { ReactNode } from 'react';
 
 type Link = { href: string; label: string };
 
@@ -11,10 +12,13 @@ export function MobileMenu({
   links,
   label,
   closeLabel,
+  children,
 }: {
   links: Link[];
   label: string;
   closeLabel: string;
+  /** More controls under the links (the language switch on a phone). */
+  children?: ReactNode;
 }) {
   return (
     <div
@@ -43,6 +47,7 @@ export function MobileMenu({
           ))}
         </ul>
       </nav>
+      {children}
       <button
         type="button"
         popoverTarget="menu"
