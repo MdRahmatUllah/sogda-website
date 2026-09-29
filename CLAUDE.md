@@ -17,7 +17,7 @@ A state-of-the-art, animated, fast and accessible one-page site (plus legal page
 | Framework | **Next.js 15 (App Router) + TypeScript (strict)**, `output: 'export'` | Pure static files on Vercel; React server components at build time |
 | Styling | **Tailwind CSS v4**, design tokens as CSS variables (`app/globals.css`) | Brand colours in one place; dark mode via `prefers-color-scheme` + a toggle |
 | Animation | **Motion** (`motion`, formerly Framer Motion) for component and scroll-linked animation (`useScroll`, `useTransform`); plain CSS for simple loops; inline SVG for drawn graphics | Declarative, GPU-friendly, supports reduced motion |
-| i18n | **next-intl** with static params: `/en`, `/de`, `/bn`, and `/` redirects by language (see BRIEF, *Languages*) | Works with static export |
+| i18n | **next-intl** with static params: one locale per app language (`/en`, `/bn` today; `/pl`, `/ru` as the app adds them), and `/` follows the visitor's language (see BRIEF, *Languages*) | Works with static export |
 | Fonts | **Inter** (the brand and app typeface) + **Noto Sans Bengali**, both **self-hosted** via `next/font/local` | Loading fonts from Google's CDN is a GDPR problem in Germany |
 | Images | Pre-built **AVIF + WebP** at several widths by a `sharp` script into `public/`; `<picture>` with `srcset` | `next/image` optimisation doesn't run in a static export |
 | QR code | `qrcode` package, rendered to **SVG at build time** from `site.config.ts` | No runtime requests |
@@ -37,7 +37,7 @@ app/layout.tsx, app/globals.css    fonts, tokens, base styles
 components/sections/*              Hero, DayStory, Memory, Journey, Features, Themes, Screens, Privacy, Faq, FinalCta
 components/ui/*                    DeviceFrame, StoreBadges, QrCode, LocaleSwitch, ThemeToggle, Section, …
 content/screenshots.json           which app screens the site shows (source golden, alt text per locale)
-messages/{en,de,bn}.json           every visible string (no literals in components)
+messages/<locale>.json             every visible string (no literals in components)
 public/brand/*                     logo files copied from the app's brand kit
 public/screens/*                   generated, optimised screenshots (committed)
 scripts/sync-screenshots.mjs       fetch + optimise screenshots from the app repo
@@ -68,11 +68,11 @@ pnpm lighthouse          # local Lighthouse against `pnpm start` of out/ (budget
    - PR body **line 1 is `**Agent-4**`**, and the body ends with `🤖 Generated with [Claude Code](https://claude.com/claude-code)`.
    - Commits end with the `Co-Authored-By:` line your harness gives you.
    - The commit identity is the repo's local git config (`MdRahmatUllah <rahmat.ullah@infinitibit.com>`). Never override it.
-3. **Every PR shows itself.** Vercel builds a preview for each PR once the owner connects the project. Put the preview URL in the PR, plus screenshots at 390 px, 768 px and 1440 px, light and dark. Also attach a short screen recording (GIF/MP4) for any animation.
+3. **Every PR shows itself.** Vercel isn't connected until the site is ready (the owner sets up Vercel and GoDaddy then; issue #13), so there are no preview URLs before that. Put screenshots in the PR, taken from `pnpm build` served locally, at 390 px, 768 px and 1440 px, light and dark. Also attach a short screen recording (GIF/MP4) for any animation.
 4. **Review, then merge.** agent-0 (the app team's lead) or the owner reviews. Merge only after an approving review, as a squash with `gh pr merge <P> --squash --subject "<title> (#P)"`. Delete the branch only once the PR shows MERGED.
 5. **Ask, don't guess, on:** anything in BRIEF's *Owner decisions*, legal texts, prices, claims not in BRIEF's *Facts*, and new dependencies or services. Ask in the issue, and tell the owner in chat. Never invent a number, a review, a rating, a download count or a testimonial.
 6. **Talking to the app team.** For a new screenshot, a fact check, or an app change, file an issue in `MdRahmatUllah/DeutschPlan` with the title prefix `website:` and a body starting `**Agent-4**`. The app team also runs a board (`tools/team.py` in that repo, which accepts `agent-4`); use it only if the owner asks you to.
-7. **CI.** Don't add GitHub Actions: the owner keeps CI minutes off. The local quality gate below is the check, and Vercel builds the previews.
+7. **CI.** Don't add GitHub Actions: the owner keeps CI minutes off. The local quality gate below is the check.
 
 ## Quality gate (run before every push; all must pass)
 - `pnpm lint`, `pnpm typecheck` and `pnpm build`: clean, with no warnings left in new code.

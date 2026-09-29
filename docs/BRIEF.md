@@ -164,10 +164,11 @@ Source: the app repo's `docs/05-dev-guide/store-listing.md`. Update these if the
 - **Updates:** when the app ships a new version, bump the ref in `screenshots.json` and run `pnpm sync:screens`. For a screen the goldens don't have (a real phone shot, the home-screen widget, a notification), file a `website:` issue in the app repo.
 
 ## 7. Languages of the website
-- **At launch:** English (`/en`, the default), German (`/de`: the domain is `.de`, and the Impressum is German anyway), and Bangla (`/bn`) **(owner: confirm this set)**.
-- **Later:** Russian and Polish, when the app supports them.
-- `/` picks a locale from `Accept-Language` in the browser (static: a small client redirect with a `<noscript>` link list) and remembers the choice.
-- All copy lives in `messages/*.json`. German and Bangla are translated from the English. Keep the Bangla consistent with the app's wording (the app repo's `app/lib/l10n/app_bn.arb` and `docs/00-product/glossary.md`). A native speaker checks them before launch **(owner)**.
+The owner decided (2026-09-29):
+- **The website's languages are the app's languages.** Today that is English (`/en`) and Bangla (`/bn`). Polish (`/pl`) and Russian (`/ru`) are added when the app ships them (app issues #1078, #1079). There is no German locale, because the app has no German interface.
+- **The visitor's own language first, English by default.** `/` picks the locale from the browser's language (`navigator.languages`, a small client redirect, with a `<noscript>` link list). When none of the site's languages matches, it uses English.
+- **The visitor can always change it.** The header's language switch lists every locale in its own name (English, বাংলা, Polski, Русский), and the choice is remembered (`localStorage`, wrapped in try/catch) over the browser's language.
+- All copy lives in `messages/*.json`, translated from the English. Keep each language consistent with the app's wording (the app repo's `app/lib/l10n/app_<code>.arb` and `docs/00-product/glossary.md`). A native speaker checks them before launch **(owner)**.
 - Add `hreflang` alternates for every locale, and `x-default` → `/en`.
 
 ## 8. Legal (Germany; required before sogda.de goes live)
@@ -194,7 +195,7 @@ Source: the app repo's `docs/05-dev-guide/store-listing.md`. Update these if the
 |---|---|---|
 | 1 | The Google Play link (for the badge, QR and JSON-LD) | "Coming soon to Google Play", no QR |
 | 2 | Price / "free" / "no ads" wording | Not mentioned |
-| 3 | The website's languages at launch (en, de, bn?) | Build en first; de and bn in the i18n issue |
+| 3 | ~~The website's languages~~ **Decided 2026-09-29:** the app's languages (en, bn; pl, ru as the app adds them), the visitor's language first, English by default, with a switch (§7) | — |
 | 4 | The Impressum details and a contact email | Placeholders; **don't launch on the domain without them** |
 | 5 | Analytics (none, or cookieless Vercel Web Analytics) | None |
 | 6 | Announce Russian/Polish meanings as "coming soon"? | Yes, only as "coming soon" |
