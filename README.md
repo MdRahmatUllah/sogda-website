@@ -20,8 +20,12 @@ pnpm build               # static export into out/, then a CSP per page (scripts
 pnpm exec playwright install chromium   # once
 pnpm test:e2e            # against out/, served on :4173
 pnpm lighthouse          # the budgets from CLAUDE.md, on every locale of out/
+pnpm sync:brand          # the app's brand kit (pinned), favicons, manifest, Play badges
 ```
 
 - **Store links, contact:** `site.config.ts`.
 - **Copy:** `messages/<locale>.json`; the locale list is `i18n/routing.ts`.
 - **Security headers:** `vercel.json` sends them. `scripts/csp.mjs` adds each page's `<meta>` Content-Security-Policy, which allows exactly that page's inline scripts by hash, since a static export has no server to add nonces.
+- **Brand:** `app/globals.css` holds the tokens (Lagoon, Sun, Ink, Paper, Night, and the app's outline and hard shadow). Components use the semantic colours (`bg`, `fg`, `card`, `line`…), which follow the theme. Dark mode follows the system until the visitor picks, and the pick is remembered.
+- **Fonts:** Inter and Noto Sans Bengali, subset from the app's variable fonts (`app/fonts.ts` says how) and self-hosted.
+- **Component gallery:** `/en/gallery` in `pnpm dev`. For its axe check on a build: `SOGDA_GALLERY=1 pnpm build && SOGDA_GALLERY=1 pnpm test:e2e -g gallery`. A plain `pnpm build` leaves it out.

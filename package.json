@@ -14,11 +14,14 @@
     "format": "prettier --write .",
     "typecheck": "tsc --noEmit",
     "test:e2e": "playwright test",
-    "lighthouse": "node scripts/lighthouse.mjs"
+    "lighthouse": "node scripts/lighthouse.mjs",
+    "sync:brand": "node scripts/sync-brand.mjs"
   },
   "dependencies": {
+    "lucide-react": "1.48.0",
     "next": "15.5.26",
     "next-intl": "4.14.8",
+    "qrcode": "1.5.4",
     "react": "19.3.0",
     "react-dom": "19.3.0"
   },
@@ -28,6 +31,7 @@
     "@playwright/test": "1.63.0",
     "@tailwindcss/postcss": "4.3.3",
     "@types/node": "22.20.4",
+    "@types/qrcode": "1.5.6",
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
     "chrome-launcher": "1.2.1",
@@ -36,6 +40,7 @@
     "lighthouse": "13.5.0",
     "prettier": "3.9.9",
     "serve": "14.2.6",
+    "sharp": "0.35.5",
     "tailwindcss": "4.3.3",
     "typescript": "5.9.3"
   }
