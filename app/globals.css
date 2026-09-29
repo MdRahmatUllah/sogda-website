@@ -172,3 +172,136 @@
     background: var(--well);
   }
 }
+
+/* The hero (BRIEF §3.1). Only transform, opacity and stroke offsets move;
+   reduced motion gets the still page: the route drawn, Ä on the tile, Today
+   on the phone. */
+@media (prefers-reduced-motion: no-preference) {
+  /* The route unrolls on load. */
+  .route-draw {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: route-draw 1.4s cubic-bezier(0.65, 0, 0.35, 1) 0.1s forwards;
+  }
+  /* The front tile flips from a to Ä, once, as the route arrives. */
+  .mark-flip {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: mark-flip 0.7s ease-in-out 1.3s both;
+  }
+  .mark-flip-from {
+    animation: flip-out 0.7s steps(1, end) 1.3s both;
+  }
+  .mark-flip-to {
+    animation: flip-in 0.7s steps(1, end) 1.3s both;
+  }
+  /* The front phone floats up into place: by transform only, never from
+     opacity 0, since on a phone it is the page's largest paint (LCP). */
+  .hero-float {
+    animation: float-up 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+  /* Four screens, 3 s each, on a 12 s loop: each fades in over 0.42 s as
+     the one before fades out. The first starts already visible (a negative
+     delay), so the page's first paint of it is at full opacity. */
+  .hero-screen {
+    animation: screen-loop 12s linear -0.42s infinite backwards;
+  }
+  .hero-screen:nth-child(2) {
+    animation-delay: 2.58s;
+  }
+  .hero-screen:nth-child(3) {
+    animation-delay: 5.58s;
+  }
+  .hero-screen:nth-child(4) {
+    animation-delay: 8.58s;
+  }
+  /* The later screens stay out of the page (display: none, so their lazy
+     images wait) until their turn: the first paint fetches only Today. */
+  .hero-screen-later {
+    animation-name: screen-loop-later;
+  }
+  .hero-phones:hover .hero-screen,
+  .hero-phones:focus-within .hero-screen,
+  #hero[data-paused] .hero-screen {
+    animation-play-state: paused;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mark-flip-from,
+  .hero-screen-later,
+  .hero-pause {
+    display: none;
+  }
+}
+@keyframes route-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes mark-flip {
+  0%,
+  100% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(0);
+  }
+}
+@keyframes flip-out {
+  0% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes flip-in {
+  0% {
+    opacity: 0;
+  }
+  50%,
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes float-up {
+  from {
+    transform: translateY(2.5rem) rotate(2deg);
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes screen-loop {
+  0% {
+    opacity: 0;
+  }
+  3.5%,
+  25% {
+    opacity: 1;
+  }
+  28.5%,
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes screen-loop-later {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  0.1% {
+    display: block;
+    opacity: 0;
+  }
+  3.5%,
+  25% {
+    opacity: 1;
+  }
+  28.5%,
+  100% {
+    display: block;
+    opacity: 0;
+  }
+}

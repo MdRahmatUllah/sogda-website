@@ -1,14 +1,13 @@
-import { useTranslations } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import { use } from 'react';
+import { Hero } from '@/components/sections/Hero';
 
 export default function Home({ params }: { params: Promise<{ locale: string }> }) {
-  setRequestLocale(use(params).locale);
-  const t = useTranslations('home');
+  const { locale } = use(params);
+  setRequestLocale(locale);
   return (
-    <main className="mx-auto max-w-3xl px-6 py-24">
-      <p className="font-semibold">{t('kicker')}</p>
-      <h1 className="mt-2 text-4xl font-extrabold">{t('headline')}</h1>
+    <main id="main">
+      <Hero locale={locale} />
     </main>
   );
 }

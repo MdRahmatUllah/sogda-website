@@ -45,6 +45,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
   setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: 'header' });
   return (
     <html
       lang={locale}
@@ -55,6 +56,12 @@ export default async function LocaleLayout({ children, params }: Props) {
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body className="flex min-h-dvh flex-col">
+        <a
+          href="#main"
+          className="sr-only z-[60] rounded-full bg-sun px-5 py-3 font-bold text-ink focus:not-sr-only focus:fixed focus:top-3 focus:left-3"
+        >
+          {t('skip')}
+        </a>
         <Header locale={locale} />
         <div className="flex-1">{children}</div>
         <Footer locale={locale} />

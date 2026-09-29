@@ -15,14 +15,20 @@ const LOCALES = readdirSync('messages').map((f) => f.replace(/\.json$/, ''));
 const RUNS = 3;
 const BUDGET = { score: 95, lcp: 2000, cls: 0.05, tbt: 150, jsKb: 130 };
 
-/** Initial JS of a built page, gzipped: every <script src> a modern browser loads. */
+/** A built page's JS, gzipped: every chunk it loads, whether its <script src>
+ * is in the HTML or in the after-load loader (scripts/defer-hydration.mjs).
+ * The noModule polyfills don't count: a module browser never fetches them. */
 function initialJsKb(locale) {
   const html = readFileSync(`out/${locale}.html`, 'utf8');
-  // noModule polyfills never load in a browser that runs modules.
-  const srcs = [...html.matchAll(/<script([^>]*)>/g)]
-    .filter(([, attrs]) => !/noModule/i.test(attrs))
-    .flatMap(([, attrs]) => attrs.match(/\ssrc="([^"]+)"/)?.[1] ?? []);
-  const bytes = srcs.reduce(
+  const polyfills = new Set(
+    [...html.matchAll(/<script[^>]*\ssrc="([^"]+)"[^>]*noModule/gi)].map((m) => m[1]),
+  );
+  const srcs = new Set(
+    [...html.matchAll(/"(\/_next\/static\/chunks\/[^"]+\.js)"/g)]
+      .map((m) => m[1])
+      .filter((src) => !polyfills.has(src)),
+  );
+  const bytes = [...srcs].reduce(
     (sum, src) => sum + gzipSync(readFileSync(`out${decodeURIComponent(src)}`)).length,
     0,
   );

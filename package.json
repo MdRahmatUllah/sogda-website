@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build && node scripts/csp.mjs",
+    "build": "next build && node scripts/defer-hydration.mjs && node scripts/csp.mjs",
     "start": "serve out -l 4173",
     "lint": "eslint . --max-warnings 0 && prettier --check .",
     "format": "prettier --write .",
