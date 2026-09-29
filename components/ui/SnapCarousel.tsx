@@ -9,6 +9,7 @@ import { Children, useEffect, useRef, useState, type ReactNode } from 'react';
 // `wideClassName` lets a wide screen lay the same items out differently
 // (the practice section's fan), with the dots and buttons hidden there.
 export function SnapCarousel({
+  locale,
   label,
   itemLabel,
   prev,
@@ -19,6 +20,8 @@ export function SnapCarousel({
   wideClassName = '',
   children,
 }: {
+  /** For the dots' numbers (Bangla digits in Bangla). */
+  locale: string;
   label: string;
   /** Each dot's label, with {n} and {total}: "Screen {n} of {total}". */
   itemLabel: string;
@@ -33,6 +36,7 @@ export function SnapCarousel({
   children: ReactNode;
 }) {
   const items = Children.toArray(children);
+  const format = (n: number) => new Intl.NumberFormat(locale).format(n);
   const track = useRef<HTMLUListElement>(null);
   const [active, setActive] = useState(0);
   // The current item is the one nearest the middle of the track (several
@@ -114,8 +118,8 @@ export function SnapCarousel({
             key={i}
             type="button"
             aria-label={itemLabel
-              .replace('{n}', String(i + 1))
-              .replace('{total}', String(items.length))}
+              .replace('{n}', format(i + 1))
+              .replace('{total}', format(items.length))}
             aria-current={i === active || undefined}
             onClick={() => go(i)}
             className="grid size-12 place-items-center"

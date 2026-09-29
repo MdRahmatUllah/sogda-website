@@ -10,7 +10,8 @@
     "menu": "Menu",
     "closeMenu": "Close menu",
     "getApp": "Get the app",
-    "darkTheme": "Dark theme"
+    "darkTheme": "Dark theme",
+    "language": "Language"
   },
   "nav": {
     "day": "How it works",

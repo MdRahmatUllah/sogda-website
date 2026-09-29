@@ -44,7 +44,7 @@ export async function DayStory({ locale }: { locale: string }) {
                   </DeviceFrame>
                   <div className="max-w-md">
                     <span className="grid size-10 place-items-center rounded-full border-2 border-line bg-sun font-extrabold text-ink shadow-hard">
-                      {i + 1}
+                      {new Intl.NumberFormat(locale).format(i + 1)}
                     </span>
                     <h3 className="mt-4 text-2xl font-bold sm:text-3xl">{t(`${b.key}.title`)}</h3>
                     <p className="mt-3 text-lg text-muted">{t(`${b.key}.body`)}</p>

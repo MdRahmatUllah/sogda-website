@@ -7,7 +7,8 @@
       "golden": "today",
       "themes": ["light", "dark", "glass"],
       "alt": {
-        "en": "Sogda's Today screen: a ring showing 12 of 20 cards done, about 6 minutes left, then today's plan: revise 10 words, 7 new words, a backlog of 14, 3 practice sentences and the grammar topic of the week."
+        "en": "Sogda's Today screen: a ring showing 12 of 20 cards done, about 6 minutes left, then today's plan: revise 10 words, 7 new words, a backlog of 14, 3 practice sentences and the grammar topic of the week.",
+        "bn": "Sogda-র আজকের পাতা: ২০টির মধ্যে ১২টি কার্ড শেষ দেখানো একটি বৃত্ত, প্রায় ৬ মিনিট বাকি, তারপর আজকের পরিকল্পনা: ১০টি শব্দের রিভিশন, ৭টি নতুন শব্দ, ১৪টির ব্যাকলগ, ৩টি অনুশীলনের বাক্য আর এই সপ্তাহের ব্যাকরণ।"
       }
     },
     {
@@ -16,7 +17,8 @@
       "device": "tablet",
       "themes": ["light"],
       "alt": {
-        "en": "Sogda's Today screen on a tablet: the day's progress ring and today's plan side by side."
+        "en": "Sogda's Today screen on a tablet: the day's progress ring and today's plan side by side.",
+        "bn": "ট্যাবলেটে Sogda-র আজকের পাতা: দিনের অগ্রগতির বৃত্ত আর আজকের পরিকল্পনা পাশাপাশি।"
       }
     },
     {
@@ -24,7 +26,8 @@
       "golden": "study_front",
       "themes": ["light", "dark", "glass"],
       "alt": {
-        "en": "A revision card showing the German word “die Rechnung” with a speaker button, before its meaning is revealed."
+        "en": "A revision card showing the German word “die Rechnung” with a speaker button, before its meaning is revealed.",
+        "bn": "একটি রিভিশন কার্ড, যাতে জার্মান শব্দ “die Rechnung” আর একটি স্পিকার বোতাম; অর্থ এখনও দেখানো হয়নি।"
       }
     },
     {
@@ -32,7 +35,8 @@
       "golden": "study_back",
       "themes": ["light", "dark", "glass"],
       "alt": {
-        "en": "The back of the card for “die Rechnung”: the meaning “bill, invoice” in English and Bangla, two example sentences, and the Again, Hard, Good and Easy ratings with their next intervals."
+        "en": "The back of the card for “die Rechnung”: the meaning “bill, invoice” in English and Bangla, two example sentences, and the Again, Hard, Good and Easy ratings with their next intervals.",
+        "bn": "“die Rechnung” কার্ডের পেছন দিক: ইংরেজি আর বাংলায় অর্থ “bill, invoice” ও “বিল, চালান”, দুটি উদাহরণ বাক্য, আর পরের বিরতিসহ আবার, কঠিন, ভালো ও সহজ রেটিং।"
       }
     },
     {
@@ -40,7 +44,8 @@
       "golden": "grammar_practice",
       "themes": ["light", "dark", "glass"],
       "alt": {
-        "en": "Grammar practice on Konjunktiv II: pick the right form for “… Sie mir bitte das Formular schicken?”, with the answer “Könnten” marked correct and the rule explained."
+        "en": "Grammar practice on Konjunktiv II: pick the right form for “… Sie mir bitte das Formular schicken?”, with the answer “Könnten” marked correct and the rule explained.",
+        "bn": "Konjunktiv II-এর ব্যাকরণ অনুশীলন: “… Sie mir bitte das Formular schicken?” বাক্যের সঠিক রূপ বাছাই, “Könnten” উত্তরটি সঠিক চিহ্নিত আর নিয়মটি ব্যাখ্যা করা।"
       }
     },
     {
@@ -48,7 +53,8 @@
       "golden": "sentences",
       "themes": ["light", "dark", "glass"],
       "alt": {
-        "en": "A practice sentence, “Der Vermieter hat die Nebenkosten für nächstes Jahr erhöht.”, with a play button, its English translation, and the choices Understood, Partly and Not yet."
+        "en": "A practice sentence, “Der Vermieter hat die Nebenkosten für nächstes Jahr erhöht.”, with a play button, its English translation, and the choices Understood, Partly and Not yet.",
+        "bn": "একটি অনুশীলনের বাক্য, “Der Vermieter hat die Nebenkosten für nächstes Jahr erhöht.”, সঙ্গে প্লে বোতাম, ইংরেজি অনুবাদ আর বুঝেছি, কিছুটা ও এখনও না বাছাই।"
       }
     },
     {
@@ -56,7 +62,8 @@
       "golden": "day_complete_confetti",
       "themes": ["light", "dark"],
       "alt": {
-        "en": "The day complete screen, “Tag geschafft!”, with confetti: 17 words in 12 minutes, a 13 day streak, and tomorrow's plan."
+        "en": "The day complete screen, “Tag geschafft!”, with confetti: 17 words in 12 minutes, a 13 day streak, and tomorrow's plan.",
+        "bn": "দিন শেষের পাতা, “Tag geschafft!”, কনফেটিসহ: ১২ মিনিটে ১৭টি শব্দ, ১৩ দিনের ধারা আর আগামীকালের পরিকল্পনা।"
       }
     },
     {
@@ -64,7 +71,8 @@
       "golden": "quiz_runner_articles",
       "themes": ["light"],
       "alt": {
-        "en": "An article quiz: pick der, die or das for the word “Vermieter”."
+        "en": "An article quiz: pick der, die or das for the word “Vermieter”.",
+        "bn": "আর্টিকেলের কুইজ: “Vermieter” শব্দের জন্য der, die বা das বাছাই করুন।"
       }
     },
     {
@@ -72,7 +80,8 @@
       "golden": "quiz_runner_listening",
       "themes": ["light"],
       "alt": {
-        "en": "A listening quiz: play the word, then type what you hear, with keys for ä, ö, ü and ß."
+        "en": "A listening quiz: play the word, then type what you hear, with keys for ä, ö, ü and ß.",
+        "bn": "শোনার কুইজ: শব্দটি শুনে যা শুনলেন তা লিখুন, ä, ö, ü আর ß-এর বোতামসহ।"
       }
     },
     {
@@ -80,7 +89,8 @@
       "golden": "exam_runner_listening",
       "themes": ["light"],
       "alt": {
-        "en": "The listening section of a mock exam, with a timer, a play button with 3 plays left, and an answer field."
+        "en": "The listening section of a mock exam, with a timer, a play button with 3 plays left, and an answer field.",
+        "bn": "মক পরীক্ষার শোনার অংশ: টাইমার, ৩ বার শোনার সুযোগসহ প্লে বোতাম আর উত্তরের ঘর।"
       }
     },
     {
@@ -88,7 +98,8 @@
       "golden": "exam_results",
       "themes": ["light", "dark", "glass"],
       "alt": {
-        "en": "A mock exam result: passed with 77 %, 37 of 48 points, and a score for each section: vocabulary, reverse, articles, word forms, gap fill, grammar, listening, writing and speaking."
+        "en": "A mock exam result: passed with 77 %, 37 of 48 points, and a score for each section: vocabulary, reverse, articles, word forms, gap fill, grammar, listening, writing and speaking.",
+        "bn": "মক পরীক্ষার ফল: ৭৭ % পেয়ে পাস, ৪৮-এর মধ্যে ৩৭ পয়েন্ট, আর প্রতিটি অংশের নম্বর: শব্দভান্ডার, বিপরীত দিক, আর্টিকেল, শব্দের রূপ, শূন্যস্থান, ব্যাকরণ, শোনা, লেখা আর বলা।"
       }
     },
     {
@@ -96,7 +107,8 @@
       "golden": "learn",
       "themes": ["light", "dark", "glass"],
       "alt": {
-        "en": "The course overview: the steps A1.1 and A1.2 passed, A2.1 current with 11 cards left today, and the later steps still locked."
+        "en": "The course overview: the steps A1.1 and A1.2 passed, A2.1 current with 11 cards left today, and the later steps still locked.",
+        "bn": "কোর্সের সারসংক্ষেপ: A1.1 আর A1.2 ধাপ পাস, A2.1 চলছে আর আজ ১১টি কার্ড বাকি, পরের ধাপগুলো এখনও বন্ধ।"
       }
     },
     {
@@ -104,7 +116,8 @@
       "golden": "step_detail",
       "themes": ["light", "dark", "glass"],
       "alt": {
-        "en": "Step A2.1: 540 words and 10 grammar topics, with the step's words listed with their articles, meanings and status."
+        "en": "Step A2.1: 540 words and 10 grammar topics, with the step's words listed with their articles, meanings and status.",
+        "bn": "A2.1 ধাপ: ৫৪০টি শব্দ আর ১০টি ব্যাকরণ বিষয়, ধাপের শব্দগুলো আর্টিকেল, অর্থ আর অবস্থাসহ তালিকায়।"
       }
     },
     {
@@ -112,7 +125,8 @@
       "golden": "progress",
       "themes": ["light", "dark", "glass"],
       "alt": {
-        "en": "The progress screen: cards per day this week, retention against its target, words per step, study time, reviews and the streak."
+        "en": "The progress screen: cards per day this week, retention against its target, words per step, study time, reviews and the streak.",
+        "bn": "অগ্রগতির পাতা: এই সপ্তাহে দিনপ্রতি কার্ড, লক্ষ্যের তুলনায় মনে রাখার হার, ধাপপ্রতি শব্দ, পড়ার সময়, রিভিউ আর ধারা।"
       }
     },
     {
@@ -120,7 +134,8 @@
       "golden": "word_detail",
       "themes": ["light", "dark", "glass"],
       "alt": {
-        "en": "The word “die Straße”: its meaning in English and Bangla, examples with audio, related words, and links to Duden, DWDS and Wiktionary."
+        "en": "The word “die Straße”: its meaning in English and Bangla, examples with audio, related words, and links to Duden, DWDS and Wiktionary.",
+        "bn": "“die Straße” শব্দটি: ইংরেজি আর বাংলায় অর্থ, অডিওসহ উদাহরণ, সম্পর্কিত শব্দ, আর Duden, DWDS ও Wiktionary-র লিংক।"
       }
     },
     {
@@ -128,7 +143,8 @@
       "golden": "compare",
       "themes": ["light", "dark", "glass"],
       "alt": {
-        "en": "Comparing near-synonyms side by side, “der Grund” and “die Ursache”: meaning, register, the words they go with, an example, and when to use each."
+        "en": "Comparing near-synonyms side by side, “der Grund” and “die Ursache”: meaning, register, the words they go with, an example, and when to use each.",
+        "bn": "কাছাকাছি অর্থের দুটি শব্দ পাশাপাশি তুলনা, “der Grund” আর “die Ursache”: অর্থ, ভাষার স্তর, যে শব্দের সঙ্গে বসে, উদাহরণ আর কখন কোনটি ব্যবহার করবেন।"
       }
     },
     {
@@ -136,7 +152,8 @@
       "golden": "search",
       "themes": ["light", "dark", "glass"],
       "alt": {
-        "en": "Searching for “strase”: the exact match “die Straße” despite the typo, words starting with it, similar words, and example sentences."
+        "en": "Searching for “strase”: the exact match “die Straße” despite the typo, words starting with it, similar words, and example sentences.",
+        "bn": "“strase” দিয়ে খোঁজা: বানান ভুল সত্ত্বেও সঠিক মিল “die Straße”, এই দিয়ে শুরু হওয়া শব্দ, কাছাকাছি শব্দ আর উদাহরণ বাক্য।"
       }
     },
     {
@@ -144,7 +161,8 @@
       "golden": "placement",
       "themes": ["light", "dark", "glass"],
       "alt": {
-        "en": "The placement check, question 1 of 20: what does “die Küche” mean? Four answers to choose from."
+        "en": "The placement check, question 1 of 20: what does “die Küche” mean? Four answers to choose from.",
+        "bn": "লেভেল যাচাই, ২০টির মধ্যে ১ নম্বর প্রশ্ন: “die Küche” মানে কী? বেছে নেওয়ার জন্য চারটি উত্তর।"
       }
     },
     {
@@ -152,7 +170,8 @@
       "golden": "onboarding_welcome",
       "themes": ["light", "dark", "glass"],
       "alt": {
-        "en": "The welcome screen: “Learn German, one clear day at a time”, works fully offline with no account, 12 steps from A1.1 to C2.2, and your progress stays on your phone."
+        "en": "The welcome screen: “Learn German, one clear day at a time”, works fully offline with no account, 12 steps from A1.1 to C2.2, and your progress stays on your phone.",
+        "bn": "স্বাগত পাতা: “Learn German, one clear day at a time”, অ্যাকাউন্ট ছাড়া পুরোপুরি অফলাইন, A1.1 থেকে C2.2 পর্যন্ত ১২টি ধাপ, আর আপনার অগ্রগতি থাকে আপনার ফোনেই।"
       }
     },
     {
@@ -160,7 +179,8 @@
       "golden": "study_front_200",
       "themes": ["light"],
       "alt": {
-        "en": "The revision card for “die Rechnung” with text at 200 %: every line still fits, the long word breaking between syllables."
+        "en": "The revision card for “die Rechnung” with text at 200 %: every line still fits, the long word breaking between syllables.",
+        "bn": "২০০ % লেখায় “die Rechnung”-এর রিভিশন কার্ড: প্রতিটি লাইন তবুও এঁটে যায়, লম্বা শব্দটি সিলেবলে ভেঙে।"
       }
     }
   ]

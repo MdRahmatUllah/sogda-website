@@ -5,6 +5,7 @@
 import { spawn } from 'node:child_process';
 import { readdirSync, readFileSync } from 'node:fs';
 import { gzipSync } from 'node:zlib';
+import { chromium } from '@playwright/test';
 import * as chromeLauncher from 'chrome-launcher';
 import lighthouse from 'lighthouse';
 
@@ -39,7 +40,12 @@ const server = spawn('pnpm', ['exec', 'serve', 'out', '-l', String(PORT)], {
   shell: true,
   stdio: 'ignore',
 });
-const chrome = await chromeLauncher.launch({ chromeFlags: ['--headless=new'] });
+// The Chromium the e2e tests run (pinned by the lockfile), so the numbers
+// don't move with whatever Chrome this machine has.
+const chrome = await chromeLauncher.launch({
+  chromePath: chromium.executablePath(),
+  chromeFlags: ['--headless=new'],
+});
 let failed = false;
 try {
   await new Promise((r) => setTimeout(r, 2000));
@@ -50,6 +56,10 @@ try {
   for (const { url, locale } of targets) {
     // The median of RUNS runs (as Lighthouse CI does): one run on a busy
     // machine swings LCP by half a second.
+    // One run first, thrown away: a browser's first page pays a one-off cold
+    // start (on Windows, loading the system fonts the first time a script
+    // like Bangla needs them, ~1 s) that no visitor's warm browser pays.
+    await lighthouse(url, { port: chrome.port, output: 'json', logLevel: 'error' });
     const runs = [];
     for (let i = 0; i < RUNS; i++) {
       const { lhr } = await lighthouse(url, {

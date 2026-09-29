@@ -104,18 +104,22 @@ test.describe('The journey (BRIEF §3.4)', () => {
       // The road's top is still below the traveller's line: back at the start.
       await expect(page.locator('.journey-station[data-lit]')).toHaveCount(1);
       await expect(page.locator('#journey-count')).toHaveText('0');
-      // Halfway down the road: about half the stations. (Scroll the road in
-      // first: until then content-visibility gives it an estimated height.)
+      // Halfway down the road: about half the stations. Sections around the
+      // road render as it scrolls (content-visibility), moving it, so align
+      // the road's middle on the traveller's line until the layout settles.
+      const lit = page.locator('.journey-station[data-lit]');
+      const alignHalfway = async () => {
+        await page.evaluate(() => {
+          const road = document.getElementById('journey-road') as unknown as SVGPathElement;
+          const box = road.ownerSVGElement!.getBoundingClientRect();
+          scrollBy(0, box.top + box.height / 2 - innerHeight * 0.7);
+        });
+        await page.waitForTimeout(150);
+        return lit.count();
+      };
       await page.locator('#journey svg').scrollIntoViewIfNeeded();
-      await page.evaluate(() => {
-        const road = document.getElementById('journey-road') as unknown as SVGPathElement;
-        const box = road.ownerSVGElement!.getBoundingClientRect();
-        scrollBy(0, box.top + box.height / 2 - innerHeight * 0.7);
-      });
-      await expect
-        .poll(() => page.locator('.journey-station[data-lit]').count())
-        .toBeGreaterThanOrEqual(5);
-      expect(await page.locator('.journey-station[data-lit]').count()).toBeLessThanOrEqual(8);
+      await expect.poll(alignHalfway).toBeGreaterThanOrEqual(5);
+      expect(await alignHalfway()).toBeLessThanOrEqual(8);
       // Past the end: the whole road.
       await page.locator('footer').scrollIntoViewIfNeeded();
       await expect(page.locator('.journey-station[data-lit]')).toHaveCount(12);

@@ -50,6 +50,7 @@ export async function Practice({ locale }: { locale: string }) {
         {/* min-w-0: a grid cell would otherwise grow to the whole row. */}
         <Reveal className="min-w-0">
           <SnapCarousel
+            locale={locale}
             label={t('carousel')}
             itemLabel={t('item')}
             wideControls={false}
