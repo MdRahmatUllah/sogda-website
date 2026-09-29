@@ -305,3 +305,33 @@
     opacity: 0;
   }
 }
+
+/* A day with Sogda (BRIEF §3.2): the sticky phone shows the beat in view
+   (DayStoryStage sets data-active), and the ring fills as the beats pass. */
+.day-screen {
+  opacity: 0;
+  transform: translateY(1.5rem) scale(0.97);
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+[data-active='0'] .day-screen:nth-child(1),
+[data-active='1'] .day-screen:nth-child(2),
+[data-active='2'] .day-screen:nth-child(3),
+[data-active='3'] .day-screen:nth-child(4),
+[data-active='4'] .day-screen:nth-child(5),
+[data-active='5'] .day-screen:nth-child(6) {
+  opacity: 1;
+  transform: none;
+}
+.day-ring-fill {
+  stroke-dasharray: 1;
+  stroke-dashoffset: calc(1 - var(--progress, 0));
+  transition: stroke-dashoffset 0.6s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .day-screen,
+  .day-ring-fill {
+    transition: none;
+  }
+}

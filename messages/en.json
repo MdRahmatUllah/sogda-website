@@ -38,5 +38,33 @@
     "subline": "A complete, offline German course from A1 to C2, with meanings in English or Bangla.",
     "pause": "Pause the animation",
     "play": "Play the animation"
+  },
+  "day": {
+    "eyebrow": "How it works",
+    "title": "Open the app, see today's plan, do it, done.",
+    "plan": {
+      "title": "Today's plan is ready",
+      "body": "Open Sogda and your day is laid out: what to revise, the new words, a grammar topic and a few sentences. About 10 to 20 minutes."
+    },
+    "revise": {
+      "title": "Revise what's due",
+      "body": "The words you're about to forget come back first. Hear it, think of the meaning, then reveal."
+    },
+    "learn": {
+      "title": "Learn a few new words",
+      "body": "Each with its article, its pronunciation, examples, and the meaning in English or Bangla. Rate how well you knew it, and Sogda picks the day it comes back."
+    },
+    "grammar": {
+      "title": "The grammar topic of the week",
+      "body": "A short rule and a quick practice. Get one wrong and the rule is right there."
+    },
+    "sentences": {
+      "title": "Sentences from words you know",
+      "body": "Practice sentences made only from words you've already learned. Tap any word for its meaning."
+    },
+    "done": {
+      "title": "Day complete 🎉",
+      "body": "That's today done. Tomorrow's plan is already waiting."
+    }
   }
 }
