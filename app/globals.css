@@ -27,6 +27,9 @@
   --color-well: var(--well);
   --color-line: var(--line);
   --color-link: var(--link);
+  --color-der: var(--der);
+  --color-die: var(--die);
+  --color-das: var(--das);
 }
 
 :root {
@@ -38,9 +41,14 @@
   --well: var(--color-oat);
   --line: var(--color-ink);
   --shadow: var(--color-ink);
-  --link: #007a70;
-  --focus: #007a70;
+  /* The app's #007A70, a shade deeper: 4.5:1 on the Oat bands too. */
+  --link: #006a61;
+  --focus: #006a61;
   --header: rgb(255 248 238 / 0.9);
+  /* The app's article colours (sg_tokens.dart). */
+  --der: #3d5afe;
+  --die: #ff3d7f;
+  --das: #00b86b;
 }
 
 /* Dark: the system's choice, unless the visitor picked light; or their pick. */
@@ -57,6 +65,9 @@
     --link: #2ee6d6;
     --focus: #2ee6d6;
     --header: rgb(19 17 29 / 0.9);
+    --der: #8c9dff;
+    --die: #ff8ab2;
+    --das: #4fe3a0;
   }
 }
 :root[data-theme='dark'] {
@@ -71,6 +82,9 @@
   --link: #2ee6d6;
   --focus: #2ee6d6;
   --header: rgb(19 17 29 / 0.9);
+  --der: #8c9dff;
+  --die: #ff8ab2;
+  --das: #4fe3a0;
 }
 
 /* The logo's light and dark lockups: one shows, per theme. */
@@ -334,4 +348,65 @@
   .day-ring-fill {
     transition: none;
   }
+}
+
+/* It remembers for you (BRIEF §3.3): once in view (Reveal), the curve draws
+   and each revision pops in as the line reaches it. Hidden only while JS
+   waits for the view; otherwise, and with reduced motion, it's all there. */
+@media (prefers-reduced-motion: no-preference) {
+  html[data-hydrated] [data-reveal]:not([data-inview]) .memory-curve {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+  }
+  html[data-hydrated] [data-reveal]:not([data-inview]) :is(.memory-dot, .memory-chip) {
+    opacity: 0;
+  }
+  [data-inview] .memory-curve {
+    stroke-dasharray: 1;
+    animation: memory-draw 2.4s linear both;
+  }
+  [data-inview] .memory-dot {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: pop 0.45s cubic-bezier(0.3, 1.6, 0.5, 1) var(--at) both;
+  }
+  [data-inview] .memory-chip {
+    animation: pop 0.45s cubic-bezier(0.3, 1.6, 0.5, 1) var(--at) both;
+  }
+}
+@keyframes memory-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* The journey (BRIEF §3.4): a station lights up once the traveller reaches
+   it (JourneyProgress toggles data-lit; the markup has them all lit). */
+.journey-dot,
+.journey-chip {
+  fill: var(--card);
+  transition: fill 0.3s ease;
+}
+.journey-chip-text {
+  fill: var(--fg);
+  transition: fill 0.3s ease;
+}
+.journey-station[data-lit] :is(.journey-dot, .journey-chip) {
+  fill: var(--color-sun);
+}
+.journey-station[data-lit] .journey-chip-text {
+  fill: var(--color-ink);
 }
