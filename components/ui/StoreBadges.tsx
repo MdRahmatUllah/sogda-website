@@ -22,15 +22,17 @@ export async function StoreBadges({
   locale,
   qr = true,
   playStoreUrl = site.playStoreUrl,
+  className = '',
 }: {
   locale: string;
   qr?: boolean;
+  className?: string;
   /** Only the component gallery passes it, to show the live state early. */
   playStoreUrl?: string | null;
 }) {
   const t = await getTranslations({ locale, namespace: 'store' });
   return (
-    <div className="flex flex-wrap items-center gap-4">
+    <div className={`flex flex-wrap items-center gap-4 ${className}`}>
       {playStoreUrl ? (
         <>
           <a href={playStoreUrl} className="rounded-lg">

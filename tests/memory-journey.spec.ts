@@ -104,7 +104,9 @@ test.describe('The journey (BRIEF §3.4)', () => {
       // The road's top is still below the traveller's line: back at the start.
       await expect(page.locator('.journey-station[data-lit]')).toHaveCount(1);
       await expect(page.locator('#journey-count')).toHaveText('0');
-      // Halfway down the road: about half the stations.
+      // Halfway down the road: about half the stations. (Scroll the road in
+      // first: until then content-visibility gives it an estimated height.)
+      await page.locator('#journey svg').scrollIntoViewIfNeeded();
       await page.evaluate(() => {
         const road = document.getElementById('journey-road') as unknown as SVGPathElement;
         const box = road.ownerSVGElement!.getBoundingClientRect();

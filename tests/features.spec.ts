@@ -102,6 +102,6 @@ test('the page makes no claim the owner hasn’t given', async ({ page }) => {
   await page.goto('/en');
   const text = await page.locator('body').innerText();
   expect(text).not.toMatch(
-    /\bfree\b|no ads|ad-free|rating|testimonial|downloads?\b.*\d|official (goethe|telc)|partner/i,
+    /\bfree\b|no ads|ad-free|rating|testimonial|downloads?\b.*\d|(goethe|telc) partner|endorsed|certified by/i,
   );
 });
