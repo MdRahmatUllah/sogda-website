@@ -16,7 +16,8 @@
     "test:e2e": "playwright test",
     "lighthouse": "node scripts/lighthouse.mjs",
     "sync:brand": "node scripts/sync-brand.mjs",
-    "sync:screens": "node scripts/sync-screenshots.mjs"
+    "sync:screens": "node scripts/sync-screenshots.mjs",
+    "check:launch": "node scripts/check-launch.mjs"
   },
   "dependencies": {
     "lucide-react": "1.48.0",

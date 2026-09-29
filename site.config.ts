@@ -1,3 +1,5 @@
+import legal from './content/legal.json';
+
 // Everything the owner decides that the page depends on (BRIEF §10).
 export const site = {
   url: 'https://sogda.de',
@@ -5,6 +7,7 @@ export const site = {
   playStoreUrl: null as string | null,
   /** 'coming-soon' until the app is listed on the App Store. */
   appStore: 'coming-soon' as const,
-  /** The contact address; null until the owner gives one (BRIEF §10, 4). */
-  contactEmail: null as string | null,
+  /** The contact address; null until the owner gives one (BRIEF §10, 4).
+   * It is the Impressum's (content/legal.json). */
+  contactEmail: legal.email as string | null,
 };

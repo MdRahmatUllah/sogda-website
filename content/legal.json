@@ -1,0 +1,10 @@
+{
+  "$comment": "The Impressum's details (§ 5 DDG). The owner supplies them; null shows a placeholder, and a production build on Vercel (or pnpm check:launch) fails while any is null. Never put these details anywhere else (CLAUDE.md, Hard rules).",
+  "name": null,
+  "street": null,
+  "postcodeCity": null,
+  "country": "Deutschland",
+  "email": null,
+  "phone": null,
+  "vatId": null
+}
