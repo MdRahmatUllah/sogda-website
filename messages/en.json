@@ -66,5 +66,29 @@
       "title": "Day complete 🎉",
       "body": "That's today done. Tomorrow's plan is already waiting."
     }
+  },
+  "memory": {
+    "eyebrow": "It remembers for you",
+    "title": "Each word comes back just before you'd forget it.",
+    "body": "Sogda schedules every word with FSRS, a modern spaced-repetition method. Each time you remember a word, the wait before it comes back grows: a day, then three, then eight, then three weeks. Your minutes go to the words you're about to forget.",
+    "chart": "A forgetting curve: memory of a new word fades, each revision brings it back to full, and after each one it fades more slowly. The revisions come after 1 day, 3 days, 8 days and 21 days.",
+    "axisMemory": "Memory",
+    "axisTime": "Time",
+    "gap": "{days, plural, one {# day} other {# days}}",
+    "gapShort": "{days} d",
+    "meaning": "appointment",
+    "revisions": "Its revisions: after 1, 3, 8 and 21 days"
+  },
+  "journey": {
+    "eyebrow": "The journey",
+    "title": "12 steps from your first “Hallo” to C2.",
+    "facts": {
+      "words": "5,069 words",
+      "grammar": "182 grammar topics",
+      "exams": "Three mock exams for every step"
+    },
+    "counter": "words on the road",
+    "placement": "Already know some German? A short placement check starts you at the right step.",
+    "road": "The course as a road with 12 stations, from A1.1 to C2.2, through the levels A1 Anfänger, A2 Grundstufe, B1 Mittelstufe, B2, C1 and C2."
   }
 }
