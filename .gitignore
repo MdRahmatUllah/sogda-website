@@ -1,0 +1,10 @@
+node_modules/
+.next/
+out/
+.vercel/
+.env*
+playwright-report/
+test-results/
+.lighthouseci/
+*.log
+.DS_Store
