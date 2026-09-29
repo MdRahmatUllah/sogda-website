@@ -21,6 +21,7 @@ pnpm exec playwright install chromium   # once
 pnpm test:e2e            # against out/, served on :4173
 pnpm lighthouse          # the budgets from CLAUDE.md, on every locale of out/
 pnpm sync:brand          # the app's brand kit (pinned), favicons, manifest, Play badges
+pnpm sync:screens        # the app's goldens (pinned) as AVIF + WebP into public/screens
 ```
 
 - **Store links, contact:** `site.config.ts`.
@@ -29,3 +30,5 @@ pnpm sync:brand          # the app's brand kit (pinned), favicons, manifest, Pla
 - **Brand:** `app/globals.css` holds the tokens (Lagoon, Sun, Ink, Paper, Night, and the app's outline and hard shadow). Components use the semantic colours (`bg`, `fg`, `card`, `line`…), which follow the theme. Dark mode follows the system until the visitor picks, and the pick is remembered.
 - **Fonts:** Inter and Noto Sans Bengali, subset from the app's variable fonts (`app/fonts.ts` says how) and self-hosted.
 - **Component gallery:** `/en/gallery` in `pnpm dev`. For its axe check on a build: `SOGDA_GALLERY=1 pnpm build && SOGDA_GALLERY=1 pnpm test:e2e -g gallery`. A plain `pnpm build` leaves it out.
+- **Screens:** `content/screenshots.json` lists the app screens the site shows: the golden, the themes, and alt text per locale, all at one pinned app `ref`. `pnpm sync:screens` builds AVIF and WebP at 360/540/720/1080 px (tablets 720–2048) and a blur placeholder (`content/screens.generated.json`). It skips anything already built from the same ref, so a second run changes nothing. `<Screen id locale theme priority sizes>` renders one: `theme="auto"` follows the site's theme, and `priority` is only for the first view.
+- **Lighthouse** judges the median of three runs per page, since one run on a busy machine can swing LCP by half a second.

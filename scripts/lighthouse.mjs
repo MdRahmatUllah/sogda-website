@@ -12,6 +12,7 @@ const PORT = 4174;
 // Every locale has its messages file (i18n/routing.ts lists the same codes).
 const LOCALES = readdirSync('messages').map((f) => f.replace(/\.json$/, ''));
 
+const RUNS = 3;
 const BUDGET = { score: 95, lcp: 2000, cls: 0.05, tbt: 150, jsKb: 130 };
 
 /** Initial JS of a built page, gzipped: every <script src> a modern browser loads. */
@@ -41,16 +42,29 @@ try {
     ? urls.map((url) => ({ url }))
     : LOCALES.map((l) => ({ url: `http://localhost:${PORT}/${l}`, locale: l }));
   for (const { url, locale } of targets) {
-    const { lhr } = await lighthouse(url, { port: chrome.port, output: 'json', logLevel: 'error' });
+    // The median of RUNS runs (as Lighthouse CI does): one run on a busy
+    // machine swings LCP by half a second.
+    const runs = [];
+    for (let i = 0; i < RUNS; i++) {
+      const { lhr } = await lighthouse(url, {
+        port: chrome.port,
+        output: 'json',
+        logLevel: 'error',
+      });
+      runs.push(lhr);
+    }
+    const median = (f) => runs.map(f).sort((x, y) => x - y)[Math.floor(RUNS / 2)];
     const scores = Object.fromEntries(
-      Object.entries(lhr.categories).map(([k, c]) => [k, Math.round(c.score * 100)]),
+      Object.keys(runs[0].categories).map((k) => [
+        k,
+        Math.round(median((r) => r.categories[k].score) * 100),
+      ]),
     );
-    const a = lhr.audits;
     const row = {
       ...scores,
-      lcp: Math.round(a['largest-contentful-paint'].numericValue),
-      cls: Number(a['cumulative-layout-shift'].numericValue.toFixed(3)),
-      tbt: Math.round(a['total-blocking-time'].numericValue),
+      lcp: Math.round(median((r) => r.audits['largest-contentful-paint'].numericValue)),
+      cls: Number(median((r) => r.audits['cumulative-layout-shift'].numericValue).toFixed(3)),
+      tbt: Math.round(median((r) => r.audits['total-blocking-time'].numericValue)),
       ...(locale ? { jsKb: Number(initialJsKb(locale).toFixed(1)) } : {}),
     };
     const misses = [

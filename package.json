@@ -15,7 +15,8 @@
     "typecheck": "tsc --noEmit",
     "test:e2e": "playwright test",
     "lighthouse": "node scripts/lighthouse.mjs",
-    "sync:brand": "node scripts/sync-brand.mjs"
+    "sync:brand": "node scripts/sync-brand.mjs",
+    "sync:screens": "node scripts/sync-screenshots.mjs"
   },
   "dependencies": {
     "lucide-react": "1.48.0",
