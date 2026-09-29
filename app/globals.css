@@ -410,3 +410,98 @@
 .journey-station[data-lit] .journey-chip-text {
   fill: var(--color-ink);
 }
+
+/* Practise and test yourself (BRIEF §3.5): on wide screens the carousel is a
+   fan of three phones that opens as it comes into view; a card lifts on
+   hover. */
+@media (min-width: 1024px) {
+  .practice-fan > li {
+    --x: 0%;
+    --r: 0deg;
+    --lift: 0rem;
+    transform: translateX(var(--x)) translateY(var(--lift)) rotate(var(--r));
+    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .practice-fan > li + li {
+    margin-left: -5rem;
+  }
+  .practice-fan > li:nth-child(1) {
+    --r: -8deg;
+  }
+  .practice-fan > li:nth-child(2) {
+    --lift: -1rem;
+    z-index: 1;
+  }
+  .practice-fan > li:nth-child(3) {
+    --r: 8deg;
+  }
+  .practice-fan > li:hover {
+    --lift: -1.75rem;
+    z-index: 2;
+  }
+}
+@media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
+  html[data-hydrated] [data-reveal]:not([data-inview]) .practice-fan > li:nth-child(1) {
+    --x: 70%;
+    --r: 0deg;
+  }
+  html[data-hydrated] [data-reveal]:not([data-inview]) .practice-fan > li:nth-child(3) {
+    --x: -70%;
+    --r: 0deg;
+  }
+}
+
+/* The feature grid rises card by card, and the language card's lines arrive
+   one after another: once, as they come into view. */
+@media (prefers-reduced-motion: no-preference) {
+  html[data-hydrated] [data-reveal]:not([data-inview]) :is(.feature-card, .lang-line) {
+    opacity: 0;
+  }
+  [data-inview] .feature-card {
+    animation: rise 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) calc(var(--i) * 70ms) both;
+  }
+  [data-inview] .lang-line {
+    animation: rise 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) calc(var(--i) * 0.7s + 0.2s) both;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .practice-fan > li,
+  .look-screen {
+    transition: none !important;
+  }
+}
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Three looks (BRIEF §3.7): the radio group picks the screen, by CSS alone.
+   Light shows unless another is picked, so a browser without :has() still
+   shows a screen. */
+.look-screen {
+  transition: opacity 0.35s ease;
+}
+.look-screen:not([data-look='light']) {
+  opacity: 0;
+}
+#looks:has(.look-input[value='dark']:checked) .look-screen[data-look='dark'],
+#looks:has(.look-input[value='glass']:checked) .look-screen[data-look='glass'] {
+  opacity: 1;
+}
+#looks:has(.look-input:not([value='light']):checked) .look-screen[data-look='light'] {
+  opacity: 0;
+}
+.look-option:has(.look-input:checked) {
+  background: var(--color-lagoon);
+  color: var(--color-ink);
+}
+.look-option:has(.look-input:focus-visible) {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}

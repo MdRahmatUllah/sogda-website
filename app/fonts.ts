@@ -3,7 +3,8 @@ import localFont from 'next/font/local';
 // Self-hosted (a Google Fonts request would be a GDPR problem in Germany), and
 // subset from the app's own variable fonts (app/assets/fonts in the app repo)
 // with fontTools:
-//   Inter: wght 400-800 and opsz 14-32 kept; Basic Latin, Latin-1, Latin
+//   Inter: wght 400-800, opsz pinned at 14 (the display cut's axis cost
+//   23 KB and 0.2 s of LCP); Basic Latin, Latin-1, Latin
 //   Extended-A (Polish), punctuation, arrows, ≈ ≠ ≤ ≥; kern liga calt ccmp
 //   locl mark mkmk case tnum frac sups.
 //   Noto Sans Bengali: wght 400-700, wdth pinned at 100; U+0964-0965,
