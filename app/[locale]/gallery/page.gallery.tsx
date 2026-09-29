@@ -1,9 +1,9 @@
-/* eslint-disable @next/next/no-img-element -- the brand icon as a stand-in screen */
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { use } from 'react';
 import { DeviceFrame } from '@/components/ui/DeviceFrame';
 import { QrCode } from '@/components/ui/QrCode';
+import { Screen } from '@/components/ui/Screen';
 import { StoreBadges } from '@/components/ui/StoreBadges';
 
 // Every shared component, for eyes and axe (dev only; see next.config.ts).
@@ -12,7 +12,6 @@ export const metadata: Metadata = { robots: { index: false } };
 export default function Gallery({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = use(params);
   setRequestLocale(locale);
-  const screen = <img src="/brand/icon-tiles-full.svg" alt="" className="size-full object-cover" />;
   return (
     <main className="mx-auto grid max-w-6xl gap-12 px-4 py-12 sm:px-6">
       <h1 className="text-3xl font-extrabold">Component gallery</h1>
@@ -50,11 +49,19 @@ export default function Gallery({ params }: { params: Promise<{ locale: string }
         </div>
       </section>
       <section className="grid gap-4">
-        <h2 className="text-xl font-bold">Device frames</h2>
+        <h2 className="text-xl font-bold">Device frames with real screens</h2>
         <div className="flex flex-wrap items-end gap-10">
-          <DeviceFrame className="w-56">{screen}</DeviceFrame>
+          <DeviceFrame className="w-56">
+            <Screen id="today" locale={locale} priority sizes="224px" />
+          </DeviceFrame>
+          <DeviceFrame className="w-56">
+            <Screen id="study-back" locale={locale} theme="auto" sizes="224px" />
+          </DeviceFrame>
+          <DeviceFrame className="w-56">
+            <Screen id="today" locale={locale} theme="glass" sizes="224px" />
+          </DeviceFrame>
           <DeviceFrame kind="tablet" className="w-full max-w-xl">
-            {screen}
+            <Screen id="today-tablet" locale={locale} sizes="(min-width: 640px) 576px, 100vw" />
           </DeviceFrame>
         </div>
       </section>

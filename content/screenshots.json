@@ -1,0 +1,167 @@
+{
+  "$comment": "The real app screens the site shows (BRIEF §6). Each is the app's golden <golden>_<theme>_<device>.png at `ref`, never redrawn. Bump `ref` to the app's release tag when it ships, then `pnpm sync:screens`.",
+  "ref": "4b088a18c815355404b1d742302d5a8e204ed77e",
+  "screens": [
+    {
+      "id": "today",
+      "golden": "today",
+      "themes": ["light", "dark", "glass"],
+      "alt": {
+        "en": "Sogda's Today screen: a ring showing 12 of 20 cards done, about 6 minutes left, then today's plan: revise 10 words, 7 new words, a backlog of 14, 3 practice sentences and the grammar topic of the week."
+      }
+    },
+    {
+      "id": "today-tablet",
+      "golden": "today",
+      "device": "tablet",
+      "themes": ["light"],
+      "alt": {
+        "en": "Sogda's Today screen on a tablet: the day's progress ring and today's plan side by side."
+      }
+    },
+    {
+      "id": "study-front",
+      "golden": "study_front",
+      "themes": ["light", "dark", "glass"],
+      "alt": {
+        "en": "A revision card showing the German word “die Rechnung” with a speaker button, before its meaning is revealed."
+      }
+    },
+    {
+      "id": "study-back",
+      "golden": "study_back",
+      "themes": ["light", "dark", "glass"],
+      "alt": {
+        "en": "The back of the card for “die Rechnung”: the meaning “bill, invoice” in English and Bangla, two example sentences, and the Again, Hard, Good and Easy ratings with their next intervals."
+      }
+    },
+    {
+      "id": "grammar-practice",
+      "golden": "grammar_practice",
+      "themes": ["light", "dark", "glass"],
+      "alt": {
+        "en": "Grammar practice on Konjunktiv II: pick the right form for “… Sie mir bitte das Formular schicken?”, with the answer “Könnten” marked correct and the rule explained."
+      }
+    },
+    {
+      "id": "sentences",
+      "golden": "sentences",
+      "themes": ["light", "dark", "glass"],
+      "alt": {
+        "en": "A practice sentence, “Der Vermieter hat die Nebenkosten für nächstes Jahr erhöht.”, with a play button, its English translation, and the choices Understood, Partly and Not yet."
+      }
+    },
+    {
+      "id": "day-complete",
+      "golden": "day_complete_confetti",
+      "themes": ["light", "dark"],
+      "alt": {
+        "en": "The day complete screen, “Tag geschafft!”, with confetti: 17 words in 12 minutes, a 13 day streak, and tomorrow's plan."
+      }
+    },
+    {
+      "id": "quiz-articles",
+      "golden": "quiz_runner_articles",
+      "themes": ["light"],
+      "alt": {
+        "en": "An article quiz: pick der, die or das for the word “Vermieter”."
+      }
+    },
+    {
+      "id": "quiz-listening",
+      "golden": "quiz_runner_listening",
+      "themes": ["light"],
+      "alt": {
+        "en": "A listening quiz: play the word, then type what you hear, with keys for ä, ö, ü and ß."
+      }
+    },
+    {
+      "id": "exam-listening",
+      "golden": "exam_runner_listening",
+      "themes": ["light"],
+      "alt": {
+        "en": "The listening section of a mock exam, with a timer, a play button with 3 plays left, and an answer field."
+      }
+    },
+    {
+      "id": "exam-results",
+      "golden": "exam_results",
+      "themes": ["light", "dark", "glass"],
+      "alt": {
+        "en": "A mock exam result: passed with 77 %, 37 of 48 points, and a score for each section: vocabulary, reverse, articles, word forms, gap fill, grammar, listening, writing and speaking."
+      }
+    },
+    {
+      "id": "learn",
+      "golden": "learn",
+      "themes": ["light", "dark", "glass"],
+      "alt": {
+        "en": "The course overview: the steps A1.1 and A1.2 passed, A2.1 current with 11 cards left today, and the later steps still locked."
+      }
+    },
+    {
+      "id": "step-detail",
+      "golden": "step_detail",
+      "themes": ["light", "dark", "glass"],
+      "alt": {
+        "en": "Step A2.1: 540 words and 10 grammar topics, with the step's words listed with their articles, meanings and status."
+      }
+    },
+    {
+      "id": "progress",
+      "golden": "progress",
+      "themes": ["light", "dark", "glass"],
+      "alt": {
+        "en": "The progress screen: cards per day this week, retention against its target, words per step, study time, reviews and the streak."
+      }
+    },
+    {
+      "id": "word-detail",
+      "golden": "word_detail",
+      "themes": ["light", "dark", "glass"],
+      "alt": {
+        "en": "The word “die Straße”: its meaning in English and Bangla, examples with audio, related words, and links to Duden, DWDS and Wiktionary."
+      }
+    },
+    {
+      "id": "compare",
+      "golden": "compare",
+      "themes": ["light", "dark", "glass"],
+      "alt": {
+        "en": "Comparing near-synonyms side by side, “der Grund” and “die Ursache”: meaning, register, the words they go with, an example, and when to use each."
+      }
+    },
+    {
+      "id": "search",
+      "golden": "search",
+      "themes": ["light", "dark", "glass"],
+      "alt": {
+        "en": "Searching for “strase”: the exact match “die Straße” despite the typo, words starting with it, similar words, and example sentences."
+      }
+    },
+    {
+      "id": "placement",
+      "golden": "placement",
+      "themes": ["light", "dark", "glass"],
+      "alt": {
+        "en": "The placement check, question 1 of 20: what does “die Küche” mean? Four answers to choose from."
+      }
+    },
+    {
+      "id": "welcome",
+      "golden": "onboarding_welcome",
+      "themes": ["light", "dark", "glass"],
+      "alt": {
+        "en": "The welcome screen: “Learn German, one clear day at a time”, works fully offline with no account, 12 steps from A1.1 to C2.2, and your progress stays on your phone."
+      }
+    },
+    {
+      "id": "study-front-200",
+      "golden": "study_front_200",
+      "themes": ["light"],
+      "alt": {
+        "en": "The revision card for “die Rechnung” with text at 200 %: every line still fits, the long word breaking between syllables."
+      }
+    }
+  ]
+}
