@@ -3,6 +3,34 @@
     "title": "Sogda — Learn German offline, A1 to C2",
     "description": "Learn German, one clear day at a time: a complete, offline German course from A1 to C2, with meanings in English or Bangla."
   },
+  "header": {
+    "home": "Sogda, home",
+    "nav": "Sections",
+    "menu": "Menu",
+    "closeMenu": "Close menu",
+    "getApp": "Get the app",
+    "darkTheme": "Dark theme"
+  },
+  "nav": {
+    "day": "How it works",
+    "features": "Features",
+    "screens": "Screens",
+    "faq": "FAQ"
+  },
+  "store": {
+    "googlePlay": "Get it on Google Play",
+    "googlePlaySoon": "Coming soon to Google Play",
+    "iphoneSoon": "Coming soon on iPhone",
+    "qr": "QR code: scan it with your phone to open Sogda on Google Play"
+  },
+  "footer": {
+    "impressum": "Impressum",
+    "privacy": "Privacy (Datenschutz)",
+    "contact": "Contact",
+    "languages": "Languages",
+    "trademark": "Google Play and the Google Play logo are trademarks of Google LLC.",
+    "copyright": "© {year} Sogda"
+  },
   "home": {
     "kicker": "The road to a new language",
     "headline": "Learn German, one clear day at a time."

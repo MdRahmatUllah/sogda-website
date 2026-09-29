@@ -17,11 +17,14 @@ for (const locale of routing.locales) {
       expect(errors).toEqual([]);
     });
 
-    test('axe finds no violations', async ({ page }) => {
-      await page.goto(`/${locale}`);
-      const { violations } = await new AxeBuilder({ page }).analyze();
-      expect(violations.map((v) => `${v.id}: ${v.help}`)).toEqual([]);
-    });
+    for (const colorScheme of ['light', 'dark'] as const) {
+      test(`axe finds no violations (${colorScheme})`, async ({ page }) => {
+        await page.emulateMedia({ colorScheme });
+        await page.goto(`/${locale}`);
+        const { violations } = await new AxeBuilder({ page }).analyze();
+        expect(violations.map((v) => `${v.id}: ${v.help}`)).toEqual([]);
+      });
+    }
 
     for (const width of WIDTHS) {
       test(`no horizontal scroll at ${width} px`, async ({ page }) => {

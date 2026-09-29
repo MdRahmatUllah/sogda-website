@@ -1,1 +1,174 @@
 @import 'tailwindcss';
+
+/* The brand (BRIEF §5) and the app's own surfaces (sg_tokens.dart in the app
+   repo): Paper or Night ground, cards with a 2 px outline and a hard 3 px
+   offset shadow. Components use the semantic colours (bg, fg, card…), which
+   follow the theme; the brand colours never change. */
+@theme {
+  --color-lagoon: #00c2b2;
+  --color-sun: #ffc61a;
+  --color-ink: #15121f;
+  --color-paper: #fff8ee;
+  --color-night: #13111d;
+  --color-oat: #f3eadb;
+
+  --font-sans: var(--font-inter), var(--font-bengali), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-card: 1.25rem;
+  --shadow-hard: 3px 3px 0 0 var(--shadow);
+  --shadow-hard-lg: 6px 6px 0 0 var(--shadow);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-card: var(--card);
+  --color-well: var(--well);
+  --color-line: var(--line);
+  --color-link: var(--link);
+}
+
+:root {
+  color-scheme: light;
+  --bg: var(--color-paper);
+  --fg: var(--color-ink);
+  --muted: #5b5670;
+  --card: #ffffff;
+  --well: var(--color-oat);
+  --line: var(--color-ink);
+  --shadow: var(--color-ink);
+  --link: #007a70;
+  --focus: #007a70;
+  --header: rgb(255 248 238 / 0.9);
+}
+
+/* Dark: the system's choice, unless the visitor picked light; or their pick. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+    --bg: var(--color-night);
+    --fg: #f4f1ff;
+    --muted: #b7b1cc;
+    --card: #1e1b2c;
+    --well: #29253a;
+    --line: rgb(244 241 255 / 0.55);
+    --shadow: rgb(255 255 255 / 0.3);
+    --link: #2ee6d6;
+    --focus: #2ee6d6;
+    --header: rgb(19 17 29 / 0.9);
+  }
+}
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: var(--color-night);
+  --fg: #f4f1ff;
+  --muted: #b7b1cc;
+  --card: #1e1b2c;
+  --well: #29253a;
+  --line: rgb(244 241 255 / 0.55);
+  --shadow: rgb(255 255 255 / 0.3);
+  --link: #2ee6d6;
+  --focus: #2ee6d6;
+  --header: rgb(19 17 29 / 0.9);
+}
+
+/* The logo's light and dark lockups: one shows, per theme. */
+.only-dark {
+  display: none;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .only-light {
+    display: none;
+  }
+  :root:not([data-theme='light']) .only-dark {
+    display: block;
+  }
+}
+:root[data-theme='dark'] .only-light {
+  display: none;
+}
+:root[data-theme='dark'] .only-dark {
+  display: block;
+}
+
+@layer base {
+  html {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    /* The sticky header never hides an anchor's heading. */
+    scroll-padding-top: 5rem;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+  :focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+    border-radius: 0.25rem;
+  }
+  /* On a Lagoon band the teal ring would vanish: Ink instead. */
+  .on-lagoon :focus-visible {
+    outline-color: var(--color-ink);
+  }
+  [lang='bn'] {
+    line-height: 1.7;
+  }
+  ::selection {
+    background: var(--color-sun);
+    color: var(--color-ink);
+  }
+}
+
+@layer components {
+  /* The app's signature card: 2 px outline, hard offset shadow. */
+  .card {
+    background: var(--card);
+    border: 2px solid var(--line);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-hard);
+  }
+  /* The app's primary button: Lagoon with Ink text (never white on Lagoon). */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 3rem;
+    padding: 0 1.25rem;
+    border: 2px solid var(--color-ink);
+    border-radius: 999px;
+    font-weight: 700;
+    background: var(--color-lagoon);
+    color: var(--color-ink);
+    box-shadow: 3px 3px 0 0 var(--color-ink);
+    transition:
+      transform 120ms ease,
+      box-shadow 120ms ease;
+  }
+  .btn:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0 0 var(--color-ink);
+  }
+  .btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 0 var(--color-ink);
+  }
+  .icon-btn {
+    display: inline-grid;
+    place-items: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 999px;
+    color: var(--fg);
+  }
+  .icon-btn:hover {
+    background: var(--well);
+  }
+}

@@ -21,7 +21,10 @@ function initialJsKb(locale) {
   const srcs = [...html.matchAll(/<script([^>]*)>/g)]
     .filter(([, attrs]) => !/noModule/i.test(attrs))
     .flatMap(([, attrs]) => attrs.match(/\ssrc="([^"]+)"/)?.[1] ?? []);
-  const bytes = srcs.reduce((sum, src) => sum + gzipSync(readFileSync(`out${src}`)).length, 0);
+  const bytes = srcs.reduce(
+    (sum, src) => sum + gzipSync(readFileSync(`out${decodeURIComponent(src)}`)).length,
+    0,
+  );
   return bytes / 1024;
 }
 
