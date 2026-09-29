@@ -52,8 +52,9 @@ function Picture({
   }
   return (
     <picture className={className}>
+      {/* AVIF at every width; a browser without AVIF (under 5 %) gets one WebP
+          at the second width, which keeps the page's markup light (LCP). */}
       <source type="image/avif" srcSet={srcSet('avif')} sizes={sizes} />
-      <source type="image/webp" srcSet={srcSet('webp')} sizes={sizes} />
       {/* Pre-built sizes: next/image can't optimise a static export. */}
       <img
         src={`/screens/${file}-${g.widths[1] ?? g.widths[0]}.webp`}

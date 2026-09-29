@@ -90,5 +90,65 @@
     "counter": "words on the road",
     "placement": "Already know some German? A short placement check starts you at the right step.",
     "road": "The course as a road with 12 stations, from A1.1 to C2.2, through the levels A1 Anfänger, A2 Grundstufe, B1 Mittelstufe, B2, C1 and C2."
+  },
+  "practice": {
+    "eyebrow": "Practise and test yourself",
+    "title": "Quizzes, then a mock exam when you're ready.",
+    "quizzes": "Quizzes in every direction: German to English or Bangla, English to German, articles, listening and word forms.",
+    "exams": "Three mock exams for every step, with vocabulary, grammar, listening, writing and speaking, and a result for each section.",
+    "carousel": "Quiz and exam screens",
+    "item": "Screen {n} of {total}"
+  },
+  "features": {
+    "eyebrow": "And everything else",
+    "title": "Made for a real learner’s day.",
+    "offline": {
+      "title": "Offline, always",
+      "body": "No signal needed: it works on the U-Bahn and on a plane."
+    },
+    "private": {
+      "title": "Private by design",
+      "body": "No account. Your progress stays on your phone."
+    },
+    "voice": {
+      "title": "Hear every word",
+      "body": "Your phone’s German voice, or the optional natural Supertonic voice: offline, about 400 MB, downloaded once over Wi-Fi."
+    },
+    "compare": {
+      "title": "Compare near-synonyms",
+      "body": "Look at words like kennen and wissen side by side."
+    },
+    "own": {
+      "title": "Add your own words",
+      "body": "Keep the words you meet in daily life with the rest of your course."
+    },
+    "widget": {
+      "title": "A home-screen widget",
+      "body": "Today’s plan at a glance, and a word of the day to hear."
+    },
+    "reminder": {
+      "title": "A reminder only when it’s due",
+      "body": "You choose your rest days."
+    },
+    "pace": {
+      "title": "Your pace",
+      "body": "A daily goal you set, with catch-up when you fall behind."
+    }
+  },
+  "looks": {
+    "eyebrow": "Three looks",
+    "title": "Light, dark or glass, and easy to read.",
+    "body": "Pick the look you like. Text goes up to 200 %, and Sogda works with your phone’s screen reader.",
+    "legend": "Look",
+    "light": "Light",
+    "dark": "Dark",
+    "glass": "Glass",
+    "large": "Text at 200 %"
+  },
+  "languages": {
+    "eyebrow": "In your language",
+    "title": "Meanings in English, Bangla, or both.",
+    "body": "Every word comes with its meaning in English, Bangla, or both, and its pronunciation written in Bangla letters. Russian and Polish meanings are coming.",
+    "soon": "soon"
   }
 }
