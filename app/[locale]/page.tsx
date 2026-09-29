@@ -1,5 +1,6 @@
 import { setRequestLocale } from 'next-intl/server';
 import { use } from 'react';
+import { DayStory } from '@/components/sections/DayStory';
 import { Hero } from '@/components/sections/Hero';
 
 export default function Home({ params }: { params: Promise<{ locale: string }> }) {
@@ -8,6 +9,7 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
   return (
     <main id="main">
       <Hero locale={locale} />
+      <DayStory locale={locale} />
     </main>
   );
 }
