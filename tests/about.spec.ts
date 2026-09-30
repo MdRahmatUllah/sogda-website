@@ -75,6 +75,10 @@ test.describe('Sogda in brief (#70)', () => {
       await page.goto(`/${l}`);
       await expect(page.locator(`footer a[href="/${l}/about"]`)).toBeVisible();
     }
+    // Of the 12 level pages (#72), only the first: they link to each other.
+    await page.goto('/en');
+    await expect(page.locator('footer a[href="/en/a1-1"]')).toBeVisible();
+    await expect(page.locator('footer a[href="/en/a1-2"]')).toHaveCount(0);
   });
 
   test.describe('the language switch', () => {
