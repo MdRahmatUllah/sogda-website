@@ -1,6 +1,7 @@
 import { existsSync } from 'node:fs';
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
+import { factArgs } from '@/i18n/facts';
 import { site } from '@/site.config';
 import type { Faq } from './graph';
 
@@ -35,12 +36,13 @@ type Values = Record<string, string | number>;
  *   } }
  *
  * Sections, paragraphs and questions keep the file's order. `values` fills
- * ICU arguments such as `{words}` (the numbers come from content/facts.json, #61).
+ * ICU arguments such as `{words}`: by default every fact in content/facts.json
+ * (`factArgs`, #61), so a page never writes a number itself.
  */
 export async function contentFromMessages(
   locale: string,
   slug: string,
-  values: Values = {},
+  values: Values = factArgs,
 ): Promise<PageContent> {
   const t = await getTranslations({ locale, namespace: `pages.${slug}` });
   const keys = (path: string) => Object.keys((t.raw(path) as object | undefined) ?? {});

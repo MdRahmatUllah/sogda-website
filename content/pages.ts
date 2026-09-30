@@ -1,4 +1,5 @@
 import { getTranslations } from 'next-intl/server';
+import { factArgs } from '@/i18n/facts';
 import { routing } from '@/i18n/routing';
 import type { PageContent } from '@/lib/page';
 
@@ -19,7 +20,9 @@ export type PageEntry = {
 // The template's own sample: every part of a page, filled with copy the site
 // already has (and every locale has reviewed), so it adds no new text.
 async function sample(locale: string): Promise<PageContent> {
-  const t = await getTranslations({ locale });
+  const tr = await getTranslations({ locale });
+  // Every message may take any fact as an ICU argument (#61).
+  const t = (key: string) => tr(key, factArgs);
   return {
     title: `${t('nav.day')} — Sogda`,
     description: t('meta.description'),
