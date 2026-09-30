@@ -9,3 +9,12 @@ export const routing = defineRouting({
 });
 
 export type Locale = (typeof routing.locales)[number];
+
+/** Open Graph's locale for each site language (the layout and the legal pages). */
+export const OG_LOCALE: Record<string, string> = {
+  en: 'en_US',
+  de: 'de_DE',
+  pl: 'pl_PL',
+  ru: 'ru_RU',
+  bn: 'bn_BD',
+};

@@ -49,6 +49,32 @@ for (const [name, size] of [
     .toBuffer();
   writeFileSync(`public/${name}`, png);
 }
+// favicon.ico for the crawlers and tools that still ask for it (#58): an ICO
+// may hold PNGs, so it's a 6-byte header, a 16-byte entry per size, the PNGs.
+const pngs = await Promise.all(
+  [16, 32, 48].map(async (size) => ({
+    size,
+    data: await sharp(icon, { density: (72 * size) / 108 })
+      .resize(size, size)
+      .png({ compressionLevel: 9 })
+      .toBuffer(),
+  })),
+);
+const header = Buffer.alloc(6 + 16 * pngs.length);
+header.writeUInt16LE(1, 2); // type: icon
+header.writeUInt16LE(pngs.length, 4);
+let offset = header.length;
+pngs.forEach(({ size, data }, i) => {
+  const entry = 6 + 16 * i;
+  header.writeUInt8(size, entry);
+  header.writeUInt8(size, entry + 1);
+  header.writeUInt16LE(1, entry + 4); // planes
+  header.writeUInt16LE(32, entry + 6); // bits per pixel
+  header.writeUInt32LE(data.length, entry + 8);
+  header.writeUInt32LE(offset, entry + 12);
+  offset += data.length;
+});
+writeFileSync('public/favicon.ico', Buffer.concat([header, ...pngs.map((p) => p.data)]));
 writeFileSync(
   'public/manifest.webmanifest',
   `${JSON.stringify(

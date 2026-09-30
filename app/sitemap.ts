@@ -4,17 +4,20 @@ import { site } from '@/site.config';
 
 export const dynamic = 'force-static';
 
-// Every page in every language, each naming its other languages (BRIEF §9).
+// Every home page, each naming its other languages and the x-default (BRIEF
+// §9). The legal pages stay out: the same text in every locale, canonical to
+// /de (#58). lastmod is the build: the one sitemap field Google says it reads.
 export default function sitemap(): MetadataRoute.Sitemap {
-  const pages = ['', '/impressum', '/datenschutz'];
-  return pages.flatMap((page) =>
-    routing.locales.map((locale) => ({
-      url: `${site.url}/${locale}${page}`,
-      changeFrequency: 'monthly' as const,
-      priority: page ? 0.3 : 1,
-      alternates: {
-        languages: Object.fromEntries(routing.locales.map((l) => [l, `${site.url}/${l}${page}`])),
-      },
-    })),
-  );
+  const lastModified = new Date();
+  const languages = {
+    ...Object.fromEntries(routing.locales.map((l) => [l, `${site.url}/${l}`])),
+    'x-default': `${site.url}/${routing.defaultLocale}`,
+  };
+  return routing.locales.map((locale) => ({
+    url: `${site.url}/${locale}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 1,
+    alternates: { languages },
+  }));
 }

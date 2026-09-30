@@ -13,7 +13,8 @@ export const LANGUAGE_NAMES: Record<string, string> = {
 
 export async function Footer({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: 'footer' });
-  const link = 'underline-offset-4 hover:underline';
+  // 24 px tall at least: WCAG 2.2's target size (2.5.8); they were 17 (#58).
+  const link = 'inline-flex min-h-6 items-center underline-offset-4 hover:underline';
   return (
     <footer className="border-t-2 border-line bg-bg">
       <div className="mx-auto grid max-w-6xl gap-6 px-4 py-10 text-sm sm:px-6">
@@ -57,7 +58,9 @@ export async function Footer({ locale }: { locale: string }) {
             </ul>
           </nav>
         )}
-        <p className="text-muted">{t('trademark')}</p>
+        {/* Google's trademark line goes with its badge, and the badge only
+            shows once there's a Play link (#58). */}
+        {site.playStoreUrl && <p className="text-muted">{t('trademark')}</p>}
         <p className="text-muted">{t('copyright', { year: new Date().getFullYear() })}</p>
       </div>
     </footer>

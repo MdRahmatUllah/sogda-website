@@ -200,6 +200,8 @@
   "legal": {
     "impressum": "Impressum",
     "privacy": "Polityka prywatności (Datenschutzerklärung)",
+    "impressumDescription": "Impressum (nota prawna) serwisu sogda.de: kto prowadzi stronę, zgodnie z § 5 DDG, i jak się skontaktować.",
+    "privacyDescription": "Polityka prywatności (Datenschutzerklärung) serwisu sogda.de: hosting, co zapisuje przeglądarka, kontakt e-mailowy, linki do Google Play i aplikacja Sogda.",
     "binding": "Wiążący jest tekst niemiecki; poniżej jego tłumaczenie na angielski.",
     "translation": "Tłumaczenie na angielski (niewiążące)",
     "back": "Wróć do Sogdy"

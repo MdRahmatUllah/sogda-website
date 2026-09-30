@@ -200,6 +200,8 @@
   "legal": {
     "impressum": "Impressum",
     "privacy": "Privacy policy (Datenschutzerklärung)",
+    "impressumDescription": "The legal notice (Impressum) of sogda.de: who provides the site, under § 5 DDG, and how to reach them.",
+    "privacyDescription": "The privacy policy (Datenschutzerklärung) of sogda.de: hosting, what your browser stores, e-mail contact, the Google Play links and the Sogda app.",
     "binding": "The German text below is the binding one; an English translation follows it.",
     "translation": "English translation (not binding)",
     "back": "Back to Sogda"

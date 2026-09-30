@@ -200,6 +200,8 @@
   "legal": {
     "impressum": "Impressum",
     "privacy": "Политика конфиденциальности (Datenschutzerklärung)",
+    "impressumDescription": "Impressum (выходные данные) сайта sogda.de: кто отвечает за сайт по § 5 DDG и как с ним связаться.",
+    "privacyDescription": "Политика конфиденциальности (Datenschutzerklärung) сайта sogda.de: хостинг, что сохраняет браузер, связь по e-mail, ссылки на Google Play и приложение Sogda.",
     "binding": "Юридически обязателен немецкий текст; ниже — его перевод на английский.",
     "translation": "Перевод на английский (не имеет юридической силы)",
     "back": "Вернуться на Sogda"

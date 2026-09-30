@@ -200,6 +200,8 @@
   "legal": {
     "impressum": "Impressum",
     "privacy": "Datenschutzerklärung",
+    "impressumDescription": "Das Impressum von sogda.de: Angaben gemäß § 5 DDG und Kontakt.",
+    "privacyDescription": "Die Datenschutzerklärung von sogda.de: Hosting, was Ihr Browser speichert, Kontakt per E-Mail, die Links zu Google Play und die Sogda-App.",
     "binding": "Maßgeblich ist der deutsche Text; darunter folgt eine englische Übersetzung.",
     "translation": "Englische Übersetzung (nicht verbindlich)",
     "back": "Zurück zu Sogda"

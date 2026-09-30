@@ -200,6 +200,8 @@
   "legal": {
     "impressum": "Impressum",
     "privacy": "গোপনীয়তা নীতি (Datenschutzerklärung)",
+    "impressumDescription": "sogda.de-এর Impressum (আইনি তথ্য): § 5 DDG অনুযায়ী সাইটটি কে পরিচালনা করেন, আর কীভাবে যোগাযোগ করবেন।",
+    "privacyDescription": "sogda.de-এর গোপনীয়তা নীতি (Datenschutzerklärung): হোস্টিং, আপনার ব্রাউজার কী সংরক্ষণ করে, ই-মেইলে যোগাযোগ, Google Play-এর লিংক আর Sogda অ্যাপ।",
     "binding": "নিচের জার্মান লেখাটিই আইনত বাধ্যতামূলক; তার পরে ইংরেজি অনুবাদ দেওয়া আছে।",
     "translation": "ইংরেজি অনুবাদ (বাধ্যতামূলক নয়)",
     "back": "Sogda-তে ফিরুন"

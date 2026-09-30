@@ -82,6 +82,25 @@ test.describe('Three looks (BRIEF §3.7)', () => {
     await expect.poll(() => opacity('glass')).toBe('1');
     await expect(looks.getByText('Text at 200 %')).toBeVisible();
   });
+
+  // #58: the Russian labels made the look picker wider than a 320 px column,
+  // and a grid item's min-width: auto let it push the text past the padding.
+  for (const locale of ['en', 'de', 'pl', 'ru', 'bn']) {
+    test(`/${locale} at 320 px: the looks column stays inside the page`, async ({ page }) => {
+      await page.setViewportSize({ width: 320, height: 640 });
+      await page.goto(`/${locale}`);
+      const right = await page
+        .locator('#looks > div > div:first-child')
+        .evaluate((column) =>
+          Math.max(
+            ...[column, ...column.querySelectorAll('*')].map(
+              (e) => e.getBoundingClientRect().right,
+            ),
+          ),
+        );
+      expect(right).toBeLessThanOrEqual(320 - 16 + 0.5);
+    });
+  }
 });
 
 test.describe('In your language (BRIEF §3.8)', () => {

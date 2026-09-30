@@ -112,7 +112,9 @@ export async function Looks({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: 'looks' });
   return (
     <section id="looks" aria-labelledby="looks-title" className="bg-well py-20 sm:py-28">
-      <div className="mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 lg:grid-cols-[1fr_1.2fr] lg:items-center">
+      {/* min-w-0: a grid item is as wide as its content by default, and the
+          look picker's Russian labels pushed this column past a 320 px phone (#58). */}
+      <div className="mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 lg:grid-cols-[1fr_1.2fr] lg:items-center *:min-w-0">
         <div>
           <Heading id="looks-title" eyebrow={t('eyebrow')} title={t('title')} />
           <p className="mt-5 max-w-xl text-lg text-muted">{t('body')}</p>
@@ -122,7 +124,7 @@ export async function Looks({ locale }: { locale: string }) {
               {LOOKS.map((look) => (
                 <label
                   key={look}
-                  className="look-option relative grid min-h-12 cursor-pointer place-items-center rounded-full px-5 font-semibold"
+                  className="look-option relative grid min-h-12 cursor-pointer place-items-center rounded-full px-3 font-semibold sm:px-5"
                 >
                   {/* appearance-none: an invisible radio still painted natively
                       held the page's first paint by ~2 s in Chrome on Windows

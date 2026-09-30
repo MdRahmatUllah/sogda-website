@@ -1,6 +1,8 @@
+import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import type { ReactNode } from 'react';
 import legal from '@/content/legal.json';
+import { OG_LOCALE } from '@/i18n/routing';
 
 type Key = Exclude<keyof typeof legal, '$comment'>;
 
@@ -16,6 +18,32 @@ export function Detail({ k, label }: { k: Key; label: string }) {
 }
 
 export const hasVatId = Boolean(legal.vatId);
+
+const SLUG = { impressum: 'impressum', privacy: 'datenschutz' } as const;
+
+/** A legal page's own title, description and share card (#58). Every locale's
+ * copy is the same bilingual text, so all point their canonical at /de. A
+ * page's `openGraph` replaces the layout's, hence the whole card here. */
+export async function legalMetadata(locale: string, page: keyof typeof SLUG): Promise<Metadata> {
+  const t = await getTranslations({ locale, namespace: 'legal' });
+  const title = `${t(page)} — Sogda`;
+  const description = t(`${page}Description`);
+  return {
+    title,
+    description,
+    alternates: { canonical: `/de/${SLUG[page]}` },
+    openGraph: {
+      type: 'website',
+      siteName: 'Sogda',
+      title,
+      description,
+      url: `/${locale}/${SLUG[page]}`,
+      locale: OG_LOCALE[locale] ?? locale,
+      images: [{ url: `/og/${locale}.png`, width: 1200, height: 630, alt: title }],
+    },
+    twitter: { card: 'summary_large_image', title, description, images: [`/og/${locale}.png`] },
+  };
+}
 
 /** A legal page (BRIEF §8): the German text is binding, the English follows
  * as a translation; the chrome around them speaks the page's language. */

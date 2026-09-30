@@ -51,7 +51,9 @@ test.describe('header and footer', () => {
     await expect(page.getByRole('button', { name: 'Menu' })).toBeHidden();
   });
 
-  test('the footer has the legal links and the trademark line', async ({ page }) => {
+  test('the footer has the legal links, 24 px targets, and the trademark line only with the badge', async ({
+    page,
+  }) => {
     await page.goto('/en');
     const footer = page.locator('footer');
     await expect(footer.getByRole('link', { name: 'Impressum' })).toHaveAttribute(
@@ -62,9 +64,19 @@ test.describe('header and footer', () => {
       'href',
       '/en/datenschutz',
     );
-    await expect(footer).toContainText(
-      'Google Play and the Google Play logo are trademarks of Google LLC.',
-    );
+    // WCAG 2.2's target size, 2.5.8 (#58): they were 17 px tall.
+    const heights = await footer
+      .getByRole('link')
+      .evaluateAll((links) => links.map((a) => a.getBoundingClientRect().height));
+    for (const height of heights) expect(height).toBeGreaterThanOrEqual(24);
+    // Google's trademark line goes with its badge: here while a Play link is
+    // on the page, gone while it isn't.
+    const line = 'Google Play and the Google Play logo are trademarks of Google LLC.';
+    if (await page.locator('a[href*="play.google.com"]').count()) {
+      await expect(footer).toContainText(line);
+    } else {
+      await expect(footer).not.toContainText(line);
+    }
   });
 
   test('the icons and the manifest are linked and served', async ({ page, request }) => {
@@ -78,6 +90,10 @@ test.describe('header and footer', () => {
       expect(href, sel).toBeTruthy();
       expect((await request.get(href!)).ok(), href!).toBe(true);
     }
+    // /favicon.ico for the crawlers and tools that ask for it unlinked (#58):
+    // an ICO header (reserved 0, type 1) with 3 images.
+    const ico = await (await request.get('/favicon.ico')).body();
+    expect([ico.readUInt16LE(0), ico.readUInt16LE(2), ico.readUInt16LE(4)]).toEqual([0, 1, 3]);
   });
 });
 
