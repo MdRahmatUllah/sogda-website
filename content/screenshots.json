@@ -53,7 +53,7 @@
         "en": "A study card before it turns: a German word with its word class and pronunciation guide, and a speaker button.",
         "de": "Eine Lernkarte vor dem Umdrehen: ein deutsches Wort mit Wortart und Aussprachehilfe, dazu ein Lautsprecher-Knopf.",
         "pl": "Fiszka przed odwróceniem: niemieckie słowo z częścią mowy i zapisem wymowy oraz przycisk głośnika.",
-        "ru": "Карточка до переворота: немецкое слово с частью речи и подсказкой произношения и кнопка динамика.",
+        "ru": "Карточка до переворота: немецкое слово с частью речи и подсказкой произношения, а также кнопка озвучки.",
         "bn": "উল্টানোর আগে একটি শেখার কার্ড: একটি জার্মান শব্দ, তার শব্দের ধরন আর উচ্চারণ, সঙ্গে একটি স্পিকার বোতাম।"
       },
       "store": "02-card-front"
@@ -65,9 +65,9 @@
       "alt": {
         "en": "The back of a study card: the word's meaning, two example sentences with their translations, and the four ratings, each with the interval it sets.",
         "de": "Die Rückseite einer Lernkarte: die Bedeutung des Worts, zwei Beispielsätze mit Übersetzung und die vier Bewertungen, jede mit dem Abstand, den sie festlegt.",
-        "pl": "Tył fiszki: znaczenie słowa, dwa przykładowe zdania z tłumaczeniem i cztery oceny, każda z odstępem, jaki wyznacza.",
+        "pl": "Tył fiszki: znaczenie słowa, dwa przykładowe zdania z tłumaczeniami i cztery oceny, każda z odstępem do następnej powtórki.",
         "ru": "Обратная сторона карточки: значение слова, два примера с переводом и четыре оценки, у каждой — интервал, который она задаёт.",
-        "bn": "শেখার কার্ডের উল্টো দিক: শব্দের অর্থ, অনুবাদসহ দুটি উদাহরণ বাক্য, আর চারটি মূল্যায়ন, প্রতিটির পাশে সেটি কত দিনের বিরতি ঠিক করে।"
+        "bn": "শেখার কার্ডের উল্টো দিক: শব্দের অর্থ, অনুবাদসহ দুটি উদাহরণ বাক্য, আর চারটি মূল্যায়ন, প্রতিটির পাশে সেটি কতটা বিরতি ঠিক করে।"
       },
       "store": "03-card-back"
     },
@@ -200,7 +200,7 @@
       "alt": {
         "en": "A word's own page: its meaning, example sentences with audio, and links to Duden, DWDS and Wiktionary.",
         "de": "Die Seite eines Worts: seine Bedeutung, Beispielsätze mit Audio und Links zu Duden, DWDS und Wiktionary.",
-        "pl": "Strona słowa: jego znaczenie, przykładowe zdania z nagraniem i linki do Duden, DWDS i Wiktionary.",
+        "pl": "Strona słowa: jego znaczenie, przykładowe zdania z nagraniem i linki do Dudena, DWDS i Wiktionary.",
         "ru": "Страница слова: значение, примеры с аудио и ссылки на Duden, DWDS и Викисловарь.",
         "bn": "একটি শব্দের নিজের পাতা: তার অর্থ, অডিওসহ উদাহরণ বাক্য, আর Duden, DWDS ও Wiktionary-র লিংক।"
       },
