@@ -1,0 +1,208 @@
+{
+  "meta": {
+    "title": "Sogda — ucz się niemieckiego offline, od A1 do C2",
+    "description": "Ucz się niemieckiego dzień po dniu, z jasnym planem: pełny kurs niemieckiego offline od A1 do C2, ze znaczeniami po angielsku lub bengalsku."
+  },
+  "header": {
+    "skip": "Przejdź do treści",
+    "home": "Sogda, strona główna",
+    "nav": "Sekcje",
+    "menu": "Menu",
+    "closeMenu": "Zamknij menu",
+    "getApp": "Pobierz aplikację",
+    "darkTheme": "Ciemny motyw",
+    "language": "Język"
+  },
+  "nav": {
+    "day": "Jak to działa",
+    "features": "Funkcje",
+    "screens": "Ekrany",
+    "faq": "Pytania"
+  },
+  "store": {
+    "googlePlay": "Pobierz z Google Play",
+    "googlePlaySoon": "Wkrótce w Google Play",
+    "iphoneSoon": "Wkrótce na iPhone’a",
+    "qr": "Kod QR: zeskanuj go telefonem, żeby otworzyć Sogdę w Google Play"
+  },
+  "footer": {
+    "impressum": "Impressum",
+    "privacy": "Prywatność (Datenschutz)",
+    "contact": "Kontakt",
+    "languages": "Języki",
+    "trademark": "Google Play i logo Google Play są znakami towarowymi Google LLC.",
+    "copyright": "© {year} Sogda"
+  },
+  "hero": {
+    "kicker": "Droga do nowego języka",
+    "headline": "Ucz się niemieckiego dzień po dniu, z jasnym planem.",
+    "subline": "Pełny kurs niemieckiego offline od A1 do C2, ze znaczeniami po angielsku lub bengalsku.",
+    "pause": "Zatrzymaj animację",
+    "play": "Włącz animację"
+  },
+  "day": {
+    "eyebrow": "Jak to działa",
+    "title": "Otwórz aplikację, zobacz plan na dziś, zrób go, gotowe.",
+    "plan": {
+      "title": "Plan na dziś jest gotowy",
+      "body": "Otwórz Sogdę, a twój dzień jest już ułożony: co powtórzyć, nowe słowa, temat gramatyczny i kilka zdań. Około 10–20 minut."
+    },
+    "revise": {
+      "title": "Powtórz to, co czeka",
+      "body": "Najpierw wracają słowa, które zaraz wypadłyby ci z pamięci. Posłuchaj, pomyśl o znaczeniu, potem odkryj."
+    },
+    "learn": {
+      "title": "Naucz się kilku nowych słów",
+      "body": "Każde z rodzajnikiem, wymową, przykładami i znaczeniem po angielsku lub bengalsku. Oceń, jak dobrze je znasz, a Sogda wybierze dzień, w którym wróci."
+    },
+    "grammar": {
+      "title": "Gramatyka w tym tygodniu",
+      "body": "Krótka reguła i szybkie ćwiczenie. Pomyłka? Reguła jest od razu pod ręką."
+    },
+    "sentences": {
+      "title": "Zdania ze znanych ci słów",
+      "body": "Zdania do ćwiczeń tylko ze słów, które już znasz. Dotknij dowolnego słowa, żeby zobaczyć znaczenie."
+    },
+    "done": {
+      "title": "Tag geschafft! 🎉",
+      "body": "Na dziś wszystko. Plan na jutro już czeka."
+    }
+  },
+  "memory": {
+    "eyebrow": "Pamięta za ciebie",
+    "title": "Każde słowo wraca tuż przed tym, zanim wypadnie ci z pamięci.",
+    "body": "Sogda planuje każde słowo metodą FSRS, nowoczesną metodą powtórek w odstępach. Za każdym razem, gdy pamiętasz słowo, przerwa do następnej powtórki rośnie: dzień, potem trzy, potem osiem, potem trzy tygodnie. Twoje minuty idą na słowa, które zaraz wypadłyby ci z pamięci.",
+    "chart": "Krzywa zapominania: pamięć nowego słowa słabnie, każda powtórka przywraca ją w pełni, a po każdej słabnie wolniej. Powtórki przychodzą po 1 dniu, 3 dniach, 8 dniach i 21 dniach.",
+    "axisMemory": "Pamięć",
+    "axisTime": "Czas",
+    "gap": "{days, plural, one {# dzień} few {# dni} many {# dni} other {# dnia}}",
+    "gapShort": "{days} d",
+    "meaning": "appointment",
+    "revisions": "Jego powtórki: po 1, 3, 8 i 21 dniach"
+  },
+  "journey": {
+    "eyebrow": "Droga",
+    "title": "12 etapów od pierwszego „Hallo” do C2.",
+    "facts": {
+      "words": "5069 słów",
+      "grammar": "182 tematy gramatyczne",
+      "exams": "Trzy egzaminy próbne na każdy etap"
+    },
+    "counter": "słów na drodze",
+    "placement": "Znasz już trochę niemieckiego? Krótki test poziomu zacznie od właściwego etapu.",
+    "road": "Kurs jako droga z 12 stacjami, od A1.1 do C2.2, przez poziomy A1 Anfänger, A2 Grundstufe, B1 Mittelstufe, B2, C1 i C2."
+  },
+  "practice": {
+    "eyebrow": "Ćwicz i sprawdzaj się",
+    "title": "Quizy, a potem egzamin próbny.",
+    "quizzes": "Quizy w każdą stronę: z niemieckiego na angielski lub bengalski, z angielskiego na niemiecki, rodzajniki, słuchanie i formy słów.",
+    "exams": "Trzy egzaminy próbne na każdy etap: słownictwo, gramatyka, słuchanie, pisanie i mówienie, z wynikiem dla każdej części.",
+    "carousel": "Ekrany quizów i egzaminów",
+    "item": "Ekran {n} z {total}"
+  },
+  "features": {
+    "eyebrow": "I cała reszta",
+    "title": "Zrobiona z myślą o prawdziwym dniu ucznia.",
+    "offline": {
+      "title": "Zawsze offline",
+      "body": "Bez zasięgu: działa w U-Bahnie i w samolocie."
+    },
+    "private": {
+      "title": "Prywatność od początku",
+      "body": "Bez konta. Twoje postępy zostają na twoim telefonie."
+    },
+    "voice": {
+      "title": "Usłysz każde słowo",
+      "body": "Niemiecki głos twojego telefonu albo opcjonalny, naturalny głos Supertonic: offline, około 400 MB, pobierany raz przez Wi-Fi."
+    },
+    "compare": {
+      "title": "Porównuj bliskoznaczne słowa",
+      "body": "Zobacz obok siebie słowa takie jak kennen i wissen."
+    },
+    "own": {
+      "title": "Dodawaj własne słowa",
+      "body": "Słowa spotkane w codziennym życiu trzymaj razem z resztą kursu."
+    },
+    "widget": {
+      "title": "Widżet na ekranie głównym",
+      "body": "Plan na dziś w skrócie i słowo dnia do posłuchania."
+    },
+    "reminder": {
+      "title": "Przypomnienie tylko wtedy, gdy coś czeka",
+      "body": "Dni odpoczynku wybierasz ty."
+    },
+    "pace": {
+      "title": "Twoje tempo",
+      "body": "Dzienny cel, który ustalasz, i nadrabianie, gdy zostaniesz w tyle."
+    }
+  },
+  "looks": {
+    "eyebrow": "Trzy wyglądy",
+    "title": "Jasny, ciemny lub szklany, i czytelny.",
+    "body": "Wybierz wygląd, który ci odpowiada. Tekst można powiększyć do 200 %, a Sogda działa z czytnikiem ekranu twojego telefonu.",
+    "legend": "Wygląd",
+    "light": "Jasny",
+    "dark": "Ciemny",
+    "glass": "Szklany",
+    "large": "Tekst 200 %"
+  },
+  "languages": {
+    "eyebrow": "W twoim języku",
+    "title": "Znaczenia po angielsku, bengalsku lub w obu językach.",
+    "body": "Każde słowo ma znaczenie po angielsku, bengalsku lub w obu językach, a jego wymowa jest zapisana pismem bengalskim. Znaczenia po rosyjsku i po polsku są w drodze.",
+    "soon": "wkrótce"
+  },
+  "gallery": {
+    "eyebrow": "Ekrany",
+    "title": "Przekonaj się.",
+    "tablet": "Plan na dziś na tablecie",
+    "carousel": "Ekrany aplikacji",
+    "item": "Ekran {n} z {total}",
+    "prev": "Poprzedni ekran",
+    "next": "Następny ekran",
+    "captions": {
+      "welcome": "Powitanie, które mówi, czym jest Sogda",
+      "placement": "Test poziomu, który znajdzie twój etap",
+      "learn": "Twój kurs, etap po etapie",
+      "step-detail": "Wszystkie słowa etapu",
+      "word-detail": "Słowo w całości, z przykładami",
+      "compare": "Bliskoznaczne słowa obok siebie",
+      "search": "Wyszukiwanie, które wybacza literówki",
+      "progress": "Twoje postępy, tydzień po tygodniu"
+    }
+  },
+  "faq": {
+    "eyebrow": "Pytania",
+    "title": "Pytania i odpowiedzi.",
+    "internet": {
+      "q": "Czy potrzebuję internetu?",
+      "a": "Nie. Sogda działa całkowicie offline. Tylko opcjonalny naturalny głos pobiera się raz, przez Wi-Fi."
+    },
+    "android": {
+      "q": "Jakiej wersji Androida potrzebuję?",
+      "a": "Android 8.0 lub nowszy."
+    },
+    "iphone": {
+      "q": "Czy jest wersja na iPhone’a?",
+      "a": "Będzie wkrótce."
+    },
+    "data": {
+      "q": "Czy moje dane są komuś przekazywane?",
+      "a": "Nie. Nie ma konta, a twoje postępy zostają na twoim telefonie."
+    },
+    "exams": {
+      "q": "Do jakich egzaminów przygotowuje?",
+      "a": "Do poziomów Goethe i telc od A1 do C2. Każdy etap ma trzy egzaminy próbne, które odpowiadają ich częściom: słownictwo, gramatyka, słuchanie, pisanie i mówienie. Są tworzone ze słów i gramatyki etapu — to nie oficjalne arkusze Goethe ani telc."
+    }
+  },
+  "cta": {
+    "title": "Zacznij dziś swoją drogę do niemieckiego."
+  },
+  "legal": {
+    "impressum": "Impressum",
+    "privacy": "Polityka prywatności (Datenschutzerklärung)",
+    "binding": "Wiążący jest tekst niemiecki; poniżej jego tłumaczenie na angielski.",
+    "translation": "Tłumaczenie na angielski (niewiążące)",
+    "back": "Wróć do Sogdy"
+  }
+}

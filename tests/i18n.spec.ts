@@ -2,12 +2,22 @@ import { expect, test } from '@playwright/test';
 import { routing } from '../i18n/routing';
 import { gotoReady } from './ready';
 
+// Each language in its own name (components/ui/Footer.tsx's LANGUAGE_NAMES).
+const NAMES: Record<string, string> = {
+  en: 'English',
+  de: 'Deutsch',
+  pl: 'Polski',
+  ru: 'Русский',
+  bn: 'বাংলা',
+};
+
 // BRIEF §7: the site's languages are the app's (en, bn today); `/` goes to
 // the visitor's language, English by default; the choice is remembered.
 test.describe('/ picks the language', () => {
   for (const [browser, expected] of [
     ['bn-BD', 'bn'],
     ['de-DE', 'de'],
+    ['pl-PL', 'pl'],
     ['fr-FR', 'en'],
     ['en-US', 'en'],
   ] as const) {
@@ -39,7 +49,7 @@ test('the header switch changes the language and remembers it', async ({ page })
   await bar.getByRole('button', { name: 'Language: English' }).click();
   const menu = page.locator('#language-menu');
   await expect(menu).toBeVisible();
-  await expect(menu.getByRole('link')).toHaveText(['English', 'Deutsch', 'বাংলা']);
+  await expect(menu.getByRole('link')).toHaveText(routing.locales.map((l) => NAMES[l]!));
   await expect(menu.getByRole('link', { name: 'English' })).toHaveAttribute('aria-current', 'true');
   await menu.getByRole('link', { name: 'বাংলা' }).click();
   await expect(page).toHaveURL(/\/bn$/);
@@ -112,4 +122,15 @@ test('the Bangla page: Bangla copy, Bangla digits, Bangla alt text', async ({ pa
   await expect(page.locator('#hero .hero-screen img').first()).toHaveAttribute('alt', /আজকের পাতা/);
   await expect(page.locator('#day [data-beat="0"] span').first()).toHaveText('১');
   await expect(page.getByText('শিগগিরই Google Play-তে আসছে').first()).toBeVisible();
+});
+
+// Counted words agree with their number (Polish one/few/many; the memory
+// chart's gaps are 1, 3, 8 and 21 days).
+test('Polish counts: 1 dzień, 3 dni, 8 dni, 21 dni', async ({ page }) => {
+  await page.goto('/pl');
+  const chart = page.locator('#memory svg');
+  for (const gap of ['1 dzień', '3 dni', '8 dni', '21 dni']) {
+    await expect(chart.getByText(gap, { exact: true })).toBeAttached();
+  }
+  await expect(page.locator('#journey').getByText('5069 słów')).toBeVisible();
 });
