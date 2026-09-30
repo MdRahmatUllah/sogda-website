@@ -85,15 +85,36 @@ test.describe('Three looks (BRIEF §3.7)', () => {
 });
 
 test.describe('In your language (BRIEF §3.8)', () => {
-  test('der Termin in English and Bangla, Russian and Polish soon', async ({ page }) => {
+  test('der Termin in the four meaning languages, each with its pronunciation (#34)', async ({
+    page,
+  }) => {
     await page.goto('/en');
+    await expect(page.locator('#languages-title')).toHaveText(
+      'Meanings in English, Bangla, Russian or Polish.',
+    );
     const card = page.locator('#languages .card');
-    await expect(card.getByText('appointment')).toBeVisible();
-    await expect(card.locator('dd[lang="bn"]')).toHaveText('অ্যাপয়েন্টমেন্ট / নির্ধারিত সময়');
-    await expect(card.locator('[lang="bn"]', { hasText: '/টের্মিন/' })).toBeVisible();
-    await expect(card.locator('[lang="ru"]')).toHaveText('Русский');
-    await expect(card.locator('[lang="pl"]')).toHaveText('Polski');
-    await expect(card.getByText('· soon')).toHaveCount(2);
+    for (const [lang, name, meaning, say] of [
+      ['en', 'English', 'appointment', '/tair-MEEN/'],
+      ['bn', 'বাংলা', 'অ্যাপয়েন্টমেন্ট / নির্ধারিত সময়', '/টের্মিন/'],
+      ['ru', 'Русский', 'запись (к врачу) / встреча', '/тэрмИн/'],
+      ['pl', 'Polski', 'wizyta / termin', '/ter-MIN/'],
+    ] as const) {
+      const line = card.locator(`[lang="${lang}"]`);
+      await expect(line.locator('dt')).toHaveText(name);
+      await expect(line.locator('dd')).toHaveText(meaning + say);
+    }
+    await expect(page.locator('#languages')).not.toContainText(/soon/i);
+  });
+
+  test('Polish and Russian pages lead with their own meanings (#34)', async ({ page }) => {
+    for (const [locale, meaning, quizzes] of [
+      ['pl', 'wizyta / termin', 'z niemieckiego na polski, z polskiego na niemiecki'],
+      ['ru', 'запись (к врачу) / встреча', 'с немецкого на русский, с русского на немецкий'],
+    ] as const) {
+      await page.goto(`/${locale}`);
+      await expect(page.locator('#memory .memory-card')).toContainText(meaning);
+      await expect(page.locator('#practice')).toContainText(quizzes);
+    }
   });
 });
 

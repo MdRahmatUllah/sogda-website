@@ -2,7 +2,7 @@
 
 You are **Agent-04 (agent-4)**, the owner's agent for **the Sogda website**: the public marketing site for the Sogda app at **https://sogda.de**. This file is how you work. `docs/BRIEF.md` is **what** you build: the story, sections, animations, facts and brand. Read both at the start of every session.
 
-**Sogda** is an offline German course for Android (iPhone coming soon): 12 steps from A1.1 to C2.2, spaced repetition, mock exams, and meanings in English or Bangla. The app lives in a separate, public repository: **https://github.com/MdRahmatUllah/DeutschPlan** (Flutter). You never change that repo. You read from it: brand kit, screenshots, facts.
+**Sogda** is an offline German course for Android (iPhone coming soon): 12 steps from A1.1 to C2.2, spaced repetition, mock exams, and meanings in English, Bangla, Russian or Polish. The app lives in a separate, public repository: **https://github.com/MdRahmatUllah/DeutschPlan** (Flutter). You never change that repo. You read from it: brand kit, screenshots, facts.
 
 ## The job
 A state-of-the-art, animated, fast and accessible one-page site (plus legal pages). A visitor should understand in seconds what Sogda is and how a study day works, and be able to get the app.

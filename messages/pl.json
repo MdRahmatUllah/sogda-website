@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Sogda — ucz się niemieckiego offline, od A1 do C2",
-    "description": "Ucz się niemieckiego dzień po dniu, z jasnym planem: pełny kurs niemieckiego offline od A1 do C2, ze znaczeniami po angielsku lub bengalsku."
+    "description": "Ucz się niemieckiego dzień po dniu, z jasnym planem: pełny kurs niemieckiego offline od A1 do C2, ze znaczeniami po polsku."
   },
   "header": {
     "skip": "Przejdź do treści",
@@ -36,7 +36,7 @@
   "hero": {
     "kicker": "Droga do nowego języka",
     "headline": "Ucz się niemieckiego dzień po dniu, z jasnym planem.",
-    "subline": "Pełny kurs niemieckiego offline od A1 do C2, ze znaczeniami po angielsku lub bengalsku.",
+    "subline": "Pełny kurs niemieckiego offline od A1 do C2, ze znaczeniami po polsku.",
     "pause": "Zatrzymaj animację",
     "play": "Włącz animację"
   },
@@ -53,7 +53,7 @@
     },
     "learn": {
       "title": "Naucz się kilku nowych słów",
-      "body": "Każde z rodzajnikiem, wymową, przykładami i znaczeniem po angielsku lub bengalsku. Oceń, jak dobrze je znasz, a Sogda wybierze dzień, w którym wróci."
+      "body": "Każde z rodzajnikiem, wymową zapisaną polskimi literami, przykładami i znaczeniem po polsku. Oceń, jak dobrze je znasz, a Sogda wybierze dzień, w którym wróci."
     },
     "grammar": {
       "title": "Gramatyka w tym tygodniu",
@@ -77,7 +77,7 @@
     "axisTime": "Czas",
     "gap": "{days, plural, one {# dzień} few {# dni} many {# dni} other {# dnia}}",
     "gapShort": "{days} d",
-    "meaning": "appointment",
+    "meaning": "wizyta / termin",
     "revisions": "Jego powtórki: po 1, 3, 8 i 21 dniach"
   },
   "journey": {
@@ -95,7 +95,7 @@
   "practice": {
     "eyebrow": "Ćwicz i sprawdzaj się",
     "title": "Quizy, a potem egzamin próbny.",
-    "quizzes": "Quizy w każdą stronę: z niemieckiego na angielski lub bengalski, z angielskiego na niemiecki, rodzajniki, słuchanie i formy słów.",
+    "quizzes": "Quizy w każdą stronę: z niemieckiego na polski, z polskiego na niemiecki, rodzajniki, słuchanie i formy słów.",
     "exams": "Trzy egzaminy próbne na każdy etap: słownictwo, gramatyka, słuchanie, pisanie i mówienie, z wynikiem dla każdej części.",
     "carousel": "Ekrany quizów i egzaminów",
     "item": "Ekran {n} z {total}"
@@ -148,9 +148,8 @@
   },
   "languages": {
     "eyebrow": "W twoim języku",
-    "title": "Znaczenia po angielsku, bengalsku lub w obu językach.",
-    "body": "Każde słowo ma znaczenie po angielsku, bengalsku lub w obu językach, a jego wymowa jest zapisana pismem bengalskim. Znaczenia po rosyjsku i po polsku są w drodze.",
-    "soon": "wkrótce"
+    "title": "Znaczenia po polsku, a pod nimi, jeśli chcesz, drugi język.",
+    "body": "Drugim językiem może być angielski, bengalski lub rosyjski. Wymowa jest zapisana polskimi literami, a reguły gramatyczne i przykłady też są po polsku. Sama aplikacja działa po polsku, angielsku, bengalsku lub rosyjsku."
   },
   "gallery": {
     "eyebrow": "Ekrany",
