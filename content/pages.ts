@@ -1,5 +1,6 @@
 import { getTranslations } from 'next-intl/server';
-import { factArgs } from '@/i18n/facts';
+import { LEVEL_LOCALES, levelPage, levelSlug } from '@/content/levels';
+import { factArgs, facts } from '@/i18n/facts';
 import { routing } from '@/i18n/routing';
 import type { PageContent } from '@/lib/page';
 
@@ -46,16 +47,29 @@ async function sample(locale: string): Promise<PageContent> {
 
 const PAGES: PageEntry[] = [
   { slug: 'template-sample', locales: routing.locales, content: sample, gallery: true },
+  // #72: a page per step, A1.1 … C2.2, from content/facts.json.
+  ...facts.steps.map((s) => ({
+    slug: levelSlug(s.code),
+    locales: LEVEL_LOCALES,
+    content: (locale: string) => levelPage(locale, s.code),
+  })),
 ];
 
 const galleryBuild = process.env.NODE_ENV !== 'production' || Boolean(process.env.SOGDA_GALLERY);
 const real = PAGES.filter((p) => !p.gallery);
 
 /** The pages this build has. */
-// ponytail: a static export refuses a dynamic route with no pages, so until
-// the first real page lands the sample stands in: noindex, in no sitemap, and
-// linked from nowhere. The first real entry above retires it on its own.
-export const pages = galleryBuild || real.length === 0 ? PAGES : real;
+// ponytail: a static export refuses a locale with no pages under [page], so in
+// a locale that has no real page yet (/de, while the level pages skip it, #72)
+// the sample stands in: noindex, in no sitemap, and linked from nowhere. A
+// real page in that locale retires it there on its own.
+const bare = routing.locales.filter((l) => !real.some((p) => p.locales.includes(l)));
+export const pages: PageEntry[] = galleryBuild
+  ? PAGES
+  : [
+      ...real,
+      ...PAGES.filter((p) => p.gallery && bare.length > 0).map((p) => ({ ...p, locales: bare })),
+    ];
 
 /** The pages that exist in a locale, in registry order. */
 export const pagesIn = (locale: string) => pages.filter((p) => p.locales.includes(locale));
