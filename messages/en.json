@@ -219,5 +219,61 @@
   "page": {
     "breadcrumb": "You are here",
     "related": "More about Sogda"
+  },
+  "pages": {
+    "mock-exams": {
+      "title": "{mocks, number} German mock exams, A1 to C2, offline | Sogda",
+      "description": "{mocks, number} German mock exams, {mocksPerStep, number} per step from {first} to {last}: {questions, number} questions, a writing and a speaking task, and a result by section. Offline.",
+      "name": "Mock exams",
+      "eyebrow": "Exam practice, offline",
+      "h1": "German mock exams from A1 to C2, on your phone",
+      "answer": "Sogda has {mocks, number} mock exams, {mocksPerStep, number} for each of its {steps, number} steps from {first} to {last}. Each has {questions, number} questions plus a writing and a speaking task, {points, number} points in all, with a result for each section; they're generated from the step's own words and grammar, work offline, and aren't official Goethe or telc papers.",
+      "paper": {
+        "heading": "What's in each paper",
+        "body": "Every paper has the same sections, in this order, drawn from the step's words and grammar:",
+        "items": "{name}: {n, plural, one {# question} other {# questions}}",
+        "task": "{name}: one task, {points, plural, one {# point} other {# points}}"
+      },
+      "section": {
+        "vocabulary": "Vocabulary",
+        "reverse": "Reverse",
+        "articles": "Articles",
+        "wordForms": "Word forms",
+        "gapFill": "Gap fill",
+        "grammar": "Grammar",
+        "listening": "Listening",
+        "writing": "Writing",
+        "speaking": "Speaking"
+      },
+      "levels": {
+        "heading": "Writing and speaking, level by level",
+        "body": "The writing task asks for a minimum length and the speaking task has a time limit, both set by the level. Each level names the exams its steps are built around:",
+        "item": "{level}: write at least {words, number} words, speak for up to {seconds, number} seconds. Built around {target}."
+      },
+      "compare": {
+        "heading": "How they compare with the Goethe and telc exams",
+        "skills": "The Goethe-Zertifikat and telc Deutsch exams test reading, listening, writing and speaking at each level. Sogda's papers share three of those skills, listening, writing and speaking, and add vocabulary, grammar, articles and word forms.",
+        "reading": "There's no reading-comprehension part: for reading, practise with longer German texts and the exams' own model papers.",
+        "official": "The papers are Sogda's own, generated from each step's words and grammar. They aren't official Goethe or telc papers, and their formats are Sogda's. The Goethe-Institut and telc publish model papers for every level on goethe.de and telc.net."
+      },
+      "faq": {
+        "official": {
+          "q": "Are these official Goethe or telc exams?",
+          "a": "No. They're Sogda's own papers, generated from each step's words and grammar. They share listening, writing and speaking with the real exams, have no reading part, and lead to no certificate."
+        },
+        "count": {
+          "q": "How many mock exams are there?",
+          "a": "{mocks, number}: {mocksPerStep, number} for each of the {steps, number} steps, from {first} to {last}."
+        },
+        "offline": {
+          "q": "Do the mock exams work offline?",
+          "a": "Yes. Sogda works fully offline, the mock exams included: no account and no signal needed."
+        },
+        "reading": {
+          "q": "Is there a reading part?",
+          "a": "No. Sogda's papers have vocabulary, grammar, listening, writing and speaking sections. Practise reading with longer texts and the exams' own model papers."
+        }
+      }
+    }
   }
 }
