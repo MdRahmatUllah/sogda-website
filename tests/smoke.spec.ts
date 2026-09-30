@@ -19,6 +19,9 @@ for (const locale of routing.locales) {
 
     for (const colorScheme of ['light', 'dark'] as const) {
       test(`axe finds no violations (${colorScheme})`, async ({ page }) => {
+        // axe walks the whole long page; Firefox needs more than 30 s for it
+        // while the other workers run.
+        test.setTimeout(90_000);
         await page.emulateMedia({ colorScheme });
         await page.goto(`/${locale}`);
         const { violations } = await new AxeBuilder({ page }).analyze();

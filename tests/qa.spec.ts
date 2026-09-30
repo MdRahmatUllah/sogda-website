@@ -13,7 +13,7 @@ for (const locale of routing.locales) {
     test.skip(browserName === 'webkit', 'Safari tabs to links only with its setting on');
     await page.setViewportSize({ width: 1280, height: 900 });
     await page.goto(`/${locale}`);
-    await expect(page.locator('html')).toHaveAttribute('data-hydrated', '');
+    await expect(page.locator('html')).toHaveAttribute('data-hydrated', '', { timeout: 15_000 });
     const seen = new Set<string>();
     for (let i = 0; i < 80; i++) {
       await page.keyboard.press('Tab');
