@@ -82,6 +82,32 @@ test.describe('Three looks (BRIEF §3.7)', () => {
     await expect.poll(() => opacity('glass')).toBe('1');
     await expect(looks.getByText('Text at 200 %')).toBeVisible();
   });
+
+  test('from 320 px up, the text, the picker and both phones stay inside the page padding (#58)', async ({
+    page,
+  }) => {
+    for (const width of [320, 360, 390]) {
+      await page.setViewportSize({ width, height: 640 });
+      for (const locale of ['ru', 'pl', 'de', 'bn', 'en']) {
+        await page.goto(`/${locale}`);
+        const looks = page.locator('#looks');
+        await looks.scrollIntoViewIfNeeded();
+        const parts = [
+          looks.locator('h2'),
+          looks.locator('fieldset > div'),
+          looks.locator('p').first(),
+          ...(await looks.locator('.bg-ink').all()), // the two phone frames
+        ];
+        for (const part of parts) {
+          const box = (await part.boundingBox())!;
+          expect(
+            box.x + box.width,
+            `${width} px, ${locale}: ${await part.evaluate((e) => e.tagName + '.' + e.className.slice(0, 20))}`,
+          ).toBeLessThanOrEqual(width - 16 + 0.5);
+        }
+      }
+    }
+  });
 });
 
 test.describe('In your language (BRIEF §3.8)', () => {

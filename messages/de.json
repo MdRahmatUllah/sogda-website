@@ -23,7 +23,9 @@
     "googlePlay": "Jetzt bei Google Play",
     "googlePlaySoon": "Bald bei Google Play",
     "iphoneSoon": "Bald fürs iPhone",
-    "qr": "QR-Code: mit dem Handy scannen, um Sogda bei Google Play zu öffnen"
+    "qr": "QR-Code: mit dem Handy scannen, um Sogda bei Google Play zu öffnen",
+    "notify": "Sag mir Bescheid, wenn es da ist",
+    "notifySubject": "Bitte sagt mir Bescheid, wenn Sogda bei Google Play ist"
   },
   "footer": {
     "impressum": "Impressum",
@@ -38,7 +40,15 @@
     "headline": "Deutsch lernen, ein klarer Tag nach dem anderen.",
     "subline": "Ein vollständiger Offline-Deutschkurs von A1 bis C2, mit Bedeutungen auf Englisch, Bangla, Russisch oder Polnisch.",
     "pause": "Animation anhalten",
-    "play": "Animation abspielen"
+    "play": "Animation abspielen",
+    "facts": {
+      "label": "Sogda in Zahlen",
+      "steps": "12 Stufen, A1 → C2",
+      "offline": "Offline, ohne Konto"
+    },
+    "card": {
+      "label": "Ein Wort aus Stufe A1.1, wie Sogda es zeigt, und die Tage, nach denen es wiederkommt"
+    }
   },
   "day": {
     "eyebrow": "So funktioniert’s",
@@ -202,7 +212,9 @@
     "privacy": "Datenschutzerklärung",
     "binding": "Maßgeblich ist der deutsche Text; darunter folgt eine englische Übersetzung.",
     "translation": "Englische Übersetzung (nicht verbindlich)",
-    "back": "Zurück zu Sogda"
+    "back": "Zurück zu Sogda",
+    "impressumDescription": "Impressum von sogda.de nach § 5 DDG: wer die Website anbietet, und der Kontakt.",
+    "privacyDescription": "Datenschutzerklärung von sogda.de: welche Daten die Website verarbeitet und wofür."
   },
   "page": {
     "breadcrumb": "Du bist hier",

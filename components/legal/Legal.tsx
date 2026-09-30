@@ -1,8 +1,32 @@
+import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import type { ReactNode } from 'react';
 import legal from '@/content/legal.json';
 
 type Key = Exclude<keyof typeof legal, '$comment'>;
+
+/** A legal page's own title, description and share text (not the home
+ * page's pitch). Every locale carries the same bilingual text, so each copy
+ * is canonical to the German one, which alone is in the sitemap (#58). */
+export async function legalMetadata(
+  locale: string,
+  page: 'impressum' | 'datenschutz',
+): Promise<Metadata> {
+  const t = await getTranslations({ locale, namespace: 'legal' });
+  const [name, description] =
+    page === 'impressum'
+      ? [t('impressum'), t('impressumDescription')]
+      : [t('privacy'), t('privacyDescription')];
+  const title = `${name} — Sogda`;
+  const canonical = `/de/${page}`;
+  return {
+    title,
+    description,
+    alternates: { canonical },
+    openGraph: { title, description, url: canonical },
+    twitter: { title, description },
+  };
+}
 
 /** One of the owner's details, or a visible placeholder until it's given. */
 export function Detail({ k, label }: { k: Key; label: string }) {
