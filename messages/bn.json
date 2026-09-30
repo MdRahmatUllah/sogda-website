@@ -92,15 +92,15 @@
   },
   "journey": {
     "eyebrow": "যাত্রাপথ",
-    "title": "প্রথম “Hallo” থেকে C2 পর্যন্ত ১২টি ধাপ।",
+    "title": "প্রথম “Hallo” থেকে C2 পর্যন্ত {steps, number}টি ধাপ।",
     "facts": {
-      "words": "৫,০৬৯টি শব্দ",
-      "grammar": "১৮২টি ব্যাকরণ বিষয়",
+      "words": "{words, number}টি শব্দ",
+      "grammar": "{topics, number}টি ব্যাকরণ বিষয়",
       "exams": "প্রতিটি ধাপের জন্য তিনটি মক পরীক্ষা"
     },
     "counter": "শব্দ, পথ জুড়ে",
     "placement": "আগে থেকেই কিছু জার্মান জানেন? ছোট একটি লেভেল যাচাই আপনাকে ঠিক ধাপ থেকে শুরু করায়।",
-    "road": "কোর্সটি ১২টি স্টেশনের একটি পথ, A1.1 থেকে C2.2 পর্যন্ত, স্তরগুলো পেরিয়ে: A1 Anfänger, A2 Grundstufe, B1 Mittelstufe, B2, C1 আর C2।"
+    "road": "কোর্সটি {steps, number}টি স্টেশনের একটি পথ, A1.1 থেকে C2.2 পর্যন্ত, স্তরগুলো পেরিয়ে: A1 Anfänger, A2 Grundstufe, B1 Mittelstufe, B2, C1 আর C2।"
   },
   "practice": {
     "eyebrow": "অনুশীলন ও নিজেকে যাচাই",
@@ -189,7 +189,7 @@
     },
     "android": {
       "q": "কোন Android সংস্করণ লাগবে?",
-      "a": "Android 8.0 বা তার নতুন।"
+      "a": "Android {android} বা তার নতুন।"
     },
     "iphone": {
       "q": "iPhone সংস্করণ আছে কি?",

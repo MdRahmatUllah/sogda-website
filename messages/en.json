@@ -92,15 +92,15 @@
   },
   "journey": {
     "eyebrow": "The journey",
-    "title": "12 steps from your first “Hallo” to C2.",
+    "title": "{steps, number} steps from your first “Hallo” to C2.",
     "facts": {
-      "words": "5,069 words",
-      "grammar": "182 grammar topics",
+      "words": "{words, plural, one {# word} other {# words}}",
+      "grammar": "{topics, plural, one {# grammar topic} other {# grammar topics}}",
       "exams": "Three mock exams for every step"
     },
     "counter": "words on the road",
     "placement": "Already know some German? A short placement check starts you at the right step.",
-    "road": "The course as a road with 12 stations, from A1.1 to C2.2, through the levels A1 Anfänger, A2 Grundstufe, B1 Mittelstufe, B2, C1 and C2."
+    "road": "The course as a road with {steps, number} stations, from A1.1 to C2.2, through the levels A1 Anfänger, A2 Grundstufe, B1 Mittelstufe, B2, C1 and C2."
   },
   "practice": {
     "eyebrow": "Practise and test yourself",
@@ -189,7 +189,7 @@
     },
     "android": {
       "q": "Which Android version do I need?",
-      "a": "Android 8.0 or newer."
+      "a": "Android {android} or newer."
     },
     "iphone": {
       "q": "Is there an iPhone version?",
