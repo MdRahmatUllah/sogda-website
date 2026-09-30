@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Sogda — Deutsch offline lernen, von A1 bis C2",
-    "description": "Deutsch lernen, ein klarer Tag nach dem anderen: ein vollständiger Offline-Deutschkurs von A1 bis C2, mit Bedeutungen auf Englisch oder Bangla."
+    "description": "Deutsch lernen, ein klarer Tag nach dem anderen: ein vollständiger Offline-Deutschkurs von A1 bis C2, mit Bedeutungen auf Englisch, Bangla, Russisch oder Polnisch."
   },
   "header": {
     "skip": "Zum Inhalt springen",
@@ -36,7 +36,7 @@
   "hero": {
     "kicker": "Der Weg zu einer neuen Sprache",
     "headline": "Deutsch lernen, ein klarer Tag nach dem anderen.",
-    "subline": "Ein vollständiger Offline-Deutschkurs von A1 bis C2, mit Bedeutungen auf Englisch oder Bangla.",
+    "subline": "Ein vollständiger Offline-Deutschkurs von A1 bis C2, mit Bedeutungen auf Englisch, Bangla, Russisch oder Polnisch.",
     "pause": "Animation anhalten",
     "play": "Animation abspielen"
   },
@@ -53,7 +53,7 @@
     },
     "learn": {
       "title": "Ein paar neue Wörter lernen",
-      "body": "Jedes mit Artikel, Aussprache, Beispielen und der Bedeutung auf Englisch oder Bangla. Sag, wie gut du es wusstest, und Sogda wählt den Tag, an dem es wiederkommt."
+      "body": "Jedes mit Artikel, Aussprache, Beispielen und der Bedeutung in deiner Sprache. Sag, wie gut du es wusstest, und Sogda wählt den Tag, an dem es wiederkommt."
     },
     "grammar": {
       "title": "Das Grammatikthema der Woche",
@@ -95,7 +95,7 @@
   "practice": {
     "eyebrow": "Üben und dich selbst prüfen",
     "title": "Quizze, und eine Probeprüfung, wenn du bereit bist.",
-    "quizzes": "Quizze in jede Richtung: Deutsch nach Englisch oder Bangla, Englisch nach Deutsch, Artikel, Hören und Wortformen.",
+    "quizzes": "Quizze in jede Richtung: Deutsch in deine Sprachen und zurück, Artikel, Hören und Wortformen.",
     "exams": "Drei Probeprüfungen für jede Stufe, mit Wortschatz, Grammatik, Hören, Schreiben und Sprechen, und einem Ergebnis für jeden Teil.",
     "carousel": "Quiz- und Prüfungsbildschirme",
     "item": "Bildschirm {n} von {total}"
@@ -148,9 +148,8 @@
   },
   "languages": {
     "eyebrow": "In deiner Sprache",
-    "title": "Bedeutungen auf Englisch, Bangla oder beidem.",
-    "body": "Jedes Wort kommt mit seiner Bedeutung auf Englisch, Bangla oder beidem, und seine Aussprache steht in bengalischer Schrift daneben. Russische und polnische Bedeutungen kommen bald.",
-    "soon": "bald"
+    "title": "Bedeutungen auf Englisch, Bangla, Russisch oder Polnisch.",
+    "body": "Wähle eine Sprache oder zwei, die zusammen erscheinen. Die Aussprache folgt der Sprache deiner Bedeutungen: in bengalischen, russischen oder polnischen Buchstaben oder als englische Umschrift. Auf Russisch und Polnisch auch die Beispielsätze und Grammatikregeln. Und die App selbst gibt es auf Englisch, Bangla, Polnisch oder Russisch."
   },
   "gallery": {
     "eyebrow": "Screenshots",

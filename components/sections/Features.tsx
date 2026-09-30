@@ -162,9 +162,17 @@ export async function Looks({ locale }: { locale: string }) {
   );
 }
 
-// BRIEF §3.8: der Termin, as the app shows it (content.db: A1.1, der,
-// "appointment", "অ্যাপয়েন্টমেন্ট / নির্ধারিত সময়", /টের্মিন/). The meaning
-// arrives in English, then in Bangla, once; Russian and Polish are "soon".
+// BRIEF §3.8: der Termin (A1.1, der) in the four meaning languages, each with
+// its pronunciation guide, as the app's A1 workbook has it (English and Bangla
+// are in content.db; Russian and Polish ship with app #1100). The lines arrive
+// one after another, once.
+const TERMIN = [
+  { lang: 'en', name: 'English', meaning: 'appointment', say: 'tair-MEEN' },
+  { lang: 'bn', name: 'বাংলা', meaning: 'অ্যাপয়েন্টমেন্ট / নির্ধারিত সময়', say: 'টের্মিন' },
+  { lang: 'ru', name: 'Русский', meaning: 'запись (к врачу) / встреча', say: 'тэрмИн' },
+  { lang: 'pl', name: 'Polski', meaning: 'wizyta / termin', say: 'ter-MIN' },
+] as const;
+
 export async function Languages({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: 'languages' });
   return (
@@ -180,45 +188,22 @@ export async function Languages({ locale }: { locale: string }) {
             <p className="mt-2 text-4xl font-extrabold" lang="de">
               <span className="text-der">der</span> Termin
             </p>
-            <p className="mt-1 text-muted">
-              <span lang="bn">/টের্মিন/</span>
-            </p>
-            <dl className="mt-6 grid gap-3">
-              <div
-                className="lang-line flex items-baseline gap-3"
-                style={{ '--i': 0 } as CSSProperties}
-              >
-                <dt className="w-20 shrink-0 text-sm font-bold text-muted">English</dt>
-                <dd className="text-xl font-semibold">appointment</dd>
-              </div>
-              <div
-                className="lang-line flex items-baseline gap-3"
-                style={{ '--i': 1 } as CSSProperties}
-              >
-                <dt className="w-20 shrink-0 text-sm font-bold text-muted" lang="bn">
-                  বাংলা
-                </dt>
-                <dd className="text-xl font-semibold" lang="bn">
-                  অ্যাপয়েন্টমেন্ট / নির্ধারিত সময়
-                </dd>
-              </div>
-            </dl>
-            <ul className="mt-6 flex flex-wrap gap-2">
-              {(
-                [
-                  ['ru', 'Русский'],
-                  ['pl', 'Polski'],
-                ] as const
-              ).map(([code, name], i) => (
-                <li
-                  key={code}
-                  className="lang-line rounded-full border-2 border-dashed border-line px-4 py-1.5 font-semibold"
-                  style={{ '--i': 2 + i } as CSSProperties}
+            <dl className="mt-6 grid gap-4">
+              {TERMIN.map(({ lang, name, meaning, say }, i) => (
+                <div
+                  key={lang}
+                  lang={lang}
+                  className="lang-line flex items-baseline gap-3"
+                  style={{ '--i': i } as CSSProperties}
                 >
-                  <span lang={code}>{name}</span> · {t('soon')}
-                </li>
+                  <dt className="w-20 shrink-0 text-sm font-bold text-muted">{name}</dt>
+                  <dd>
+                    <span className="block text-xl font-semibold">{meaning}</span>
+                    <span className="text-muted">/{say}/</span>
+                  </dd>
+                </div>
               ))}
-            </ul>
+            </dl>
           </div>
         </Reveal>
       </div>
