@@ -42,7 +42,9 @@ for (const locale of routing.locales) {
   });
 }
 
-test('/ goes to a locale', async ({ page }) => {
+test('/ is the chooser, linking every locale (#63)', async ({ page }) => {
   await page.goto('/');
-  await expect(page).toHaveURL(new RegExp(`/(${routing.locales.join('|')})$`));
+  for (const l of routing.locales) {
+    await expect(page.locator(`main a[hreflang="${l}"]`)).toHaveAttribute('href', `/${l}`);
+  }
 });
