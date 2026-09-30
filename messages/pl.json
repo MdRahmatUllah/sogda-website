@@ -224,7 +224,7 @@
     "title": "Niemiecki {step}: {words, plural, one {# słowo} few {# słowa} many {# słów} other {# słowa}} i {topics, plural, one {# temat gramatyczny} few {# tematy gramatyczne} many {# tematów gramatycznych} other {# tematu gramatycznego}} | Sogda",
     "description": "CEFR {level}, etap {step} kursu niemieckiego offline Sogda: {words, plural, one {# słowo} few {# słowa} many {# słów} other {# słowa}} ze znaczeniami po polsku, {topics, plural, one {# temat gramatyczny} few {# tematy gramatyczne} many {# tematów gramatycznych} other {# tematu gramatycznego}}, egzaminy próbne i przykładowe słowa.",
     "name": "Niemiecki {step}",
-    "eyebrow": "CEFR {level} · etap {ord} z {steps}",
+    "eyebrow": "CEFR {level} · etap {ord, number} z {steps, number}",
     "h1": "Niemiecki {step}: słowa, gramatyka i egzaminy próbne",
     "answer": "Etap {step} w Sogdzie to {words, plural, one {# niemieckie słowo} few {# niemieckie słowa} many {# niemieckich słów} other {# niemieckiego słowa}} i {topics, plural, one {# temat gramatyczny} few {# tematy gramatyczne} many {# tematów gramatycznych} other {# tematu gramatycznego}}, {half, select, first {pierwsza} other {druga}} połowa poziomu {level} według CEFR. Kończy się {mocksPerStep, plural, one {# egzaminem próbnym} other {# egzaminami próbnymi}}: każdy ma {questions, plural, one {# pytanie} few {# pytania} many {# pytań} other {# pytania}} oraz zadanie pisemne i ustne, ułożone ze słów i gramatyki tego etapu.",
     "levelHeading": "Co oznacza poziom {level}",

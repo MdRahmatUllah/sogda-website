@@ -222,11 +222,11 @@
   },
   "levelPages": {
     "title": "German {step}: {words, number} words and {topics, number} grammar topics | Sogda",
-    "description": "CEFR {level}, step {step} of Sogda's offline German course: {words, number} words, {topics, number} grammar topics, {mocksPerStep} mock exams, and a sample of the words.",
+    "description": "CEFR {level}, step {step} of Sogda's offline German course: {words, number} words, {topics, number} grammar topics, {mocksPerStep, number} mock exams, and a sample of the words.",
     "name": "German {step}",
-    "eyebrow": "CEFR {level} · step {ord} of {steps}",
+    "eyebrow": "CEFR {level} · step {ord, number} of {steps, number}",
     "h1": "German {step}: the words, the grammar and the mock exams",
-    "answer": "Sogda's step {step} teaches {words, plural, one {# German word} other {# German words}} and {topics, plural, one {# grammar topic} other {# grammar topics}}, the {half, select, first {first} other {second}} half of CEFR level {level}. It ends with {mocksPerStep} mock exams, each with {questions} questions plus a writing and a speaking task, generated from the step's own words and grammar.",
+    "answer": "Sogda's step {step} teaches {words, plural, one {# German word} other {# German words}} and {topics, plural, one {# grammar topic} other {# grammar topics}}, the {half, select, first {first} other {second}} half of CEFR level {level}. It ends with {mocksPerStep, number} mock exams, each with {questions, number} questions plus a writing and a speaking task, generated from the step's own words and grammar.",
     "levelHeading": "What {level} means",
     "cefr": {
       "A1": "At A1 you understand and use familiar everyday expressions and very basic phrases. You can introduce yourself, and ask and answer simple questions about where you live, people you know and things you have, as long as the other person speaks slowly and clearly.",
@@ -238,11 +238,11 @@
     },
     "cefrNote": "These are the levels of the Common European Framework of Reference for Languages (CEFR), which the Goethe-Zertifikat and telc exams follow. Each step's words and grammar are Sogda's selection for its level.",
     "grammarHeading": "The {topics, plural, one {grammar topic} other {# grammar topics}} of {step}",
-    "examHeading": "The {mocksPerStep} mock exams",
-    "examBody": "Each mock exam for {step} has {questions} questions and two tasks, {points} points in all, with a result for each section. They follow the sections of the Goethe and telc exams at {level}, but they are generated from the step's words and grammar, not official papers.",
+    "examHeading": "The {mocksPerStep, number} mock exams",
+    "examBody": "Each mock exam for {step} has {questions, number} questions and two tasks, {points, number} points in all, with a result for each section. They follow the sections of the Goethe and telc exams at {level}, but they are generated from the step's words and grammar, not official papers.",
     "items": "{name}: {n, plural, one {# question} other {# questions}}",
-    "writing": "{name}: a text of at least {words} words",
-    "speaking": "{name}: up to {seconds} seconds",
+    "writing": "{name}: a text of at least {words, number} words",
+    "speaking": "{name}: up to {seconds, number} seconds",
     "section": {
       "vocabulary": "Vocabulary",
       "reverse": "Reverse",
@@ -254,7 +254,7 @@
       "writing": "Writing",
       "speaking": "Speaking"
     },
-    "wordsHeading": "{sample} of the {words, number} words",
+    "wordsHeading": "{sample, number} of the {words, number} words",
     "wordsBody": "A sample from step {step}: each word with its article and forms, its meaning in English and a pronunciation guide. The app has all {words, number}, with examples.",
     "faq": {
       "official": {
@@ -263,7 +263,7 @@
       },
       "count": {
         "q": "How many words does Sogda teach for {level}?",
-        "a": "{levelWords, number} words and {levelTopics} grammar topics, across its two steps, {first} and {second}."
+        "a": "{levelWords, number} words and {levelTopics, number} grammar topics, across its two steps, {first} and {second}."
       },
       "next": {
         "q": "What comes after {step}?",

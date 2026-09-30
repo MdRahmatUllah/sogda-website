@@ -8,11 +8,14 @@ test('sitemap.xml lists every home page, with its alternates, x-default and last
 }) => {
   const xml = await (await request.get('/sitemap.xml')).text();
   const locs = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
-  expect(locs).toEqual(routing.locales.map((l) => `https://www.sogda.de/${l}`));
+  // The home pages first; the content pages (#68, #72) follow them.
+  expect(locs.slice(0, routing.locales.length)).toEqual(
+    routing.locales.map((l) => `https://www.sogda.de/${l}`),
+  );
   for (const locale of routing.locales) expect(xml).toContain(`hreflang="${locale}"`);
   expect(xml).toContain('hreflang="x-default" href="https://www.sogda.de/en"');
   const lastmods = [...xml.matchAll(/<lastmod>([^<]+)<\/lastmod>/g)].map((m) => m[1]);
-  expect(lastmods).toHaveLength(routing.locales.length);
+  expect(lastmods).toHaveLength(locs.length);
   for (const d of lastmods) expect(Date.parse(d!)).not.toBeNaN();
 });
 

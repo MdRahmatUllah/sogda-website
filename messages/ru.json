@@ -224,7 +224,7 @@
     "title": "Немецкий {step}: {words, plural, one {# слово} few {# слова} many {# слов} other {# слова}} и {topics, plural, one {# тема грамматики} few {# темы грамматики} many {# тем грамматики} other {# темы грамматики}} | Sogda",
     "description": "CEFR {level}, этап {step} офлайн-курса немецкого Sogda: {words, plural, one {# слово} few {# слова} many {# слов} other {# слова}} со значениями на русском, {topics, plural, one {# тема грамматики} few {# темы грамматики} many {# тем грамматики} other {# темы грамматики}}, пробные экзамены и примеры слов.",
     "name": "Немецкий {step}",
-    "eyebrow": "CEFR {level} · этап {ord} из {steps}",
+    "eyebrow": "CEFR {level} · этап {ord, number} из {steps, number}",
     "h1": "Немецкий {step}: слова, грамматика и пробные экзамены",
     "answer": "Этап {step} в Sogda — это {words, plural, one {# немецкое слово} few {# немецких слова} many {# немецких слов} other {# немецкого слова}} и {topics, plural, one {# тема грамматики} few {# темы грамматики} many {# тем грамматики} other {# темы грамматики}}, {half, select, first {первая} other {вторая}} половина уровня {level} по шкале CEFR. В конце этапа — {mocksPerStep, plural, one {# пробный экзамен} few {# пробных экзамена} many {# пробных экзаменов} other {# пробного экзамена}}: в каждом {questions, plural, one {# вопрос} few {# вопроса} many {# вопросов} other {# вопроса}}, письменное и устное задание, всё из слов и грамматики этого этапа.",
     "levelHeading": "Что значит уровень {level}",
