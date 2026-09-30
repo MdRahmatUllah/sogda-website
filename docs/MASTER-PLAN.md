@@ -134,15 +134,23 @@ Every page:
 
 **Already decided, and unchanged:** no price or "free" wording (BRIEF §10 #2); no analytics (§10 #5); the five site languages (§10 #3).
 
-## 8. Who does what
+## 8. Who does what (assigned 2026-09-30; every agent builds the site, CLAUDE.md "Team mode")
 
-| Agent | Takes |
+| Agent | Issues |
 |---|---|
-| **agent-4** | All website code: W1-a, c, e, f, g; W1-d's sync, ICU and `llms.txt`; W2-b, c; W3-0 and building each page; W4-a, d. Live Lighthouse after every `dev → main` |
-| **agent-1** | W1-b copy, eyebrows and titles; the native ru/pl (and de) review of every new page; W2-a the bn store set; W4-b the Play listing's ASO |
-| **agent-2** | W1-d's app-repo facts export (`content.db` + `store-listing.md` → one JSON at a pinned ref, schema proposed first); reviews on request |
-| **agent-3** | The drift test (with agent-4); a live SQA sweep before each `dev → main`; Android checks on the S24 (the first screen per locale, the redirect per phone language, share cards, the Play deep link at launch); scoring the monthly prompt panel |
-| **agent-0** | This plan and its issues; the owner's questions; the positioning sentence; a fact check of every new page; W1-h; W4-c drafts |
+| **agent-4** (the site's owner) | [#68](https://github.com/MdRahmatUllah/sogda-website/issues/68) the page template **first** (all of W3 waits on it); [#58](https://github.com/MdRahmatUllah/sogda-website/issues/58) small fixes; [#60](https://github.com/MdRahmatUllah/sogda-website/issues/60) the JSON-LD graph; [#63](https://github.com/MdRahmatUllah/sogda-website/issues/63) the root chooser; [#64](https://github.com/MdRahmatUllah/sogda-website/issues/64) the /bn A/B; [#66](https://github.com/MdRahmatUllah/sogda-website/issues/66) localised screens; [#67](https://github.com/MdRahmatUllah/sogda-website/issues/67) OG cards; [#45](https://github.com/MdRahmatUllah/sogda-website/issues/45) the Play badge (at launch); [#77](https://github.com/MdRahmatUllah/sogda-website/issues/77) real ratings (after launch) |
+| **agent-1** | [#59](https://github.com/MdRahmatUllah/sogda-website/issues/59) copy, eyebrows and titles; [#69](https://github.com/MdRahmatUllah/sogda-website/issues/69) "Learn German in Bangla"; [#75](https://github.com/MdRahmatUllah/sogda-website/issues/75) the pl/ru pages; [app #1175](https://github.com/MdRahmatUllah/DeutschPlan/issues/1175) the bn store set; [app #1176](https://github.com/MdRahmatUllah/DeutschPlan/issues/1176) the Play listing's ASO; the native pl/ru (and bn) review of every PR with copy |
+| **agent-2** | [app #1174](https://github.com/MdRahmatUllah/DeutschPlan/issues/1174) the facts export (schema first); [#61](https://github.com/MdRahmatUllah/sogda-website/issues/61) `sync:facts`, ICU numbers and `llms.txt` (with agent-3's drift test); [#72](https://github.com/MdRahmatUllah/sogda-website/issues/72) the 12 level pages; [#73](https://github.com/MdRahmatUllah/sogda-website/issues/73) the FSRS page |
+| **agent-3** | [#65](https://github.com/MdRahmatUllah/sogda-website/issues/65) measuring (the baseline now, then monthly); the drift test in [#61](https://github.com/MdRahmatUllah/sogda-website/issues/61); [#71](https://github.com/MdRahmatUllah/sogda-website/issues/71) the mock-exams page; live sweeps of `dev` and S24 checks |
+| **agent-0** | [#62](https://github.com/MdRahmatUllah/sogda-website/issues/62) the first screen (fact row, the product before the scroll, der Termin up, the mailto notify); [#70](https://github.com/MdRahmatUllah/sogda-website/issues/70) "Sogda in brief"; [#74](https://github.com/MdRahmatUllah/sogda-website/issues/74) the comparisons; [#76](https://github.com/MdRahmatUllah/sogda-website/issues/76) outreach drafts; [app #1177](https://github.com/MdRahmatUllah/DeutschPlan/issues/1177) the repos point at sogda.de; [#79](https://github.com/MdRahmatUllah/sogda-website/issues/79) team mode; the owner's decisions ([#56](https://github.com/MdRahmatUllah/sogda-website/issues/56)) and a fact check of every page |
+
+**The owner decided (#56, 2026-09-30):**
+- O2: all of W3;
+- O3: 20–30 words per step;
+- O4: a mailto notify;
+- O5: the publisher is the brand "Sogda".
+
+**Still the owner's:** O1 (Search Console, Bing and Yandex), O7 (outreach), O9 (the mailbox).
 
 ## 9. Order and dependencies
 ```
