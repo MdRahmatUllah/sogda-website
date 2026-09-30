@@ -293,13 +293,13 @@
         "day": {
           "heading": "Dzień z Sogdą",
           "body": {
-            "p1": "Otwierasz aplikację i plan na dziś jest gotowy: powtórz to, co wymaga powtórki, naucz się kilku nowych słów, przećwicz temat gramatyczny tygodnia i przeczytaj zdania złożone tylko ze słów, które już znasz. Dzienny cel i dni wolne ustalasz sam, a przypomnienie przychodzi tylko wtedy, gdy jest coś do zrobienia."
+            "p1": "Otwierasz aplikację i plan na dziś jest gotowy: powtórz to, co wymaga powtórki, naucz się kilku nowych słów, przećwicz temat gramatyczny tygodnia i przeczytaj zdania złożone tylko ze słów, które już znasz. Dzienny cel i dni wolne ustalasz samodzielnie, a przypomnienie przychodzi tylko wtedy, gdy jest coś do zrobienia."
           }
         },
         "memory": {
           "heading": "Jak Sogda pamięta",
           "body": {
-            "p1": "Sogda planuje każde słowo metodą FSRS, nowoczesną metodą powtórek rozłożonych w czasie. Za każdym razem, gdy przypominasz sobie słowo, przerwa do jego powrotu się wydłuża: od dni do tygodni i miesięcy. Czas poświęcasz słowom, które zaraz wypadłyby ci z pamięci."
+            "p1": "Sogda planuje każde słowo według FSRS, nowoczesnej metody powtórek rozłożonych w czasie. Za każdym razem, gdy przypominasz sobie słowo, przerwa do jego powrotu się wydłuża: od dni do tygodni i miesięcy. Czas poświęcasz słowom, które zaraz wypadłyby ci z pamięci."
           }
         },
         "course": {
@@ -319,7 +319,7 @@
         "exams": {
           "heading": "Egzaminy próbne",
           "body": {
-            "p1": "{mocksPerStep, plural, one {# egzamin próbny} few {# egzaminy próbne} many {# egzaminów próbnych} other {# egzaminu próbnego}} na każdy etap, łącznie {mocks, number}, ze słuchaniem, pisaniem i mówieniem jak na prawdziwych egzaminach, a do tego słownictwo i gramatyka, z wynikiem dla każdej części. Nie ma części z czytaniem ze zrozumieniem. Powstają ze słów i gramatyki etapu: to nie są oficjalne arkusze Goethe ani telc, a Sogda nie jest powiązana z żadną z tych instytucji."
+            "p1": "{mocksPerStep, plural, one {# egzamin próbny} few {# egzaminy próbne} many {# egzaminów próbnych} other {# egzaminu próbnego}} na każdy etap, łącznie {mocks, number}, ze słuchaniem, pisaniem i mówieniem jak na prawdziwych egzaminach, a do tego ze słownictwem i gramatyką, z wynikiem dla każdej części. Nie ma części z czytaniem ze zrozumieniem. Powstają ze słów i gramatyki etapu: to nie są oficjalne arkusze Goethe ani telc, a Sogda nie jest powiązana z żadną z tych instytucji."
           }
         },
         "languages": {
