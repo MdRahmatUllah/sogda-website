@@ -4,10 +4,14 @@ import createNextIntlPlugin from 'next-intl/plugin';
 
 const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
 
-// sogda.de can't go live without a complete Impressum (BRIEF §8): Vercel's
-// production build stops here while content/legal.json has a placeholder.
-// Previews and local builds go on.
-if (process.env.VERCEL_ENV === 'production') {
+// sogda.de can't go live without a complete Impressum (BRIEF §8): a Vercel
+// production build for the sogda.de domain stops here while
+// content/legal.json has a placeholder. Production on *.vercel.app (before
+// the domain is attached), previews and local builds go on.
+if (
+  process.env.VERCEL_ENV === 'production' &&
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL ?? '').endsWith('sogda.de')
+) {
   execFileSync(process.execPath, ['scripts/check-launch.mjs'], { stdio: 'inherit' });
 }
 
