@@ -2,6 +2,7 @@
 // site (default https://www.sogda.de, the canonical host). Exits non-zero if any fails. Then run
 // `pnpm lighthouse https://www.sogda.de/en https://www.sogda.de/bn` for the budgets.
 import { readdirSync } from 'node:fs';
+import { request } from 'node:https';
 
 const base = (process.argv[2] ?? 'https://www.sogda.de').replace(/\/$/, '');
 const host = new URL(base).host;
@@ -35,6 +36,34 @@ if (base.startsWith('https://')) {
       new URL(alt.headers.get('location') ?? 'x:', base).host === host,
     `${alt.status} ${alt.headers.get('location') ?? ''}`,
   );
+
+  // The chooser at / (#63): a browser goes on by its first language, with a
+  // temporary 307 (a 308 would be cached for everyone); a request with no
+  // Accept-Language, a crawler, gets the page. fetch always sends one, so these
+  // go through https.request, which sends only what it's given.
+  const raw = (headers) =>
+    new Promise((resolve) => {
+      const req = request(`${base}/`, { headers }, (res) => {
+        res.resume();
+        resolve({ status: res.statusCode, location: res.headers.location ?? '' });
+      });
+      req.on('error', (e) => resolve({ status: 0, location: String(e) }));
+      req.end();
+    });
+  const bare = await raw({});
+  check('/ without Accept-Language: the chooser', bare.status === 200, String(bare.status));
+  for (const [lang, expected] of [
+    ['bn-BD,bn;q=0.9,en-US;q=0.8', 'bn'],
+    ['en-US,en;q=0.9,bn;q=0.8', 'en'],
+    ['pl-PL,pl;q=0.9', 'pl'],
+  ]) {
+    const r = await raw({ 'accept-language': lang });
+    check(
+      `/ with ${lang} → /${expected}`,
+      r.status === 307 && r.location.endsWith(`/${expected}?from=root`),
+      `${r.status} ${r.location}`,
+    );
+  }
 }
 
 // Every page in every locale, and the files around them.

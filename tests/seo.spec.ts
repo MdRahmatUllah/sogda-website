@@ -3,17 +3,19 @@ import { readFileSync } from 'node:fs';
 import { routing } from '../i18n/routing';
 
 // BRIEF §9.
-test('sitemap.xml lists every home page, with its alternates, x-default and lastmod (#58)', async ({
+test('sitemap.xml: the chooser and every home page, with alternates, x-default and lastmod (#58, #63)', async ({
   request,
 }) => {
   const xml = await (await request.get('/sitemap.xml')).text();
   const locs = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
-  // The home pages first; the content pages (#68, #72) follow them.
-  expect(locs.slice(0, routing.locales.length)).toEqual(
-    routing.locales.map((l) => `https://www.sogda.de/${l}`),
-  );
+  // The chooser and the home pages first; the content pages (#68, #72) follow.
+  const homes = [
+    'https://www.sogda.de',
+    ...routing.locales.map((l) => `https://www.sogda.de/${l}`),
+  ];
+  expect(locs.slice(0, homes.length)).toEqual(homes);
   for (const locale of routing.locales) expect(xml).toContain(`hreflang="${locale}"`);
-  expect(xml).toContain('hreflang="x-default" href="https://www.sogda.de/en"');
+  expect(xml).toContain('hreflang="x-default" href="https://www.sogda.de"');
   const lastmods = [...xml.matchAll(/<lastmod>([^<]+)<\/lastmod>/g)].map((m) => m[1]);
   expect(lastmods).toHaveLength(locs.length);
   for (const d of lastmods) expect(Date.parse(d!)).not.toBeNaN();
