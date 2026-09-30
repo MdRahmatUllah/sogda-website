@@ -8,6 +8,7 @@ import { mkdirSync, readFileSync, readdirSync } from 'node:fs';
 
 const b64 = (path) => readFileSync(path).toString('base64');
 const inter = b64('app/fonts/inter-latin.woff2');
+const cyrillic = b64('app/fonts/inter-cyrillic.woff2');
 const bengali = b64('app/fonts/noto-sans-bengali.woff2');
 const screen = b64('public/screens/today-light-720.webp');
 const mark = readFileSync('public/brand/icon-road-full.svg', 'utf8').replace(
@@ -17,9 +18,10 @@ const mark = readFileSync('public/brand/icon-road-full.svg', 'utf8').replace(
 
 const html = (m) => `<!doctype html><html><head><meta charset="utf-8"><style>
 @font-face{font-family:Inter;src:url(data:font/woff2;base64,${inter}) format('woff2');font-weight:400 800}
+@font-face{font-family:InterCyr;src:url(data:font/woff2;base64,${cyrillic}) format('woff2');font-weight:400 800;unicode-range:U+0400-045F}
 @font-face{font-family:Bengali;src:url(data:font/woff2;base64,${bengali}) format('woff2');font-weight:400 700}
 *{margin:0;box-sizing:border-box}
-body{width:1200px;height:630px;background:#00C2B2;color:#15121F;font-family:Inter,Bengali,sans-serif;overflow:hidden;position:relative}
+body{width:1200px;height:630px;background:#00C2B2;color:#15121F;font-family:InterCyr,Inter,Bengali,sans-serif;overflow:hidden;position:relative}
 .text{position:absolute;left:72px;top:72px;width:640px}
 .mark svg{border-radius:26px;display:block}
 .kicker{margin-top:36px;font-size:30px;font-weight:600}

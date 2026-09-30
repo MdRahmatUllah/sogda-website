@@ -164,10 +164,10 @@ Source: the app repo's `docs/05-dev-guide/store-listing.md`. Update these if the
 - **Updates:** when the app ships a new version, bump the ref in `screenshots.json` and run `pnpm sync:screens`. For a screen the goldens don't have (a real phone shot, the home-screen widget, a notification), file a `website:` issue in the app repo.
 
 ## 7. Languages of the website
-The owner decided (2026-09-29):
-- **The website's languages are the app's languages.** Today that is English (`/en`) and Bangla (`/bn`). Polish (`/pl`) and Russian (`/ru`) are added when the app ships them (app issues #1078, #1079). There is no German locale, because the app has no German interface.
+The owner decided (2026-09-29, and 2026-09-30 for the list):
+- **The website speaks five languages: English (`/en`), German (`/de`), Polish (`/pl`), Russian (`/ru`) and Bangla (`/bn`)** (the owner, 2026-09-30; website #36–#38). German is there for visitors in Germany, although the app has no German interface: its screenshots stay the app's English UI, described in German. Polish and Russian follow the app's own wording (`app_pl.arb`, `app_ru.arb`).
 - **The visitor's own language first, English by default.** `/` picks the locale from the browser's language (`navigator.languages`, a small client redirect, with a `<noscript>` link list). When none of the site's languages matches, it uses English.
-- **The visitor can always change it.** The header's language switch lists every locale in its own name (English, বাংলা, Polski, Русский), and the choice is remembered (`localStorage`, wrapped in try/catch) over the browser's language.
+- **The visitor can always change it.** The header's language switch lists every locale in its own name (English, Deutsch, Polski, Русский, বাংলা), and the choice is remembered (`localStorage`, wrapped in try/catch) over the browser's language.
 - All copy lives in `messages/*.json`, translated from the English. Keep each language consistent with the app's wording (the app repo's `app/lib/l10n/app_<code>.arb` and `docs/00-product/glossary.md`). A native speaker checks them before launch **(owner)**.
 - Add `hreflang` alternates for every locale, and `x-default` → `/en`.
 
@@ -195,7 +195,7 @@ The owner decided (2026-09-29):
 |---|---|---|
 | 1 | The Google Play link (for the badge, QR and JSON-LD) | "Coming soon to Google Play", no QR |
 | 2 | ~~Price / "free" / "no ads" wording~~ **Decided 2026-09-30:** left out; the site says nothing about price or ads | — |
-| 3 | ~~The website's languages~~ **Decided 2026-09-29:** the app's languages (en, bn; pl, ru as the app adds them), the visitor's language first, English by default, with a switch (§7) | — |
+| 3 | ~~The website's languages~~ **Decided 2026-09-29, list 2026-09-30:** English, German, Polish, Russian and Bangla; the visitor's language first, English by default, with a switch (§7) | — |
 | 4 | The Impressum details and a contact email: **the owner fills `content/legal.json` (2026-09-30)** | Placeholders; **don't launch on the domain without them** (a production build refuses: `pnpm check:launch`) |
 | 5 | ~~Analytics (none, or cookieless Vercel Web Analytics)~~ **Decided 2026-09-30:** none | — |
 | 6 | Announce Russian/Polish meanings as "coming soon"? | Yes, only as "coming soon" |

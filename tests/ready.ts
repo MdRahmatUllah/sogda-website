@@ -5,5 +5,7 @@ import { expect, type Page } from '@playwright/test';
  * toggle, the menu's link handler and the pause button work. */
 export async function gotoReady(page: Page, path: string) {
   await page.goto(path);
-  await expect(page.locator('html')).toHaveAttribute('data-hydrated', '');
+  // It arrives after load and an idle moment: under a full parallel run that
+  // can take a few seconds.
+  await expect(page.locator('html')).toHaveAttribute('data-hydrated', '', { timeout: 15_000 });
 }

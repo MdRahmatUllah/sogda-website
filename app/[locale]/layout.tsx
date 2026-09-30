@@ -3,7 +3,7 @@ import { hasLocale } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import type { ReactNode } from 'react';
-import { bengali, inter } from '@/app/fonts';
+import { bengali, inter, interCyrillic } from '@/app/fonts';
 import { Footer } from '@/components/ui/Footer';
 import { Header } from '@/components/ui/Header';
 import { routing } from '@/i18n/routing';
@@ -11,7 +11,13 @@ import { site } from '@/site.config';
 
 type Props = { children: ReactNode; params: Promise<{ locale: string }> };
 
-const OG_LOCALE: Record<string, string> = { en: 'en_US', bn: 'bn_BD', pl: 'pl_PL', ru: 'ru_RU' };
+const OG_LOCALE: Record<string, string> = {
+  en: 'en_US',
+  de: 'de_DE',
+  pl: 'pl_PL',
+  ru: 'ru_RU',
+  bn: 'bn_BD',
+};
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -75,7 +81,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <html
       lang={locale}
-      className={`${inter.variable} ${bengali.variable}`}
+      className={`${inter.variable} ${interCyrillic.variable} ${bengali.variable}`}
       suppressHydrationWarning
     >
       <head>

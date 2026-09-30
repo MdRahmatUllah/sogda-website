@@ -2,13 +2,16 @@ import AxeBuilder from '@axe-core/playwright';
 import { expect, test } from '@playwright/test';
 import { execFileSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
+import { routing } from '../i18n/routing';
 
 const legal = JSON.parse(readFileSync('content/legal.json', 'utf8')) as Record<string, unknown>;
 const complete = ['name', 'street', 'postcodeCity', 'email', 'phone'].every((k) => legal[k]);
 
 // BRIEF §8: the Impressum and the privacy policy, German (binding) and
 // English, reached from every page's footer.
-for (const locale of ['en', 'bn']) {
+for (const locale of routing.locales) {
+  const translation = JSON.parse(readFileSync(`messages/${locale}.json`, 'utf8')).legal
+    .translation as string;
   test.describe(`/${locale}`, () => {
     for (const [path, heading] of [
       ['impressum', 'Angaben gemäß § 5 DDG'],
@@ -21,7 +24,7 @@ for (const locale of ['en', 'bn']) {
         const german = page.locator('article[lang="de"]');
         const english = page.locator('article[lang="en"]');
         await expect(german.getByRole('heading', { name: heading })).toBeVisible();
-        await expect(english).toContainText(/English translation|ইংরেজি অনুবাদ/);
+        await expect(english).toContainText(translation);
         const { violations } = await new AxeBuilder({ page }).analyze();
         expect(violations.map((v) => `${v.id}: ${v.help}`)).toEqual([]);
       });
