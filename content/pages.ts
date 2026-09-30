@@ -2,7 +2,7 @@ import { getTranslations } from 'next-intl/server';
 import { LEVEL_LOCALES, levelPage, levelSlug } from '@/content/levels';
 import { factArgs, facts } from '@/i18n/facts';
 import { routing } from '@/i18n/routing';
-import type { PageContent } from '@/lib/page';
+import { contentFromMessages, type PageContent } from '@/lib/page';
 
 // Every content page (MASTER-PLAN W3, #68): its URL segment, the locales it
 // exists in (hreflang and the sitemap cover only these), and its copy per
@@ -46,6 +46,13 @@ async function sample(locale: string): Promise<PageContent> {
 }
 
 const PAGES: PageEntry[] = [
+  // Fair comparisons, features only (#74): en and de first; pl, ru and bn
+  // join after their native drafts.
+  ...['sogda-vs-anki', 'sogda-vs-duolingo'].map((slug) => ({
+    slug,
+    locales: ['en', 'de'],
+    content: (l: string) => contentFromMessages(l, slug),
+  })),
   { slug: 'template-sample', locales: routing.locales, content: sample, gallery: true },
   // #72: a page per step, A1.1 … C2.2, from content/facts.json.
   ...facts.steps.map((s) => ({

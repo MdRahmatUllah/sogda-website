@@ -36,7 +36,7 @@
     "copyright": "© {year} Sogda"
   },
   "hero": {
-    "kicker": "Offline German course app\u00a0· A1–\u2060C2",
+    "kicker": "Offline German course app · A1–⁠C2",
     "headline": "Learn German, one clear day at a time.",
     "subline": "A complete, offline German course from A1 to C2, with meanings in English, Bangla, Russian or Polish.",
     "pause": "Pause the animation",
@@ -272,6 +272,149 @@
       "last": {
         "q": "What comes after {step}?",
         "a": "{step} is the last step of the course. The words you've learnt keep coming back for revision, just before you'd forget them."
+      }
+    }
+  },
+  "pages": {
+    "sogda-vs-anki": {
+      "title": "Sogda or Anki for German: a ready course or your own decks",
+      "description": "Sogda or Anki for German? Both use spaced repetition. Anki runs the decks you make or download; Sogda is a ready course, A1 to C2, offline.",
+      "name": "Sogda or Anki",
+      "eyebrow": "Comparison",
+      "h1": "Sogda or Anki for German?",
+      "answer": "Anki is a flashcard app: you make your own decks, or download decks other users have shared. Sogda is a ready German course from A1 to C2, with {words, number} words, {topics, number} grammar topics and {mocksPerStep, number} mock exams for every step, and both schedule your revision with spaced repetition.",
+      "sections": {
+        "same": {
+          "heading": "What they share",
+          "body": {
+            "p1": "Both bring a card back just before you'd forget it. Anki's manual describes FSRS, the Free Spaced Repetition Scheduler, as an alternative to its older SM-2 algorithm that you can turn on (Anki 23.10 and later, AnkiDroid 2.17 and later). Sogda schedules every word with FSRS from the start."
+          }
+        },
+        "anki": {
+          "heading": "Choose Anki if…",
+          "body": {
+            "p1": "Anki is the better fit when the cards are yours to make:"
+          },
+          "list": {
+            "a": "you want to make your own cards, for German or for anything else;",
+            "b": "you already have a deck you trust, or want one from Anki's shared decks;",
+            "c": "you want to set every scheduling option yourself;",
+            "d": "you also study on a computer: Anki runs on Windows, Mac and Linux, with AnkiDroid on Android and AnkiMobile on iPhone."
+          }
+        },
+        "sogda": {
+          "heading": "Choose Sogda if…",
+          "body": {
+            "p1": "Sogda is the better fit when you want the course, not the cards:"
+          },
+          "list": {
+            "a": "you want the whole course ready, from your first “Hallo” to C2: {words, number} words, each with examples, its article and forms where it has them, and {topics, number} grammar topics, each with its rule and a short practice;",
+            "b": "you want a plan for each day rather than decks to manage;",
+            "c": "you want the meanings and a pronunciation guide in English, or in Bangla, Russian or Polish letters;",
+            "d": "you're preparing for an exam: {mocksPerStep, number} mock exams for every step, with listening, writing and speaking, plus vocabulary and grammar;",
+            "e": "you want it fully offline and with no account, on Android."
+          }
+        },
+        "both": {
+          "heading": "Or use both",
+          "body": {
+            "p1": "Nothing stops you: take the course in Sogda, and keep an Anki deck for the words from your own work or studies that no course has."
+          }
+        },
+        "sources": {
+          "heading": "Where these facts come from",
+          "body": {
+            "p1": "Anki: its own manual at docs.ankiweb.net (Getting started; Deck options, on FSRS), read on 1 October 2026. Sogda: the app's course data. Anki is named here only to describe it; Sogda has no connection with it."
+          }
+        }
+      },
+      "faq": {
+        "algorithm": {
+          "q": "Does Sogda schedule like Anki?",
+          "a": "Sogda uses FSRS, which Anki offers as an option from version 23.10; you turn it on in Anki's deck options. Anki's older SM-2 scheduler is what runs until you do."
+        },
+        "import": {
+          "q": "Can I import my Anki deck into Sogda?",
+          "a": "No. Sogda teaches its own course, so your Anki decks stay in Anki."
+        },
+        "exam": {
+          "q": "Which is better for the Goethe or telc exam?",
+          "a": "With Anki, it depends on the deck. Sogda's steps are built around the exams, with {mocksPerStep, number} mock exams for every step that test listening, writing and speaking, plus vocabulary and grammar. They're not official papers, and there's no reading part."
+        },
+        "iphone": {
+          "q": "Is Sogda on iPhone?",
+          "a": "Not yet: Sogda is on Android ({android} or newer), and iPhone is coming soon."
+        }
+      }
+    },
+    "sogda-vs-duolingo": {
+      "title": "Sogda or Duolingo for German: how far, how deep, how offline",
+      "description": "Sogda or Duolingo for German? Duolingo's German course goes through B2; Sogda goes A1 to C2 with grammar and mock exams, offline, no account.",
+      "name": "Sogda or Duolingo",
+      "eyebrow": "Comparison",
+      "h1": "Sogda or Duolingo for German?",
+      "answer": "Duolingo teaches many languages, and its German course goes through B2 on the CEFR scale, as Duolingo's blog said in April 2026. Sogda teaches only German, from A1 to C2 in {steps, number} steps, with {words, number} words, {topics, number} grammar topics and {mocksPerStep, number} mock exams for every step, fully offline and with no account.",
+      "sections": {
+        "levels": {
+          "heading": "How far each goes",
+          "body": {
+            "p1": "The CEFR has six levels, from A1 to C2. Duolingo's German course reaches B2, where you're an “independent user” of the language. Sogda's {steps, number} steps go on through C1 and C2, the levels of the Goethe-Zertifikat C1 and C2."
+          }
+        },
+        "duolingo": {
+          "heading": "Choose Duolingo if…",
+          "body": {
+            "p1": "Duolingo is the better fit when German is one language among several:"
+          },
+          "list": {
+            "a": "you want to learn other languages in the same app;",
+            "b": "B2 is as far as you need to go in German;",
+            "c": "you're on iPhone today: Sogda is on Android only, for now."
+          }
+        },
+        "sogda": {
+          "heading": "Choose Sogda if…",
+          "body": {
+            "p1": "Sogda is the better fit when German is the goal:"
+          },
+          "list": {
+            "a": "you're aiming for C1 or C2, or for a Goethe or telc exam at any level: {mocksPerStep, number} mock exams for every step;",
+            "b": "you want grammar as rules you can look up: {topics, number} topics, each with its rule and a short practice;",
+            "c": "you want every word with its article and forms where it has them, examples, and a pronunciation guide in your meaning language's letters;",
+            "d": "you learn from Bangla, Russian or Polish and want the meanings in your language;",
+            "e": "you want it fully offline, with no account to make."
+          }
+        },
+        "both": {
+          "heading": "Or use both",
+          "body": {
+            "p1": "Nothing stops you: many learners keep one app for variety and another for depth. Sogda's plan takes as long as the daily goal you set, so it fits beside another app."
+          }
+        },
+        "sources": {
+          "heading": "Where these facts come from",
+          "body": {
+            "p1": "Duolingo: its blog post “Duolingo Course Content Can Take You to B2 Proficiency”, 22 April 2026, read on 1 October 2026. Sogda: the app's course data. Duolingo is named here only to describe it; Sogda has no connection with it."
+          }
+        }
+      },
+      "faq": {
+        "levels": {
+          "q": "How far does Duolingo's German course go?",
+          "a": "Through B2 on the CEFR scale, according to Duolingo's blog in April 2026. Sogda goes on to C2."
+        },
+        "exam": {
+          "q": "Which is better for the Goethe or telc exam?",
+          "a": "Sogda's steps are built around the exams, with {mocksPerStep, number} mock exams for every step that test listening, writing and speaking, plus vocabulary and grammar. They're not official papers, and there's no reading part."
+        },
+        "offline": {
+          "q": "Does Sogda work offline?",
+          "a": "Yes, fully, and with no account. Only the optional natural voice is a download, once, over Wi-Fi."
+        },
+        "switch": {
+          "q": "Can I move my Duolingo progress to Sogda?",
+          "a": "No, but a short placement check starts you at the right step."
+        }
       }
     }
   }
