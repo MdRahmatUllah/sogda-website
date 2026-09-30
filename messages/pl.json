@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Sogda — ucz się niemieckiego offline, od A1 do C2",
-    "description": "Ucz się niemieckiego dzień po dniu, z jasnym planem: pełny kurs niemieckiego offline od A1 do C2, ze znaczeniami po polsku."
+    "title": "Sogda: niemiecki od podstaw do C2, offline · aplikacja",
+    "description": "Ucz się niemieckiego dzień po dniu, z jasnym planem: pełny kurs offline od podstaw (A1) do C2, z egzaminami próbnymi i znaczeniami po polsku."
   },
   "header": {
     "skip": "Przejdź do treści",
@@ -36,14 +36,14 @@
     "copyright": "© {year} Sogda"
   },
   "hero": {
-    "kicker": "Droga do nowego języka",
+    "kicker": "Niemiecki offline w aplikacji · A1–⁠C2",
     "headline": "Ucz się niemieckiego dzień po dniu, z jasnym planem.",
     "subline": "Pełny kurs niemieckiego offline od A1 do C2, ze znaczeniami po polsku.",
     "pause": "Zatrzymaj animację",
     "play": "Włącz animację",
     "facts": {
       "label": "Sogda w liczbach",
-      "steps": "12 etapów, A1 → C2",
+      "steps": "{steps, plural, one {# etap} few {# etapy} many {# etapów} other {# etapu}}, A1 → C2",
       "offline": "Offline, bez konta"
     },
     "card": {
@@ -59,7 +59,7 @@
     },
     "revise": {
       "title": "Powtórz to, co czeka",
-      "body": "Najpierw wracają słowa, które zaraz wypadłyby ci z pamięci. Posłuchaj, pomyśl o znaczeniu, potem odkryj."
+      "body": "Najpierw wracają słowa, które zaraz wypadłyby ci z pamięci. Posłuchaj, pomyśl o znaczeniu, potem odsłoń."
     },
     "learn": {
       "title": "Naucz się kilku nowych słów",
@@ -74,14 +74,14 @@
       "body": "Zdania do ćwiczeń tylko ze słów, które już znasz. Dotknij dowolnego słowa, żeby zobaczyć znaczenie."
     },
     "done": {
-      "title": "Tag geschafft! 🎉",
+      "title": "Tag geschafft! Dzień zaliczony 🎉",
       "body": "Na dziś wszystko. Plan na jutro już czeka."
     }
   },
   "memory": {
     "eyebrow": "Pamięta za ciebie",
-    "title": "Każde słowo wraca tuż przed tym, zanim wypadnie ci z pamięci.",
-    "body": "Sogda planuje każde słowo metodą FSRS, nowoczesną metodą powtórek w odstępach. Za każdym razem, gdy pamiętasz słowo, przerwa do następnej powtórki rośnie: dzień, potem trzy, potem osiem, potem trzy tygodnie. Twoje minuty idą na słowa, które zaraz wypadłyby ci z pamięci.",
+    "title": "Każde słowo wraca tuż zanim wypadnie ci z pamięci.",
+    "body": "Sogda planuje każde słowo według FSRS, nowoczesnej metody powtórek rozłożonych w czasie. Za każdym razem, gdy przypomnisz sobie słowo, przerwa do następnej powtórki rośnie: dzień, potem trzy, potem osiem, potem trzy tygodnie. Czas poświęcasz słowom, które zaraz wypadłyby ci z pamięci.",
     "chart": "Krzywa zapominania: pamięć nowego słowa słabnie, każda powtórka przywraca ją w pełni, a po każdej słabnie wolniej. Powtórki przychodzą po 1 dniu, 3 dniach, 8 dniach i 21 dniach.",
     "axisMemory": "Pamięć",
     "axisTime": "Czas",
@@ -98,8 +98,8 @@
       "grammar": "{topics, plural, one {# temat gramatyczny} few {# tematy gramatyczne} many {# tematów gramatycznych} other {# tematu gramatycznego}}",
       "exams": "Trzy egzaminy próbne na każdy etap"
     },
-    "counter": "słów na drodze",
-    "placement": "Znasz już trochę niemieckiego? Krótki test poziomu zacznie od właściwego etapu.",
+    "counter": "słów po drodze",
+    "placement": "Znasz już trochę niemieckiego? Krótki test poziomu dobierze właściwy etap.",
     "road": "Kurs jako droga z {steps, plural, one {# stacją} other {# stacjami}}, od A1.1 do C2.2, przez poziomy A1 Anfänger, A2 Grundstufe, B1 Mittelstufe, B2, C1 i C2."
   },
   "practice": {
@@ -112,10 +112,10 @@
   },
   "features": {
     "eyebrow": "I cała reszta",
-    "title": "Zrobiona z myślą o prawdziwym dniu ucznia.",
+    "title": "Z myślą o prawdziwej codzienności nauki.",
     "offline": {
       "title": "Zawsze offline",
-      "body": "Bez zasięgu: działa w U-Bahnie i w samolocie."
+      "body": "Bez zasięgu: działa w metrze i w samolocie."
     },
     "private": {
       "title": "Prywatność od początku",
@@ -147,10 +147,10 @@
     }
   },
   "looks": {
-    "eyebrow": "Trzy wyglądy",
-    "title": "Jasny, ciemny lub szklany, i czytelny.",
+    "eyebrow": "Trzy motywy",
+    "title": "Jasny, ciemny albo szklany — zawsze czytelny.",
     "body": "Wybierz wygląd, który ci odpowiada. Tekst można powiększyć do 200 %, a Sogda działa z czytnikiem ekranu twojego telefonu.",
-    "legend": "Wygląd",
+    "legend": "Motyw",
     "light": "Jasny",
     "dark": "Ciemny",
     "glass": "Szklany",
@@ -219,6 +219,61 @@
   "page": {
     "breadcrumb": "Jesteś tutaj",
     "related": "Więcej o Sogdzie"
+  },
+  "levelPages": {
+    "title": "Niemiecki {step}: {words, plural, one {# słowo} few {# słowa} many {# słów} other {# słowa}} i {topics, plural, one {# temat gramatyczny} few {# tematy gramatyczne} many {# tematów gramatycznych} other {# tematu gramatycznego}} | Sogda",
+    "description": "CEFR {level}, etap {step} kursu niemieckiego offline Sogda: {words, plural, one {# słowo} few {# słowa} many {# słów} other {# słowa}} ze znaczeniami po polsku, {topics, plural, one {# temat gramatyczny} few {# tematy gramatyczne} many {# tematów gramatycznych} other {# tematu gramatycznego}}, egzaminy próbne i przykładowe słowa.",
+    "name": "Niemiecki {step}",
+    "eyebrow": "CEFR {level} · etap {ord, number} z {steps, number}",
+    "h1": "Niemiecki {step}: słowa, gramatyka i egzaminy próbne",
+    "answer": "Etap {step} w Sogdzie to {words, plural, one {# niemieckie słowo} few {# niemieckie słowa} many {# niemieckich słów} other {# niemieckiego słowa}} i {topics, plural, one {# temat gramatyczny} few {# tematy gramatyczne} many {# tematów gramatycznych} other {# tematu gramatycznego}}, {half, select, first {pierwsza} other {druga}} połowa poziomu {level} według CEFR. Kończy się {mocksPerStep, plural, one {# egzaminem próbnym} other {# egzaminami próbnymi}}: każdy ma {questions, plural, one {# pytanie} few {# pytania} many {# pytań} other {# pytania}} oraz zadanie pisemne i ustne, ułożone ze słów i gramatyki tego etapu.",
+    "levelHeading": "Co oznacza poziom {level}",
+    "cefr": {
+      "A1": "Na poziomie A1 rozumiesz i używasz znanych, codziennych wyrażeń i bardzo prostych zwrotów. Potrafisz się przedstawić, zadawać proste pytania i odpowiadać na nie o to, gdzie mieszkasz, kogo znasz i co masz, jeśli rozmówca mówi powoli i wyraźnie.",
+      "A2": "Na poziomie A2 rozumiesz zdania i częste wyrażenia o sprawach ważnych na co dzień: rodzina, zakupy, okolica, praca. Radzisz sobie w prostych, rutynowych sytuacjach, które wymagają bezpośredniej wymiany informacji.",
+      "B1": "Na poziomie B1 rozumiesz główne myśli jasnych wypowiedzi w standardowym języku o znanych sprawach z pracy, nauki i czasu wolnego. Radzisz sobie w większości sytuacji w podróży i potrafisz opisać doświadczenia, wydarzenia, nadzieje i plany, krótko je uzasadniając.",
+      "B2": "Na poziomie B2 rozumiesz główne myśli złożonych tekstów na tematy konkretne i abstrakcyjne. Potrafisz rozmawiać z rodzimymi użytkownikami języka na tyle płynnie i spontanicznie, że rozmowa przebiega bez wysiłku dla obu stron, i pisać jasne, szczegółowe teksty, rozważając argumenty za i przeciw.",
+      "C1": "Na poziomie C1 rozumiesz wiele trudnych, dłuższych tekstów i dostrzegasz ukryte znaczenia. Wypowiadasz się płynnie i spontanicznie, bez szukania słów, i elastycznie używasz języka w życiu towarzyskim, na studiach i w pracy.",
+      "C2": "Na poziomie C2 rozumiesz praktycznie wszystko, co słyszysz i czytasz. Potrafisz streszczać informacje z różnych źródeł mówionych i pisanych oraz wyrażać się spontanicznie, bardzo płynnie i precyzyjnie, rozróżniając subtelne odcienie znaczeń."
+    },
+    "cefrNote": "To poziomy Europejskiego systemu opisu kształcenia językowego (CEFR), według których są ułożone egzaminy Goethe-Zertifikat i telc. Słowa i gramatyka każdego etapu to wybór Sogdy dla danego poziomu.",
+    "grammarHeading": "Gramatyka etapu {step}: {topics, plural, one {# temat} few {# tematy} many {# tematów} other {# tematu}}",
+    "examHeading": "Egzaminy próbne",
+    "examBody": "Każdy egzamin próbny etapu {step} ma {questions, plural, one {# pytanie} few {# pytania} many {# pytań} other {# pytania}} i dwa zadania, razem {points, plural, one {# punkt} few {# punkty} many {# punktów} other {# punktu}}, z wynikiem dla każdej części. Tak jak prawdziwe egzaminy, sprawdzają słuchanie, pisanie i mówienie, a do tego słownictwo i gramatykę; nie ma części z czytaniem. Są tworzone ze słów i gramatyki etapu — to nie są oficjalne arkusze Goethe ani telc.",
+    "items": "{name}: {n, plural, one {# pytanie} few {# pytania} many {# pytań} other {# pytania}}",
+    "writing": "{name}: tekst z co najmniej {words, plural, one {# słowa} other {# słów}}",
+    "speaking": "{name}: do {seconds, plural, one {# sekundy} other {# sekund}}",
+    "section": {
+      "vocabulary": "Słownictwo",
+      "reverse": "Odwrotnie (ze znaczenia na niemiecki)",
+      "articles": "Rodzajniki",
+      "wordForms": "Formy wyrazów",
+      "gapFill": "Luki",
+      "grammar": "Gramatyka",
+      "listening": "Słuchanie",
+      "writing": "Pisanie",
+      "speaking": "Mówienie"
+    },
+    "wordsHeading": "Słowa etapu {step}: przykłady",
+    "wordsBody": "Przykłady z etapu {step}: każde słowo z rodzajnikiem i formami, jeśli je ma, znaczeniem po polsku i wskazówką wymowy. Aplikacja ma wszystkie {words, plural, one {# słowo} few {# słowa} many {# słów} other {# słowa}}, z przykładowymi zdaniami.",
+    "faq": {
+      "official": {
+        "q": "Czy to oficjalna lista słów Goethe lub telc dla poziomu {level}?",
+        "a": "Nie. To słowa etapu {step} w Sogdzie, dobrane dla poziomu {level}. Egzaminy próbne, tak jak prawdziwe, sprawdzają słuchanie, pisanie i mówienie, a do tego słownictwo i gramatykę, ale są tworzone z materiału kursu — to nie są oficjalne arkusze Goethe ani telc."
+      },
+      "count": {
+        "q": "Ile słów ma Sogda na poziomie {level}?",
+        "a": "{levelWords, plural, one {# słowo} few {# słowa} many {# słów} other {# słowa}} i {levelTopics, plural, one {# temat gramatyczny} few {# tematy gramatyczne} many {# tematów gramatycznych} other {# tematu gramatycznego}} w dwóch etapach: {first} i {second}."
+      },
+      "next": {
+        "q": "Co po etapie {step}?",
+        "a": "Etap {next}: jeszcze {nextWords, plural, one {# słowo} few {# słowa} many {# słów} other {# słowa}}. Znasz już trochę niemieckiego? Krótki test poziomu dobierze właściwy etap."
+      },
+      "last": {
+        "q": "Co po etapie {step}?",
+        "a": "{step} to ostatni etap kursu. Poznane słowa dalej wracają do powtórki — tuż zanim wypadną ci z pamięci."
+      }
+    }
   },
   "pages": {
     "mock-exams": {

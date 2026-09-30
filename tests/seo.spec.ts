@@ -2,17 +2,29 @@ import { expect, test } from '@playwright/test';
 import { readFileSync } from 'node:fs';
 import { routing } from '../i18n/routing';
 
+const facts = JSON.parse(readFileSync('content/facts.json', 'utf8'));
+
+type GraphNode = Record<string, unknown> & {
+  '@type': string;
+  image?: string;
+  logo?: { url: string };
+  featureList?: string[];
+  screenshot?: string[];
+  mainEntity?: { name: string }[];
+};
+
 // BRIEF §9.
 test('sitemap.xml: the chooser and every home page, with alternates, x-default and lastmod (#58, #63)', async ({
   request,
 }) => {
   const xml = await (await request.get('/sitemap.xml')).text();
   const locs = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
-  // The chooser and the home pages first; the content pages (#68) follow.
-  expect(locs.slice(0, routing.locales.length + 1)).toEqual([
+  // The chooser and the home pages first; the content pages (#68, #72) follow.
+  const homes = [
     'https://www.sogda.de',
     ...routing.locales.map((l) => `https://www.sogda.de/${l}`),
-  ]);
+  ];
+  expect(locs.slice(0, homes.length)).toEqual(homes);
   for (const locale of routing.locales) expect(xml).toContain(`hreflang="${locale}"`);
   expect(xml).toContain('hreflang="x-default" href="https://www.sogda.de"');
   const lastmods = [...xml.matchAll(/<lastmod>([^<]+)<\/lastmod>/g)].map((m) => m[1]);
@@ -102,15 +114,54 @@ for (const locale of routing.locales) {
     expect([bytes.readUInt32BE(16), bytes.readUInt32BE(20)]).toEqual([1200, 630]);
   });
 
-  test(`/${locale}: JSON-LD MobileApplication, with no rating or price`, async ({ page }) => {
+  test(`/${locale}: one JSON-LD graph, publisher → site → app, and the FAQ it shows (#60)`, async ({
+    page,
+    request,
+  }) => {
     await page.goto(`/${locale}`);
     const raw = await page.locator('script[type="application/ld+json"]').textContent();
-    const data = JSON.parse(raw!);
-    expect(data['@type']).toBe('MobileApplication');
-    expect(data.name).toBe('Sogda');
-    expect(data.operatingSystem).toBe('ANDROID');
-    expect(data.applicationCategory).toBe('EducationalApplication');
-    expect(data).not.toHaveProperty('aggregateRating');
-    expect(data).not.toHaveProperty('offers');
+    const graph = JSON.parse(raw!)['@graph'] as GraphNode[];
+    const node = (type: string) => graph.find((n) => n['@type'] === type)!;
+    const url = 'https://www.sogda.de';
+    expect(graph.map((n) => n['@type'])).toEqual([
+      'Organization',
+      'WebSite',
+      'MobileApplication',
+      'FAQPage',
+    ]);
+    expect(node('Organization')).toMatchObject({ '@id': `${url}/#org`, name: 'Sogda', url });
+    expect(node('WebSite')).toMatchObject({
+      '@id': `${url}/#website`,
+      publisher: { '@id': `${url}/#org` },
+    });
+    const app = node('MobileApplication');
+    expect(app).toMatchObject({
+      '@id': `${url}/#app`,
+      name: 'Sogda',
+      operatingSystem: 'ANDROID',
+      applicationCategory: 'EducationalApplication',
+      inLanguage: locale,
+      softwareVersion: facts.app.version,
+      publisher: { '@id': `${url}/#org` },
+    });
+    // The facts in the page's language and digits (#61), none unfilled.
+    expect(app.featureList!.join(' ')).toContain(
+      new Intl.NumberFormat(locale).format(facts.totals.words),
+    );
+    expect(JSON.stringify(graph)).not.toMatch(/\{(words|topics|steps|mocks)/);
+    // No rating or price until they're real (BRIEF).
+    for (const n of graph) {
+      expect(n).not.toHaveProperty('aggregateRating');
+      expect(n).not.toHaveProperty('offers');
+    }
+    // Every image it names is served.
+    for (const img of [app.image!, node('Organization').logo!.url, ...app.screenshot!]) {
+      expect((await request.get(img.replace(url, ''))).ok(), img).toBe(true);
+    }
+    // The FAQ is the one on the page, question for question.
+    const faq = node('FAQPage');
+    expect(faq['@id']).toBe(`${url}/${locale}#faq`);
+    const shown = (await page.locator('#faq summary').allTextContents()).map((q) => q.trim());
+    expect(faq.mainEntity!.map((q) => q.name)).toEqual(shown);
   });
 }

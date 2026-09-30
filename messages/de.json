@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Sogda — Deutsch offline lernen, von A1 bis C2",
-    "description": "Deutsch lernen, ein klarer Tag nach dem anderen: ein vollständiger Offline-Deutschkurs von A1 bis C2, mit Bedeutungen auf Englisch, Bangla, Russisch oder Polnisch."
+    "title": "Sogda: Deutsch offline lernen · App A1–C2 mit Probeprüfungen",
+    "description": "Deutsch lernen – Tag für Tag, mit klarem Plan: der komplette Offline-Kurs von A1 bis C2, mit Bedeutungen auf Englisch, Bangla, Russisch oder Polnisch."
   },
   "header": {
     "skip": "Zum Inhalt springen",
@@ -36,14 +36,14 @@
     "copyright": "© {year} Sogda"
   },
   "hero": {
-    "kicker": "Der Weg zu einer neuen Sprache",
-    "headline": "Deutsch lernen, ein klarer Tag nach dem anderen.",
+    "kicker": "Deutschkurs offline als App · A1 bis C2",
+    "headline": "Deutsch lernen – Tag für Tag, mit klarem Plan.",
     "subline": "Ein vollständiger Offline-Deutschkurs von A1 bis C2, mit Bedeutungen auf Englisch, Bangla, Russisch oder Polnisch.",
     "pause": "Animation anhalten",
     "play": "Animation abspielen",
     "facts": {
       "label": "Sogda in Zahlen",
-      "steps": "12 Stufen, A1 → C2",
+      "steps": "{steps, number} Stufen, A1 → C2",
       "offline": "Offline, ohne Konto"
     },
     "card": {
@@ -81,7 +81,7 @@
   "memory": {
     "eyebrow": "Sogda merkt es sich für dich",
     "title": "Jedes Wort kommt wieder, kurz bevor du es vergessen würdest.",
-    "body": "Sogda plant jedes Wort mit FSRS, einer modernen Methode der verteilten Wiederholung. Jedes Mal, wenn du ein Wort weißt, wird die Pause bis zur nächsten Wiederholung länger: ein Tag, dann drei, dann acht, dann drei Wochen. Deine Minuten gehen an die Wörter, die du gerade vergessen würdest.",
+    "body": "Sogda plant jedes Wort mit FSRS, einer modernen Methode der verteilten Wiederholung. Jedes Mal, wenn du dich an ein Wort erinnerst, wird die Pause bis zur nächsten Wiederholung länger: ein Tag, dann drei, dann acht, dann drei Wochen. Deine Zeit fließt in die Wörter, die du sonst gleich vergessen würdest.",
     "chart": "Eine Vergessenskurve: Die Erinnerung an ein neues Wort verblasst, jede Wiederholung holt sie ganz zurück, und danach verblasst sie jedes Mal langsamer. Die Wiederholungen kommen nach 1 Tag, 3 Tagen, 8 Tagen und 21 Tagen.",
     "axisMemory": "Erinnerung",
     "axisTime": "Zeit",
@@ -104,7 +104,7 @@
   },
   "practice": {
     "eyebrow": "Üben und dich selbst prüfen",
-    "title": "Quizze, und eine Probeprüfung, wenn du bereit bist.",
+    "title": "Quizze – und eine Probeprüfung, wenn du so weit bist.",
     "quizzes": "Quizze in jede Richtung: Deutsch in deine Sprachen und zurück, Artikel, Hören und Wortformen.",
     "exams": "Drei Probeprüfungen für jede Stufe, mit Wortschatz, Grammatik, Hören, Schreiben und Sprechen, und einem Ergebnis für jeden Teil.",
     "carousel": "Quiz- und Prüfungsbildschirme",
@@ -148,7 +148,7 @@
   },
   "looks": {
     "eyebrow": "Drei Designs",
-    "title": "Hell, dunkel oder Glas, und gut lesbar.",
+    "title": "Hell, dunkel oder Glas – und immer gut lesbar.",
     "body": "Wähle das Design, das dir gefällt. Text geht bis 200 %, und Sogda funktioniert mit dem Screenreader deines Handys.",
     "legend": "Design",
     "light": "Hell",
@@ -205,7 +205,7 @@
     }
   },
   "cta": {
-    "title": "Starte heute deinen Weg zum Deutsch."
+    "title": "Starte heute deinen Weg ins Deutsche."
   },
   "legal": {
     "impressum": "Impressum",
@@ -272,6 +272,147 @@
         "reading": {
           "q": "Gibt es einen Leseteil?",
           "a": "Nein. Die Prüfungen in Sogda haben Wortschatz, Grammatik, Hören, Schreiben und Sprechen. Übe das Lesen mit längeren Texten und den Modellsätzen der Prüfungen."
+        }
+      }
+    },
+    "sogda-vs-anki": {
+      "title": "Sogda oder Anki für Deutsch: fertiger Kurs oder eigene Stapel",
+      "description": "Sogda oder Anki zum Deutschlernen? Beide wiederholen verteilt. Anki lernt deine eigenen oder geladenen Stapel; Sogda ist ein fertiger Kurs A1–C2, offline.",
+      "name": "Sogda oder Anki",
+      "eyebrow": "Vergleich",
+      "h1": "Sogda oder Anki für Deutsch?",
+      "answer": "Anki ist eine Karteikarten-App: Du erstellst eigene Stapel oder lädst Stapel, die andere geteilt haben. Sogda ist ein fertiger Deutschkurs von A1 bis C2 mit {words, number} Wörtern, {topics, number} Grammatikthemen und {mocksPerStep, number} Probeprüfungen für jede Stufe, und beide planen deine Wiederholungen mit verteilter Wiederholung.",
+      "sections": {
+        "same": {
+          "heading": "Was beide gemeinsam haben",
+          "body": {
+            "p1": "Beide zeigen eine Karte wieder, kurz bevor du sie vergessen würdest. Ankis Handbuch beschreibt FSRS, den Free Spaced Repetition Scheduler, als Alternative zum älteren SM-2-Algorithmus, die man einschalten kann (ab Anki 23.10 und AnkiDroid 2.17). Sogda plant jedes Wort von Anfang an mit FSRS."
+          }
+        },
+        "anki": {
+          "heading": "Nimm Anki, wenn …",
+          "body": {
+            "p1": "Anki passt besser, wenn die Karten deine eigenen sein sollen:"
+          },
+          "list": {
+            "a": "du eigene Karten erstellen willst, für Deutsch oder für alles andere;",
+            "b": "du schon einen Stapel hast, dem du vertraust, oder einen aus Ankis geteilten Stapeln willst;",
+            "c": "du jede Einstellung der Planung selbst festlegen willst;",
+            "d": "du auch am Computer lernst: Anki läuft unter Windows, macOS und Linux, dazu AnkiDroid auf Android und AnkiMobile auf dem iPhone."
+          }
+        },
+        "sogda": {
+          "heading": "Nimm Sogda, wenn …",
+          "body": {
+            "p1": "Sogda passt besser, wenn du den Kurs willst, nicht die Karten:"
+          },
+          "list": {
+            "a": "du den ganzen Kurs fertig willst, vom ersten „Hallo“ bis C2: {words, number} Wörter, jedes mit Beispielen, seinem Artikel und seinen Formen, wo es welche hat, und {topics, number} Grammatikthemen, jedes mit Regel und kurzer Übung;",
+            "b": "du lieber einen Plan für jeden Tag hast als Stapel, die du verwalten musst;",
+            "c": "du die Bedeutungen und eine Aussprachehilfe auf Englisch willst, oder in bengalischer, russischer oder polnischer Schrift;",
+            "d": "du dich auf eine Prüfung vorbereitest: {mocksPerStep, number} Probeprüfungen für jede Stufe, mit Hören, Schreiben und Sprechen, dazu Wortschatz und Grammatik;",
+            "e": "du alles komplett offline und ohne Konto willst, auf Android."
+          }
+        },
+        "both": {
+          "heading": "Oder beides",
+          "body": {
+            "p1": "Nichts spricht dagegen: Mach den Kurs in Sogda und führe einen Anki-Stapel für die Wörter aus deiner Arbeit oder deinem Studium, die kein Kurs hat."
+          }
+        },
+        "sources": {
+          "heading": "Woher diese Angaben stammen",
+          "body": {
+            "p1": "Anki: sein eigenes Handbuch auf docs.ankiweb.net (Getting started; Deck options, zu FSRS), gelesen am 1. Oktober 2026. Sogda: die Kursdaten der App. Anki wird hier nur zur Beschreibung genannt; Sogda hat keine Verbindung dazu."
+          }
+        }
+      },
+      "faq": {
+        "algorithm": {
+          "q": "Plant Sogda wie Anki?",
+          "a": "Sogda nutzt FSRS, das Anki ab Version 23.10 als Option anbietet; du schaltest es in Ankis Stapeloptionen ein. Bis dahin läuft Ankis älterer SM-2-Planer."
+        },
+        "import": {
+          "q": "Kann ich meinen Anki-Stapel in Sogda importieren?",
+          "a": "Nein. Sogda lehrt seinen eigenen Kurs, deine Anki-Stapel bleiben in Anki."
+        },
+        "exam": {
+          "q": "Was ist besser für die Goethe- oder telc-Prüfung?",
+          "a": "Bei Anki hängt es vom Stapel ab. Die Stufen von Sogda sind auf die Prüfungen ausgerichtet, mit {mocksPerStep, number} Probeprüfungen für jede Stufe, die Hören, Schreiben und Sprechen prüfen, dazu Wortschatz und Grammatik. Es sind keine offiziellen Prüfungen, und einen Leseteil gibt es nicht."
+        },
+        "iphone": {
+          "q": "Gibt es Sogda für das iPhone?",
+          "a": "Noch nicht: Sogda gibt es für Android ({android} oder neuer), das iPhone folgt bald."
+        }
+      }
+    },
+    "sogda-vs-duolingo": {
+      "title": "Sogda oder Duolingo für Deutsch: wie weit, wie tief, wie offline",
+      "description": "Sogda oder Duolingo für Deutsch? Duolingos Deutschkurs reicht bis B2; Sogda geht von A1 bis C2, mit Grammatik und Probeprüfungen, offline, ohne Konto.",
+      "name": "Sogda oder Duolingo",
+      "eyebrow": "Vergleich",
+      "h1": "Sogda oder Duolingo für Deutsch?",
+      "answer": "Duolingo lehrt viele Sprachen, und sein Deutschkurs reicht bis B2 auf der GER-Skala, wie Duolingos Blog im April 2026 schrieb. Sogda lehrt nur Deutsch, von A1 bis C2 in {steps, number} Stufen, mit {words, number} Wörtern, {topics, number} Grammatikthemen und {mocksPerStep, number} Probeprüfungen für jede Stufe, komplett offline und ohne Konto.",
+      "sections": {
+        "levels": {
+          "heading": "Wie weit jede reicht",
+          "body": {
+            "p1": "Der GER hat sechs Niveaus, von A1 bis C2. Duolingos Deutschkurs reicht bis B2, der Stufe der „selbstständigen Sprachverwendung“. Die {steps, number} Stufen von Sogda gehen weiter bis C1 und C2, den Niveaus des Goethe-Zertifikats C1 und C2."
+          }
+        },
+        "duolingo": {
+          "heading": "Nimm Duolingo, wenn …",
+          "body": {
+            "p1": "Duolingo passt besser, wenn Deutsch eine von mehreren Sprachen ist:"
+          },
+          "list": {
+            "a": "du in derselben App auch andere Sprachen lernen willst;",
+            "b": "dir B2 in Deutsch reicht;",
+            "c": "du heute ein iPhone nutzt: Sogda gibt es vorerst nur für Android."
+          }
+        },
+        "sogda": {
+          "heading": "Nimm Sogda, wenn …",
+          "body": {
+            "p1": "Sogda passt besser, wenn Deutsch das Ziel ist:"
+          },
+          "list": {
+            "a": "du C1 oder C2 anstrebst, oder eine Goethe- oder telc-Prüfung auf irgendeinem Niveau: {mocksPerStep, number} Probeprüfungen für jede Stufe;",
+            "b": "du Grammatik als Regeln willst, die du nachschlagen kannst: {topics, number} Themen, jedes mit Regel und kurzer Übung;",
+            "c": "du jedes Wort mit Artikel und Formen, wo es welche hat, Beispielen und einer Aussprachehilfe in der Schrift deiner Bedeutungssprache willst;",
+            "d": "du von Bangla, Russisch oder Polnisch aus lernst und die Bedeutungen in deiner Sprache willst;",
+            "e": "du alles komplett offline willst, ohne ein Konto anzulegen."
+          }
+        },
+        "both": {
+          "heading": "Oder beides",
+          "body": {
+            "p1": "Nichts spricht dagegen: Viele Lernende nutzen eine App für Abwechslung und eine für die Tiefe. Der Plan von Sogda dauert so lange, wie dein Tagesziel sagt, und passt so neben eine andere App."
+          }
+        },
+        "sources": {
+          "heading": "Woher diese Angaben stammen",
+          "body": {
+            "p1": "Duolingo: sein Blogbeitrag „Duolingo Course Content Can Take You to B2 Proficiency“ vom 22. April 2026, gelesen am 1. Oktober 2026. Sogda: die Kursdaten der App. Duolingo wird hier nur zur Beschreibung genannt; Sogda hat keine Verbindung dazu."
+          }
+        }
+      },
+      "faq": {
+        "levels": {
+          "q": "Wie weit reicht Duolingos Deutschkurs?",
+          "a": "Bis B2 auf der GER-Skala, laut Duolingos Blog vom April 2026. Sogda geht weiter bis C2."
+        },
+        "exam": {
+          "q": "Was ist besser für die Goethe- oder telc-Prüfung?",
+          "a": "Die Stufen von Sogda sind auf die Prüfungen ausgerichtet, mit {mocksPerStep, number} Probeprüfungen für jede Stufe, die Hören, Schreiben und Sprechen prüfen, dazu Wortschatz und Grammatik. Es sind keine offiziellen Prüfungen, und einen Leseteil gibt es nicht."
+        },
+        "offline": {
+          "q": "Funktioniert Sogda offline?",
+          "a": "Ja, komplett und ohne Konto. Nur die optionale natürliche Stimme ist ein Download, einmal, über WLAN."
+        },
+        "switch": {
+          "q": "Kann ich meinen Duolingo-Fortschritt zu Sogda mitnehmen?",
+          "a": "Nein, aber ein kurzer Einstufungstest bringt dich zur richtigen Stufe."
         }
       }
     }
