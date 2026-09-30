@@ -1,7 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import { factArgs } from '@/i18n/facts';
 import { routing } from '@/i18n/routing';
-import type { PageContent } from '@/lib/page';
+import { contentFromMessages, type PageContent } from '@/lib/page';
 
 // Every content page (MASTER-PLAN W3, #68): its URL segment, the locales it
 // exists in (hreflang and the sitemap cover only these), and its copy per
