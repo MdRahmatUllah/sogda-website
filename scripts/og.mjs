@@ -7,6 +7,7 @@
 import { chromium } from '@playwright/test';
 import { mkdirSync, readFileSync, readdirSync } from 'node:fs';
 
+const facts = JSON.parse(readFileSync('content/facts.json', 'utf8'));
 const b64 = (path) => readFileSync(path).toString('base64');
 const inter = b64('app/fonts/inter-latin.woff2');
 const cyrillic = b64('app/fonts/inter-cyrillic.woff2');
@@ -16,7 +17,7 @@ const today = JSON.parse(readFileSync('content/screens.generated.json', 'utf8'))
 const screen = b64(`public/screens/${today.base}-720.${today.hash}.webp`);
 const mark = readFileSync('public/brand/icon-road-full.svg', 'utf8').replace(
   'width="108" height="108"',
-  'width="150" height="150"',
+  'width="120" height="120"',
 );
 
 const html = (kicker, headline) => `<!doctype html><html><head><meta charset="utf-8"><style>
@@ -27,7 +28,7 @@ const html = (kicker, headline) => `<!doctype html><html><head><meta charset="ut
 body{width:1200px;height:630px;background:#00C2B2;color:#15121F;font-family:InterCyr,Inter,Bengali,sans-serif;overflow:hidden;position:relative}
 .text{position:absolute;left:72px;top:72px;width:640px}
 .mark svg{border-radius:26px;display:block}
-.kicker{margin-top:36px;font-size:30px;font-weight:600}
+.kicker{margin-top:24px;font-size:30px;font-weight:600}
 h1{margin-top:12px;font-size:64px;line-height:1.05;font-weight:800;letter-spacing:-0.025em;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
 .url{position:absolute;left:72px;bottom:56px;font-size:26px;font-weight:700}
 .phone{position:absolute;right:96px;top:64px;width:300px;padding:12px;background:#15121F;border-radius:44px;box-shadow:10px 10px 0 #FFC61A;transform:rotate(4deg)}
@@ -47,15 +48,37 @@ const card = async (kicker, headline, path) => {
   await page.screenshot({ path });
   console.log(`og: ${path}`);
 };
+// `pnpm og levels` renders only the level pages' cards, so the others' PNGs
+// aren't rewritten byte for byte.
+const onlyLevels = process.argv[2] === 'levels';
 for (const file of readdirSync('messages')) {
   const locale = file.replace(/\.json$/, '');
   const m = JSON.parse(readFileSync(`messages/${file}`, 'utf8'));
-  await card(m.hero.kicker, m.hero.headline, `public/og/${locale}.png`);
-  // Each content page kept in messages (`pages.<slug>`, #68) gets its own
-  // card; lib/page.ts uses it when it's there, else the locale's.
-  for (const [slug, p] of Object.entries(m.pages ?? {})) {
-    mkdirSync(`public/og/${locale}`, { recursive: true });
-    await card(p.eyebrow ?? p.name, p.h1, `public/og/${locale}/${slug}.png`);
+  if (!onlyLevels) {
+    await card(m.hero.kicker, m.hero.headline, `public/og/${locale}.png`);
+    // Each content page kept in messages (`pages.<slug>`, #68) gets its own
+    // card; lib/page.ts uses it when it's there, else the locale's.
+    for (const [slug, p] of Object.entries(m.pages ?? {})) {
+      mkdirSync(`public/og/${locale}`, { recursive: true });
+      await card(p.eyebrow ?? p.name, p.h1, `public/og/${locale}/${slug}.png`);
+    }
+  }
+  // The level pages (#72): a card per step, from the `levelPages` messages and
+  // content/facts.json. Their eyebrow and H1 take only simple arguments. The
+  // slug is content/levels.ts's levelSlug (A1.1 → a1-1).
+  if (m.levelPages) {
+    const n = (x) => new Intl.NumberFormat(locale).format(x);
+    for (const s of facts.steps) {
+      const values = { step: s.code, level: s.level, ord: n(s.ord), steps: n(facts.totals.steps) };
+      const fill = (text) => text.replace(/\{(\w+)(?:, number)?\}/g, (_, key) => values[key]);
+      const slug = s.code.toLowerCase().replace('.', '-');
+      mkdirSync(`public/og/${locale}`, { recursive: true });
+      await card(
+        fill(m.levelPages.eyebrow),
+        fill(m.levelPages.h1),
+        `public/og/${locale}/${slug}.png`,
+      );
+    }
   }
 }
 await browser.close();
