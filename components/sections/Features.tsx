@@ -166,7 +166,7 @@ export async function Looks({ locale }: { locale: string }) {
 // its pronunciation guide, as the app's A1 workbook has it (English and Bangla
 // are in content.db; Russian and Polish ship with app #1100). The lines arrive
 // one after another, once.
-const TERMIN = [
+export const TERMIN = [
   { lang: 'en', name: 'English', meaning: 'appointment', say: 'tair-MEEN' },
   { lang: 'bn', name: 'বাংলা', meaning: 'অ্যাপয়েন্টমেন্ট / নির্ধারিত সময়', say: 'টের্মিন' },
   { lang: 'ru', name: 'Русский', meaning: 'запись (к врачу) / встреча', say: 'тэрмИн' },

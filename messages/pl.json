@@ -23,7 +23,9 @@
     "googlePlay": "Pobierz z Google Play",
     "googlePlaySoon": "Wkrótce w Google Play",
     "iphoneSoon": "Wkrótce na iPhone’a",
-    "qr": "Kod QR: zeskanuj go telefonem, żeby otworzyć Sogdę w Google Play"
+    "qr": "Kod QR: zeskanuj go telefonem, żeby otworzyć Sogdę w Google Play",
+    "notify": "Daj mi znać, gdy będzie dostępna",
+    "notifySubject": "Proszę o wiadomość, gdy Sogda będzie w Google Play"
   },
   "footer": {
     "impressum": "Impressum",
@@ -38,7 +40,15 @@
     "headline": "Ucz się niemieckiego dzień po dniu, z jasnym planem.",
     "subline": "Pełny kurs niemieckiego offline od A1 do C2, ze znaczeniami po polsku.",
     "pause": "Zatrzymaj animację",
-    "play": "Włącz animację"
+    "play": "Włącz animację",
+    "facts": {
+      "label": "Sogda w liczbach",
+      "steps": "12 etapów, A1 → C2",
+      "offline": "Offline, bez konta"
+    },
+    "card": {
+      "label": "Słowo z etapu A1.1 tak, jak pokazuje je Sogda, i dni, po których wraca"
+    }
   },
   "day": {
     "eyebrow": "Jak to działa",

@@ -23,7 +23,9 @@
     "googlePlay": "Get it on Google Play",
     "googlePlaySoon": "Coming soon to Google Play",
     "iphoneSoon": "Coming soon on iPhone",
-    "qr": "QR code: scan it with your phone to open Sogda on Google Play"
+    "qr": "QR code: scan it with your phone to open Sogda on Google Play",
+    "notify": "Tell me when it's out",
+    "notifySubject": "Tell me when Sogda is on Google Play"
   },
   "footer": {
     "impressum": "Impressum",
@@ -38,7 +40,15 @@
     "headline": "Learn German, one clear day at a time.",
     "subline": "A complete, offline German course from A1 to C2, with meanings in English, Bangla, Russian or Polish.",
     "pause": "Pause the animation",
-    "play": "Play the animation"
+    "play": "Play the animation",
+    "facts": {
+      "label": "Sogda in numbers",
+      "steps": "12 steps, A1 → C2",
+      "offline": "Offline, no account"
+    },
+    "card": {
+      "label": "A word from step A1.1, as Sogda shows it, and the days it comes back after"
+    }
   },
   "day": {
     "eyebrow": "How it works",
