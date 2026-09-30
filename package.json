@@ -18,7 +18,8 @@
     "sync:brand": "node scripts/sync-brand.mjs",
     "sync:screens": "node scripts/sync-screenshots.mjs",
     "check:launch": "node scripts/check-launch.mjs",
-    "og": "node scripts/og.mjs"
+    "og": "node scripts/og.mjs",
+    "verify:live": "node scripts/verify-live.mjs"
   },
   "dependencies": {
     "lucide-react": "1.48.0",
