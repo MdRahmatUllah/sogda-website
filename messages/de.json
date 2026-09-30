@@ -248,7 +248,7 @@
       "levels": {
         "heading": "Schreiben und Sprechen, Niveau für Niveau",
         "body": "Die Schreibaufgabe verlangt eine Mindestlänge, die Sprechaufgabe hat ein Zeitlimit, beides je nach Niveau. Jedes Niveau nennt die Prüfungen, um die seine Stufen aufgebaut sind:",
-        "item": "{level}: mindestens {words, number} Wörter schreiben, bis zu {seconds, number} Sekunden sprechen. Aufgebaut um {target}."
+        "item": "{level}: mindestens {words, number} Wörter schreiben, bis zu {seconds, number} Sekunden sprechen. Ausgerichtet auf {target}."
       },
       "compare": {
         "heading": "Im Vergleich mit den Goethe- und telc-Prüfungen",
