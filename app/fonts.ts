@@ -9,7 +9,8 @@ import localFont from 'next/font/local';
 //   locl mark mkmk case tnum frac sups.
 //   Noto Sans Bengali: wght 400-700, wdth pinned at 100; U+0964-0965,
 //   U+0980-09FE, U+200B-200D, U+25CC; every layout feature (Bangla shaping).
-// ponytail: Cyrillic isn't in the Inter subset yet; add it with the ru locale.
+//   Inter Cyrillic: the same axes and features, U+0400-045F, U+0490-0491,
+//   U+04B0-04B1, U+2116 (12 KB), a face of its own (below).
 export const inter = localFont({
   src: './fonts/inter-latin.woff2',
   variable: '--font-inter',
@@ -26,4 +27,18 @@ export const bengali = localFont({
   preload: false,
   adjustFontFallback: false,
   declarations: [{ prop: 'unicode-range', value: 'U+0964-0965, U+0980-09FE, U+200B-200D, U+25CC' }],
+});
+
+// Cyrillic, only where a page shows it (the Russian pages, an opened language
+// menu). It comes first in the stack (globals.css) and covers only Cyrillic,
+// so Latin text skips it, and Cyrillic never falls to the Latin face's Arial
+// fallback while it loads (Inter Latin has no Cyrillic glyphs to offer).
+export const interCyrillic = localFont({
+  src: './fonts/inter-cyrillic.woff2',
+  variable: '--font-inter-cyrillic',
+  weight: '400 800',
+  display: 'swap',
+  preload: false,
+  adjustFontFallback: false,
+  declarations: [{ prop: 'unicode-range', value: 'U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116' }],
 });

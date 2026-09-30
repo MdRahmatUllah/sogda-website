@@ -12,7 +12,9 @@
   --color-night: #13111d;
   --color-oat: #f3eadb;
 
-  --font-sans: var(--font-inter), var(--font-bengali), ui-sans-serif, system-ui, sans-serif;
+  --font-sans:
+    var(--font-inter-cyrillic), var(--font-inter), var(--font-bengali), ui-sans-serif, system-ui,
+    sans-serif;
 
   --radius-card: 1.25rem;
   --shadow-hard: 3px 3px 0 0 var(--shadow);

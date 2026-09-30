@@ -3,7 +3,7 @@ import { hasLocale } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import type { ReactNode } from 'react';
-import { bengali, inter } from '@/app/fonts';
+import { bengali, inter, interCyrillic } from '@/app/fonts';
 import { Footer } from '@/components/ui/Footer';
 import { Header } from '@/components/ui/Header';
 import { routing } from '@/i18n/routing';
@@ -81,7 +81,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <html
       lang={locale}
-      className={`${inter.variable} ${bengali.variable}`}
+      className={`${inter.variable} ${interCyrillic.variable} ${bengali.variable}`}
       suppressHydrationWarning
     >
       <head>

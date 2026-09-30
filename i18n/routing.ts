@@ -4,7 +4,7 @@ import { defineRouting } from 'next-intl/routing';
 // plus messages/<code>.json.
 export const routing = defineRouting({
   // The owner's order (2026-09-30): English, German, Polish, Russian, Bangla.
-  locales: ['en', 'de', 'pl', 'bn'],
+  locales: ['en', 'de', 'pl', 'ru', 'bn'],
   defaultLocale: 'en',
 });
 
