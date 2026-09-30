@@ -1,7 +1,7 @@
 import { ChevronDown, ChevronRight } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import { pagesIn, type PageEntry } from '@/content/pages';
-import { jsonLd, pageGraph } from '@/lib/graph';
+import { jsonLd, pageGraph, siteNodes } from '@/lib/graph';
 import { absolute, pagePath, type PageContent } from '@/lib/page';
 import { StoreBadges } from '@/components/ui/StoreBadges';
 
@@ -34,6 +34,8 @@ export async function ContentPage({
     ],
     faq: content.faq,
   });
+  // The shared nodes the page's own ones point at (#60).
+  graph['@graph'].unshift(...(await siteNodes(locale)));
   return (
     <main id="main" className="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(graph) }} />

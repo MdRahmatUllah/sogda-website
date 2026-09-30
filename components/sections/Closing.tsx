@@ -71,7 +71,7 @@ export async function Gallery({ locale }: { locale: string }) {
 
 // BRIEF §3.10: answers only from BRIEF §4. "Is it free?" waits for the owner
 // (BRIEF §10, 2). Native <details>: no JS, and the browser does the rest.
-const FAQ = ['internet', 'android', 'iphone', 'data', 'exams'] as const;
+export const FAQ = ['internet', 'android', 'iphone', 'data', 'exams'] as const;
 
 export async function Faq({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: 'faq' });
