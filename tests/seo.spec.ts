@@ -3,16 +3,19 @@ import { readFileSync } from 'node:fs';
 import { routing } from '../i18n/routing';
 
 // BRIEF §9.
-test('sitemap.xml lists every home page, with its alternates, x-default and lastmod (#58)', async ({
+test('sitemap.xml: the chooser and every home page, with alternates, x-default and lastmod (#58, #63)', async ({
   request,
 }) => {
   const xml = await (await request.get('/sitemap.xml')).text();
   const locs = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
-  expect(locs).toEqual(routing.locales.map((l) => `https://www.sogda.de/${l}`));
+  expect(locs).toEqual([
+    'https://www.sogda.de',
+    ...routing.locales.map((l) => `https://www.sogda.de/${l}`),
+  ]);
   for (const locale of routing.locales) expect(xml).toContain(`hreflang="${locale}"`);
-  expect(xml).toContain('hreflang="x-default" href="https://www.sogda.de/en"');
+  expect(xml).toContain('hreflang="x-default" href="https://www.sogda.de"');
   const lastmods = [...xml.matchAll(/<lastmod>([^<]+)<\/lastmod>/g)].map((m) => m[1]);
-  expect(lastmods).toHaveLength(routing.locales.length);
+  expect(lastmods).toHaveLength(routing.locales.length + 1);
   for (const d of lastmods) expect(Date.parse(d!)).not.toBeNaN();
 });
 
@@ -67,6 +70,11 @@ for (const locale of routing.locales) {
       const canonical = `https://www.sogda.de/de/${path}`;
       await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', canonical);
       expect(await meta('property="og:url"')).toBe(canonical);
+      // The page's openGraph replaces the layout's: the card and the locale
+      // must be there all the same.
+      expect(await meta('property="og:image"')).toBe(`https://www.sogda.de/og/${locale}.png`);
+      expect(await meta('property="og:locale"')).toBeTruthy();
+      expect(await meta('name="twitter:card"')).toBe('summary_large_image');
       // A canonical elsewhere with hreflang here would contradict it.
       await expect(page.locator('link[rel="alternate"][hreflang]')).toHaveCount(0);
     });

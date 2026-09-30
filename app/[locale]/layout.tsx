@@ -6,18 +6,10 @@ import type { ReactNode } from 'react';
 import { bengali, inter, interCyrillic } from '@/app/fonts';
 import { Footer } from '@/components/ui/Footer';
 import { Header } from '@/components/ui/Header';
-import { routing } from '@/i18n/routing';
+import { OG_LOCALE, routing } from '@/i18n/routing';
 import { site } from '@/site.config';
 
 type Props = { children: ReactNode; params: Promise<{ locale: string }> };
-
-const OG_LOCALE: Record<string, string> = {
-  en: 'en_US',
-  de: 'de_DE',
-  pl: 'pl_PL',
-  ru: 'ru_RU',
-  bn: 'bn_BD',
-};
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -54,12 +46,13 @@ export async function generateMetadata({ params }: Omit<Props, 'children'>): Pro
       description: t('description'),
       images: [`/og/${locale}.png`],
     },
-    // Every language's version of the page, and English for everyone else.
+    // Every language's version of the page, and the chooser at / for
+    // everyone else (#63).
     alternates: {
       canonical: `/${locale}`,
       languages: {
         ...Object.fromEntries(routing.locales.map((l) => [l, `/${l}`])),
-        'x-default': `/${routing.defaultLocale}`,
+        'x-default': site.url, // the chooser at / (Next writes it without the slash)
       },
     },
   };
@@ -72,6 +65,12 @@ export const viewport: Viewport = {
 // Before first paint: the visitor's remembered theme, so a dark pick never
 // flashes light. Without JS, or with nothing stored, the system's wins (CSS).
 const themeScript = `try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}`;
+
+// Before first paint, too: a visitor sent here from / by their browser's
+// language (vercel.json, ?from=root, #63) goes on to the language they picked
+// before, if that's another one; otherwise the parameter is dropped. The edge
+// can't read localStorage, and the site sets no cookie (BRIEF §8).
+const rootPickScript = `(function(){if(!/[?&]from=root(&|$)/.test(location.search))return;var p;try{p=localStorage.getItem('locale')}catch(e){}var L=${JSON.stringify(routing.locales)};if(p&&p!==document.documentElement.lang&&L.indexOf(p)>=0){location.replace('/'+p+location.hash)}else{history.replaceState(null,'',location.pathname+location.hash)}})()`;
 
 export default async function LocaleLayout({ children, params }: Props) {
   const { locale } = await params;
@@ -86,6 +85,7 @@ export default async function LocaleLayout({ children, params }: Props) {
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <script dangerouslySetInnerHTML={{ __html: rootPickScript }} />
         {/* The page's only JS; Next's own is stripped after the build (#22). */}
         <script src="/site.js" defer />
       </head>
