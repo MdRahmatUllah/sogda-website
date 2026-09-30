@@ -1,3 +1,7 @@
+import { getTranslations } from 'next-intl/server';
+import screens from '@/content/screens.generated.json';
+import { factArgs, facts } from '@/i18n/facts';
+import { routing } from '@/i18n/routing';
 import { site } from '@/site.config';
 
 // The site's schema.org graph shares node ids across pages (MASTER-PLAN
@@ -10,6 +14,91 @@ export const ids = {
 } as const;
 
 export type Faq = { q: string; a: string };
+
+// The app's screens the graph names, from the site's own set: the locale's
+// own capture where the app has one (#66), under its hashed name.
+const SCREENSHOTS = ['today-light', 'learn-light', 'exam-results-light', 'progress-light'];
+const built = screens as Record<string, { base: string; hash: string }>;
+const screenshot = (key: string, locale: string) => {
+  const g = built[`${key}@${locale}`] ?? built[key]!;
+  return `${site.url}/screens/${g.base}-1080.${g.hash}.webp`;
+};
+
+/** The nodes every page carries (#60), in the page's language: the publisher
+ * (O5: the brand itself), the site, and the app. No offers or rating until
+ * they're real (BRIEF); the Play link once there is one (#45). */
+export async function siteNodes(locale: string): Promise<Record<string, unknown>[]> {
+  const meta = await getTranslations({ locale, namespace: 'meta' });
+  const journey = await getTranslations({ locale, namespace: 'journey' });
+  const hero = await getTranslations({ locale, namespace: 'hero' });
+  const play = site.playStoreUrl;
+  return [
+    {
+      '@type': 'Organization',
+      '@id': ids.org,
+      name: 'Sogda',
+      url: site.url,
+      logo: { '@type': 'ImageObject', url: `${site.url}/icon-512.png`, width: 512, height: 512 },
+      // ponytail: the GitHub repo joins sameAs only if the owner agrees (O11, #56).
+      ...(play ? { sameAs: [play] } : {}),
+    },
+    {
+      '@type': 'WebSite',
+      '@id': ids.website,
+      name: 'Sogda',
+      url: site.url,
+      inLanguage: routing.locales,
+      publisher: { '@id': ids.org },
+    },
+    {
+      '@type': 'MobileApplication',
+      '@id': ids.app,
+      name: 'Sogda',
+      alternateName: 'Sogda: German A1–C2',
+      description: meta('description'),
+      url: `${site.url}/${locale}`,
+      inLanguage: locale,
+      operatingSystem: 'ANDROID',
+      applicationCategory: 'EducationalApplication',
+      applicationSubCategory: 'Language learning',
+      // No availableLanguage: schema.org has none for an app (the validator
+      // flags it); the languages are in the description and the pages.
+      softwareVersion: facts.app.version,
+      featureList: [
+        journey('facts.words', factArgs),
+        journey('facts.grammar', factArgs),
+        hero('facts.steps', factArgs),
+        journey('facts.exams', factArgs),
+        hero('facts.offline'),
+      ],
+      image: `${site.url}/og/${locale}.png`,
+      screenshot: SCREENSHOTS.map((s) => screenshot(s, locale)),
+      publisher: { '@id': ids.org },
+      author: { '@id': ids.org },
+      ...(play ? { installUrl: play, downloadUrl: play } : {}),
+    },
+  ];
+}
+
+/** The FAQ a page shows, as a FAQPage node. */
+export function faqPage(
+  id: string,
+  locale: string,
+  faq: Faq[],
+  extra: Record<string, unknown> = {},
+) {
+  return {
+    '@type': 'FAQPage',
+    '@id': id,
+    inLanguage: locale,
+    ...extra,
+    mainEntity: faq.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+}
 
 /** A content page's own nodes: the WebPage about the app, its breadcrumb
  * trail (the locale's home, then the page) and, if it has one, its FAQ. */
@@ -52,17 +141,7 @@ export function pageGraph({
     },
   ];
   if (faq.length) {
-    nodes.push({
-      '@type': 'FAQPage',
-      '@id': `${url}#faq`,
-      inLanguage: locale,
-      isPartOf: { '@id': `${url}#webpage` },
-      mainEntity: faq.map((f) => ({
-        '@type': 'Question',
-        name: f.q,
-        acceptedAnswer: { '@type': 'Answer', text: f.a },
-      })),
-    });
+    nodes.push(faqPage(`${url}#faq`, locale, faq, { isPartOf: { '@id': `${url}#webpage` } }));
   }
   return { '@context': 'https://schema.org', '@graph': nodes };
 }

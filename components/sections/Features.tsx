@@ -147,7 +147,7 @@ export async function Looks({ locale }: { locale: string }) {
           <DeviceFrame className="w-[min(52vw,16rem)]">
             {LOOKS.map((look) => (
               <div key={look} data-look={look} className="look-screen absolute inset-0">
-                <Screen id="today" locale={locale} theme={look} sizes="256px" />
+                <Screen id="today" locale={locale} theme={look} localize={false} sizes="256px" />
               </div>
             ))}
           </DeviceFrame>
