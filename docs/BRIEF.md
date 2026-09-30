@@ -184,6 +184,8 @@ The owner decided (2026-09-29, and 2026-09-30 for the list):
 - The legal pages exist in German (binding) and English (translation, marked as such).
 
 ## 9. SEO and sharing
+*Beyond this section, the plan for search and AI answers is `docs/MASTER-PLAN.md` (2026-09-30). Its W1-b (#59) changes the titles below, and W1-c (#60) the JSON-LD.*
+
 - **Per-locale metadata:**
   - title *"Sogda — Learn German offline, A1 to C2"*;
   - description from the store listing's short description;
