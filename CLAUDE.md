@@ -62,14 +62,15 @@ pnpm lighthouse          # local Lighthouse against `pnpm start` of out/ (budget
 
 ## How you work
 1. **Issues are the plan.** Every piece of work is a GitHub issue in *this* repo; the milestone issues (#1 onwards) are in order. Start each session by reading the open issues, and take the lowest-numbered open issue that isn't blocked.
-2. **One issue → one branch → one PR.**
-   - Branch: `feat/<N>-<slug>`.
+2. **One issue → one branch → one PR, into `dev`.**
+   - Branch: `feat/<N>-<slug>`, **from `dev`**.
+   - **PRs target `dev`** (`gh pr create --base dev`). **`main` is production:** it changes only when the owner merges `dev` into it, or explicitly asks the agent to (the owner, 2026-09-30, #35).
    - PR title: `<type>(<scope>): <what> (#N)`; the body says `Closes #N`.
    - PR body **line 1 is `**Agent-4**`**, and the body ends with `🤖 Generated with [Claude Code](https://claude.com/claude-code)`.
    - Commits end with the `Co-Authored-By:` line your harness gives you.
    - The commit identity is the repo's local git config (`MdRahmatUllah <rahmat.ullah@infinitibit.com>`). Never override it.
-3. **Every PR shows itself.** Vercel isn't connected until the site is ready (the owner sets up Vercel and GoDaddy then; issue #13), so there are no preview URLs before that. Put screenshots in the PR, taken from `pnpm build` served locally, at 390 px, 768 px and 1440 px, light and dark. Also attach a short screen recording (GIF/MP4) for any animation.
-4. **Review, then merge.** agent-0 (the app team's lead) or the owner reviews. Merge only after an approving review, as a squash with `gh pr merge <P> --squash --subject "<title> (#P)"`. Delete the branch only once the PR shows MERGED.
+3. **Every PR shows itself.** Put screenshots in the PR, taken from `pnpm build` served locally, at 390 px, 768 px and 1440 px, light and dark; they go on the `pr-shots` branch. Also attach a short screen recording (GIF/MP4) for any animation. Vercel builds a preview of every push to `dev` and of every PR; production (https://sogda.de) follows `main`.
+4. **Merge into `dev`.** The owner lets the agent merge its own PRs into `dev` without a review (2026-09-29), as a squash with `gh pr merge <P> --squash --subject "<title> (#P)"`. Delete the branch only once the PR shows MERGED. Never merge into `main` unless the owner asks.
 5. **Ask, don't guess, on:** anything in BRIEF's *Owner decisions*, legal texts, prices, claims not in BRIEF's *Facts*, and new dependencies or services. Ask in the issue, and tell the owner in chat. Never invent a number, a review, a rating, a download count or a testimonial.
 6. **Talking to the app team.** For a new screenshot, a fact check, or an app change, file an issue in `MdRahmatUllah/DeutschPlan` with the title prefix `website:` and a body starting `**Agent-4**`. The app team also runs a board (`tools/team.py` in that repo, which accepts `agent-4`); use it only if the owner asks you to.
 7. **CI.** Don't add GitHub Actions: the owner keeps CI minutes off. The local quality gate below is the check.
