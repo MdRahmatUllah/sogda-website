@@ -1,0 +1,14 @@
+import { chromium } from '../sogda-website/node_modules/@playwright/test/index.mjs';
+import { mkdirSync } from 'node:fs';
+mkdirSync('58', { recursive: true });
+const b = await chromium.launch();
+const p = await b.newPage({ viewport: { width: 390, height: 700 } });
+await p.goto('http://localhost:4175/no-such-page');
+await p.screenshot({ path: '58/404-390.png' });
+await p.setViewportSize({ width: 320, height: 640 });
+await p.goto('http://localhost:4175/ru');
+const looks = p.locator('#looks');
+await looks.scrollIntoViewIfNeeded();
+await p.waitForTimeout(500);
+await looks.screenshot({ path: '58/ru-looks-320.png' });
+await b.close();
