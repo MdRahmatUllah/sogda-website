@@ -173,6 +173,24 @@ test('a page loads only the fonts its own text needs', async ({ page }) => {
   expect(fonts).toHaveLength(1);
 });
 
+// Without a range, Chrome only learns that Inter has no Bangla once Inter has
+// loaded: /bn then asked for its font after the first paint and laid the page
+// out again in the TBT window (#104).
+test('Inter says which characters it has, so /bn asks for its font before the first paint', async ({
+  page,
+}) => {
+  await page.goto('/bn');
+  const ranges = await page.evaluate(() =>
+    [...document.fonts].filter((f) => f.family === 'inter').map((f) => f.unicodeRange),
+  );
+  expect(ranges.length).toBeGreaterThan(0);
+  for (const range of ranges) {
+    expect(range).not.toBe('U+0-10FFFF');
+    for (const [, from, to = from] of range.matchAll(/U\+([0-9A-F]+)(?:-([0-9A-F]+))?/gi))
+      expect(parseInt(from, 16) > 0x9ff || parseInt(to, 16) < 0x980).toBe(true);
+  }
+});
+
 test('every page names its other languages (hreflang, x-default → the chooser at /)', async ({
   page,
 }) => {

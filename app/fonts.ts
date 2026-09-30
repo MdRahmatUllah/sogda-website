@@ -16,6 +16,16 @@ export const inter = localFont({
   variable: '--font-inter',
   weight: '400 800',
   display: 'swap',
+  // The subset's own cmap. Without it Chrome can't know Inter has no Bangla
+  // until Inter has loaded, so it asked for the Bengali face only after the
+  // first paint, and /bn laid itself out again in the TBT window (#104).
+  declarations: [
+    {
+      prop: 'unicode-range',
+      value:
+        'U+0000, U+0020-007E, U+00A0-00AC, U+00AE-0148, U+014A-017F, U+02C6, U+02DA, U+02DC, U+2000-200B, U+2010-2027, U+202F-2055, U+2057, U+205F, U+20AC, U+2122, U+2190-2193, U+2212, U+2248, U+2260, U+2264-2265',
+    },
+  ],
 });
 
 export const bengali = localFont({
