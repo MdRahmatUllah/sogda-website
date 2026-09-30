@@ -27,6 +27,16 @@ test('/llms.txt states the facts from facts.json, as plain text', async ({ reque
 });
 
 for (const locale of ['en', 'de', 'pl', 'ru', 'bn'] as const) {
+  test(`/${locale}: the hero's fact row states facts.json's numbers`, async ({ page }) => {
+    // #91's smoke test catches a raw ICU placeholder; this one a stale count.
+    await page.goto(`/${locale}`);
+    const format = new Intl.NumberFormat(locale);
+    const hero = page.locator('#hero li');
+    await expect(hero.nth(0)).toContainText(format.format(words));
+    await expect(hero.nth(1)).toContainText(format.format(facts.totals.grammar_topics));
+    await expect(hero.nth(2)).toContainText(format.format(facts.totals.steps));
+  });
+
   test(`/${locale}: the journey's numbers are facts.json's, in the locale's digits`, async ({
     page,
   }) => {
