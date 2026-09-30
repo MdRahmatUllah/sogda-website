@@ -11,6 +11,38 @@
   "outputDirectory": "out",
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/",
+      "has": [{ "type": "header", "key": "accept-language", "value": "^bn.*" }],
+      "destination": "/bn?from=root",
+      "permanent": false
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "header", "key": "accept-language", "value": "^de.*" }],
+      "destination": "/de?from=root",
+      "permanent": false
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "header", "key": "accept-language", "value": "^pl.*" }],
+      "destination": "/pl?from=root",
+      "permanent": false
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "header", "key": "accept-language", "value": "^ru.*" }],
+      "destination": "/ru?from=root",
+      "permanent": false
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "header", "key": "accept-language" }],
+      "destination": "/en?from=root",
+      "permanent": false
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
