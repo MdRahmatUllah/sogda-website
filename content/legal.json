@@ -1,10 +1,10 @@
 {
   "$comment": "The Impressum's details (§ 5 DDG). The owner supplies them; null shows a placeholder, and a Vercel production build for sogda.de (or pnpm check:launch) fails while any is null. Never put these details anywhere else (CLAUDE.md, Hard rules).",
-  "name": null,
-  "street": null,
-  "postcodeCity": null,
+  "name": "Md Rahmat Ullah",
+  "street": "Sonnwendstr. 6, App. 1.OG",
+  "postcodeCity": "82110 Germering",
   "country": "Deutschland",
-  "email": null,
-  "phone": null,
+  "email": "mdrahmatullahde@gmail.com",
+  "phone": "+49 177 6489615",
   "vatId": null
 }
