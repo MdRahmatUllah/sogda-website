@@ -40,6 +40,16 @@ For PRs: `node scripts/shots.mjs <dir> /en` (screenshots at 390/768/1440, light 
 - **Store links, contact:** `site.config.ts`. Setting `playStoreUrl` switches on the official badge, the QR code and the JSON-LD `installUrl`.
 - **Copy:** `messages/<locale>.json`; the locale list is `i18n/routing.ts`.
 - **A new language** (when the app ships one): add it to `i18n/routing.ts`, add `messages/<code>.json` (the app's own wording: `app_<code>.arb` and the glossary), give every screen in `content/screenshots.json` its `alt.<code>`, then `pnpm sync:brand` (its Play badge) and `pnpm og`. Its name goes in `LANGUAGE_NAMES` (`components/ui/Footer.tsx`). For Russian, add Cyrillic to the Inter subset first (`app/fonts.ts`).
+- **A new content page** (#68, MASTER-PLAN W3):
+  1. **Register it:** one entry in `content/pages.ts`, with its `slug` (`/<locale>/<slug>`, ASCII and the same in every locale), the `locales` it exists in (hreflang, the sitemap and the language switch follow them), and `content: (l) => contentFromMessages(l, '<slug>', values)`.
+  2. **Write its copy:** a `pages.<slug>` namespace in each of those locales' `messages/<locale>.json` (the shape is in `lib/page.ts`):
+     - `title`, `description`, `name`, `eyebrow`?, `h1`;
+     - **`answer`: two self-contained sentences that answer the page's query, with the numbers**;
+     - `sections` and `faq`.
+
+     Numbers are ICU arguments (`{words}`) filled from `values`, never literals.
+  3. **Run `pnpm og`** for its share cards.
+  4. **The template does the rest:** breadcrumbs, the graph (`WebPage` → `/#app`, `BreadcrumbList`, `FAQPage`), the store CTA and links to the other pages. `/<locale>/template-sample` shows every part (it's built in `pnpm dev`, with `SOGDA_GALLERY=1`, and while no real page exists).
 - **Legal:** the Impressum's details live only in `content/legal.json`. Until they're all there, the pages show placeholders and a Vercel production build for the sogda.de domain stops (a production build on `*.vercel.app` and previews go on).
 - **Security headers:** `vercel.json` sends them. The www ↔ sogda.de redirect is set in Vercel's domain settings only (sogda.de primary, www redirecting to it): a second redirect in `vercel.json` made a loop with them. `scripts/csp.mjs` adds each page's `<meta>` Content-Security-Policy, which allows exactly that page's inline scripts by hash, since a static export has no server to add nonces.
 - **Brand:** `app/globals.css` holds the tokens (Lagoon, Sun, Ink, Paper, Night, the app's article colours, outline and hard shadow). Components use the semantic colours (`bg`, `fg`, `card`, `line`…), which follow the theme. Dark mode follows the system until the visitor picks, and the pick is remembered.

@@ -215,5 +215,9 @@
     "back": "Wróć do Sogdy",
     "impressumDescription": "Impressum (nota prawna) serwisu sogda.de zgodnie z § 5 DDG: kto prowadzi stronę i jak się skontaktować.",
     "privacyDescription": "Polityka prywatności (Datenschutzerklärung) serwisu sogda.de: jakie dane przetwarza strona. Tekst niemiecki z tłumaczeniem na angielski."
+  },
+  "page": {
+    "breadcrumb": "Jesteś tutaj",
+    "related": "Więcej o Sogdzie"
   }
 }

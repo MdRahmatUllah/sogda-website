@@ -215,5 +215,9 @@
     "back": "Sogda-তে ফিরুন",
     "impressumDescription": "sogda.de-এর Impressum (আইনি তথ্য), § 5 DDG অনুযায়ী: ওয়েবসাইটটি কে পরিচালনা করেন এবং কীভাবে যোগাযোগ করবেন।",
     "privacyDescription": "sogda.de-এর গোপনীয়তা নীতি (Datenschutzerklärung): ওয়েবসাইট কোন তথ্য প্রক্রিয়া করে। জার্মান মূল লেখা, সঙ্গে ইংরেজি অনুবাদ।"
+  },
+  "page": {
+    "breadcrumb": "আপনি এখানে আছেন",
+    "related": "Sogda সম্পর্কে আরও"
   }
 }
