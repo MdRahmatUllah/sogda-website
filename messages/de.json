@@ -203,5 +203,9 @@
     "binding": "Maßgeblich ist der deutsche Text; darunter folgt eine englische Übersetzung.",
     "translation": "Englische Übersetzung (nicht verbindlich)",
     "back": "Zurück zu Sogda"
+  },
+  "page": {
+    "breadcrumb": "Du bist hier",
+    "related": "Mehr über Sogda"
   }
 }

@@ -203,5 +203,9 @@
     "binding": "Wiążący jest tekst niemiecki; poniżej jego tłumaczenie na angielski.",
     "translation": "Tłumaczenie na angielski (niewiążące)",
     "back": "Wróć do Sogdy"
+  },
+  "page": {
+    "breadcrumb": "Jesteś tutaj",
+    "related": "Więcej o Sogdzie"
   }
 }

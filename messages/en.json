@@ -203,5 +203,9 @@
     "binding": "The German text below is the binding one; an English translation follows it.",
     "translation": "English translation (not binding)",
     "back": "Back to Sogda"
+  },
+  "page": {
+    "breadcrumb": "You are here",
+    "related": "More about Sogda"
   }
 }

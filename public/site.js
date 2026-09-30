@@ -68,20 +68,31 @@
     });
 
   // The language links keep the visitor on the same page, and `/` remembers
-  // the pick (LanguageSwitch).
+  // the pick (LanguageSwitch). "The same page" is the page's own hreflang
+  // alternate: a content page exists only in some languages (#68), so one
+  // without that language goes to that language's home. A page with no
+  // alternates at all (the legal pages) swaps the locale in its path.
   $$('[data-locale-links]').forEach(function (list) {
     list.addEventListener('click', function (e) {
       var link = e.target.closest('a[hreflang]');
       if (!link) return;
       e.preventDefault();
+      var next = link.hreflang;
       try {
-        localStorage.setItem('locale', link.hreflang);
+        localStorage.setItem('locale', next);
       } catch {
         // Storage blocked: the link still goes there.
       }
-      location.assign(
-        location.pathname.replace(/^\/[a-z]{2}(?=\/|$)/, '/' + link.hreflang) + location.hash,
-      );
+      var alternates = $$('link[rel="alternate"][hreflang]');
+      var same = alternates.filter(function (a) {
+        return a.hreflang === next;
+      })[0];
+      var path = same
+        ? new URL(same.href).pathname
+        : alternates.length
+          ? '/' + next
+          : location.pathname.replace(/^\/[a-z]{2}(?=\/|$)/, '/' + next);
+      location.assign(path + location.hash);
     });
   });
 
