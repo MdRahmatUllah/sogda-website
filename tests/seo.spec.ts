@@ -154,7 +154,10 @@ for (const locale of routing.locales) {
       expect(n).not.toHaveProperty('aggregateRating');
       expect(n).not.toHaveProperty('offers');
     }
-    // Every image it names is served.
+    // Every image it names is served, and a locale with its own store
+    // captures names those (#66).
+    if (locale === 'pl' || locale === 'ru')
+      expect(app.screenshot![0]).toContain(`/screens/today-light-${locale}-1080.`);
     for (const img of [app.image!, node('Organization').logo!.url, ...app.screenshot!]) {
       expect((await request.get(img.replace(url, ''))).ok(), img).toBe(true);
     }
