@@ -32,11 +32,11 @@ test.describe('/ is the language chooser (#63)', () => {
     );
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
       'href',
-      'https://www.sogda.de/',
+      'https://www.sogda.de',
     );
     await expect(page.locator('link[rel="alternate"][hreflang="x-default"]')).toHaveAttribute(
       'href',
-      'https://www.sogda.de/',
+      'https://www.sogda.de',
     );
     for (const l of routing.locales) {
       await expect(page.locator(`link[rel="alternate"][hreflang="${l}"]`)).toHaveAttribute(
@@ -54,7 +54,7 @@ test.describe('/ is the language chooser (#63)', () => {
     await page.goto('/pl');
     await expect(page.locator('link[rel="alternate"][hreflang="x-default"]')).toHaveAttribute(
       'href',
-      'https://www.sogda.de/',
+      'https://www.sogda.de',
     );
   });
 });
@@ -186,7 +186,7 @@ test('every page names its other languages (hreflang, x-default → the chooser 
     }
     await expect(page.locator('link[rel="alternate"][hreflang="x-default"]')).toHaveAttribute(
       'href',
-      'https://www.sogda.de/',
+      'https://www.sogda.de',
     );
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
       'href',

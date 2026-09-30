@@ -23,7 +23,9 @@
     "googlePlay": "Jetzt bei Google Play",
     "googlePlaySoon": "Bald bei Google Play",
     "iphoneSoon": "Bald fürs iPhone",
-    "qr": "QR-Code: mit dem Handy scannen, um Sogda bei Google Play zu öffnen"
+    "qr": "QR-Code: mit dem Handy scannen, um Sogda bei Google Play zu öffnen",
+    "notify": "Sag mir Bescheid, wenn es da ist",
+    "notifySubject": "Bitte sagt mir Bescheid, wenn Sogda bei Google Play ist"
   },
   "footer": {
     "impressum": "Impressum",
@@ -38,7 +40,15 @@
     "headline": "Deutsch lernen, ein klarer Tag nach dem anderen.",
     "subline": "Ein vollständiger Offline-Deutschkurs von A1 bis C2, mit Bedeutungen auf Englisch, Bangla, Russisch oder Polnisch.",
     "pause": "Animation anhalten",
-    "play": "Animation abspielen"
+    "play": "Animation abspielen",
+    "facts": {
+      "label": "Sogda in Zahlen",
+      "steps": "12 Stufen, A1 → C2",
+      "offline": "Offline, ohne Konto"
+    },
+    "card": {
+      "label": "Ein Wort aus Stufe A1.1, wie Sogda es zeigt, und die Tage, nach denen es wiederkommt"
+    }
   },
   "day": {
     "eyebrow": "So funktioniert’s",
@@ -82,15 +92,15 @@
   },
   "journey": {
     "eyebrow": "Die Reise",
-    "title": "12 Stufen von deinem ersten „Hallo“ bis C2.",
+    "title": "{steps, number} Stufen von deinem ersten „Hallo“ bis C2.",
     "facts": {
-      "words": "5.069 Wörter",
-      "grammar": "182 Grammatikthemen",
+      "words": "{words, plural, one {# Wort} other {# Wörter}}",
+      "grammar": "{topics, plural, one {# Grammatikthema} other {# Grammatikthemen}}",
       "exams": "Drei Probeprüfungen für jede Stufe"
     },
     "counter": "Wörter auf dem Weg",
     "placement": "Du kannst schon etwas Deutsch? Ein kurzer Einstufungstest bringt dich zur passenden Stufe.",
-    "road": "Der Kurs als Weg mit 12 Stationen, von A1.1 bis C2.2, durch die Niveaus A1 Anfänger, A2 Grundstufe, B1 Mittelstufe, B2, C1 und C2."
+    "road": "Der Kurs als Weg mit {steps, number} Stationen, von A1.1 bis C2.2, durch die Niveaus A1 Anfänger, A2 Grundstufe, B1 Mittelstufe, B2, C1 und C2."
   },
   "practice": {
     "eyebrow": "Üben und dich selbst prüfen",
@@ -179,7 +189,7 @@
     },
     "android": {
       "q": "Welche Android-Version brauche ich?",
-      "a": "Android 8.0 oder neuer."
+      "a": "Android {android} oder neuer."
     },
     "iphone": {
       "q": "Gibt es eine iPhone-Version?",
@@ -202,6 +212,8 @@
     "privacy": "Datenschutzerklärung",
     "binding": "Maßgeblich ist der deutsche Text; darunter folgt eine englische Übersetzung.",
     "translation": "Englische Übersetzung (nicht verbindlich)",
-    "back": "Zurück zu Sogda"
+    "back": "Zurück zu Sogda",
+    "impressumDescription": "Impressum von sogda.de nach § 5 DDG: wer die Website anbietet, und der Kontakt.",
+    "privacyDescription": "Datenschutzerklärung von sogda.de: welche Daten die Website verarbeitet und wofür."
   }
 }

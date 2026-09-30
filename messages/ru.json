@@ -23,7 +23,9 @@
     "googlePlay": "Доступно в Google Play",
     "googlePlaySoon": "Скоро в Google Play",
     "iphoneSoon": "Скоро на iPhone",
-    "qr": "QR-код: отсканируй телефоном, чтобы открыть Sogda в Google Play"
+    "qr": "QR-код: отсканируй телефоном, чтобы открыть Sogda в Google Play",
+    "notify": "Сообщить мне о выходе",
+    "notifySubject": "Напишите мне, когда Sogda появится в Google Play"
   },
   "footer": {
     "impressum": "Impressum",
@@ -38,7 +40,15 @@
     "headline": "Учи немецкий день за днём, с ясным планом.",
     "subline": "Полный офлайн-курс немецкого от A1 до C2, со значениями на русском.",
     "pause": "Остановить анимацию",
-    "play": "Запустить анимацию"
+    "play": "Запустить анимацию",
+    "facts": {
+      "label": "Sogda в цифрах",
+      "steps": "12 этапов, A1 → C2",
+      "offline": "Офлайн, без аккаунта"
+    },
+    "card": {
+      "label": "Слово из этапа A1.1 — так его показывает Sogda — и дни, через которые оно возвращается"
+    }
   },
   "day": {
     "eyebrow": "Как это работает",
@@ -82,15 +92,15 @@
   },
   "journey": {
     "eyebrow": "Путь",
-    "title": "12 этапов от первого «Hallo» до C2.",
+    "title": "{steps, plural, one {# этап} few {# этапа} many {# этапов} other {# этапа}} от первого «Hallo» до C2.",
     "facts": {
-      "words": "5 069 слов",
-      "grammar": "182 темы грамматики",
+      "words": "{words, plural, one {# слово} few {# слова} many {# слов} other {# слова}}",
+      "grammar": "{topics, plural, one {# тема грамматики} few {# темы грамматики} many {# тем грамматики} other {# темы грамматики}}",
       "exams": "Три пробных экзамена на каждый этап"
     },
     "counter": "слов на пути",
     "placement": "Уже немного знаешь немецкий? Короткая проверка уровня начнёт с нужного этапа.",
-    "road": "Курс как путь с 12 станциями, от A1.1 до C2.2, через уровни A1 Anfänger, A2 Grundstufe, B1 Mittelstufe, B2, C1 и C2."
+    "road": "Курс как путь с {steps, plural, one {# станцией} other {# станциями}}, от A1.1 до C2.2, через уровни A1 Anfänger, A2 Grundstufe, B1 Mittelstufe, B2, C1 и C2."
   },
   "practice": {
     "eyebrow": "Практика и проверка",
@@ -179,7 +189,7 @@
     },
     "android": {
       "q": "Какая нужна версия Android?",
-      "a": "Android 8.0 или новее."
+      "a": "Android {android} или новее."
     },
     "iphone": {
       "q": "Есть ли версия для iPhone?",
@@ -202,6 +212,8 @@
     "privacy": "Политика конфиденциальности (Datenschutzerklärung)",
     "binding": "Юридически обязателен немецкий текст; ниже — его перевод на английский.",
     "translation": "Перевод на английский (не имеет юридической силы)",
-    "back": "Вернуться на Sogda"
+    "back": "Вернуться на Sogda",
+    "impressumDescription": "Impressum (выходные данные) сайта sogda.de согласно § 5 DDG: кто владелец сайта и как с ним связаться.",
+    "privacyDescription": "Политика конфиденциальности (Datenschutzerklärung) сайта sogda.de: какие данные обрабатывает сайт. Текст на немецком с переводом на английский."
   }
 }

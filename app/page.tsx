@@ -28,11 +28,11 @@ export default function RootPage() {
       <head>
         <title>{en.meta.title}</title>
         <meta name="description" content={en.meta.description} />
-        <link rel="canonical" href={`${site.url}/`} />
+        <link rel="canonical" href={site.url} />
         {routing.locales.map((l) => (
           <link key={l} rel="alternate" hrefLang={l} href={`${site.url}/${l}`} />
         ))}
-        <link rel="alternate" hrefLang="x-default" href={`${site.url}/`} />
+        <link rel="alternate" hrefLang="x-default" href={site.url} />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
       <body className="grid min-h-dvh place-items-center bg-bg p-6 font-[system-ui,sans-serif] text-fg">

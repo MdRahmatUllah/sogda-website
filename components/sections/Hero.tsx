@@ -3,7 +3,13 @@ import { DeviceFrame } from '@/components/ui/DeviceFrame';
 import { Mark } from '@/components/ui/Mark';
 import { Screen } from '@/components/ui/Screen';
 import { StoreBadges } from '@/components/ui/StoreBadges';
+import { factArgs } from '@/i18n/facts';
+import { TERMIN } from './Features';
 import { HeroPause } from './HeroPause';
+
+// #62: the gaps a new word comes back after, as the Memory section shows them
+// (1 day → 3 → 8 → 21, the app's own Again/Hard/Good/Easy intervals).
+const GAPS = [1, 3, 8, 21];
 
 // The front phone's loop (BRIEF §3.1): Today, a card's front, its back (the
 // meaning appears), a quiz. 3 s each; globals.css times the cross-fade.
@@ -54,19 +60,66 @@ function Route({
 
 export async function Hero({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: 'hero' });
+  const journey = await getTranslations({ locale, namespace: 'journey' });
+  const memory = await getTranslations({ locale, namespace: 'memory' });
+  // #62: the product in the first screen. The facts are the journey's own
+  // strings (one wording per locale), their numbers ICU arguments from
+  // content/facts.json (#61); the card shows der Termin in the visitor's
+  // meaning language, English where the app has none (de).
+  const facts = [
+    journey('facts.words', factArgs),
+    journey('facts.grammar', factArgs),
+    t('facts.steps', factArgs),
+    journey('facts.exams', factArgs),
+    t('facts.offline', factArgs),
+  ];
+  const word = TERMIN.find((w) => w.lang === locale) ?? TERMIN[0];
   return (
     <section id="hero" className="on-lagoon relative overflow-hidden bg-lagoon text-ink">
       <Route id="route-wide" d={WIDE} viewBox="0 0 1440 720" className="hidden md:block" />
       <Route id="route-narrow" d={NARROW} viewBox="0 0 400 1200" className="md:hidden" />
-      <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 pt-10 pb-16 sm:px-6 lg:grid-cols-[1.15fr_1fr] lg:gap-8 lg:py-20">
+      <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 pt-6 pb-16 sm:px-6 sm:pt-10 lg:grid-cols-[1.15fr_1fr] lg:gap-8 lg:py-20">
         <div>
-          <Mark road flip className="size-16 sm:size-20" />
-          <p className="mt-6 text-lg font-semibold">{t('kicker')}</p>
+          <Mark road flip className="size-12 sm:size-20" />
+          <p className="mt-4 text-lg font-semibold sm:mt-6">{t('kicker')}</p>
           <h1 className="mt-2 text-[clamp(2.4rem,7vw,4.5rem)] leading-[1.02] font-extrabold tracking-[-0.025em] text-balance">
             {t('headline')}
           </h1>
           <p className="mt-5 max-w-xl text-lg sm:text-xl">{t('subline')}</p>
-          <div className="mt-8">
+          <ul aria-label={t('facts.label')} className="mt-5 flex max-w-xl flex-wrap gap-2">
+            {facts.map((fact) => (
+              <li
+                key={fact}
+                className="rounded-full border-2 border-ink bg-paper px-3 py-1 text-sm font-semibold text-ink"
+              >
+                {fact}
+              </li>
+            ))}
+          </ul>
+          <figure className="hero-word card mt-5 flex text-fg max-w-sm flex-wrap items-center justify-between gap-x-5 gap-y-3 p-4">
+            <figcaption className="sr-only">{t('card.label')}</figcaption>
+            <div className="min-w-0">
+              <p className="text-xs font-bold text-muted">A1.1</p>
+              <p className="text-2xl font-extrabold" lang="de">
+                <span className="text-der">der</span> Termin
+              </p>
+              <p lang={word.lang}>
+                <span className="font-semibold">{word.meaning}</span>{' '}
+                <span className="text-muted">/{word.say}/</span>
+              </p>
+            </div>
+            <ol className="flex gap-1.5" aria-label={memory('revisions')}>
+              {GAPS.map((g) => (
+                <li
+                  key={g}
+                  className="grid h-10 min-w-10 place-items-center rounded-full border-2 border-line bg-sun px-2 text-xs font-bold whitespace-nowrap text-ink"
+                >
+                  {memory('gapShort', { days: g })}
+                </li>
+              ))}
+            </ol>
+          </figure>
+          <div className="mt-6">
             <StoreBadges locale={locale} />
           </div>
         </div>

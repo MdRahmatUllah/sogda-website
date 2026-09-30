@@ -104,12 +104,19 @@ test.describe('The journey (BRIEF §3.4)', () => {
       // The script starts the road once its section is within a screen of the
       // view (it measures nothing at load, #22). There, the road's top is
       // still below the traveller's line: back at the start.
-      await page.evaluate(() => {
-        const section = document.getElementById('journey')!;
-        scrollTo(0, section.getBoundingClientRect().top + scrollY - innerHeight - 10);
-      });
+      // The sections above render as they near the view (content-visibility),
+      // which moves the journey, so re-aim until the layout settles (#89).
+      await expect
+        .poll(async () => {
+          await page.evaluate(() => {
+            const section = document.getElementById('journey')!;
+            scrollTo(0, section.getBoundingClientRect().top + scrollY - innerHeight - 10);
+          });
+          await page.waitForTimeout(150);
+          return page.locator('#journey-count').textContent();
+        })
+        .toBe('0');
       await expect(page.locator('.journey-station[data-lit]')).toHaveCount(1);
-      await expect(page.locator('#journey-count')).toHaveText('0');
       // Halfway down the road: about half the stations. Sections around the
       // road render as it scrolls (content-visibility), moving it, so align
       // the road's middle on the traveller's line until the layout settles.

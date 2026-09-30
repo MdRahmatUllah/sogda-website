@@ -17,6 +17,19 @@ for (const locale of routing.locales) {
       expect(errors).toEqual([]);
     });
 
+    test('shows no raw ICU: every {argument} is filled (#61, #89)', async ({ request }) => {
+      // A message given no argument renders its source, e.g.
+      // "{words, plural, one {# word} …}": the hero did after #82 met #86.
+      for (const path of ['', '/impressum', '/datenschutz']) {
+        const html = await (await request.get(`/${locale}${path}`)).text();
+        const text = html.replace(/<(script|style)\b[\s\S]*?<\/\1>/g, ' ').replace(/<[^>]+>/g, ' ');
+        expect(
+          text.match(/\{\s*[a-zA-Z]+\s*(,\s*(plural|number|select)[^}]*)?\}/g),
+          `${locale}${path}`,
+        ).toBeNull();
+      }
+    });
+
     for (const colorScheme of ['light', 'dark'] as const) {
       test(`axe finds no violations (${colorScheme})`, async ({ page }) => {
         // axe walks the whole long page; Firefox needs more than 30 s for it
