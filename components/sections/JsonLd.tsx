@@ -1,27 +1,20 @@
 import { getTranslations } from 'next-intl/server';
+import { FAQ } from '@/components/sections/Closing';
+import { factArgs } from '@/i18n/facts';
+import { faqPage, ids, jsonLd, siteNodes } from '@/lib/graph';
 import { site } from '@/site.config';
 
-// BRIEF §9: the app as a MobileApplication. No rating and no offer (price)
-// until the owner gives them; the Play URL once there is one.
+// The home page's graph (#60, BRIEF §9): the nodes every page shares (the
+// publisher, the site, the app) and the FAQ the page shows.
 export async function JsonLd({ locale }: { locale: string }) {
-  const t = await getTranslations({ locale, namespace: 'meta' });
-  const data = {
+  const t = await getTranslations({ locale, namespace: 'faq' });
+  const faq = FAQ.map((k) => ({ q: t(`${k}.q`), a: t(`${k}.a`, factArgs) }));
+  const graph = {
     '@context': 'https://schema.org',
-    '@type': 'MobileApplication',
-    name: 'Sogda',
-    operatingSystem: 'ANDROID',
-    applicationCategory: 'EducationalApplication',
-    description: t('description'),
-    inLanguage: locale,
-    url: `${site.url}/${locale}`,
-    image: `${site.url}/og/${locale}.png`,
-    ...(site.playStoreUrl ? { installUrl: site.playStoreUrl, downloadUrl: site.playStoreUrl } : {}),
+    '@graph': [
+      ...(await siteNodes(locale)),
+      faqPage(`${site.url}/${locale}#faq`, locale, faq, { about: { '@id': ids.app } }),
+    ],
   };
-  return (
-    <script
-      type="application/ld+json"
-      // Our own data, serialised: nothing from a visitor reaches it.
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data).replace(/</g, '\u003c') }}
-    />
-  );
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(graph) }} />;
 }
