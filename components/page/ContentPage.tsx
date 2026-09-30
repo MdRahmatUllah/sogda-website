@@ -90,6 +90,18 @@ export async function ContentPage({
               ))}
             </ul>
           )}
+          {s.terms && (
+            <dl className="mt-4 grid gap-x-6 gap-y-2 text-lg sm:grid-cols-[auto_1fr]">
+              {s.terms.map((term, i) => (
+                <div key={i} className="contents">
+                  <dt lang={term.lang} className="font-bold">
+                    {term.term}
+                  </dt>
+                  <dd className="text-muted">{term.detail}</dd>
+                </div>
+              ))}
+            </dl>
+          )}
         </section>
       ))}
 

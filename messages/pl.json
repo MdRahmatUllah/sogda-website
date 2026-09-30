@@ -207,5 +207,60 @@
   "page": {
     "breadcrumb": "Jesteś tutaj",
     "related": "Więcej o Sogdzie"
+  },
+  "levelPages": {
+    "title": "Niemiecki {step}: {words, plural, one {# słowo} few {# słowa} many {# słów} other {# słowa}} i {topics, plural, one {# temat gramatyczny} few {# tematy gramatyczne} many {# tematów gramatycznych} other {# tematu gramatycznego}} | Sogda",
+    "description": "CEFR {level}, etap {step} kursu niemieckiego offline Sogda: {words, plural, one {# słowo} few {# słowa} many {# słów} other {# słowa}} ze znaczeniami po polsku, {topics, plural, one {# temat gramatyczny} few {# tematy gramatyczne} many {# tematów gramatycznych} other {# tematu gramatycznego}}, egzaminy próbne i przykładowe słowa.",
+    "name": "Niemiecki {step}",
+    "eyebrow": "CEFR {level} · etap {ord} z {steps}",
+    "h1": "Niemiecki {step}: słowa, gramatyka i egzaminy próbne",
+    "answer": "Etap {step} w Sogdzie to {words, plural, one {# niemieckie słowo} few {# niemieckie słowa} many {# niemieckich słów} other {# niemieckiego słowa}} i {topics, plural, one {# temat gramatyczny} few {# tematy gramatyczne} many {# tematów gramatycznych} other {# tematu gramatycznego}}, {half, select, first {pierwsza} other {druga}} połowa poziomu {level} według CEFR. Kończy się {mocksPerStep, plural, one {# egzaminem próbnym} other {# egzaminami próbnymi}}: każdy ma {questions, plural, one {# pytanie} few {# pytania} many {# pytań} other {# pytania}} oraz zadanie pisemne i ustne, ułożone ze słów i gramatyki tego etapu.",
+    "levelHeading": "Co oznacza poziom {level}",
+    "cefr": {
+      "A1": "Na poziomie A1 rozumiesz i używasz znanych, codziennych wyrażeń i bardzo prostych zwrotów. Potrafisz się przedstawić, zadawać i odpowiadać na proste pytania o to, gdzie mieszkasz, kogo znasz i co masz, jeśli rozmówca mówi powoli i wyraźnie.",
+      "A2": "Na poziomie A2 rozumiesz zdania i częste wyrażenia o sprawach ważnych na co dzień: rodzina, zakupy, okolica, praca. Radzisz sobie w prostych, rutynowych sytuacjach, które wymagają bezpośredniej wymiany informacji.",
+      "B1": "Na poziomie B1 rozumiesz główne myśli jasnych wypowiedzi w standardowym języku o znanych sprawach z pracy, nauki i czasu wolnego. Radzisz sobie w większości sytuacji w podróży i potrafisz opisać doświadczenia, wydarzenia, nadzieje i plany, krótko je uzasadniając.",
+      "B2": "Na poziomie B2 rozumiesz główne myśli złożonych tekstów na tematy konkretne i abstrakcyjne. Potrafisz rozmawiać z rodzimymi użytkownikami języka płynnie i spontanicznie, bez wysiłku dla obu stron, i pisać jasne, szczegółowe teksty, rozważając argumenty za i przeciw.",
+      "C1": "Na poziomie C1 rozumiesz wiele trudnych, dłuższych tekstów i dostrzegasz ukryte znaczenia. Wypowiadasz się płynnie i spontanicznie, bez szukania słów, i elastycznie używasz języka w życiu towarzyskim, na studiach i w pracy.",
+      "C2": "Na poziomie C2 rozumiesz praktycznie wszystko, co słyszysz i czytasz. Potrafisz streszczać informacje z różnych źródeł mówionych i pisanych i wyrażać się spontanicznie, bardzo płynnie i precyzyjnie, rozróżniając subtelne odcienie znaczeń."
+    },
+    "cefrNote": "To poziomy Europejskiego systemu opisu kształcenia językowego (CEFR), według których są ułożone egzaminy Goethe-Zertifikat i telc. Słowa i gramatyka każdego etapu to wybór Sogdy dla danego poziomu.",
+    "grammarHeading": "Gramatyka etapu {step}: {topics, plural, one {# temat} few {# tematy} many {# tematów} other {# tematu}}",
+    "examHeading": "Egzaminy próbne",
+    "examBody": "Każdy egzamin próbny etapu {step} ma {questions, plural, one {# pytanie} few {# pytania} many {# pytań} other {# pytania}} i dwa zadania, razem {points, plural, one {# punkt} few {# punkty} many {# punktów} other {# punktu}}, z wynikiem dla każdej części. Odpowiadają częściom egzaminów Goethe i telc na poziomie {level}, ale są tworzone ze słów i gramatyki etapu — to nie oficjalne arkusze.",
+    "items": "{name}: {n, plural, one {# pytanie} few {# pytania} many {# pytań} other {# pytania}}",
+    "writing": "{name}: tekst z co najmniej {words, plural, one {# słowa} other {# słów}}",
+    "speaking": "{name}: do {seconds, plural, one {# sekundy} other {# sekund}}",
+    "section": {
+      "vocabulary": "Słownictwo",
+      "reverse": "Odwrotnie",
+      "articles": "Rodzajniki",
+      "wordForms": "Formy wyrazów",
+      "gapFill": "Luki",
+      "grammar": "Gramatyka",
+      "listening": "Słuchanie",
+      "writing": "Pisanie",
+      "speaking": "Mówienie"
+    },
+    "wordsHeading": "Słowa etapu {step}: przykłady",
+    "wordsBody": "Przykłady z etapu {step}: każde słowo z rodzajnikiem i formami, znaczeniem po polsku i wskazówką wymowy. Aplikacja ma wszystkie {words, plural, one {# słowo} few {# słowa} many {# słów} other {# słowa}}, z przykładowymi zdaniami.",
+    "faq": {
+      "official": {
+        "q": "Czy to oficjalna lista słów Goethe lub telc dla poziomu {level}?",
+        "a": "Nie. To słowa etapu {step} w Sogdzie, dobrane dla poziomu {level}. Egzaminy próbne odpowiadają częściom egzaminów Goethe i telc na tym poziomie, ale są tworzone z materiału kursu — to nie oficjalne arkusze."
+      },
+      "count": {
+        "q": "Ile słów ma Sogda na poziomie {level}?",
+        "a": "{levelWords, plural, one {# słowo} few {# słowa} many {# słów} other {# słowa}} i {levelTopics, plural, one {# temat gramatyczny} few {# tematy gramatyczne} many {# tematów gramatycznych} other {# tematu gramatycznego}} w dwóch etapach: {first} i {second}."
+      },
+      "next": {
+        "q": "Co po etapie {step}?",
+        "a": "Etap {next}: jeszcze {nextWords, plural, one {# słowo} few {# słowa} many {# słów} other {# słowa}}. Znasz już trochę niemieckiego? Krótki test poziomu dobierze właściwy etap."
+      },
+      "last": {
+        "q": "Co po etapie {step}?",
+        "a": "{step} to ostatni etap kursu. Poznane słowa dalej wracają do powtórki — tuż zanim wypadną ci z pamięci."
+      }
+    }
   }
 }

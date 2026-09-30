@@ -18,7 +18,16 @@ export type PageContent = {
   /** Answer first: two self-contained sentences that answer the page's query,
    * with the numbers. AI answers and search snippets lift exactly this. */
   answer: string;
-  sections: { id: string; heading: string; paragraphs: string[]; list?: string[] }[];
+  sections: {
+    id: string;
+    heading: string;
+    paragraphs: string[];
+    list?: string[];
+    /** Terms in another language (#72: German words on a Bangla page), each
+     * marked with its `lang` so screen readers and search engines read it
+     * right, and what it means in the page's language. */
+    terms?: { term: string; lang: string; detail: string }[];
+  }[];
   faq: Faq[];
 };
 

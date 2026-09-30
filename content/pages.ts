@@ -1,5 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
+import { LEVEL_LOCALES, levelPage, levelSlug } from '@/content/levels';
+import { facts } from '@/i18n/facts';
 import type { PageContent } from '@/lib/page';
 
 // Every content page (MASTER-PLAN W3, #68): its URL segment, the locales it
@@ -43,6 +45,12 @@ async function sample(locale: string): Promise<PageContent> {
 
 const PAGES: PageEntry[] = [
   { slug: 'template-sample', locales: routing.locales, content: sample, gallery: true },
+  // #72: a page per step, A1.1 … C2.2, from content/facts.json.
+  ...facts.steps.map((s) => ({
+    slug: levelSlug(s.code),
+    locales: LEVEL_LOCALES,
+    content: (locale: string) => levelPage(locale, s.code),
+  })),
 ];
 
 const galleryBuild = process.env.NODE_ENV !== 'production' || Boolean(process.env.SOGDA_GALLERY);
