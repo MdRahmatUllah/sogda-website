@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import type { ReactNode } from 'react';
 import legal from '@/content/legal.json';
+import { OG_LOCALE } from '@/i18n/routing';
 
 type Key = Exclude<keyof typeof legal, '$comment'>;
 
@@ -19,12 +20,23 @@ export async function legalMetadata(
       : [t('privacy'), t('privacyDescription')];
   const title = `${name} — Sogda`;
   const canonical = `/de/${page}`;
+  // A page's openGraph replaces the layout's whole, so the card, the site's
+  // name and the locale are named again here.
+  const card = `/og/${locale}.png`;
   return {
     title,
     description,
     alternates: { canonical },
-    openGraph: { title, description, url: canonical },
-    twitter: { title, description },
+    openGraph: {
+      type: 'website',
+      siteName: 'Sogda',
+      title,
+      description,
+      url: canonical,
+      locale: OG_LOCALE[locale] ?? locale,
+      images: [{ url: card, width: 1200, height: 630, alt: title }],
+    },
+    twitter: { card: 'summary_large_image', title, description, images: [card] },
   };
 }
 
