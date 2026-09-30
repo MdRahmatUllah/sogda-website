@@ -63,6 +63,8 @@ test.describe('/ with JavaScript off', () => {
   test.use({ javaScriptEnabled: false });
   test('lands on English', async ({ page }) => {
     await page.goto('/');
-    await expect(page).toHaveURL(/\/en$/);
+    // The meta refresh navigates after goto resolves; under a full parallel
+    // run WebKit took over 5 s to commit it (#12).
+    await expect(page).toHaveURL(/\/en$/, { timeout: 15_000 });
   });
 });

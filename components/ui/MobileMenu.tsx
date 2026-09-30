@@ -1,5 +1,3 @@
-'use client';
-
 import { X } from 'lucide-react';
 import type { ReactNode } from 'react';
 
@@ -7,7 +5,7 @@ type Link = { href: string; label: string };
 
 // The narrow-screen menu: a native popover, so opening, Esc, light dismiss
 // and the button's expanded state come from the browser. Choosing a link
-// closes it.
+// closes it (public/site.js).
 export function MobileMenu({
   links,
   label,
@@ -27,14 +25,7 @@ export function MobileMenu({
       className="inset-x-0 top-16 bottom-auto m-0 w-full border-y-2 border-line bg-bg p-4 text-fg shadow-hard lg:hidden"
     >
       <nav aria-label={label}>
-        <ul
-          className="grid gap-1"
-          onClick={(e) => {
-            if ((e.target as HTMLElement).closest('a')) {
-              document.getElementById('menu')?.hidePopover();
-            }
-          }}
-        >
+        <ul className="grid gap-1">
           {links.map((l) => (
             <li key={l.href}>
               <a

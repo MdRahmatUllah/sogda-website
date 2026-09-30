@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Sogda — Learn German offline, A1 to C2",
-    "description": "Learn German, one clear day at a time: a complete, offline German course from A1 to C2, with meanings in English or Bangla."
+    "description": "Learn German, one clear day at a time: a complete, offline German course from A1 to C2, with meanings in English, Bangla, Russian or Polish."
   },
   "header": {
     "skip": "Skip to content",
@@ -36,7 +36,7 @@
   "hero": {
     "kicker": "The road to a new language",
     "headline": "Learn German, one clear day at a time.",
-    "subline": "A complete, offline German course from A1 to C2, with meanings in English or Bangla.",
+    "subline": "A complete, offline German course from A1 to C2, with meanings in English, Bangla, Russian or Polish.",
     "pause": "Pause the animation",
     "play": "Play the animation"
   },
@@ -53,7 +53,7 @@
     },
     "learn": {
       "title": "Learn a few new words",
-      "body": "Each with its article, its pronunciation, examples, and the meaning in English or Bangla. Rate how well you knew it, and Sogda picks the day it comes back."
+      "body": "Each with its article, its pronunciation, examples, and the meaning in your language. Rate how well you knew it, and Sogda picks the day it comes back."
     },
     "grammar": {
       "title": "The grammar topic of the week",
@@ -95,7 +95,7 @@
   "practice": {
     "eyebrow": "Practise and test yourself",
     "title": "Quizzes, then a mock exam when you're ready.",
-    "quizzes": "Quizzes in every direction: German to English or Bangla, English to German, articles, listening and word forms.",
+    "quizzes": "Quizzes in every direction: German to your languages and back, articles, listening and word forms.",
     "exams": "Three mock exams for every step, with vocabulary, grammar, listening, writing and speaking, and a result for each section.",
     "carousel": "Quiz and exam screens",
     "item": "Screen {n} of {total}"
@@ -148,9 +148,8 @@
   },
   "languages": {
     "eyebrow": "In your language",
-    "title": "Meanings in English, Bangla, or both.",
-    "body": "Every word comes with its meaning in English, Bangla, or both, and its pronunciation written in Bangla letters. Russian and Polish meanings are coming.",
-    "soon": "soon"
+    "title": "Meanings in English, Bangla, Russian or Polish.",
+    "body": "Pick one language, or two shown together. The pronunciation guide follows your meaning language: Bangla, Russian or Polish letters, or an English respelling. In Russian and Polish, the example sentences and grammar rules too. And the app itself comes in English, Bangla, Polish or Russian."
   },
   "gallery": {
     "eyebrow": "Screens",

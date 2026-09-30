@@ -86,6 +86,8 @@ export default async function LocaleLayout({ children, params }: Props) {
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        {/* The page's only JS; Next's own is stripped after the build (#22). */}
+        <script src="/site.js" defer />
       </head>
       <body className="flex min-h-dvh flex-col">
         <a

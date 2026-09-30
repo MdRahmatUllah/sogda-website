@@ -3,9 +3,9 @@
 What to build and why. `CLAUDE.md` says how. Anything marked **(owner)** is a decision only the owner makes: ask, don't guess.
 
 ## 1. The product in one breath
-**Sogda — the road to a new language.** A complete German course on your phone, from A1 to C2. It works fully offline: no account, no signal needed, and your progress stays on your phone. Every day it gives you a short plan: revise what is due, learn a few new words, practise a grammar topic and some sentences. Spaced repetition (FSRS) brings each word back just before you would forget it. Three mock exams per step show you're ready. Meanings come in English or Bangla, with Russian and Polish on the way.
+**Sogda — the road to a new language.** A complete German course on your phone, from A1 to C2. It works fully offline: no account, no signal needed, and your progress stays on your phone. Every day it gives you a short plan: revise what is due, learn a few new words, practise a grammar topic and some sentences. Spaced repetition (FSRS) brings each word back just before you would forget it. Three mock exams per step show you're ready. Meanings come in English, Bangla, Russian or Polish: one language, or two shown together.
 
-**Who it's for:** adults learning German to live and work in Germany, especially English and Bangla speakers (the first audience), with Russian and Polish speakers next. Many are studying for a Goethe or telc certificate.
+**Who it's for:** adults learning German to live and work in Germany, especially English and Bangla speakers (the first audience), and since the app's v1.1.0 Russian and Polish speakers. Many are studying for a Goethe or telc certificate.
 
 **The feeling:** calm, clear, encouraging, a little playful. It is *not* a gamified slot machine. It is a trusted course that respects your time and your privacy.
 
@@ -15,14 +15,14 @@ What to build and why. `CLAUDE.md` says how. Anything marked **(owner)** is a de
 3. **It remembers for you**: spaced repetition shows each word at the right moment.
 4. **You'll be ready for the exam**: three mock exams per step, graded by section.
 5. **Offline and private**: no account, no ads *(owner: confirm "no ads")*, works on a plane.
-6. **In your language**: English or Bangla meanings, with Bangla pronunciation help. Russian and Polish are coming.
+6. **In your language**: meanings in English, Bangla, Russian or Polish, with a pronunciation guide in the meaning language.
 7. **Get it on Google Play** (badge + QR code). iPhone is coming soon.
 
 ## 3. The page, section by section (the storyboard)
 One long page with a sticky header (logo, section links, language switch, theme toggle, and a *Get the app* button that scrolls to the final CTA). Each section below has its **message**, **visual** and **motion**. Motion is always subtle and purposeful, never decoration for its own sake.
 
 ### 3.1 Hero
-- **Message:** headline *"Learn German, one clear day at a time."* (from the store listing), with *"The road to a new language"* as the kicker. Subline: *"A complete, offline German course from A1 to C2, with meanings in English or Bangla."*
+- **Message:** headline *"Learn German, one clear day at a time."* (from the store listing), with *"The road to a new language"* as the kicker. Subline: *"A complete, offline German course from A1 to C2, with meanings in English, Bangla, Russian or Polish."* (The Polish and Russian pages lead with their own language, as their listings do; the Bangla page keeps "English or Bangla", as its listing does.)
 - **Visual:**
   - A phone in a generic CSS/SVG device frame (not an iPhone or Pixel likeness) showing the **Today** screen, with a second phone behind it at an angle showing a **study card**.
   - Background: Lagoon, with the brand's *Silk Road* route (Variant B) drawn as a dotted path across the section.
@@ -76,8 +76,8 @@ Short title, one line and an icon each. A card animates in with a small stagger:
 - **Visual and motion:** one phone with a **three-way toggle**. Switching cross-fades the same screen (Today) between `today_light_phone`, `today_dark_phone` and `today_glass_phone`. A 200 % text badge shows `word_detail` at large text *(use the app's `_200` goldens if present)*.
 
 ### 3.8 In your language
-- **Message:** meanings in **English, Bangla, or both**, and Bangla pronunciation written in Bangla letters. **Russian and Polish meanings are coming** *(owner: confirm announcing this)*.
-- **Visual:** one word card (*der Termin*) whose meaning line cycles English → বাংলা → Русский → Polski, with the future languages labelled "soon".
+- **Message:** meanings in **English, Bangla, Russian or Polish**, one language or two shown together, with the pronunciation guide in the meaning language; in Russian and Polish, the examples and grammar rules too (app v1.1.0, #34).
+- **Visual:** one word card (*der Termin*) whose four meanings, each with its pronunciation, arrive one after another: English → বাংলা → Русский → Polski.
 - Any Bangla on the page is set with `lang="bn"` and Noto Sans Bengali.
 
 ### 3.9 Screens gallery
@@ -100,23 +100,25 @@ Accordion. Answers only from *Facts* or the owner:
 Source: the app repo's `docs/05-dev-guide/store-listing.md`. Update these if the listing changes.
 - **Course:**
   - A complete German course, **12 steps from A1.1 to C2.2**, built around the exams.
-  - **5,069 words**, each with examples, its pronunciation written in Bangla letters, and its article and forms where it has them.
+  - **5,069 words**, each with examples, its article and forms where it has them, and a pronunciation guide in your meaning language: Bangla, Russian or Polish letters, or an English respelling.
   - **182 grammar topics**, each with its rule and a short practice.
-  - Meanings in **English, Bangla, or both**.
+  - Meanings in **English, Bangla, Russian or Polish**: one language, or two shown together.
+  - In Russian and Polish, the example sentences and grammar rules too.
+  - Not a feature: Russian and Polish interference tips (they cover only some words).
 - **Daily study:**
   - A **daily plan**: revise what is due, learn new words, practise a grammar topic and sentences.
   - **Spaced revision (FSRS)**.
   - Rest days you choose, and a reminder only when something is due.
   - A **home-screen widget**.
 - **Practice and exams:**
-  - **Quizzes** in every direction: German → English, German → Bangla, English → German, articles, listening and word forms.
+  - **Quizzes** in every direction: German to your languages and back, articles, listening and word forms.
   - **Three mock exams per step**: vocabulary, grammar, listening, writing and speaking, with a result by section.
   - Compare near-synonyms; add your own words.
 - **Voice:** your phone's German voice; optional **Supertonic** voice, offline, ~400 MB over Wi-Fi, downloaded once.
 - **Setup and access:**
   - A placement check.
   - **Light, dark and glass** themes, text up to **200 %**, and screen-reader support.
-  - The app itself in English or Bangla (Russian and Polish in progress).
+  - The app in English, Bangla, Polish or Russian.
 - **Privacy and platform:**
   - **Fully offline**, with **no account**, and progress stays on the phone.
   - Android 8.0+ (minSdk 26).
@@ -185,7 +187,7 @@ The owner decided (2026-09-29, and 2026-09-30 for the list):
 - **Per-locale metadata:**
   - title *"Sogda — Learn German offline, A1 to C2"*;
   - description from the store listing's short description;
-  - canonical `https://sogda.de/<locale>`.
+  - canonical `https://www.sogda.de/<locale>` (the primary host in Vercel; `sogda.de` redirects to it).
 - **Open Graph and Twitter images:** 1200 × 630, generated at build (logo + headline + a phone), per locale.
 - `sitemap.xml`, `robots.txt`.
 - **JSON-LD:** `MobileApplication` (name, operatingSystem `ANDROID`, applicationCategory `EducationalApplication`, the Play URL once live). No ratings or offers unless the owner gives them.
@@ -198,7 +200,7 @@ The owner decided (2026-09-29, and 2026-09-30 for the list):
 | 3 | ~~The website's languages~~ **Decided 2026-09-29, list 2026-09-30:** English, German, Polish, Russian and Bangla; the visitor's language first, English by default, with a switch (§7) | — |
 | 4 | The Impressum details and a contact email: **the owner fills `content/legal.json` (2026-09-30)** | Placeholders; **don't launch on the domain without them** (a production build refuses: `pnpm check:launch`) |
 | 5 | ~~Analytics (none, or cookieless Vercel Web Analytics)~~ **Decided 2026-09-30:** none | — |
-| 6 | Announce Russian/Polish meanings as "coming soon"? | Yes, only as "coming soon" |
+| 6 | ~~Announce Russian/Polish meanings as "coming soon"?~~ **Moot since the app's v1.1.0 (#34):** they are in the listing, so the site states them | — |
 | 7 | A pre-launch "notify me" (mailto only; no form backend) | None |
 
 ## 11. Definition of done (launch)

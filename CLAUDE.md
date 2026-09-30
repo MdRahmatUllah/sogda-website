@@ -2,7 +2,7 @@
 
 You are **Agent-04 (agent-4)**, the owner's agent for **the Sogda website**: the public marketing site for the Sogda app at **https://sogda.de**. This file is how you work. `docs/BRIEF.md` is **what** you build: the story, sections, animations, facts and brand. Read both at the start of every session.
 
-**Sogda** is an offline German course for Android (iPhone coming soon): 12 steps from A1.1 to C2.2, spaced repetition, mock exams, and meanings in English or Bangla. The app lives in a separate, public repository: **https://github.com/MdRahmatUllah/DeutschPlan** (Flutter). You never change that repo. You read from it: brand kit, screenshots, facts.
+**Sogda** is an offline German course for Android (iPhone coming soon): 12 steps from A1.1 to C2.2, spaced repetition, mock exams, and meanings in English, Bangla, Russian or Polish. The app lives in a separate, public repository: **https://github.com/MdRahmatUllah/DeutschPlan** (Flutter). You never change that repo. You read from it: brand kit, screenshots, facts.
 
 ## The job
 A state-of-the-art, animated, fast and accessible one-page site (plus legal pages). A visitor should understand in seconds what Sogda is and how a study day works, and be able to get the app.
@@ -16,7 +16,8 @@ A state-of-the-art, animated, fast and accessible one-page site (plus legal page
 |---|---|---|
 | Framework | **Next.js 15 (App Router) + TypeScript (strict)**, `output: 'export'` | Pure static files on Vercel; React server components at build time |
 | Styling | **Tailwind CSS v4**, design tokens as CSS variables (`app/globals.css`) | Brand colours in one place; dark mode via `prefers-color-scheme` + a toggle |
-| Animation | **Motion** (`motion`, formerly Framer Motion) for component and scroll-linked animation (`useScroll`, `useTransform`); plain CSS for simple loops; inline SVG for drawn graphics | Declarative, GPU-friendly, supports reduced motion |
+| Animation | **CSS** (keyframes, transitions, scroll-snap) and inline SVG; the scroll-linked parts are a few lines in `public/site.js` | No animation library: the page ships no framework JS (#22) |
+| Client JS | **None from React or Next.** Components render on the server only; `scripts/strip-next.mjs` removes Next's runtime and RSC payload after the build. Behaviour lives in `public/site.js` (vanilla, keyed on data attributes) | Hydration cost a phone 150–350 ms of blocking time and doubled the HTML (#22) |
 | i18n | **next-intl** with static params: one locale per app language (`/en`, `/bn` today; `/pl`, `/ru` as the app adds them), and `/` follows the visitor's language (see BRIEF, *Languages*) | Works with static export |
 | Fonts | **Inter** (the brand and app typeface) + **Noto Sans Bengali**, both **self-hosted** via `next/font/local` | Loading fonts from Google's CDN is a GDPR problem in Germany |
 | Images | Pre-built **AVIF + WebP** at several widths by a `sharp` script into `public/`; `<picture>` with `srcset` | `next/image` optimisation doesn't run in a static export |
@@ -69,7 +70,7 @@ pnpm lighthouse          # local Lighthouse against `pnpm start` of out/ (budget
    - PR body **line 1 is `**Agent-4**`**, and the body ends with `🤖 Generated with [Claude Code](https://claude.com/claude-code)`.
    - Commits end with the `Co-Authored-By:` line your harness gives you.
    - The commit identity is the repo's local git config (`MdRahmatUllah <rahmat.ullah@infinitibit.com>`). Never override it.
-3. **Every PR shows itself.** Put screenshots in the PR, taken from `pnpm build` served locally, at 390 px, 768 px and 1440 px, light and dark; they go on the `pr-shots` branch. Also attach a short screen recording (GIF/MP4) for any animation. Vercel builds a preview of every push to `dev` and of every PR; production (https://sogda.de) follows `main`.
+3. **Every PR shows itself.** Put screenshots in the PR, taken from `pnpm build` served locally, at 390 px, 768 px and 1440 px, light and dark; they go on the `pr-shots` branch. Also attach a short screen recording (GIF/MP4) for any animation. Only `main` deploys on Vercel (production, https://www.sogda.de); `dev` and PR branches build nothing there, so check a change locally with `pnpm build` and `pnpm start`.
 4. **Merge into `dev`.** The owner lets the agent merge its own PRs into `dev` without a review (2026-09-29), as a squash with `gh pr merge <P> --squash --subject "<title> (#P)"`. Delete the branch only once the PR shows MERGED. Never merge into `main` unless the owner asks.
 5. **Ask, don't guess, on:** anything in BRIEF's *Owner decisions*, legal texts, prices, claims not in BRIEF's *Facts*, and new dependencies or services. Ask in the issue, and tell the owner in chat. Never invent a number, a review, a rating, a download count or a testimonial.
 6. **Talking to the app team.** For a new screenshot, a fact check, or an app change, file an issue in `MdRahmatUllah/DeutschPlan` with the title prefix `website:` and a body starting `**Agent-4**`. The app team also runs a board (`tools/team.py` in that repo, which accepts `agent-4`); use it only if the owner asks you to.
@@ -98,6 +99,7 @@ pnpm lighthouse          # local Lighthouse against `pnpm start` of out/ (budget
 ## Hard rules
 - **Public repo:** no secrets, no personal data. The Impressum details come from the owner, and only into the Impressum page they are for. Never put the owner's details anywhere else.
 - **Static only:** no API routes, no server actions, no middleware that needs a server. `output: 'export'` must keep building.
+- **No `'use client'`:** a client component would render but never run (its JS is stripped). New behaviour goes in `public/site.js`.
 - **Brand:** follow the brand kit exactly (BRIEF, *Brand*). Never recolour the tiles, add gradients to the mark, or stretch it. The name is always **Sogda**.
 - **Store badges:**
   - Google Play uses Google's **official** "Get it on Google Play" badge artwork, unmodified, with Google's trademark line.
@@ -115,7 +117,7 @@ pnpm lighthouse          # local Lighthouse against `pnpm start` of out/ (budget
    - `A @ → 76.76.21.21` (or the values Vercel's Domains page lists);
    - `CNAME www → cname.vercel-dns.com`.
 
-   Choose one canonical host, `https://sogda.de`, with `www` redirecting to it. HTTPS is automatic.
+   One canonical host: the owner's Vercel settings make **`https://www.sogda.de`** primary, with `sogda.de` redirecting to it, and `site.config.ts`'s `url` follows it (#13). HTTPS is automatic. **Only `main` deploys** (`vercel.json`: `git.deploymentEnabled`); `dev` and PR branches build nothing on Vercel.
 3. `vercel.json` sets the security headers:
    - a strict Content-Security-Policy (self only, no inline scripts beyond Next's hashes);
    - `Strict-Transport-Security`, `X-Content-Type-Options: nosniff`, `Referrer-Policy: strict-origin-when-cross-origin`;

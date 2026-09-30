@@ -16,19 +16,12 @@ const LOCALES = readdirSync('messages').map((f) => f.replace(/\.json$/, ''));
 const RUNS = 3;
 const BUDGET = { score: 95, lcp: 2000, cls: 0.05, tbt: 150, jsKb: 130 };
 
-/** A built page's JS, gzipped: every chunk it loads, whether its <script src>
- * is in the HTML or in the after-load loader (scripts/defer-hydration.mjs).
- * The noModule polyfills don't count: a module browser never fetches them. */
+/** A built page's JS, gzipped: every <script src> it loads (since #22 only
+ * /site.js; scripts/strip-next.mjs removes Next's). Inline scripts are in the
+ * HTML's own weight. */
 function initialJsKb(locale) {
   const html = readFileSync(`out/${locale}.html`, 'utf8');
-  const polyfills = new Set(
-    [...html.matchAll(/<script[^>]*\ssrc="([^"]+)"[^>]*noModule/gi)].map((m) => m[1]),
-  );
-  const srcs = new Set(
-    [...html.matchAll(/"(\/_next\/static\/chunks\/[^"]+\.js)"/g)]
-      .map((m) => m[1])
-      .filter((src) => !polyfills.has(src)),
-  );
+  const srcs = new Set([...html.matchAll(/<script\b[^>]*\ssrc="([^"]+)"/gi)].map((m) => m[1]));
   const bytes = [...srcs].reduce(
     (sum, src) => sum + gzipSync(readFileSync(`out${decodeURIComponent(src)}`)).length,
     0,
@@ -42,9 +35,15 @@ const server = spawn('pnpm', ['exec', 'serve', 'out', '-l', String(PORT)], {
 });
 // The Chromium the e2e tests run (pinned by the lockfile), so the numbers
 // don't move with whatever Chrome this machine has.
+// Headless Chrome has no display to sync to: on Windows its frame clock
+// drops to 1 Hz about 0.4 s in, so a page ready at 0.5 s first paints at
+// ~1.15 s, and Lighthouse's model then counts every request started before
+// that against LCP (#22: /bn 3.1 s; example.com, ready at 0.1 s, is spared).
+// A phone's screen ticks at 60 Hz, so the frame clock runs free here; network
+// and CPU are still Lighthouse's simulated mid-range phone.
 const chrome = await chromeLauncher.launch({
   chromePath: chromium.executablePath(),
-  chromeFlags: ['--headless=new'],
+  chromeFlags: ['--headless=new', '--disable-gpu-vsync', '--disable-frame-rate-limit'],
 });
 let failed = false;
 try {
