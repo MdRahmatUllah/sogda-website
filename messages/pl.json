@@ -375,6 +375,147 @@
           "a": "Nie. Sprawdzają słuchanie, pisanie i mówienie jak prawdziwe egzaminy, a do tego słownictwo i gramatykę, bez części z czytaniem. Powstają ze słów i gramatyki etapu, to nie są arkusze Goethe ani telc."
         }
       }
+    },
+    "sogda-vs-anki": {
+      "title": "Sogda czy Anki do niemieckiego: gotowy kurs czy własne talie",
+      "description": "Sogda czy Anki do niemieckiego? Obie stosują powtórki rozłożone w czasie. Anki to talie, które tworzysz lub pobierasz; Sogda to gotowy kurs A1–C2, offline.",
+      "name": "Sogda czy Anki",
+      "eyebrow": "Porównanie",
+      "h1": "Sogda czy Anki do niemieckiego?",
+      "answer": "Anki to aplikacja z fiszkami: tworzysz w niej własne talie albo pobierasz talie udostępnione przez innych użytkowników. Sogda to gotowy kurs niemieckiego od A1 do C2: {words, plural, one {# słowo} few {# słowa} many {# słów} other {# słowa}}, {topics, plural, one {# temat gramatyczny} few {# tematy gramatyczne} many {# tematów gramatycznych} other {# tematu gramatycznego}} i {mocksPerStep, plural, one {# egzamin próbny} few {# egzaminy próbne} many {# egzaminów próbnych} other {# egzaminu próbnego}} na każdy etap, a obie aplikacje planują powtórki tak, by słowo wracało tuż zanim je zapomnisz.",
+      "sections": {
+        "same": {
+          "heading": "Co mają wspólnego",
+          "body": {
+            "p1": "Obie przywracają kartę tuż zanim ją zapomnisz. Podręcznik Anki opisuje FSRS (Free Spaced Repetition Scheduler) jako alternatywę dla starszego algorytmu SM-2, którą można włączyć (Anki 23.10 i nowsze, AnkiDroid 2.17 i nowsze). Sogda od początku planuje każde słowo według FSRS."
+          }
+        },
+        "anki": {
+          "heading": "Wybierz Anki, jeśli…",
+          "body": {
+            "p1": "Anki sprawdzi się lepiej, gdy karty mają być twoje:"
+          },
+          "list": {
+            "a": "chcesz tworzyć własne karty, do niemieckiego albo czegokolwiek innego;",
+            "b": "masz już talię, której ufasz, albo chcesz wziąć jedną ze wspólnych talii Anki;",
+            "c": "chcesz samodzielnie ustawiać każdą opcję planowania;",
+            "d": "uczysz się także na komputerze: Anki działa na Windowsie, macOS i Linuksie, a do tego jest AnkiDroid na Androida i AnkiMobile na iPhone'a."
+          }
+        },
+        "sogda": {
+          "heading": "Wybierz Sogdę, jeśli…",
+          "body": {
+            "p1": "Sogda sprawdzi się lepiej, gdy potrzebujesz kursu, a nie kart:"
+          },
+          "list": {
+            "a": "chcesz mieć cały kurs gotowy, od pierwszego „Hallo” do C2: {words, plural, one {# słowo} few {# słowa} many {# słów} other {# słowa}}, każde z przykładami, rodzajnikiem i formami (jeśli je ma), oraz {topics, plural, one {# temat gramatyczny} few {# tematy gramatyczne} many {# tematów gramatycznych} other {# tematu gramatycznego}}, każdy z regułą i krótkim ćwiczeniem;",
+            "b": "wolisz plan na każdy dzień niż talie, którymi trzeba zarządzać;",
+            "c": "zależy ci na znaczeniach, przykładach i regułach gramatyki po polsku oraz na wskazówkach wymowy zapisanych polskimi literami;",
+            "d": "przygotowujesz się do egzaminu: {mocksPerStep, plural, one {# egzamin próbny} few {# egzaminy próbne} many {# egzaminów próbnych} other {# egzaminu próbnego}} na każdy etap, ze słuchaniem, pisaniem i mówieniem, a do tego ze słownictwem i gramatyką;",
+            "e": "chcesz uczyć się w pełni offline i bez konta, na Androidzie."
+          }
+        },
+        "both": {
+          "heading": "Albo jedno i drugie",
+          "body": {
+            "p1": "Nic nie stoi na przeszkodzie: przerabiaj kurs w Sogdzie, a w Anki trzymaj talię ze słowami z własnej pracy czy studiów, których nie ma w żadnym kursie."
+          }
+        },
+        "sources": {
+          "heading": "Skąd te informacje",
+          "body": {
+            "p1": "Anki: jej własny podręcznik na docs.ankiweb.net (Getting started; Deck options, o FSRS), przeczytany 1 października 2026 r. Sogda: dane kursu w aplikacji. Anki jest tu wymieniona tylko w celu opisu; Sogda nie jest z nią w żaden sposób powiązana."
+          }
+        }
+      },
+      "faq": {
+        "algorithm": {
+          "q": "Czy Sogda planuje powtórki tak jak Anki?",
+          "a": "Sogda używa FSRS, który Anki oferuje jako opcję od wersji 23.10; włącza się go w opcjach talii w Anki. Dopóki go nie włączysz, w Anki działa starszy harmonogram SM-2."
+        },
+        "import": {
+          "q": "Czy mogę zaimportować swoją talię Anki do Sogdy?",
+          "a": "Nie. Sogda uczy według własnego kursu, więc twoje talie zostają w Anki."
+        },
+        "exam": {
+          "q": "Co lepiej przygotuje do egzaminu Goethe lub telc?",
+          "a": "W Anki wszystko zależy od talii. Etapy Sogdy są ułożone pod kątem egzaminów: {mocksPerStep, plural, one {# egzamin próbny} few {# egzaminy próbne} many {# egzaminów próbnych} other {# egzaminu próbnego}} na każdy etap sprawdzają słuchanie, pisanie i mówienie, a do tego słownictwo i gramatykę. To nie są oficjalne arkusze i nie ma części z czytaniem ze zrozumieniem."
+        },
+        "iphone": {
+          "q": "Czy Sogda jest na iPhone'a?",
+          "a": "Jeszcze nie: Sogda działa na Androidzie ({android} lub nowszym), iPhone — wkrótce."
+        }
+      }
+    },
+    "sogda-vs-duolingo": {
+      "title": "Sogda czy Duolingo do niemieckiego: jak daleko, jak głęboko, czy offline",
+      "description": "Sogda czy Duolingo do niemieckiego? Kurs niemieckiego w Duolingo sięga B2; Sogda prowadzi od A1 do C2, z gramatyką i egzaminami próbnymi, offline i bez konta.",
+      "name": "Sogda czy Duolingo",
+      "eyebrow": "Porównanie",
+      "h1": "Sogda czy Duolingo do niemieckiego?",
+      "answer": "Duolingo uczy wielu języków, a jego kurs niemieckiego sięga poziomu B2 w skali CEFR, jak napisał blog Duolingo w kwietniu 2026 r. Sogda uczy tylko niemieckiego, od A1 do C2 w {steps, number} etapach, z {words, number} słowami, {topics, number} tematami gramatycznymi i {mocksPerStep, number} egzaminami próbnymi na każdy etap, w pełni offline i bez konta.",
+      "sections": {
+        "levels": {
+          "heading": "Jak daleko sięga każda",
+          "body": {
+            "p1": "CEFR ma sześć poziomów, od A1 do C2. Kurs niemieckiego w Duolingo sięga B2, poziomu „samodzielnego użytkownika”. {steps, plural, one {# etap} few {# etapy} many {# etapów} other {# etapu}} Sogdy idzie dalej, przez C1 i C2 — poziomy Goethe-Zertifikat C1 i C2."
+          }
+        },
+        "duolingo": {
+          "heading": "Wybierz Duolingo, jeśli…",
+          "body": {
+            "p1": "Duolingo sprawdzi się lepiej, gdy niemiecki jest jednym z kilku języków:"
+          },
+          "list": {
+            "a": "chcesz uczyć się w tej samej aplikacji także innych języków;",
+            "b": "wystarczy ci niemiecki do poziomu B2;",
+            "c": "masz dziś iPhone'a: Sogda jest na razie tylko na Androida."
+          }
+        },
+        "sogda": {
+          "heading": "Wybierz Sogdę, jeśli…",
+          "body": {
+            "p1": "Sogda sprawdzi się lepiej, gdy celem jest niemiecki:"
+          },
+          "list": {
+            "a": "celujesz w C1 lub C2 albo w egzamin Goethe lub telc na dowolnym poziomie: {mocksPerStep, plural, one {# egzamin próbny} few {# egzaminy próbne} many {# egzaminów próbnych} other {# egzaminu próbnego}} na każdy etap;",
+            "b": "potrzebujesz gramatyki w postaci reguł, do których można wrócić: {topics, plural, one {# temat gramatyczny} few {# tematy gramatyczne} many {# tematów gramatycznych} other {# tematu gramatycznego}}, każdy z regułą i krótkim ćwiczeniem;",
+            "c": "chcesz, by każde słowo miało rodzajnik i formy (jeśli je ma), przykłady i wskazówkę wymowy zapisaną polskimi literami;",
+            "d": "zależy ci na znaczeniach, przykładach i regułach po polsku;",
+            "e": "chcesz uczyć się w pełni offline, bez zakładania konta."
+          }
+        },
+        "both": {
+          "heading": "Albo jedno i drugie",
+          "body": {
+            "p1": "Nic nie stoi na przeszkodzie: wiele osób ma jedną aplikację dla odmiany, a drugą dla głębi. Plan w Sogdzie trwa tyle, ile wyznacza twój dzienny cel, więc zmieści się obok innej aplikacji."
+          }
+        },
+        "sources": {
+          "heading": "Skąd te informacje",
+          "body": {
+            "p1": "Duolingo: wpis na jego blogu „Duolingo Course Content Can Take You to B2 Proficiency” z 22 kwietnia 2026 r., przeczytany 1 października 2026 r. Sogda: dane kursu w aplikacji. Duolingo jest tu wymienione tylko w celu opisu; Sogda nie jest z nim w żaden sposób powiązana."
+          }
+        }
+      },
+      "faq": {
+        "levels": {
+          "q": "Jak daleko sięga kurs niemieckiego w Duolingo?",
+          "a": "Do B2 w skali CEFR, według bloga Duolingo z kwietnia 2026 r. Sogda idzie dalej, do C2."
+        },
+        "exam": {
+          "q": "Co lepiej przygotuje do egzaminu Goethe lub telc?",
+          "a": "Etapy Sogdy są ułożone pod kątem egzaminów: {mocksPerStep, plural, one {# egzamin próbny} few {# egzaminy próbne} many {# egzaminów próbnych} other {# egzaminu próbnego}} na każdy etap sprawdzają słuchanie, pisanie i mówienie, a do tego słownictwo i gramatykę. To nie są oficjalne arkusze i nie ma części z czytaniem ze zrozumieniem."
+        },
+        "offline": {
+          "q": "Czy Sogda działa offline?",
+          "a": "Tak, w pełni i bez konta. Pobrania wymaga tylko opcjonalny naturalny głos, raz, przez Wi‑Fi."
+        },
+        "switch": {
+          "q": "Czy mogę przenieść postępy z Duolingo do Sogdy?",
+          "a": "Nie, ale krótki test poziomu dobierze właściwy etap."
+        }
+      }
     }
   }
 }

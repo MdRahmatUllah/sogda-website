@@ -1,29 +1,32 @@
 import AxeBuilder from '@axe-core/playwright';
 import { expect, test } from '@playwright/test';
 import { readFileSync } from 'node:fs';
+import { routing } from '../i18n/routing';
 
 const facts = JSON.parse(readFileSync('content/facts.json', 'utf8'));
 
-// #74: fair comparisons, features only. en and de for now; the other
-// locales have no such page, so neither hreflang nor the switch offers one.
+// #74: fair comparisons, features only, in every locale.
 const SLUGS = ['sogda-vs-anki', 'sogda-vs-duolingo'];
-const LOCALES = ['en', 'de'];
+
+// No price, rating or "free" (BRIEF), in any of the site's languages. FSRS's
+// own name, the Free Spaced Repetition Scheduler, is not a price.
+const PRICE =
+  /€|\$|\bfree\b(?! spaced)|kostenlos|gratis|darmo|бесплатн|বিনামূল্যে|ফ্রি|\brating|★/i;
 
 for (const slug of SLUGS) {
-  for (const locale of LOCALES) {
+  for (const locale of routing.locales) {
     test(`/${locale}/${slug}: answer first with the facts, both ways, its sources, no prices, axe-clean`, async ({
       page,
     }) => {
       await page.goto(`/${locale}/${slug}`);
       const url = `https://www.sogda.de/${locale}/${slug}`;
       await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', url);
-      for (const l of LOCALES) {
+      for (const l of routing.locales) {
         await expect(page.locator(`link[rel="alternate"][hreflang="${l}"]`)).toHaveAttribute(
           'href',
           `https://www.sogda.de/${l}/${slug}`,
         );
       }
-      await expect(page.locator('link[rel="alternate"][hreflang="pl"]')).toHaveCount(0);
       const description = await page.locator('meta[name="description"]').getAttribute('content');
       expect(description!.length).toBeLessThanOrEqual(160);
 
@@ -37,9 +40,7 @@ for (const slug of SLUGS) {
         await main.locator('section[aria-labelledby^="s-"] ul').count(),
       ).toBeGreaterThanOrEqual(2);
       await expect(main.locator('#s-sources')).toBeVisible();
-      // Features only: no price, rating or "free" (BRIEF). FSRS's own name,
-      // the Free Spaced Repetition Scheduler, is not a price.
-      expect(text).not.toMatch(/€|\$|\bfree\b(?! spaced)|\bkostenlos|\bgratis|\brating|★/i);
+      expect(text).not.toMatch(PRICE);
 
       const graph = JSON.parse(
         (await main.locator('script[type="application/ld+json"]').textContent())!,
@@ -52,9 +53,4 @@ for (const slug of SLUGS) {
       expect(violations.map((v) => `${v.id}: ${v.help}`)).toEqual([]);
     });
   }
-
-  test(`/${slug} doesn't exist in pl, ru or bn yet`, async ({ request }) => {
-    for (const l of ['pl', 'ru', 'bn'])
-      expect((await request.get(`/${l}/${slug}`)).status()).toBe(404);
-  });
 }
