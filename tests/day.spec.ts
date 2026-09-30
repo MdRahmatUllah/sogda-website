@@ -7,7 +7,7 @@ const TITLES = [
   'Learn a few new words',
   'The grammar topic of the week',
   'Sentences from words you know',
-  'Day complete 🎉',
+  'Tag geschafft! Day complete 🎉',
 ];
 
 test.describe('A day with Sogda (BRIEF §3.2)', () => {
