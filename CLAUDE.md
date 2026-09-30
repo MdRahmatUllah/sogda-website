@@ -69,7 +69,7 @@ pnpm lighthouse          # local Lighthouse against `pnpm start` of out/ (budget
    - PR body **line 1 is `**Agent-4**`**, and the body ends with `🤖 Generated with [Claude Code](https://claude.com/claude-code)`.
    - Commits end with the `Co-Authored-By:` line your harness gives you.
    - The commit identity is the repo's local git config (`MdRahmatUllah <rahmat.ullah@infinitibit.com>`). Never override it.
-3. **Every PR shows itself.** Put screenshots in the PR, taken from `pnpm build` served locally, at 390 px, 768 px and 1440 px, light and dark; they go on the `pr-shots` branch. Also attach a short screen recording (GIF/MP4) for any animation. Vercel builds a preview of every push to `dev` and of every PR; production (https://sogda.de) follows `main`.
+3. **Every PR shows itself.** Put screenshots in the PR, taken from `pnpm build` served locally, at 390 px, 768 px and 1440 px, light and dark; they go on the `pr-shots` branch. Also attach a short screen recording (GIF/MP4) for any animation. Only `main` deploys on Vercel (production, https://www.sogda.de); `dev` and PR branches build nothing there, so check a change locally with `pnpm build` and `pnpm start`.
 4. **Merge into `dev`.** The owner lets the agent merge its own PRs into `dev` without a review (2026-09-29), as a squash with `gh pr merge <P> --squash --subject "<title> (#P)"`. Delete the branch only once the PR shows MERGED. Never merge into `main` unless the owner asks.
 5. **Ask, don't guess, on:** anything in BRIEF's *Owner decisions*, legal texts, prices, claims not in BRIEF's *Facts*, and new dependencies or services. Ask in the issue, and tell the owner in chat. Never invent a number, a review, a rating, a download count or a testimonial.
 6. **Talking to the app team.** For a new screenshot, a fact check, or an app change, file an issue in `MdRahmatUllah/DeutschPlan` with the title prefix `website:` and a body starting `**Agent-4**`. The app team also runs a board (`tools/team.py` in that repo, which accepts `agent-4`); use it only if the owner asks you to.
@@ -115,7 +115,7 @@ pnpm lighthouse          # local Lighthouse against `pnpm start` of out/ (budget
    - `A @ → 76.76.21.21` (or the values Vercel's Domains page lists);
    - `CNAME www → cname.vercel-dns.com`.
 
-   Choose one canonical host, `https://sogda.de`, with `www` redirecting to it. HTTPS is automatic.
+   One canonical host: the owner's Vercel settings make **`https://www.sogda.de`** primary, with `sogda.de` redirecting to it, and `site.config.ts`'s `url` follows it (#13). HTTPS is automatic. **Only `main` deploys** (`vercel.json`: `git.deploymentEnabled`); `dev` and PR branches build nothing on Vercel.
 3. `vercel.json` sets the security headers:
    - a strict Content-Security-Policy (self only, no inline scripts beyond Next's hashes);
    - `Strict-Transport-Security`, `X-Content-Type-Options: nosniff`, `Referrer-Policy: strict-origin-when-cross-origin`;
