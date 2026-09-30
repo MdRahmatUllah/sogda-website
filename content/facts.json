@@ -1,5 +1,5 @@
 {
-  "app_ref": "b8a2eeea6557aabba7d4f0a53e19f3823f749817",
+  "app_ref": "04554cf801c61f450f8a4a245d7d8072a3f4ed2b",
   "schema": 1,
   "content_version": "20260930135630",
   "app": { "version": "1.1.0", "package": "de.sogda.app", "min_sdk": 26, "min_android": "8.0" },
