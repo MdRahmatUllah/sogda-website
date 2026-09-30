@@ -1,24 +1,12 @@
 import { getTranslations } from 'next-intl/server';
+import { factArgs, facts } from '@/i18n/facts';
 
 // BRIEF §3.4: the Silk Road as the course, 12 stations from A1.1 to C2.2,
 // winding down the page; a traveller (the Sun tile's colour) follows the
 // scroll and lights each station it passes. The finished road is the markup
 // (no JS, reduced motion); public/site.js takes it back to the start and
 // follows the scroll.
-const STEPS = [
-  'A1.1',
-  'A1.2',
-  'A2.1',
-  'A2.2',
-  'B1.1',
-  'B1.2',
-  'B2.1',
-  'B2.2',
-  'C1.1',
-  'C1.2',
-  'C2.1',
-  'C2.2',
-];
+const STEPS = facts.steps.map((step) => step.code);
 // The app's own level names (learn_screen.dart); B2, C1 and C2 have none.
 const LEVEL_NAMES: Record<string, string> = { A1: 'Anfänger', A2: 'Grundstufe', B1: 'Mittelstufe' };
 
@@ -64,7 +52,7 @@ export async function Journey({ locale }: { locale: string }) {
             id="journey-title"
             className="mt-2 text-4xl leading-tight font-extrabold tracking-[-0.02em] sm:text-5xl"
           >
-            {t('title')}
+            {t('title', factArgs)}
           </h2>
           <ul className="mt-8 grid gap-3 text-lg">
             {(['words', 'grammar', 'exams'] as const).map((k) => (
@@ -73,24 +61,29 @@ export async function Journey({ locale }: { locale: string }) {
                   aria-hidden="true"
                   className="size-3 rounded-full border-2 border-ink bg-sun"
                 />
-                {t(`facts.${k}`)}
+                {t(`facts.${k}`, factArgs)}
               </li>
             ))}
           </ul>
           <p aria-hidden="true" className="card mt-8 inline-flex items-baseline gap-2 px-5 py-3">
             <span
               id="journey-count"
-              data-total={5069}
+              data-total={facts.totals.words}
               className="text-3xl font-extrabold tabular-nums"
             >
-              {new Intl.NumberFormat(locale).format(5069)}
+              {new Intl.NumberFormat(locale).format(facts.totals.words)}
             </span>
             <span className="text-muted">{t('counter')}</span>
           </p>
           <p className="mt-8 max-w-md text-lg">{t('placement')}</p>
         </div>
         <div className="relative mx-auto w-full max-w-md">
-          <svg viewBox={`0 0 ${W} ${H}`} className="w-full" role="img" aria-label={t('road')}>
+          <svg
+            viewBox={`0 0 ${W} ${H}`}
+            className="w-full"
+            role="img"
+            aria-label={t('road', factArgs)}
+          >
             <path
               id="journey-road"
               d={road()}

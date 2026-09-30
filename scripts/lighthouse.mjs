@@ -9,7 +9,8 @@ import { chromium } from '@playwright/test';
 import * as chromeLauncher from 'chrome-launcher';
 import lighthouse from 'lighthouse';
 
-const PORT = 4174;
+// #84: each agent measures its own build on its own port (CLAUDE.md, Team mode).
+const PORT = Number(process.env.LH_PORT ?? 4174);
 // Every locale has its messages file (i18n/routing.ts lists the same codes).
 const LOCALES = readdirSync('messages').map((f) => f.replace(/\.json$/, ''));
 
