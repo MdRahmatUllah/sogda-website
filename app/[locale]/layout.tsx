@@ -11,6 +11,8 @@ import { site } from '@/site.config';
 
 type Props = { children: ReactNode; params: Promise<{ locale: string }> };
 
+const OG_LOCALE: Record<string, string> = { en: 'en_US', bn: 'bn_BD', pl: 'pl_PL', ru: 'ru_RU' };
+
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
@@ -30,6 +32,22 @@ export async function generateMetadata({ params }: Omit<Props, 'children'>): Pro
       apple: '/apple-touch-icon.png',
     },
     manifest: '/manifest.webmanifest',
+    // Sharing (BRIEF §9): the per-locale card from scripts/og.mjs.
+    openGraph: {
+      type: 'website',
+      siteName: 'Sogda',
+      title: t('title'),
+      description: t('description'),
+      url: `/${locale}`,
+      locale: OG_LOCALE[locale] ?? locale,
+      images: [{ url: `/og/${locale}.png`, width: 1200, height: 630, alt: t('title') }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: t('title'),
+      description: t('description'),
+      images: [`/og/${locale}.png`],
+    },
     // Every language's version of the page, and English for everyone else.
     alternates: {
       canonical: `/${locale}`,
