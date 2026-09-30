@@ -59,3 +59,22 @@ test.describe('until the owner fills in content/legal.json', () => {
     expect(failed).toBe(true);
   });
 });
+
+test.describe('once the owner has filled in content/legal.json', () => {
+  test.skip(!complete, 'the Impressum still has placeholders');
+
+  test('the Impressum shows every detail, no placeholder, and the footer offers the contact', async ({
+    page,
+  }) => {
+    await page.goto('/en/impressum');
+    await expect(page.locator('[data-placeholder]')).toHaveCount(0);
+    for (const k of ['name', 'street', 'postcodeCity', 'email', 'phone']) {
+      await expect(page.locator('article[lang="de"]')).toContainText(String(legal[k]));
+    }
+    await expect(page.locator('footer').getByRole('link', { name: 'Contact' })).toHaveAttribute(
+      'href',
+      `mailto:${legal.email}`,
+    );
+    execFileSync(process.execPath, ['scripts/check-launch.mjs'], { stdio: 'pipe' });
+  });
+});

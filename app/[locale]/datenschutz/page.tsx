@@ -93,8 +93,9 @@ export default async function Datenschutz({ params }: Props) {
             Sie haben das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art.
             17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) und
             Widerspruch (Art. 21). Sie können sich außerdem bei einer Datenschutz-Aufsichtsbehörde
-            beschweren (Art. 77 DSGVO). Eine automatisierte Entscheidungsfindung oder ein Profiling
-            findet nicht statt.
+            beschweren (Art. 77 DSGVO); für uns zuständig ist das Bayerische Landesamt für
+            Datenschutzaufsicht (BayLDA), Promenade 18, 91522 Ansbach. Eine automatisierte
+            Entscheidungsfindung oder ein Profiling findet nicht statt.
           </p>
         </>
       }
@@ -162,8 +163,10 @@ export default async function Datenschutz({ params }: Props) {
           <p>
             You have the right of access (Art. 15 GDPR), rectification (Art. 16), erasure (Art. 17),
             restriction of processing (Art. 18), data portability (Art. 20) and objection (Art. 21).
-            You can also complain to a data protection supervisory authority (Art. 77 GDPR). There
-            is no automated decision-making or profiling.
+            You can also complain to a data protection supervisory authority (Art. 77 GDPR); the one
+            responsible for us is the Bavarian Data Protection Authority (Bayerisches Landesamt für
+            Datenschutzaufsicht, BayLDA), Promenade 18, 91522 Ansbach. There is no automated
+            decision-making or profiling.
           </p>
         </>
       }
