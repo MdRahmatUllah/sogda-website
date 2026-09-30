@@ -24,7 +24,7 @@ const context = await browser.newContext({
   recordVideo: { dir, size },
 });
 const page = await context.newPage();
-await page.goto(`http://localhost:4173${path}`);
+await page.goto(`http://localhost:${process.env.PW_PORT ?? 4173}${path}`);
 if (mode === 'scroll') {
   const steps = Number(seconds) * 10;
   for (let i = 0; i < steps; i++) {

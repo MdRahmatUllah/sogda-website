@@ -1,5 +1,9 @@
 import { defineConfig, devices } from '@playwright/test';
 
+// #84: agents build the site in parallel (CLAUDE.md, Team mode), so each runs on
+// its own port, and a server already on it is never silently reused.
+const port = Number(process.env.PW_PORT ?? 4173);
+
 // The tests run against the static build (`pnpm build` first), served as Vercel
 // would serve out/.
 export default defineConfig({
@@ -7,7 +11,7 @@ export default defineConfig({
   fullyParallel: true,
   reporter: [['list']],
   use: {
-    baseURL: 'http://localhost:4173',
+    baseURL: `http://localhost:${port}`,
     // Animations still: snapshots stay stable (CLAUDE.md, Quality gate).
     reducedMotion: 'reduce',
   },
@@ -30,8 +34,8 @@ export default defineConfig({
     })),
   ],
   webServer: {
-    command: 'pnpm start',
-    url: 'http://localhost:4173/en',
-    reuseExistingServer: true,
+    command: `pnpm exec serve out -l ${port}`,
+    url: `http://localhost:${port}/en`,
+    reuseExistingServer: process.env.PW_REUSE === '1',
   },
 });
