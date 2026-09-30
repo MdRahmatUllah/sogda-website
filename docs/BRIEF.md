@@ -194,10 +194,10 @@ The owner decided (2026-09-29):
 | # | Question | Default until answered |
 |---|---|---|
 | 1 | The Google Play link (for the badge, QR and JSON-LD) | "Coming soon to Google Play", no QR |
-| 2 | Price / "free" / "no ads" wording | Not mentioned |
+| 2 | ~~Price / "free" / "no ads" wording~~ **Decided 2026-09-30:** left out; the site says nothing about price or ads | — |
 | 3 | ~~The website's languages~~ **Decided 2026-09-29:** the app's languages (en, bn; pl, ru as the app adds them), the visitor's language first, English by default, with a switch (§7) | — |
-| 4 | The Impressum details and a contact email | Placeholders; **don't launch on the domain without them** |
-| 5 | Analytics (none, or cookieless Vercel Web Analytics) | None |
+| 4 | The Impressum details and a contact email: **the owner fills `content/legal.json` (2026-09-30)** | Placeholders; **don't launch on the domain without them** (a production build refuses: `pnpm check:launch`) |
+| 5 | ~~Analytics (none, or cookieless Vercel Web Analytics)~~ **Decided 2026-09-30:** none | — |
 | 6 | Announce Russian/Polish meanings as "coming soon"? | Yes, only as "coming soon" |
 | 7 | A pre-launch "notify me" (mailto only; no form backend) | None |
 
