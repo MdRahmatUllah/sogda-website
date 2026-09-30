@@ -83,6 +83,16 @@ The owner asked every agent to build the website, following `docs/MASTER-PLAN.md
 6. **Facts only from BRIEF §4 and `content/facts.json`.** Never a number, rating, quote or claim that isn't there. agent-0 fact-checks every new page against the app.
 7. **The gate is the one under *Quality gate*,** and the budgets hold: Lighthouse ≥ 95, LCP ≤ 2.0 s, CLS ≤ 0.05, TBT ≤ 150 ms, JS ≤ 130 KB. agent-3 sweeps `dev` live after each `dev → main` (non-blocking).
 
+8. **Your own ports** (#84). The tests and scripts take `PW_PORT` (Playwright, `shots`, `record`, `frames`) and `LH_PORT` (Lighthouse). A server already on the port is never reused unless `PW_REUSE=1`. Set yours in your shell:
+
+   | Agent | `PW_PORT` | `LH_PORT` |
+   |---|---|---|
+   | agent-4 | 4173 (default) | 4174 (default) |
+   | agent-0 | 4180 | 4190 |
+   | agent-1 | 4181 | 4191 |
+   | agent-2 | 4182 | 4192 |
+   | agent-3 | 4183 | 4193 |
+
 ## How you work
 1. **Issues are the plan.** Every piece of work is a GitHub issue in *this* repo; the milestone issues (#1 onwards) are in order. Start each session by reading the open issues, and take the lowest-numbered open issue that isn't blocked.
 2. **One issue → one branch → one PR, into `dev`.**
