@@ -12,7 +12,9 @@ const b64 = (path) => readFileSync(path).toString('base64');
 const inter = b64('app/fonts/inter-latin.woff2');
 const cyrillic = b64('app/fonts/inter-cyrillic.woff2');
 const bengali = b64('app/fonts/noto-sans-bengali.woff2');
-const screen = b64('public/screens/today-light-720.webp');
+// The Today screen by its hashed name (#66); per-locale cards are #67.
+const today = JSON.parse(readFileSync('content/screens.generated.json', 'utf8'))['today-light'];
+const screen = b64(`public/screens/${today.base}-720.${today.hash}.webp`);
 const mark = readFileSync('public/brand/icon-road-full.svg', 'utf8').replace(
   'width="108" height="108"',
   'width="120" height="120"',
