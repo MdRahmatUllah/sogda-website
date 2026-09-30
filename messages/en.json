@@ -219,5 +219,107 @@
   "page": {
     "breadcrumb": "You are here",
     "related": "More about Sogda"
+  },
+  "pages": {
+    "about": {
+      "title": "Sogda in brief: the offline German course app, A1 to C2",
+      "description": "Sogda in facts: an offline German course app for Android, A1 to C2 in {steps, number} steps, with {words, number} words, {topics, number} grammar topics and mock exams.",
+      "name": "Sogda in brief",
+      "eyebrow": "About Sogda",
+      "h1": "Sogda in brief",
+      "answer": "Sogda is an offline German course app for Android: A1 to C2 in {steps, number} steps, with {words, number} words, {topics, number} grammar topics and {mocksPerStep, number} mock exams for every step. Meanings and a pronunciation guide come in English, Bangla, Russian or Polish, and it needs no account.",
+      "sections": {
+        "what": {
+          "heading": "What Sogda is",
+          "body": {
+            "p1": "A complete German course, built around the exams, from your first “Hallo” (A1.1) to C2.2. Every word comes with examples, its article and forms where it has them, and a pronunciation guide in your meaning language: Bangla, Russian or Polish letters, or an English respelling."
+          }
+        },
+        "day": {
+          "heading": "A study day",
+          "body": {
+            "p1": "Open the app and today's plan is there: revise what's due, learn a few new words, practise the grammar topic of the week, and read sentences made only from words you know. You set the daily goal and your rest days, and a reminder comes only when something is due."
+          }
+        },
+        "memory": {
+          "heading": "How it remembers",
+          "body": {
+            "p1": "Sogda schedules every word with FSRS, a modern spaced-repetition method. Each time you remember a word, the wait before it comes back grows: a day, then three, then eight, then three weeks. Your time goes to the words you're about to forget."
+          }
+        },
+        "course": {
+          "heading": "The course",
+          "body": {
+            "p1": "{steps, number} steps from A1.1 to C2.2, with {words, number} words and {topics, number} grammar topics, each topic with its rule and a short practice. A short placement check starts you at the right step."
+          },
+          "list": {
+            "a1": "A1: steps A1.1 and A1.2",
+            "a2": "A2: steps A2.1 and A2.2",
+            "b1": "B1: steps B1.1 and B1.2",
+            "b2": "B2: steps B2.1 and B2.2",
+            "c1": "C1: steps C1.1 and C1.2",
+            "c2": "C2: steps C2.1 and C2.2"
+          }
+        },
+        "exams": {
+          "heading": "Mock exams",
+          "body": {
+            "p1": "{mocksPerStep, number} mock exams for every step, {mocks, number} in all, with listening, writing and speaking like the real exams, plus vocabulary and grammar, and a result for each section. There's no reading-comprehension part. They're generated from the step's words and grammar: they aren't official Goethe or telc papers, and Sogda isn't affiliated with either."
+          }
+        },
+        "languages": {
+          "heading": "In your language",
+          "body": {
+            "p1": "Meanings in English, Bangla, Russian or Polish: one language, or two shown together. In Russian and Polish, the example sentences and grammar rules too. The app itself comes in English, Bangla, Polish or Russian."
+          }
+        },
+        "private": {
+          "heading": "Offline and private",
+          "body": {
+            "p1": "Fully offline, with no account: your progress stays on your phone. The optional natural Supertonic voice is a one-time download of about 400 MB over Wi-Fi; otherwise Sogda uses your phone's German voice."
+          }
+        },
+        "platform": {
+          "heading": "Platform",
+          "body": {
+            "p1": "Android {android} or newer. iPhone: coming soon."
+          }
+        },
+        "maker": {
+          "heading": "Who makes it",
+          "body": {
+            "p1": "Sogda is published under its own name, Sogda. The legal details are in the Impressum, linked at the foot of every page."
+          }
+        },
+        "name": {
+          "heading": "Not to be confused with",
+          "body": {
+            "p1": "Sogda, the German course app, isn't related to Sogdia, the historical region in Central Asia."
+          }
+        }
+      },
+      "faq": {
+        "course": {
+          "q": "Is Sogda a full course or a vocabulary app?",
+          "a": "A full course: {words, number} words, {topics, number} grammar topics, a daily plan, quizzes and {mocksPerStep, number} mock exams for every step, from A1 to C2."
+        },
+        "offline": {
+          "q": "Does Sogda work without internet?",
+          "a": "Yes, fully. Only the optional natural voice is a download, once, over Wi-Fi."
+        },
+        "account": {
+          "q": "Do I need an account?",
+          "a": "No. There's no account, and your progress stays on your phone."
+        },
+        "languages": {
+          "q": "Which languages does Sogda explain German in?",
+          "a": "English, Bangla, Russian or Polish, one at a time or two together."
+        },
+        "official": {
+          "q": "Are Sogda's mock exams official?",
+          "a": "No. They test listening, writing and speaking like the real exams, plus vocabulary and grammar, with no reading part. They're generated from the step's words and grammar, not Goethe or telc papers."
+        }
+      }
+    }
   }
 }

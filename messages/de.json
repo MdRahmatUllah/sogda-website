@@ -219,5 +219,107 @@
   "page": {
     "breadcrumb": "Du bist hier",
     "related": "Mehr über Sogda"
+  },
+  "pages": {
+    "about": {
+      "title": "Sogda kurz erklärt: die Offline-App für Deutsch, A1 bis C2",
+      "description": "Sogda in Fakten: eine Offline-Deutschkurs-App für Android, A1 bis C2 in {steps, number} Stufen, mit {words, number} Wörtern, {topics, number} Grammatikthemen und Probeprüfungen.",
+      "name": "Sogda kurz erklärt",
+      "eyebrow": "Über Sogda",
+      "h1": "Sogda kurz erklärt",
+      "answer": "Sogda ist eine Offline-Deutschkurs-App für Android: A1 bis C2 in {steps, number} Stufen, mit {words, number} Wörtern, {topics, number} Grammatikthemen und {mocksPerStep, number} Probeprüfungen für jede Stufe. Bedeutungen und eine Aussprachehilfe gibt es auf Englisch, Bangla, Russisch oder Polnisch, und du brauchst kein Konto.",
+      "sections": {
+        "what": {
+          "heading": "Was Sogda ist",
+          "body": {
+            "p1": "Ein vollständiger Deutschkurs, an den Prüfungen ausgerichtet, von deinem ersten „Hallo“ (A1.1) bis C2.2. Jedes Wort kommt mit Beispielen, seinem Artikel und seinen Formen, wo es welche hat, und einer Aussprachehilfe in deiner Bedeutungssprache: in bengalischer, russischer oder polnischer Schrift oder als englische Umschrift."
+          }
+        },
+        "day": {
+          "heading": "Ein Lerntag",
+          "body": {
+            "p1": "Öffne die App, und der Plan für heute steht: wiederholen, was fällig ist, ein paar neue Wörter lernen, das Grammatikthema der Woche üben und Sätze lesen, die nur aus Wörtern bestehen, die du schon kennst. Das Tagesziel und deine freien Tage legst du fest, und eine Erinnerung kommt nur, wenn etwas fällig ist."
+          }
+        },
+        "memory": {
+          "heading": "Wie Sogda sich erinnert",
+          "body": {
+            "p1": "Sogda plant jedes Wort mit FSRS, einer modernen Methode der verteilten Wiederholung. Jedes Mal, wenn du dich an ein Wort erinnerst, wird die Pause bis zu seiner Wiederkehr länger: ein Tag, dann drei, dann acht, dann drei Wochen. So fließt deine Zeit in die Wörter, die du sonst gleich vergessen würdest."
+          }
+        },
+        "course": {
+          "heading": "Der Kurs",
+          "body": {
+            "p1": "{steps, number} Stufen von A1.1 bis C2.2, mit {words, number} Wörtern und {topics, number} Grammatikthemen, jedes mit seiner Regel und einer kurzen Übung. Ein kurzer Einstufungstest bringt dich zur richtigen Stufe."
+          },
+          "list": {
+            "a1": "A1: Stufen A1.1 und A1.2",
+            "a2": "A2: Stufen A2.1 und A2.2",
+            "b1": "B1: Stufen B1.1 und B1.2",
+            "b2": "B2: Stufen B2.1 und B2.2",
+            "c1": "C1: Stufen C1.1 und C1.2",
+            "c2": "C2: Stufen C2.1 und C2.2"
+          }
+        },
+        "exams": {
+          "heading": "Probeprüfungen",
+          "body": {
+            "p1": "{mocksPerStep, number} Probeprüfungen für jede Stufe, {mocks, number} insgesamt, mit Hören, Schreiben und Sprechen wie in den echten Prüfungen, dazu Wortschatz und Grammatik, und einem Ergebnis für jeden Teil. Einen Leseverstehen-Teil gibt es nicht. Sie werden aus den Wörtern und der Grammatik der Stufe erzeugt: Es sind keine offiziellen Goethe- oder telc-Prüfungen, und Sogda ist mit keinem der beiden verbunden."
+          }
+        },
+        "languages": {
+          "heading": "In deiner Sprache",
+          "body": {
+            "p1": "Bedeutungen auf Englisch, Bangla, Russisch oder Polnisch: in einer Sprache oder in zwei zugleich. Auf Russisch und Polnisch auch die Beispielsätze und Grammatikregeln. Die App selbst gibt es auf Englisch, Bangla, Polnisch oder Russisch."
+          }
+        },
+        "private": {
+          "heading": "Offline und privat",
+          "body": {
+            "p1": "Komplett offline und ohne Konto: Dein Fortschritt bleibt auf deinem Handy. Die optionale natürliche Supertonic-Stimme ist ein einmaliger Download von etwa 400 MB über WLAN; sonst nutzt Sogda die deutsche Stimme deines Handys."
+          }
+        },
+        "platform": {
+          "heading": "Plattform",
+          "body": {
+            "p1": "Android {android} oder neuer. iPhone: bald."
+          }
+        },
+        "maker": {
+          "heading": "Wer Sogda macht",
+          "body": {
+            "p1": "Sogda erscheint unter eigenem Namen, Sogda. Die rechtlichen Angaben stehen im Impressum, das unten auf jeder Seite verlinkt ist."
+          }
+        },
+        "name": {
+          "heading": "Nicht zu verwechseln",
+          "body": {
+            "p1": "Sogda, die Deutschkurs-App, hat nichts mit Sogdien zu tun, der historischen Region in Zentralasien."
+          }
+        }
+      },
+      "faq": {
+        "course": {
+          "q": "Ist Sogda ein ganzer Kurs oder eine Vokabel-App?",
+          "a": "Ein ganzer Kurs: {words, number} Wörter, {topics, number} Grammatikthemen, ein Tagesplan, Quizze und {mocksPerStep, number} Probeprüfungen für jede Stufe, von A1 bis C2."
+        },
+        "offline": {
+          "q": "Funktioniert Sogda ohne Internet?",
+          "a": "Ja, komplett. Nur die optionale natürliche Stimme ist ein Download, einmal, über WLAN."
+        },
+        "account": {
+          "q": "Brauche ich ein Konto?",
+          "a": "Nein. Es gibt kein Konto, und dein Fortschritt bleibt auf deinem Handy."
+        },
+        "languages": {
+          "q": "In welchen Sprachen erklärt Sogda Deutsch?",
+          "a": "Auf Englisch, Bangla, Russisch oder Polnisch, in einer Sprache oder in zwei zugleich."
+        },
+        "official": {
+          "q": "Sind die Probeprüfungen von Sogda offiziell?",
+          "a": "Nein. Sie prüfen Hören, Schreiben und Sprechen wie die echten Prüfungen, dazu Wortschatz und Grammatik, ohne Leseteil. Sie werden aus den Wörtern und der Grammatik der Stufe erzeugt, nicht aus Goethe- oder telc-Prüfungen."
+        }
+      }
+    }
   }
 }

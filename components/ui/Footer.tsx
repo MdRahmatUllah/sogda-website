@@ -1,5 +1,7 @@
 import { getTranslations } from 'next-intl/server';
+import { pagesIn } from '@/content/pages';
 import { routing } from '@/i18n/routing';
+import { pagePath } from '@/lib/page';
 import { site } from '@/site.config';
 
 // Each language named in itself (BRIEF §7).
@@ -15,11 +17,25 @@ export async function Footer({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: 'footer' });
   // 24 px tall at least: WCAG 2.2's target size (2.5.8), #58.
   const link = 'inline-flex min-h-6 items-center underline-offset-4 hover:underline';
+  // Every content page in this language (#68), so none is an orphan.
+  // ponytail: one flat list; group it once W3 has more pages than fit a row.
+  const content = await Promise.all(
+    pagesIn(locale)
+      .filter((p) => !p.gallery)
+      .map(async (p) => ({ href: pagePath(locale, p.slug), name: (await p.content(locale)).name })),
+  );
   return (
     <footer className="border-t-2 border-line bg-bg">
       <div className="mx-auto grid max-w-6xl gap-6 px-4 py-10 text-sm sm:px-6">
         <nav aria-label={t('impressum')}>
           <ul className="flex flex-wrap gap-x-6 gap-y-3 font-semibold">
+            {content.map(({ href, name }) => (
+              <li key={href}>
+                <a className={link} href={href}>
+                  {name}
+                </a>
+              </li>
+            ))}
             <li>
               <a className={link} href={`/${locale}/impressum`}>
                 {t('impressum')}

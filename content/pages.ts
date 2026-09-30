@@ -1,6 +1,7 @@
 import { getTranslations } from 'next-intl/server';
+import { factArgs } from '@/i18n/facts';
 import { routing } from '@/i18n/routing';
-import type { PageContent } from '@/lib/page';
+import { contentFromMessages, type PageContent } from '@/lib/page';
 
 // Every content page (MASTER-PLAN W3, #68): its URL segment, the locales it
 // exists in (hreflang and the sitemap cover only these), and its copy per
@@ -42,6 +43,12 @@ async function sample(locale: string): Promise<PageContent> {
 }
 
 const PAGES: PageEntry[] = [
+  // Sogda in brief (#70): the press and AI-answer fact sheet.
+  {
+    slug: 'about',
+    locales: routing.locales,
+    content: (l) => contentFromMessages(l, 'about', factArgs),
+  },
   { slug: 'template-sample', locales: routing.locales, content: sample, gallery: true },
 ];
 
