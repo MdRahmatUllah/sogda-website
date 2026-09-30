@@ -61,10 +61,9 @@ for (const locale of routing.locales) {
 
 test.describe('/ with JavaScript off', () => {
   test.use({ javaScriptEnabled: false });
-  test('lands on English', async ({ page }) => {
+  test('the chooser at / works: a link to each language (#63)', async ({ page }) => {
     await page.goto('/');
-    // The meta refresh navigates after goto resolves; under a full parallel
-    // run WebKit took over 5 s to commit it (#12).
-    await expect(page).toHaveURL(/\/en$/, { timeout: 15_000 });
+    await page.locator('main a[hreflang="en"]').click();
+    await expect(page).toHaveURL(/\/en$/);
   });
 });

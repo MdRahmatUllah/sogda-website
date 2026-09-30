@@ -15,17 +15,18 @@ function lastModified(): Date {
   }
 }
 
-// Every home page, each naming its other languages and the default (BRIEF §9).
-// The legal pages stay out: the same bilingual text in every locale, each
-// copy canonical to the German one (#58).
+// The chooser at / (the x-default, #63) and every home page, each naming its
+// other languages and the default (BRIEF §9). The legal pages stay out: the
+// same bilingual text in every locale, each copy canonical to German (#58).
 export default function sitemap(): MetadataRoute.Sitemap {
   const modified = lastModified();
+  const chooser = site.url; // no slash, as Next writes it in every page's hreflang
   const languages = {
     ...Object.fromEntries(routing.locales.map((l) => [l, `${site.url}/${l}`])),
-    'x-default': `${site.url}/${routing.defaultLocale}`,
+    'x-default': chooser,
   };
-  return routing.locales.map((locale) => ({
-    url: `${site.url}/${locale}`,
+  return [chooser, ...routing.locales.map((l) => `${site.url}/${l}`)].map((url) => ({
+    url,
     lastModified: modified,
     alternates: { languages },
   }));
