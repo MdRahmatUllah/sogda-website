@@ -17,6 +17,8 @@ export type PageEntry = {
   content: (locale: string) => Promise<PageContent>;
   /** Built only in `pnpm dev` or with SOGDA_GALLERY=1, never indexed. */
   gallery?: boolean;
+  /** Pages of one series (the 12 levels): the footer links only the first. */
+  series?: string;
 };
 
 // The template's own sample: every part of a page, filled with copy the site
@@ -55,10 +57,13 @@ const PAGES: PageEntry[] = [
     content: (l: string) => contentFromMessages(l, slug),
   })),
   { slug: 'template-sample', locales: routing.locales, content: sample, gallery: true },
+  // Sogda in brief (#70): the press and AI-answer fact sheet.
+  { slug: 'about', locales: routing.locales, content: (l) => contentFromMessages(l, 'about') },
   // #72: a page per step, A1.1 … C2.2, from content/facts.json.
   ...facts.steps.map((s) => ({
     slug: levelSlug(s.code),
     locales: LEVEL_LOCALES,
+    series: 'levels',
     content: (locale: string) => levelPage(locale, s.code),
   })),
   // #71: the mock exams, what a paper holds and how it compares with Goethe and telc.

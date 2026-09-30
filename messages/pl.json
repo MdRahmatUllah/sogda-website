@@ -329,6 +329,106 @@
           "a": "Nie. Egzaminy w Sogda mają słownictwo, gramatykę, słuchanie, pisanie i mówienie. Czytanie ćwicz na dłuższych tekstach i na przykładowych testach egzaminów."
         }
       }
+    },
+    "about": {
+      "title": "Sogda w skrócie: aplikacja do nauki niemieckiego offline, A1–C2",
+      "description": "Sogda w faktach: kurs niemieckiego offline na Androida, od A1 do C2 w {steps, number} etapach, {words, plural, one {# słowo} few {# słowa} many {# słów} other {# słowa}}, {topics, plural, one {# temat gramatyczny} few {# tematy gramatyczne} many {# tematów gramatycznych} other {# tematu gramatycznego}} i egzaminy próbne.",
+      "name": "Sogda w skrócie",
+      "eyebrow": "O Sogdzie",
+      "h1": "Sogda w skrócie",
+      "answer": "Sogda to aplikacja z kursem niemieckiego offline na Androida: od A1 do C2 w {steps, number} etapach, z {words, number} słowami, {topics, number} tematami gramatycznymi i {mocksPerStep, number} egzaminami próbnymi na każdy etap. Znaczenia i wskazówki wymowy są po angielsku, bengalsku, rosyjsku lub polsku, a konto nie jest potrzebne.",
+      "sections": {
+        "what": {
+          "heading": "Czym jest Sogda",
+          "body": {
+            "p1": "Pełny kurs niemieckiego, zbudowany wokół egzaminów, od pierwszego „Hallo” (A1.1) do C2.2. Każde słowo ma przykłady, rodzajnik i formy, jeśli je ma, oraz wskazówkę wymowy w twoim języku znaczeń: polskimi, rosyjskimi lub bengalskimi literami albo angielskim zapisem."
+          }
+        },
+        "day": {
+          "heading": "Dzień z Sogdą",
+          "body": {
+            "p1": "Otwierasz aplikację i plan na dziś jest gotowy: powtórz to, co wymaga powtórki, naucz się kilku nowych słów, przećwicz temat gramatyczny tygodnia i przeczytaj zdania złożone tylko ze słów, które już znasz. Dzienny cel i dni wolne ustalasz samodzielnie, a przypomnienie przychodzi tylko wtedy, gdy jest coś do zrobienia."
+          }
+        },
+        "memory": {
+          "heading": "Jak Sogda pamięta",
+          "body": {
+            "p1": "Sogda planuje każde słowo według FSRS, nowoczesnej metody powtórek rozłożonych w czasie. Za każdym razem, gdy przypominasz sobie słowo, przerwa do jego powrotu się wydłuża: od dni do tygodni i miesięcy. Czas poświęcasz słowom, które zaraz wypadłyby ci z pamięci."
+          }
+        },
+        "course": {
+          "heading": "Kurs",
+          "body": {
+            "p1": "{steps, plural, one {# etap} few {# etapy} many {# etapów} other {# etapu}} od A1.1 do C2.2, z {words, number} słowami i {topics, number} tematami gramatycznymi, każdy z regułą i krótkim ćwiczeniem. Krótki test poziomu dobierze właściwy etap."
+          },
+          "list": {
+            "a1": "A1: etapy A1.1 i A1.2",
+            "a2": "A2: etapy A2.1 i A2.2",
+            "b1": "B1: etapy B1.1 i B1.2",
+            "b2": "B2: etapy B2.1 i B2.2",
+            "c1": "C1: etapy C1.1 i C1.2",
+            "c2": "C2: etapy C2.1 i C2.2"
+          }
+        },
+        "exams": {
+          "heading": "Egzaminy próbne",
+          "body": {
+            "p1": "{mocksPerStep, plural, one {# egzamin próbny} few {# egzaminy próbne} many {# egzaminów próbnych} other {# egzaminu próbnego}} na każdy etap, łącznie {mocks, number}, ze słuchaniem, pisaniem i mówieniem jak na prawdziwych egzaminach, a do tego ze słownictwem i gramatyką, z wynikiem dla każdej części. Nie ma części z czytaniem ze zrozumieniem. Powstają ze słów i gramatyki etapu: to nie są oficjalne arkusze Goethe ani telc, a Sogda nie jest powiązana z żadną z tych instytucji."
+          }
+        },
+        "languages": {
+          "heading": "W twoim języku",
+          "body": {
+            "p1": "Znaczenia po angielsku, bengalsku, rosyjsku lub polsku: w jednym języku albo w dwóch naraz. Po polsku i rosyjsku także przykładowe zdania i reguły gramatyczne. Sama aplikacja jest po angielsku, bengalsku, polsku lub rosyjsku."
+          }
+        },
+        "private": {
+          "heading": "Offline i prywatnie",
+          "body": {
+            "p1": "Całkowicie offline i bez konta: twoje postępy zostają na telefonie. Opcjonalny naturalny głos Supertonic to jednorazowe pobranie około 400 MB przez Wi‑Fi; bez niego Sogda używa niemieckiego głosu twojego telefonu."
+          }
+        },
+        "platform": {
+          "heading": "Platforma",
+          "body": {
+            "p1": "Android {android} lub nowszy. iPhone: wkrótce."
+          }
+        },
+        "maker": {
+          "heading": "Kto ją tworzy",
+          "body": {
+            "p1": "Wydawcą jest Sogda. Dane prawne są w Impressum, do którego link jest na dole każdej strony."
+          }
+        },
+        "name": {
+          "heading": "Nie mylić z…",
+          "body": {
+            "p1": "Sogda, aplikacja do nauki niemieckiego, nie ma związku z Sogdianą, historyczną krainą w Azji Środkowej."
+          }
+        }
+      },
+      "faq": {
+        "course": {
+          "q": "Czy Sogda to pełny kurs, czy aplikacja do słówek?",
+          "a": "Pełny kurs: {words, plural, one {# słowo} few {# słowa} many {# słów} other {# słowa}}, {topics, plural, one {# temat gramatyczny} few {# tematy gramatyczne} many {# tematów gramatycznych} other {# tematu gramatycznego}}, plan dnia, quizy i {mocksPerStep, plural, one {# egzamin próbny} few {# egzaminy próbne} many {# egzaminów próbnych} other {# egzaminu próbnego}} na każdy etap, od A1 do C2."
+        },
+        "offline": {
+          "q": "Czy Sogda działa bez internetu?",
+          "a": "Tak, w pełni. Pobrania wymaga tylko opcjonalny naturalny głos, raz, przez Wi‑Fi."
+        },
+        "account": {
+          "q": "Czy potrzebuję konta?",
+          "a": "Nie. Nie ma konta, a twoje postępy zostają na telefonie."
+        },
+        "languages": {
+          "q": "W jakich językach Sogda tłumaczy niemiecki?",
+          "a": "Po angielsku, bengalsku, rosyjsku lub polsku, w jednym języku albo w dwóch naraz."
+        },
+        "official": {
+          "q": "Czy egzaminy próbne w Sogdzie są oficjalne?",
+          "a": "Nie. Sprawdzają słuchanie, pisanie i mówienie jak prawdziwe egzaminy, a do tego słownictwo i gramatykę, bez części z czytaniem. Powstają ze słów i gramatyki etapu, to nie są arkusze Goethe ani telc."
+        }
+      }
     }
   }
 }
