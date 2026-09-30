@@ -3,7 +3,7 @@ import { getTranslations } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import { LANGUAGE_NAMES } from './Footer';
 import { HeaderShell } from './HeaderShell';
-import { LanguageSwitch } from './LanguageSwitch';
+import { LanguageList, LanguageSwitch } from './LanguageSwitch';
 import { Logo } from './Logo';
 import { MobileMenu } from './MobileMenu';
 import { ThemeToggle } from './ThemeToggle';
@@ -18,18 +18,14 @@ export async function Header({ locale }: { locale: string }) {
   // Full paths, so the links work from the legal pages too (on the home page
   // they just scroll).
   const links = NAV.map((id) => ({ href: `/${locale}#${id}`, label: nav(id) }));
-  // The site's languages (BRIEF §7): in the bar on wider screens, in the
-  // menu on a phone.
-  const switcher = (className: string) =>
-    routing.locales.length > 1 && (
-      <LanguageSwitch
-        locale={locale}
-        locales={routing.locales}
-        names={LANGUAGE_NAMES}
-        label={t('language')}
-        className={className}
-      />
-    );
+  // The site's languages (BRIEF §7): a popover in the bar on wider screens,
+  // a list in the menu on a phone.
+  const languages = {
+    locale,
+    locales: routing.locales,
+    names: LANGUAGE_NAMES,
+    label: t('language'),
+  };
   return (
     <HeaderShell>
       <div className="mx-auto flex h-16 max-w-6xl items-center gap-2 px-4 sm:px-6">
@@ -46,7 +42,7 @@ export async function Header({ locale }: { locale: string }) {
           </ul>
         </nav>
         <div className="ml-auto flex items-center gap-1 sm:gap-2">
-          {switcher('hidden sm:inline-flex')}
+          <LanguageSwitch {...languages} className="hidden sm:block" />
           <ThemeToggle label={t('darkTheme')} />
           <a href={`/${locale}#get`} className="btn hidden sm:inline-flex">
             {t('getApp')}
@@ -66,7 +62,9 @@ export async function Header({ locale }: { locale: string }) {
         label={t('nav')}
         closeLabel={t('closeMenu')}
       >
-        {switcher('mt-4 flex sm:hidden')}
+        <div className="sm:hidden">
+          <LanguageList {...languages} />
+        </div>
       </MobileMenu>
     </HeaderShell>
   );

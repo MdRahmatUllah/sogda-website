@@ -3,7 +3,8 @@ import { defineRouting } from 'next-intl/routing';
 // The website speaks the app's languages (BRIEF §7). Adding one is this list
 // plus messages/<code>.json.
 export const routing = defineRouting({
-  locales: ['en', 'bn'],
+  // The owner's order (2026-09-30): English, German, Polish, Russian, Bangla.
+  locales: ['en', 'de', 'bn'],
   defaultLocale: 'en',
 });
 

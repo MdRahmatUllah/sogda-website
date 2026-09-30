@@ -5,6 +5,7 @@ import { site } from '@/site.config';
 // Each language named in itself (BRIEF §7).
 export const LANGUAGE_NAMES: Record<string, string> = {
   en: 'English',
+  de: 'Deutsch',
   bn: 'বাংলা',
   pl: 'Polski',
   ru: 'Русский',

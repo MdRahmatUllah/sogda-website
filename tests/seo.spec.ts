@@ -1,15 +1,16 @@
 import { expect, test } from '@playwright/test';
 import { readFileSync } from 'node:fs';
+import { routing } from '../i18n/routing';
 
 // BRIEF §9.
 test('sitemap.xml lists every page in every language, with its alternates', async ({ request }) => {
   const xml = await (await request.get('/sitemap.xml')).text();
-  for (const locale of ['en', 'bn']) {
+  for (const locale of routing.locales) {
     for (const page of ['', '/impressum', '/datenschutz']) {
       expect(xml).toContain(`<loc>https://sogda.de/${locale}${page}</loc>`);
     }
   }
-  expect(xml).toContain('hreflang="bn"');
+  for (const locale of routing.locales) expect(xml).toContain(`hreflang="${locale}"`);
 });
 
 test('robots.txt allows everything and names the sitemap', async ({ request }) => {
@@ -18,7 +19,7 @@ test('robots.txt allows everything and names the sitemap', async ({ request }) =
   expect(txt).toContain('Sitemap: https://sogda.de/sitemap.xml');
 });
 
-for (const locale of ['en', 'bn']) {
+for (const locale of routing.locales) {
   test(`/${locale}: title, description, Open Graph and Twitter card`, async ({ page, request }) => {
     await page.goto(`/${locale}`);
     const messages = JSON.parse(readFileSync(`messages/${locale}.json`, 'utf8'));
