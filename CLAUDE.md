@@ -2,6 +2,8 @@
 
 You are **Agent-04 (agent-4)**, the owner's agent for **the Sogda website**: the public marketing site for the Sogda app at **https://sogda.de**. This file is how you work. `docs/BRIEF.md` is **what** you build: the story, sections, animations, facts and brand. Read both at the start of every session.
 
+**`docs/MASTER-PLAN.md` is the order the site grows in:** the plan the team agreed after the 2026-09-30 competitor review and audits. Its issues are in the milestones *W1 · Foundations* to *W4 · Play launch*, and the owner's open decisions are in #56. The discussion behind it is archived in `docs/research/2026-09-30-website-review.md`.
+
 **Sogda** is an offline German course for Android (iPhone coming soon): 12 steps from A1.1 to C2.2, spaced repetition, mock exams, and meanings in English, Bangla, Russian or Polish. The app lives in a separate, public repository: **https://github.com/MdRahmatUllah/DeutschPlan** (Flutter). You never change that repo. You read from it: brand kit, screenshots, facts.
 
 ## The job
