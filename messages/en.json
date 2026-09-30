@@ -274,5 +274,56 @@
         "a": "{step} is the last step of the course. The words you've learnt keep coming back for revision, just before you'd forget them."
       }
     }
+  },
+  "pages": {
+    "learn-german-in-bangla": {
+      "title": "Learn German in Bangla, from A1 to C2, offline | Sogda",
+      "description": "Sogda teaches German with Bangla meanings and a pronunciation guide in Bangla letters: {words, number} words from A1 to C2, offline, with mock exams for every step.",
+      "name": "Learn German in Bangla",
+      "eyebrow": "For Bangla speakers",
+      "h1": "Learn German in Bangla, from A1 to C2",
+      "answer": "Sogda is an offline German course app with Bangla meanings: {words, number} words from A1 to C2, each with its meaning in Bangla and a pronunciation guide in Bangla letters, and {topics, number} grammar topics. The app itself can be in Bangla, and each of its {steps, number} steps ends with {mocksPerStep, number} mock exams.",
+      "sections": {
+        "meanings": {
+          "heading": "Bangla meanings, and a guide in Bangla letters",
+          "body": {
+            "p1": "Every word has its meaning in Bangla: alone, or with English shown under it, or the other way round. Its pronunciation guide is written in Bangla letters, the way you would read it aloud.",
+            "p2": "The app itself can be in Bangla too. The example sentences and the grammar rules are in English."
+          }
+        },
+        "path": {
+          "heading": "From A1 to C2, with the exams in mind",
+          "body": {
+            "p1": "{steps, number} steps from A1.1 to C2.2 follow the CEFR levels that the Goethe-Zertifikat and telc exams use. Each step ends with {mocksPerStep, number} mock exams, each with {questions, number} questions plus a writing and a speaking task, and a result for each section. They are generated from the step's words and grammar, not official Goethe or telc papers."
+          }
+        },
+        "germany": {
+          "heading": "Words for your first year in Germany",
+          "body": {
+            "p1": "The course has the words you meet at the Ausländerbehörde, at your Anmeldung or in a job application. Some of them, with the step they are in:"
+          }
+        },
+        "offline": {
+          "heading": "Offline, and private",
+          "body": {
+            "p1": "No signal and no account needed: your progress stays on your phone. Sogda runs on Android {android} or newer."
+          }
+        }
+      },
+      "faq": {
+        "bangla": {
+          "q": "Does Sogda teach German in Bangla?",
+          "a": "Every word has its meaning and a pronunciation guide in Bangla, and the app itself can be in Bangla. The example sentences and grammar rules are in English."
+        },
+        "goethe": {
+          "q": "Can I prepare for the Goethe A1 exam with it?",
+          "a": "Sogda's steps {a1First} and {a1Last} cover level A1 with {a1Words, number} words, and each step has {mocksPerStep, number} mock exams that follow the exam's sections. They are practice, not official Goethe or telc papers."
+        },
+        "internet": {
+          "q": "Do I need the internet?",
+          "a": "No. Sogda works fully offline. Only the optional natural voice is a download, once, over Wi-Fi."
+        }
+      }
+    }
   }
 }

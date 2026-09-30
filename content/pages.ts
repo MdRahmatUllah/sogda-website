@@ -1,6 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import { factArgs } from '@/i18n/facts';
 import { routing } from '@/i18n/routing';
+import { BANGLA_LOCALES, banglaPage } from '@/content/bangla';
 import { LEVEL_LOCALES, levelPage, levelSlug } from '@/content/levels';
 import { facts } from '@/i18n/facts';
 import type { PageContent } from '@/lib/page';
@@ -48,6 +49,8 @@ async function sample(locale: string): Promise<PageContent> {
 
 const PAGES: PageEntry[] = [
   { slug: 'template-sample', locales: routing.locales, content: sample, gallery: true },
+  // #69: the first audience page, for Bangla speakers.
+  { slug: 'learn-german-in-bangla', locales: BANGLA_LOCALES, content: banglaPage },
   // #72: a page per step, A1.1 … C2.2, from content/facts.json.
   ...facts.steps.map((s) => ({
     slug: levelSlug(s.code),
