@@ -51,7 +51,9 @@ test.describe('header and footer', () => {
     await expect(page.getByRole('button', { name: 'Menu' })).toBeHidden();
   });
 
-  test('the footer has the legal links and the trademark line', async ({ page }) => {
+  test('the footer has the legal links, 24 px targets, and no Google line without a badge (#58)', async ({
+    page,
+  }) => {
     await page.goto('/en');
     const footer = page.locator('footer');
     await expect(footer.getByRole('link', { name: 'Impressum' })).toHaveAttribute(
@@ -62,9 +64,12 @@ test.describe('header and footer', () => {
       'href',
       '/en/datenschutz',
     );
-    await expect(footer).toContainText(
-      'Google Play and the Google Play logo are trademarks of Google LLC.',
-    );
+    // WCAG 2.2, 2.5.8: every footer link is at least 24 px tall.
+    for (const link of await footer.getByRole('link').all()) {
+      expect((await link.boundingBox())!.height).toBeGreaterThanOrEqual(24);
+    }
+    // Google's trademark line comes with its badge, and there's no Play link yet (#45).
+    await expect(footer).not.toContainText('trademarks of Google LLC');
   });
 
   test('the icons and the manifest are linked and served', async ({ page, request }) => {
