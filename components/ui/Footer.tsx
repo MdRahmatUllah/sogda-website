@@ -17,12 +17,21 @@ export async function Footer({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: 'footer' });
   // 24 px tall at least: WCAG 2.2's target size (2.5.8), #58.
   const link = 'inline-flex min-h-6 items-center underline-offset-4 hover:underline';
-  // Every content page in this language (#68), so none is an orphan.
-  // ponytail: one flat list; group it once W3 has more pages than fit a row.
+  // Every content page in this language (#68), so none is an orphan; of a
+  // series (the 12 levels) only its first, as its pages link to each other.
+  const seen = new Set<string>();
+  const listed = pagesIn(locale).filter((p) => {
+    if (p.gallery) return false;
+    if (!p.series) return true;
+    if (seen.has(p.series)) return false;
+    seen.add(p.series);
+    return true;
+  });
   const content = await Promise.all(
-    pagesIn(locale)
-      .filter((p) => !p.gallery)
-      .map(async (p) => ({ href: pagePath(locale, p.slug), name: (await p.content(locale)).name })),
+    listed.map(async (p) => ({
+      href: pagePath(locale, p.slug),
+      name: (await p.content(locale)).name,
+    })),
   );
   return (
     <footer className="border-t-2 border-line bg-bg">
