@@ -1,9 +1,9 @@
 // `pnpm verify:live [base]`: the launch checks (#13) against the deployed
-// site (default https://sogda.de). Exits non-zero if any fails. Then run
-// `pnpm lighthouse https://sogda.de/en https://sogda.de/bn` for the budgets.
+// site (default https://www.sogda.de, the canonical host). Exits non-zero if any fails. Then run
+// `pnpm lighthouse https://www.sogda.de/en https://www.sogda.de/bn` for the budgets.
 import { readdirSync } from 'node:fs';
 
-const base = (process.argv[2] ?? 'https://sogda.de').replace(/\/$/, '');
+const base = (process.argv[2] ?? 'https://www.sogda.de').replace(/\/$/, '');
 const host = new URL(base).host;
 const locales = readdirSync('messages').map((f) => f.replace(/\.json$/, ''));
 const results = [];
@@ -17,7 +17,7 @@ async function get(url, redirect = 'follow') {
   }
 }
 
-// HTTPS, and one canonical host: http and www both go to https://sogda.de.
+// HTTPS, and one canonical host: http, and the other host, go to it.
 if (base.startsWith('https://')) {
   const http = await get(`http://${host}/en`, 'manual');
   check(
@@ -26,12 +26,14 @@ if (base.startsWith('https://')) {
       http.headers.get('location')?.startsWith('https://'),
     `${http.status} ${http.headers.get('location') ?? ''}`,
   );
-  const www = await get(`https://www.${host}/en`, 'manual');
+  // The other host (www ↔ apex) redirects to the canonical one.
+  const other = host.startsWith('www.') ? host.slice(4) : `www.${host}`;
+  const alt = await get(`https://${other}/en`, 'manual');
   check(
-    'www → canonical host',
-    [301, 302, 307, 308].includes(www.status) &&
-      new URL(www.headers.get('location') ?? 'x:', base).host === host,
-    `${www.status} ${www.headers.get('location') ?? ''}`,
+    `${other} → ${host}`,
+    [301, 302, 307, 308].includes(alt.status) &&
+      new URL(alt.headers.get('location') ?? 'x:', base).host === host,
+    `${alt.status} ${alt.headers.get('location') ?? ''}`,
   );
 }
 

@@ -10,8 +10,8 @@ A static Next.js site, deployed on Vercel at https://sogda.de.
 
 ## Branches
 
-- **`dev`:** where every change lands, one PR per issue (`--base dev`). Vercel builds a preview of it.
-- **`main`:** production, https://sogda.de. It changes only when the owner merges `dev` into it.
+- **`dev`:** where every change lands, one PR per issue (`--base dev`). Vercel doesn't deploy it: only `main` deploys (`vercel.json`, `git.deploymentEnabled`).
+- **`main`:** production, https://www.sogda.de (sogda.de redirects to it). It changes only when the owner merges `dev` into it, or asks.
 
 ## Develop
 

@@ -185,7 +185,7 @@ The owner decided (2026-09-29, and 2026-09-30 for the list):
 - **Per-locale metadata:**
   - title *"Sogda — Learn German offline, A1 to C2"*;
   - description from the store listing's short description;
-  - canonical `https://sogda.de/<locale>`.
+  - canonical `https://www.sogda.de/<locale>` (the primary host in Vercel; `sogda.de` redirects to it).
 - **Open Graph and Twitter images:** 1200 × 630, generated at build (logo + headline + a phone), per locale.
 - `sitemap.xml`, `robots.txt`.
 - **JSON-LD:** `MobileApplication` (name, operatingSystem `ANDROID`, applicationCategory `EducationalApplication`, the Play URL once live). No ratings or offers unless the owner gives them.
