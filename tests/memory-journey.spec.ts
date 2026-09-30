@@ -101,7 +101,13 @@ test.describe('The journey (BRIEF §3.4)', () => {
 
     test('the traveller follows the scroll, lighting the stations it reaches', async ({ page }) => {
       await gotoReady(page, '/en');
-      // The road's top is still below the traveller's line: back at the start.
+      // The script starts the road once its section is within a screen of the
+      // view (it measures nothing at load, #22). There, the road's top is
+      // still below the traveller's line: back at the start.
+      await page.evaluate(() => {
+        const section = document.getElementById('journey')!;
+        scrollTo(0, section.getBoundingClientRect().top + scrollY - innerHeight - 10);
+      });
       await expect(page.locator('.journey-station[data-lit]')).toHaveCount(1);
       await expect(page.locator('#journey-count')).toHaveText('0');
       // Halfway down the road: about half the stations. Sections around the
