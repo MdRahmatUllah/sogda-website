@@ -44,18 +44,5 @@
         }
       ]
     }
-  ],
-  "redirects": [
-    {
-      "source": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.sogda.de"
-        }
-      ],
-      "destination": "https://sogda.de/$1",
-      "permanent": true
-    }
   ]
 }
