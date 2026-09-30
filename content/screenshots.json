@@ -1,18 +1,36 @@
 {
   "$comment": "The real app screens the site shows (BRIEF §6). Each is the app's golden <golden>_<theme>_<device>.png at `ref`, never redrawn. Bump `ref` to the app's release tag when it ships, then `pnpm sync:screens`.",
   "ref": "4b088a18c815355404b1d742302d5a8e204ed77e",
+  "store": {
+    "$comment": "The app's Play screenshots (docs/05-dev-guide/store/<set>/<capture>.png) at one pinned app commit (#66). A set's `skip` lists captures that are out of date: English's course screen was shot on 2026-09-26 and says 5,594 words (the course: 5,069); re-shot at app #1123's release, then drop the skip.",
+    "ref": "f14a735efe6249faf489cdc9d3066e2abc42b3b2",
+    "sets": {
+      "en": {
+        "light": "phone-light",
+        "dark": "phone-dark",
+        "skip": ["04-course"]
+      },
+      "pl": {
+        "light": "pl-phone-light"
+      },
+      "ru": {
+        "light": "ru-phone-light"
+      }
+    }
+  },
   "screens": [
     {
       "id": "today",
       "golden": "today",
       "themes": ["light", "dark", "glass"],
       "alt": {
-        "en": "Sogda's Today screen: a ring showing 12 of 20 cards done, about 6 minutes left, then today's plan: revise 10 words, 7 new words, a backlog of 14, 3 practice sentences and the grammar topic of the week.",
-        "de": "Die Heute-Seite von Sogda: ein Ring mit 12 von 20 erledigten Karten, noch etwa 6 Minuten, darunter der Tagesplan: 10 Wörter wiederholen, 7 neue Wörter, 14 im Rückstand, 3 Übungssätze und das Grammatikthema der Woche.",
-        "bn": "Sogda-র আজকের পাতা: ২০টির মধ্যে ১২টি কার্ড শেষ দেখানো একটি বৃত্ত, প্রায় ৬ মিনিট বাকি, তারপর আজকের পরিকল্পনা: ১০টি শব্দের রিভিশন, ৭টি নতুন শব্দ, ১৪টির ব্যাকলগ, ৩টি অনুশীলনের বাক্য আর এই সপ্তাহের ব্যাকরণ।",
-        "pl": "Ekran „Dziś” w Sogdzie: pierścień z 12 z 20 kart ukończonych, zostało około 6 minut, a pod nim plan na dziś: powtórka 10 słów, 7 nowych słów, 14 zaległości, 3 zdania do ćwiczeń i gramatyka tygodnia.",
-        "ru": "Экран «Сегодня» в Sogda: кольцо с 12 из 20 выполненных карточек, осталось около 6 минут, а ниже план на сегодня: повторить 10 слов, 7 новых слов, 14 пропущенных, 3 предложения для практики и грамматика недели."
-      }
+        "en": "Sogda's Today screen: a ring with today's progress and the minutes left, then the day's plan: revision, new words, practice sentences and the grammar topic of the week.",
+        "de": "Die Heute-Seite von Sogda: ein Ring mit dem Fortschritt des Tages und den verbleibenden Minuten, darunter der Tagesplan: Wiederholung, neue Wörter, Übungssätze und das Grammatikthema der Woche.",
+        "pl": "Ekran „Dziś” w Sogdzie: pierścień z dzisiejszym postępem i pozostałymi minutami, a pod nim plan dnia: powtórki, nowe słowa, zdania do ćwiczeń i temat gramatyczny tygodnia.",
+        "ru": "Экран «Сегодня» в Sogda: кольцо с прогрессом за день и оставшимися минутами, а ниже план на день: повторение, новые слова, предложения для практики и грамматика недели.",
+        "bn": "Sogda-র আজকের পাতা: আজকের অগ্রগতি আর বাকি মিনিট দেখানো একটি বৃত্ত, তারপর দিনের পরিকল্পনা: রিভিশন, নতুন শব্দ, অনুশীলনের বাক্য আর এই সপ্তাহের ব্যাকরণ।"
+      },
+      "store": "01-today"
     },
     {
       "id": "today-tablet",
@@ -32,24 +50,26 @@
       "golden": "study_front",
       "themes": ["light", "dark", "glass"],
       "alt": {
-        "en": "A revision card showing the German word “die Rechnung” with a speaker button, before its meaning is revealed.",
-        "de": "Eine Wiederholungskarte mit dem deutschen Wort „die Rechnung“ und einem Lautsprecher-Knopf, bevor die Bedeutung aufgedeckt ist.",
-        "bn": "একটি রিভিশন কার্ড, যাতে জার্মান শব্দ “die Rechnung” আর একটি স্পিকার বোতাম; অর্থ এখনও দেখানো হয়নি।",
-        "pl": "Karta powtórki z niemieckim słowem „die Rechnung” i przyciskiem głośnika, zanim pokaże się znaczenie.",
-        "ru": "Карточка повторения с немецким словом «die Rechnung» и кнопкой динамика, пока значение ещё не открыто."
-      }
+        "en": "A study card before it turns: a German word with its word class and pronunciation guide, and a speaker button.",
+        "de": "Eine Lernkarte vor dem Umdrehen: ein deutsches Wort mit Wortart und Aussprachehilfe, dazu ein Lautsprecher-Knopf.",
+        "pl": "Fiszka przed odwróceniem: niemieckie słowo z częścią mowy i zapisem wymowy oraz przycisk głośnika.",
+        "ru": "Карточка до переворота: немецкое слово с частью речи и подсказкой произношения и кнопка динамика.",
+        "bn": "উল্টানোর আগে একটি শেখার কার্ড: একটি জার্মান শব্দ, তার শব্দের ধরন আর উচ্চারণ, সঙ্গে একটি স্পিকার বোতাম।"
+      },
+      "store": "02-card-front"
     },
     {
       "id": "study-back",
       "golden": "study_back",
       "themes": ["light", "dark", "glass"],
       "alt": {
-        "en": "The back of the card for “die Rechnung”: the meaning “bill, invoice” in English and Bangla, two example sentences, and the Again, Hard, Good and Easy ratings with their next intervals.",
-        "de": "Die Rückseite der Karte „die Rechnung“: die Bedeutung „bill, invoice“ auf Englisch und Bangla, zwei Beispielsätze und die Bewertungen Again, Hard, Good und Easy mit ihren nächsten Abständen.",
-        "bn": "“die Rechnung” কার্ডের পেছন দিক: ইংরেজি আর বাংলায় অর্থ “bill, invoice” ও “বিল, চালান”, দুটি উদাহরণ বাক্য, আর পরের বিরতিসহ আবার, কঠিন, ভালো ও সহজ রেটিং।",
-        "pl": "Odwrotna strona karty „die Rechnung”: znaczenie „bill, invoice” po angielsku i bengalsku, dwa przykładowe zdania oraz oceny Again, Hard, Good i Easy z kolejnymi odstępami.",
-        "ru": "Обратная сторона карточки «die Rechnung»: значение «bill, invoice» на английском и бенгальском, два примера и оценки Again, Hard, Good и Easy со следующими интервалами."
-      }
+        "en": "The back of a study card: the word's meaning, two example sentences with their translations, and the four ratings, each with the interval it sets.",
+        "de": "Die Rückseite einer Lernkarte: die Bedeutung des Worts, zwei Beispielsätze mit Übersetzung und die vier Bewertungen, jede mit dem Abstand, den sie festlegt.",
+        "pl": "Tył fiszki: znaczenie słowa, dwa przykładowe zdania z tłumaczeniem i cztery oceny, każda z odstępem, jaki wyznacza.",
+        "ru": "Обратная сторона карточки: значение слова, два примера с переводом и четыре оценки, у каждой — интервал, который она задаёт.",
+        "bn": "শেখার কার্ডের উল্টো দিক: শব্দের অর্থ, অনুবাদসহ দুটি উদাহরণ বাক্য, আর চারটি মূল্যায়ন, প্রতিটির পাশে সেটি কত দিনের বিরতি ঠিক করে।"
+      },
+      "store": "03-card-back"
     },
     {
       "id": "grammar-practice",
@@ -140,24 +160,26 @@
       "golden": "learn",
       "themes": ["light", "dark", "glass"],
       "alt": {
-        "en": "The course overview: the steps A1.1 and A1.2 passed, A2.1 current with 11 cards left today, and the later steps still locked.",
-        "de": "Die Kursübersicht: die Stufen A1.1 und A1.2 bestanden, A2.1 aktuell mit heute noch 11 Karten, die späteren Stufen noch gesperrt.",
-        "bn": "কোর্সের সারসংক্ষেপ: A1.1 আর A1.2 ধাপ পাস, A2.1 চলছে আর আজ ১১টি কার্ড বাকি, পরের ধাপগুলো এখনও বন্ধ।",
-        "pl": "Przegląd kursu: etapy A1.1 i A1.2 zaliczone, A2.1 w toku z 11 kartami na dziś, kolejne etapy jeszcze zablokowane.",
-        "ru": "Обзор курса: этапы A1.1 и A1.2 пройдены, A2.1 текущий, на сегодня осталось 11 карточек, следующие этапы пока закрыты."
-      }
+        "en": "The course overview: the steps from A1 to C2 along a road, the current step with today's cards, and the later steps still locked.",
+        "de": "Die Kursübersicht: die Stufen von A1 bis C2 entlang eines Wegs, die aktuelle Stufe mit den Karten von heute und die späteren Stufen noch gesperrt.",
+        "pl": "Przegląd kursu: etapy od A1 do C2 wzdłuż drogi, bieżący etap z dzisiejszymi kartami i kolejne etapy jeszcze zablokowane.",
+        "ru": "Обзор курса: этапы от A1 до C2 вдоль дороги, текущий этап с карточками на сегодня и следующие этапы, пока закрытые.",
+        "bn": "কোর্সের সারসংক্ষেপ: একটি পথ ধরে A1 থেকে C2 পর্যন্ত ধাপগুলো, আজকের কার্ডসহ বর্তমান ধাপ, আর পরের ধাপগুলো এখনও বন্ধ।"
+      },
+      "store": "04-course"
     },
     {
       "id": "step-detail",
       "golden": "step_detail",
       "themes": ["light", "dark", "glass"],
       "alt": {
-        "en": "Step A2.1: 540 words and 10 grammar topics, with the step's words listed with their articles, meanings and status.",
-        "de": "Stufe A2.1: 540 Wörter und 10 Grammatikthemen, die Wörter der Stufe mit Artikel, Bedeutung und Status aufgelistet.",
-        "bn": "A2.1 ধাপ: ৫৪০টি শব্দ আর ১০টি ব্যাকরণ বিষয়, ধাপের শব্দগুলো আর্টিকেল, অর্থ আর অবস্থাসহ তালিকায়।",
-        "pl": "Etap A2.1: 540 słów i 10 tematów gramatycznych, z listą słów etapu z rodzajnikiem, znaczeniem i stanem.",
-        "ru": "Этап A2.1: 540 слов и 10 тем грамматики, слова этапа в списке с артиклем, значением и статусом."
-      }
+        "en": "A step's page: how many words and grammar topics it has, and the step's words listed with their meanings and status.",
+        "de": "Die Seite einer Stufe: wie viele Wörter und Grammatikthemen sie hat, darunter die Wörter der Stufe mit Bedeutung und Status.",
+        "pl": "Strona etapu: ile ma słów i tematów gramatycznych, a pod spodem słowa etapu ze znaczeniami i statusem.",
+        "ru": "Страница этапа: сколько в нём слов и тем грамматики, а ниже слова этапа со значениями и статусом.",
+        "bn": "একটি ধাপের পাতা: তাতে কতগুলো শব্দ আর ব্যাকরণ বিষয় আছে, আর ধাপের শব্দগুলোর তালিকা, অর্থ আর অবস্থাসহ।"
+      },
+      "store": "05-step"
     },
     {
       "id": "progress",
@@ -176,12 +198,13 @@
       "golden": "word_detail",
       "themes": ["light", "dark", "glass"],
       "alt": {
-        "en": "The word “die Straße”: its meaning in English and Bangla, examples with audio, related words, and links to Duden, DWDS and Wiktionary.",
-        "de": "Das Wort „die Straße“: seine Bedeutung auf Englisch und Bangla, Beispiele mit Audio, verwandte Wörter und Links zu Duden, DWDS und Wiktionary.",
-        "bn": "“die Straße” শব্দটি: ইংরেজি আর বাংলায় অর্থ, অডিওসহ উদাহরণ, সম্পর্কিত শব্দ, আর Duden, DWDS ও Wiktionary-র লিংক।",
-        "pl": "Słowo „die Straße”: znaczenie po angielsku i bengalsku, przykłady z nagraniem, słowa powiązane i odnośniki do Dudena, DWDS i Wikisłownika.",
-        "ru": "Слово «die Straße»: значение на английском и бенгальском, примеры с аудио, связанные слова и ссылки на Duden, DWDS и Викисловарь."
-      }
+        "en": "A word's own page: its meaning, example sentences with audio, and links to Duden, DWDS and Wiktionary.",
+        "de": "Die Seite eines Worts: seine Bedeutung, Beispielsätze mit Audio und Links zu Duden, DWDS und Wiktionary.",
+        "pl": "Strona słowa: jego znaczenie, przykładowe zdania z nagraniem i linki do Duden, DWDS i Wiktionary.",
+        "ru": "Страница слова: значение, примеры с аудио и ссылки на Duden, DWDS и Викисловарь.",
+        "bn": "একটি শব্দের নিজের পাতা: তার অর্থ, অডিওসহ উদাহরণ বাক্য, আর Duden, DWDS ও Wiktionary-র লিংক।"
+      },
+      "store": "06-word"
     },
     {
       "id": "compare",

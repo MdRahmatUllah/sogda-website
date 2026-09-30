@@ -3,6 +3,9 @@ import config from '@/content/screenshots.json';
 import generatedJson from '@/content/screens.generated.json';
 
 type Generated = {
+  source: string;
+  base: string;
+  hash: string;
   width: number;
   height: number;
   widths: number[];
@@ -19,30 +22,42 @@ export function screenAlt(id: string, locale: string): string {
   return alt?.[locale] ?? alt?.en ?? '';
 }
 
+/** The built variant of a screen: the locale's own capture where the app has
+ * one (the Polish and Russian store sets, #66), else the default. */
+function variant(id: string, theme: string, locale: string, localize: boolean) {
+  return (
+    (localize ? generated[`${id}-${theme}@${locale}`] : undefined) ?? generated[`${id}-${theme}`]
+  );
+}
+
 function Picture({
-  file,
+  g,
+  name,
   alt,
   priority,
   sizes,
   className = '',
 }: {
-  file: string;
+  g: Generated | undefined;
+  name: string;
   alt: string;
   priority: boolean;
   sizes: string;
   className?: string;
 }) {
-  const g = generated[file];
   if (!g)
     throw new Error(
-      `No screen "${file}": add it to content/screenshots.json, then pnpm sync:screens`,
+      `No screen "${name}": add it to content/screenshots.json, then pnpm sync:screens`,
     );
-  const srcSet = (ext: string) =>
-    g.widths.map((w) => `/screens/${file}-${w}.${ext} ${w}w`).join(', ');
+  // Hashed names (#66): a screen that changes gets a new URL, so /screens is
+  // cached for good (vercel.json).
+  const file = (w: number, ext: string) => `/screens/${g.base}-${w}.${g.hash}.${ext}`;
+  const srcSet = (ext: string) => g.widths.map((w) => `${file(w, ext)} ${w}w`).join(', ');
+  const second = g.widths[1] ?? g.widths[0]!;
   // The first view's screen is fetched from <head>, before the parser, CSS
   // and scripts get to it (LCP).
   if (priority) {
-    preload(`/screens/${file}-${g.widths[1] ?? g.widths[0]}.avif`, {
+    preload(file(second, 'avif'), {
       as: 'image',
       type: 'image/avif',
       imageSrcSet: srcSet('avif'),
@@ -57,7 +72,7 @@ function Picture({
       <source type="image/avif" srcSet={srcSet('avif')} sizes={sizes} />
       {/* Pre-built sizes: next/image can't optimise a static export. */}
       <img
-        src={`/screens/${file}-${g.widths[1] ?? g.widths[0]}.webp`}
+        src={file(second, 'webp')}
         width={g.width}
         height={g.height}
         alt={alt}
@@ -72,15 +87,21 @@ function Picture({
 }
 
 // A real app screen (BRIEF §6), from content/screenshots.json. Width and
-// height are the golden's, so it never shifts the layout; it loads lazily
-// unless it's the page's first view (`priority`). `theme="auto"` follows the
-// site's theme: the dark one, when the screen has it, shows in dark mode, and
-// being lazy, the hidden one isn't downloaded.
+// height are the source's (every one in the goldens' shape), so it never
+// shifts the layout; it loads lazily unless it's the page's first view
+// (`priority`). Where the app has a capture in the page's language (#66) that
+// one shows. `theme="auto"` follows the site's theme: the dark one, when the
+// screen has it, shows in dark mode, and being lazy, the hidden one isn't
+// downloaded. A capture in the page's language wins over a dark one in
+// another: the app in your language matters more than its theme.
+// `localize={false}` keeps the default (the looks section compares themes,
+// so all three must be the same app).
 export function Screen({
   id,
   locale,
   theme = 'light',
   priority = false,
+  localize = true,
   sizes = '(min-width: 1024px) 320px, 70vw',
   className = '',
 }: {
@@ -88,48 +109,29 @@ export function Screen({
   locale: string;
   theme?: ScreenTheme;
   priority?: boolean;
+  localize?: boolean;
   sizes?: string;
   className?: string;
 }) {
   const alt = screenAlt(id, locale);
-  if (theme !== 'auto') {
-    return (
-      <Picture
-        file={`${id}-${theme}`}
-        alt={alt}
-        priority={priority}
-        sizes={sizes}
-        className={className}
-      />
-    );
-  }
-  if (!generated[`${id}-dark`]) {
-    return (
-      <Picture
-        file={`${id}-light`}
-        alt={alt}
-        priority={priority}
-        sizes={sizes}
-        className={className}
-      />
-    );
-  }
+  const one = (t: string, cls: string, prio: boolean) => (
+    <Picture
+      g={variant(id, t, locale, localize)}
+      name={`${id}-${t}`}
+      alt={alt}
+      priority={prio}
+      sizes={sizes}
+      className={cls}
+    />
+  );
+  if (theme !== 'auto') return one(theme, className, priority);
+  const own = localize && Boolean(generated[`${id}-light@${locale}`]);
+  const ownDark = localize && Boolean(generated[`${id}-dark@${locale}`]);
+  if (!generated[`${id}-dark`] || (own && !ownDark)) return one('light', className, priority);
   return (
     <>
-      <Picture
-        file={`${id}-light`}
-        alt={alt}
-        priority={false}
-        sizes={sizes}
-        className={`only-light ${className}`}
-      />
-      <Picture
-        file={`${id}-dark`}
-        alt={alt}
-        priority={false}
-        sizes={sizes}
-        className={`only-dark ${className}`}
-      />
+      {one('light', `only-light ${className}`, false)}
+      {one('dark', `only-dark ${className}`, false)}
     </>
   );
 }
