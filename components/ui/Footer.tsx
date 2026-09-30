@@ -13,7 +13,8 @@ export const LANGUAGE_NAMES: Record<string, string> = {
 
 export async function Footer({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: 'footer' });
-  const link = 'underline-offset-4 hover:underline';
+  // 24 px tall at least: WCAG 2.2's target size (2.5.8), #58.
+  const link = 'inline-flex min-h-6 items-center underline-offset-4 hover:underline';
   return (
     <footer className="border-t-2 border-line bg-bg">
       <div className="mx-auto grid max-w-6xl gap-6 px-4 py-10 text-sm sm:px-6">
@@ -57,7 +58,8 @@ export async function Footer({ locale }: { locale: string }) {
             </ul>
           </nav>
         )}
-        <p className="text-muted">{t('trademark')}</p>
+        {/* Google's attribution goes with its badge, once there's a link (#45). */}
+        {site.playStoreUrl && <p className="text-muted">{t('trademark')}</p>}
         <p className="text-muted">{t('copyright', { year: new Date().getFullYear() })}</p>
       </div>
     </footer>

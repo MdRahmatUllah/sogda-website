@@ -202,6 +202,8 @@
     "privacy": "Privacy policy (Datenschutzerklärung)",
     "binding": "The German text below is the binding one; an English translation follows it.",
     "translation": "English translation (not binding)",
-    "back": "Back to Sogda"
+    "back": "Back to Sogda",
+    "impressumDescription": "Legal notice (Impressum) for sogda.de under § 5 DDG: who provides the site, and how to get in touch.",
+    "privacyDescription": "Privacy policy (Datenschutzerklärung) for sogda.de: what the site does with your data, in German with an English translation."
   }
 }

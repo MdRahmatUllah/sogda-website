@@ -202,6 +202,8 @@
     "privacy": "Datenschutzerklärung",
     "binding": "Maßgeblich ist der deutsche Text; darunter folgt eine englische Übersetzung.",
     "translation": "Englische Übersetzung (nicht verbindlich)",
-    "back": "Zurück zu Sogda"
+    "back": "Zurück zu Sogda",
+    "impressumDescription": "Impressum von sogda.de nach § 5 DDG: wer die Website anbietet, und der Kontakt.",
+    "privacyDescription": "Datenschutzerklärung von sogda.de: welche Daten die Website verarbeitet und wofür."
   }
 }
