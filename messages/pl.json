@@ -82,15 +82,15 @@
   },
   "journey": {
     "eyebrow": "Droga",
-    "title": "12 etapów od pierwszego „Hallo” do C2.",
+    "title": "{steps, plural, one {# etap} few {# etapy} many {# etapów} other {# etapu}} od pierwszego „Hallo” do C2.",
     "facts": {
-      "words": "5069 słów",
-      "grammar": "182 tematy gramatyczne",
+      "words": "{words, plural, one {# słowo} few {# słowa} many {# słów} other {# słowa}}",
+      "grammar": "{topics, plural, one {# temat gramatyczny} few {# tematy gramatyczne} many {# tematów gramatycznych} other {# tematu gramatycznego}}",
       "exams": "Trzy egzaminy próbne na każdy etap"
     },
     "counter": "słów na drodze",
     "placement": "Znasz już trochę niemieckiego? Krótki test poziomu zacznie od właściwego etapu.",
-    "road": "Kurs jako droga z 12 stacjami, od A1.1 do C2.2, przez poziomy A1 Anfänger, A2 Grundstufe, B1 Mittelstufe, B2, C1 i C2."
+    "road": "Kurs jako droga z {steps, plural, one {# stacją} other {# stacjami}}, od A1.1 do C2.2, przez poziomy A1 Anfänger, A2 Grundstufe, B1 Mittelstufe, B2, C1 i C2."
   },
   "practice": {
     "eyebrow": "Ćwicz i sprawdzaj się",
@@ -179,7 +179,7 @@
     },
     "android": {
       "q": "Jakiej wersji Androida potrzebuję?",
-      "a": "Android 8.0 lub nowszy."
+      "a": "Android {android} lub nowszy."
     },
     "iphone": {
       "q": "Czy jest wersja na iPhone’a?",
