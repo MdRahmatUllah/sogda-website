@@ -1,8 +1,7 @@
 import { getTranslations } from 'next-intl/server';
-import { factArgs } from '@/i18n/facts';
-import { routing } from '@/i18n/routing';
 import { LEVEL_LOCALES, levelPage, levelSlug } from '@/content/levels';
-import { facts } from '@/i18n/facts';
+import { factArgs, facts } from '@/i18n/facts';
+import { routing } from '@/i18n/routing';
 import type { PageContent } from '@/lib/page';
 
 // Every content page (MASTER-PLAN W3, #68): its URL segment, the locales it
