@@ -201,7 +201,7 @@
     },
     "exams": {
       "q": "Do jakich egzaminów przygotowuje?",
-      "a": "Do poziomów Goethe i telc od A1 do C2. Każdy etap ma trzy egzaminy próbne, które odpowiadają ich częściom: słownictwo, gramatyka, słuchanie, pisanie i mówienie. Są tworzone ze słów i gramatyki etapu — to nie oficjalne arkusze Goethe ani telc."
+      "a": "Do poziomów Goethe i telc od A1 do C2. Każdy etap ma trzy egzaminy próbne ze słuchaniem, pisaniem i mówieniem, jak na prawdziwych egzaminach, a do tego ze słownictwem i gramatyką, z wynikiem dla każdej części. Nie ma części z czytaniem ze zrozumieniem. Są tworzone ze słów i gramatyki etapu — to nie są oficjalne arkusze Goethe ani telc."
     }
   },
   "cta": {

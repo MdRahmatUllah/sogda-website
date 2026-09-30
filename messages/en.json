@@ -201,7 +201,7 @@
     },
     "exams": {
       "q": "Which exams does it prepare me for?",
-      "a": "The Goethe and telc levels from A1 to C2. Each step has three mock exams that follow their sections: vocabulary, grammar, listening, writing and speaking. They are generated from the step’s words and grammar, not official Goethe or telc papers."
+      "a": "The Goethe and telc levels from A1 to C2. Each step has three mock exams with listening, writing and speaking, like the real exams, plus vocabulary and grammar, and a result for each section. There’s no reading-comprehension part. They’re generated from the step’s words and grammar, not official Goethe or telc papers."
     }
   },
   "cta": {

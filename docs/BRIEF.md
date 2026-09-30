@@ -90,7 +90,7 @@ Accordion. Answers only from *Facts* or the owner:
 - Which Android version? (Android 8.0 or newer.)
 - iPhone? (Coming soon.)
 - Is my data shared? (No account; progress stays on the phone.)
-- Which exams does it prepare for? (Goethe/telc levels A1–C2; the app's mock exams follow their sections. Don't claim official endorsement.)
+- Which exams does it prepare for? (Goethe/telc levels A1–C2; each step's three mock exams test listening, writing and speaking, like those exams, plus vocabulary and grammar, with a result by section. No reading-comprehension part. Not official papers: don't claim official endorsement.)
 
 ### 3.11 Final CTA + footer
 - **Final CTA:** a big Lagoon band with the lockup, *"Start your road to German today"*, the Google Play badge + QR code, and the iPhone *coming soon* chip.
