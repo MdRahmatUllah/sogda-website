@@ -36,7 +36,7 @@
     "copyright": "© {year} Sogda"
   },
   "hero": {
-    "kicker": "Offline German course app\u00a0· A1–\u2060C2",
+    "kicker": "Offline German course app · A1–⁠C2",
     "headline": "Learn German, one clear day at a time.",
     "subline": "A complete, offline German course from A1 to C2, with meanings in English, Bangla, Russian or Polish.",
     "pause": "Pause the animation",
@@ -219,6 +219,61 @@
   "page": {
     "breadcrumb": "You are here",
     "related": "More about Sogda"
+  },
+  "levelPages": {
+    "title": "German {step}: {words, number} words and {topics, number} grammar topics | Sogda",
+    "description": "CEFR {level}, step {step} of Sogda's offline German course: {words, number} words, {topics, number} grammar topics, {mocksPerStep, number} mock exams, and a sample of the words.",
+    "name": "German {step}",
+    "eyebrow": "CEFR {level} · step {ord, number} of {steps, number}",
+    "h1": "German {step}: the words, the grammar and the mock exams",
+    "answer": "Sogda's step {step} teaches {words, plural, one {# German word} other {# German words}} and {topics, plural, one {# grammar topic} other {# grammar topics}}, the {half, select, first {first} other {second}} half of CEFR level {level}. It ends with {mocksPerStep, number} mock exams, each with {questions, number} questions plus a writing and a speaking task, generated from the step's own words and grammar.",
+    "levelHeading": "What {level} means",
+    "cefr": {
+      "A1": "At A1 you understand and use familiar everyday expressions and very basic phrases. You can introduce yourself, and ask and answer simple questions about where you live, people you know and things you have, as long as the other person speaks slowly and clearly.",
+      "A2": "At A2 you understand sentences and frequent expressions about things that matter to you every day, such as family, shopping, where you live and work. You can handle simple, routine tasks that need a direct exchange of information.",
+      "B1": "At B1 you understand the main points of clear, standard language about familiar things at work, school or in your free time. You can deal with most situations while travelling, and describe experiences, events, hopes and plans, with short reasons.",
+      "B2": "At B2 you understand the main ideas of complex texts on concrete and abstract topics. You can talk with native speakers with a degree of fluency and spontaneity that makes it possible without strain for either side, and write clear, detailed texts that weigh the pros and cons of an issue.",
+      "C1": "At C1 you understand a wide range of demanding, longer texts and recognise what they imply. You express yourself fluently and spontaneously, without searching for words, and use the language flexibly for social, academic and professional purposes.",
+      "C2": "At C2 you understand virtually everything you hear or read. You can summarise information from different spoken and written sources, and express yourself spontaneously, very fluently and precisely, telling apart finer shades of meaning."
+    },
+    "cefrNote": "These are the levels of the Common European Framework of Reference for Languages (CEFR), which the Goethe-Zertifikat and telc exams follow. Each step's words and grammar are Sogda's selection for its level.",
+    "grammarHeading": "The {topics, plural, one {grammar topic} other {# grammar topics}} of {step}",
+    "examHeading": "The {mocksPerStep, number} mock exams",
+    "examBody": "Each mock exam for {step} has {questions, number} questions and two tasks, {points, number} points in all, with a result for each section. Like the real exams, they test listening, writing and speaking, plus vocabulary and grammar; there's no reading-comprehension part. They're generated from the step's words and grammar, not official Goethe or telc papers.",
+    "items": "{name}: {n, plural, one {# question} other {# questions}}",
+    "writing": "{name}: a text of at least {words, number} words",
+    "speaking": "{name}: up to {seconds, number} seconds",
+    "section": {
+      "vocabulary": "Vocabulary",
+      "reverse": "Reverse (from the meaning to German)",
+      "articles": "Articles",
+      "wordForms": "Word forms",
+      "gapFill": "Gap fill",
+      "grammar": "Grammar",
+      "listening": "Listening",
+      "writing": "Writing",
+      "speaking": "Speaking"
+    },
+    "wordsHeading": "{sample, number} of the {words, number} words",
+    "wordsBody": "A sample from step {step}: each word with its article and forms where it has them, its meaning in English and a pronunciation guide. The app has all {words, number}, with examples.",
+    "faq": {
+      "official": {
+        "q": "Is this the official Goethe or telc word list for {level}?",
+        "a": "No. These are the words of Sogda's step {step}, chosen for CEFR {level}. The mock exams test listening, writing and speaking like the real exams, plus vocabulary and grammar, but they're generated from the course, not official Goethe or telc papers."
+      },
+      "count": {
+        "q": "How many words does Sogda teach for {level}?",
+        "a": "{levelWords, number} words and {levelTopics, number} grammar topics, across its two steps, {first} and {second}."
+      },
+      "next": {
+        "q": "What comes after {step}?",
+        "a": "Step {next}, with {nextWords, number} more words. Already know some German? A short placement check starts you at the right step."
+      },
+      "last": {
+        "q": "What comes after {step}?",
+        "a": "{step} is the last step of the course. The words you've learnt keep coming back for revision, just before you'd forget them."
+      }
+    }
   },
   "pages": {
     "sogda-vs-anki": {

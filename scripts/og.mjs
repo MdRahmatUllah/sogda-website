@@ -7,6 +7,7 @@
 import { chromium } from '@playwright/test';
 import { mkdirSync, readFileSync, readdirSync } from 'node:fs';
 
+const facts = JSON.parse(readFileSync('content/facts.json', 'utf8'));
 const b64 = (path) => readFileSync(path).toString('base64');
 const inter = b64('app/fonts/inter-latin.woff2');
 const cyrillic = b64('app/fonts/inter-cyrillic.woff2');
@@ -45,15 +46,37 @@ const card = async (kicker, headline, path) => {
   await page.screenshot({ path });
   console.log(`og: ${path}`);
 };
+// `pnpm og levels` renders only the level pages' cards, so the others' PNGs
+// aren't rewritten byte for byte.
+const onlyLevels = process.argv[2] === 'levels';
 for (const file of readdirSync('messages')) {
   const locale = file.replace(/\.json$/, '');
   const m = JSON.parse(readFileSync(`messages/${file}`, 'utf8'));
-  await card(m.hero.kicker, m.hero.headline, `public/og/${locale}.png`);
-  // Each content page kept in messages (`pages.<slug>`, #68) gets its own
-  // card; lib/page.ts uses it when it's there, else the locale's.
-  for (const [slug, p] of Object.entries(m.pages ?? {})) {
-    mkdirSync(`public/og/${locale}`, { recursive: true });
-    await card(p.eyebrow ?? p.name, p.h1, `public/og/${locale}/${slug}.png`);
+  if (!onlyLevels) {
+    await card(m.hero.kicker, m.hero.headline, `public/og/${locale}.png`);
+    // Each content page kept in messages (`pages.<slug>`, #68) gets its own
+    // card; lib/page.ts uses it when it's there, else the locale's.
+    for (const [slug, p] of Object.entries(m.pages ?? {})) {
+      mkdirSync(`public/og/${locale}`, { recursive: true });
+      await card(p.eyebrow ?? p.name, p.h1, `public/og/${locale}/${slug}.png`);
+    }
+  }
+  // The level pages (#72): a card per step, from the `levelPages` messages and
+  // content/facts.json. Their eyebrow and H1 take only simple arguments. The
+  // slug is content/levels.ts's levelSlug (A1.1 → a1-1).
+  if (m.levelPages) {
+    const n = (x) => new Intl.NumberFormat(locale).format(x);
+    for (const s of facts.steps) {
+      const values = { step: s.code, level: s.level, ord: n(s.ord), steps: n(facts.totals.steps) };
+      const fill = (text) => text.replace(/\{(\w+)(?:, number)?\}/g, (_, key) => values[key]);
+      const slug = s.code.toLowerCase().replace('.', '-');
+      mkdirSync(`public/og/${locale}`, { recursive: true });
+      await card(
+        fill(m.levelPages.eyebrow),
+        fill(m.levelPages.h1),
+        `public/og/${locale}/${slug}.png`,
+      );
+    }
   }
 }
 await browser.close();
