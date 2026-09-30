@@ -11,7 +11,9 @@ const page = await browser.newPage({
   viewport: { width: Number(width), height: Number(height) },
   reducedMotion: 'no-preference',
 });
-await page.goto(`http://localhost:4173${path}`, { waitUntil: 'networkidle' });
+await page.goto(`http://localhost:${process.env.PW_PORT ?? 4173}${path}`, {
+  waitUntil: 'networkidle',
+});
 await page.locator('html[data-hydrated]').waitFor({ state: 'attached' });
 const cdp = await page.context().newCDPSession(page);
 await cdp.send('Emulation.setCPUThrottlingRate', { rate: Number(slow) });
