@@ -1,7 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import { factArgs } from '@/i18n/facts';
 import { routing } from '@/i18n/routing';
-import { contentFromMessages, type PageContent } from '@/lib/page';
+import type { PageContent } from '@/lib/page';
 
 // Every content page (MASTER-PLAN W3, #68): its URL segment, the locales it
 // exists in (hreflang and the sitemap cover only these), and its copy per
@@ -20,7 +20,9 @@ export type PageEntry = {
 // The template's own sample: every part of a page, filled with copy the site
 // already has (and every locale has reviewed), so it adds no new text.
 async function sample(locale: string): Promise<PageContent> {
-  const t = await getTranslations({ locale });
+  const tr = await getTranslations({ locale });
+  // Every message may take any fact as an ICU argument (#61).
+  const t = (key: string) => tr(key, factArgs);
   return {
     title: `${t('nav.day')} — Sogda`,
     description: t('meta.description'),
@@ -44,11 +46,7 @@ async function sample(locale: string): Promise<PageContent> {
 
 const PAGES: PageEntry[] = [
   // Sogda in brief (#70): the press and AI-answer fact sheet.
-  {
-    slug: 'about',
-    locales: routing.locales,
-    content: (l) => contentFromMessages(l, 'about', factArgs),
-  },
+  { slug: 'about', locales: routing.locales, content: (l) => contentFromMessages(l, 'about') },
   { slug: 'template-sample', locales: routing.locales, content: sample, gallery: true },
 ];
 

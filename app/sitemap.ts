@@ -17,34 +17,28 @@ function lastModified(): Date {
   }
 }
 
-// Every home page, each naming its other languages and the default (BRIEF §9),
-// then every content page in the locales it exists in (#68). The legal pages
-// stay out: the same bilingual text in every locale, each copy canonical to
-// the German one (#58).
+// The chooser at / (the x-default, #63), every home page, then every content
+// page in each locale it exists in (#68), each naming its other languages and
+// its default (BRIEF §9). The legal pages stay out: the same bilingual text in
+// every locale, each copy canonical to German (#58).
 export default function sitemap(): MetadataRoute.Sitemap {
   const modified = lastModified();
-  const languages = {
-    ...Object.fromEntries(routing.locales.map((l) => [l, `${site.url}/${l}`])),
-    'x-default': `${site.url}/${routing.defaultLocale}`,
-  };
-  const home = routing.locales.map((locale) => ({
-    url: `${site.url}/${locale}`,
-    lastModified: modified,
-    alternates: { languages },
-  }));
-  const content = pages
-    .filter((p) => !p.gallery)
-    .flatMap((p) => {
-      const url = (l: string) => `${site.url}${pagePath(l, p.slug)}`;
-      const languages = {
-        ...Object.fromEntries(p.locales.map((l) => [l, url(l)])),
-        'x-default': url(p.locales.includes('en') ? 'en' : p.locales[0]!),
-      };
-      return p.locales.map((locale) => ({
-        url: url(locale),
-        lastModified: modified,
-        alternates: { languages },
-      }));
-    });
-  return [...home, ...content];
+  const chooser = site.url; // no slash, as Next writes it in every page's hreflang
+  const entries = (urls: string[], languages: Record<string, string>) =>
+    urls.map((url) => ({ url, lastModified: modified, alternates: { languages } }));
+  const homes = Object.fromEntries(routing.locales.map((l) => [l, `${site.url}/${l}`]));
+  return [
+    ...entries([chooser, ...Object.values(homes)], { ...homes, 'x-default': chooser }),
+    ...pages
+      .filter((p) => !p.gallery)
+      .flatMap((p) => {
+        const urls = Object.fromEntries(
+          p.locales.map((l) => [l, `${site.url}${pagePath(l, p.slug)}`]),
+        );
+        const fallback = p.locales.includes(routing.defaultLocale)
+          ? routing.defaultLocale
+          : p.locales[0]!;
+        return entries(Object.values(urls), { ...urls, 'x-default': urls[fallback]! });
+      }),
+  ];
 }
