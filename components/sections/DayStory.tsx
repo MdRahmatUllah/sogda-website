@@ -22,7 +22,7 @@ export async function DayStory({ locale }: { locale: string }) {
   );
   return (
     <section id="day" aria-labelledby="day-title" className="py-20 sm:py-28">
-      <DayStoryStage steps={BEATS.length}>
+      <DayStoryStage>
         <div className="mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-20 motion-reduce:lg:grid-cols-1">
           <div>
             <p className="font-semibold text-link">{t('eyebrow')}</p>

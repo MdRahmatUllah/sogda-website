@@ -1,10 +1,9 @@
 import { getTranslations } from 'next-intl/server';
-import { JourneyProgress } from './JourneyProgress';
 
 // BRIEF §3.4: the Silk Road as the course, 12 stations from A1.1 to C2.2,
 // winding down the page; a traveller (the Sun tile's colour) follows the
 // scroll and lights each station it passes. The finished road is the markup
-// (no JS, reduced motion); JourneyProgress takes it back to the start and
+// (no JS, reduced motion); public/site.js takes it back to the start and
 // follows the scroll.
 const STEPS = [
   'A1.1',
@@ -79,7 +78,11 @@ export async function Journey({ locale }: { locale: string }) {
             ))}
           </ul>
           <p aria-hidden="true" className="card mt-8 inline-flex items-baseline gap-2 px-5 py-3">
-            <span id="journey-count" className="text-3xl font-extrabold tabular-nums">
+            <span
+              id="journey-count"
+              data-total={5069}
+              className="text-3xl font-extrabold tabular-nums"
+            >
               {new Intl.NumberFormat(locale).format(5069)}
             </span>
             <span className="text-muted">{t('counter')}</span>
@@ -176,7 +179,6 @@ export async function Journey({ locale }: { locale: string }) {
               transform={`translate(${STATIONS.at(-1)!.x} ${STATIONS.at(-1)!.y})`}
             />
           </svg>
-          <JourneyProgress total={5069} locale={locale} />
         </div>
       </div>
     </section>

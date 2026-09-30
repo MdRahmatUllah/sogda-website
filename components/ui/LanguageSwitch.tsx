@@ -1,7 +1,4 @@
-'use client';
-
 import { ChevronDown, Languages } from 'lucide-react';
-import type { MouseEvent } from 'react';
 
 type Props = {
   locale: string;
@@ -17,23 +14,12 @@ type Props = {
 // Links, not a <select>: a closed select still lays out every option, so each
 // script's font (Bangla: 70 KB, Cyrillic) would load on every page. A link list
 // in a native popover (or in the closed phone menu) is laid out, and its fonts
-// fetched, only when it opens. Without JS the links still go to each home page.
-function go(e: MouseEvent<HTMLElement>) {
-  const link = (e.target as HTMLElement).closest<HTMLAnchorElement>('a[hreflang]');
-  if (!link) return;
-  const next = link.hreflang;
-  e.preventDefault();
-  try {
-    localStorage.setItem('locale', next);
-  } catch {
-    // Storage blocked: the link still goes there.
-  }
-  location.assign(location.pathname.replace(/^\/[a-z]{2}(?=\/|$)/, `/${next}`) + location.hash);
-}
+// fetched, only when it opens. public/site.js keeps the visitor on the same
+// page and remembers the pick; without JS the links go to each home page.
 
 function Links({ locale, locales, names, className = '' }: Omit<Props, 'label'>) {
   return (
-    <ul className={className} onClick={go}>
+    <ul data-locale-links className={className}>
       {locales.map((l) => (
         <li key={l}>
           <a
