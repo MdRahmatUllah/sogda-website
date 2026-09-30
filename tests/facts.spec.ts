@@ -27,6 +27,21 @@ test('/llms.txt states the facts from facts.json, as plain text', async ({ reque
 });
 
 for (const locale of ['en', 'de', 'pl', 'ru', 'bn'] as const) {
+  test(`/${locale}: no message is rendered with its ICU placeholders raw`, async ({ page }) => {
+    // A message made ICU (#61) and called somewhere without its values
+    // renders as "{words, plural, one {# word}…}": #82's hero did.
+    await page.goto(`/${locale}`);
+    const text = (await page.locator('body').textContent()) ?? '';
+    expect(text).not.toMatch(
+      /\{\s*\w+\s*,\s*(?:plural|number|select)\b|\{(?:words|topics|steps|android|mocks|mocksPerStep)\}/,
+    );
+    const format = new Intl.NumberFormat(locale);
+    const hero = page.locator('#hero li');
+    await expect(hero.nth(0)).toContainText(format.format(words));
+    await expect(hero.nth(1)).toContainText(format.format(facts.totals.grammar_topics));
+    await expect(hero.nth(2)).toContainText(format.format(facts.totals.steps));
+  });
+
   test(`/${locale}: the journey's numbers are facts.json's, in the locale's digits`, async ({
     page,
   }) => {

@@ -43,7 +43,7 @@
     "play": "Włącz animację",
     "facts": {
       "label": "Sogda w liczbach",
-      "steps": "12 etapów, A1 → C2",
+      "steps": "{steps, plural, one {# etap} few {# etapy} many {# etapów} other {# etapu}}, A1 → C2",
       "offline": "Offline, bez konta"
     },
     "card": {

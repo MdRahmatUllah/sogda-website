@@ -3,6 +3,7 @@ import { DeviceFrame } from '@/components/ui/DeviceFrame';
 import { Mark } from '@/components/ui/Mark';
 import { Screen } from '@/components/ui/Screen';
 import { StoreBadges } from '@/components/ui/StoreBadges';
+import { factArgs } from '@/i18n/facts';
 import { TERMIN } from './Features';
 import { HeroPause } from './HeroPause';
 
@@ -65,9 +66,9 @@ export async function Hero({ locale }: { locale: string }) {
   // strings (one wording per locale); the card shows der Termin in the
   // visitor's meaning language, English where the app has none (de).
   const facts = [
-    journey('facts.words'),
-    journey('facts.grammar'),
-    t('facts.steps'),
+    journey('facts.words', factArgs),
+    journey('facts.grammar', factArgs),
+    t('facts.steps', factArgs),
     journey('facts.exams'),
     t('facts.offline'),
   ];

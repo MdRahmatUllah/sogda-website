@@ -43,7 +43,7 @@
     "play": "Запустить анимацию",
     "facts": {
       "label": "Sogda в цифрах",
-      "steps": "12 этапов, A1 → C2",
+      "steps": "{steps, plural, one {# этап} few {# этапа} many {# этапов} other {# этапа}}, A1 → C2",
       "offline": "Офлайн, без аккаунта"
     },
     "card": {

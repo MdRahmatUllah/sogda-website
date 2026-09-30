@@ -43,7 +43,7 @@
     "play": "Play the animation",
     "facts": {
       "label": "Sogda in numbers",
-      "steps": "12 steps, A1 → C2",
+      "steps": "{steps, number} steps, A1 → C2",
       "offline": "Offline, no account"
     },
     "card": {
