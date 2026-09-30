@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Sogda — Deutsch offline lernen, von A1 bis C2",
-    "description": "Deutsch lernen, ein klarer Tag nach dem anderen: ein vollständiger Offline-Deutschkurs von A1 bis C2, mit Bedeutungen auf Englisch, Bangla, Russisch oder Polnisch."
+    "title": "Sogda: Deutsch lernen offline · App A1–C2 mit Probeprüfungen",
+    "description": "Deutsch lernen – Tag für Tag, mit klarem Plan: der komplette Offline-Kurs von A1 bis C2, mit Bedeutungen auf Englisch, Bangla, Russisch oder Polnisch."
   },
   "header": {
     "skip": "Zum Inhalt springen",
@@ -34,8 +34,8 @@
     "copyright": "© {year} Sogda"
   },
   "hero": {
-    "kicker": "Der Weg zu einer neuen Sprache",
-    "headline": "Deutsch lernen, ein klarer Tag nach dem anderen.",
+    "kicker": "Deutschkurs offline als App\u00a0· A1\u00a0bis\u00a0C2\u00a0· 36\u00a0Probeprüfungen",
+    "headline": "Deutsch lernen – Tag für Tag, mit klarem Plan.",
     "subline": "Ein vollständiger Offline-Deutschkurs von A1 bis C2, mit Bedeutungen auf Englisch, Bangla, Russisch oder Polnisch.",
     "pause": "Animation anhalten",
     "play": "Animation abspielen"
@@ -71,7 +71,7 @@
   "memory": {
     "eyebrow": "Sogda merkt es sich für dich",
     "title": "Jedes Wort kommt wieder, kurz bevor du es vergessen würdest.",
-    "body": "Sogda plant jedes Wort mit FSRS, einer modernen Methode der verteilten Wiederholung. Jedes Mal, wenn du ein Wort weißt, wird die Pause bis zur nächsten Wiederholung länger: ein Tag, dann drei, dann acht, dann drei Wochen. Deine Minuten gehen an die Wörter, die du gerade vergessen würdest.",
+    "body": "Sogda plant jedes Wort mit FSRS, einer modernen Methode der verteilten Wiederholung. Jedes Mal, wenn du dich an ein Wort erinnerst, wird die Pause bis zur nächsten Wiederholung länger: ein Tag, dann drei, dann acht, dann drei Wochen. Deine Zeit fließt in die Wörter, die du sonst gleich vergessen würdest.",
     "chart": "Eine Vergessenskurve: Die Erinnerung an ein neues Wort verblasst, jede Wiederholung holt sie ganz zurück, und danach verblasst sie jedes Mal langsamer. Die Wiederholungen kommen nach 1 Tag, 3 Tagen, 8 Tagen und 21 Tagen.",
     "axisMemory": "Erinnerung",
     "axisTime": "Zeit",
@@ -94,7 +94,7 @@
   },
   "practice": {
     "eyebrow": "Üben und dich selbst prüfen",
-    "title": "Quizze, und eine Probeprüfung, wenn du bereit bist.",
+    "title": "Quizze – und eine Probeprüfung, wenn du so weit bist.",
     "quizzes": "Quizze in jede Richtung: Deutsch in deine Sprachen und zurück, Artikel, Hören und Wortformen.",
     "exams": "Drei Probeprüfungen für jede Stufe, mit Wortschatz, Grammatik, Hören, Schreiben und Sprechen, und einem Ergebnis für jeden Teil.",
     "carousel": "Quiz- und Prüfungsbildschirme",
@@ -138,7 +138,7 @@
   },
   "looks": {
     "eyebrow": "Drei Designs",
-    "title": "Hell, dunkel oder Glas, und gut lesbar.",
+    "title": "Hell, dunkel oder Glas – und immer gut lesbar.",
     "body": "Wähle das Design, das dir gefällt. Text geht bis 200 %, und Sogda funktioniert mit dem Screenreader deines Handys.",
     "legend": "Design",
     "light": "Hell",
@@ -195,7 +195,7 @@
     }
   },
   "cta": {
-    "title": "Starte heute deinen Weg zum Deutsch."
+    "title": "Starte heute deinen Weg ins Deutsche."
   },
   "legal": {
     "impressum": "Impressum",

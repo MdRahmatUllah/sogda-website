@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Sogda — Learn German offline, A1 to C2",
-    "description": "Learn German, one clear day at a time: a complete, offline German course from A1 to C2, with meanings in English, Bangla, Russian or Polish."
+    "title": "Sogda: Learn German offline, A1–C2 app with mock exams",
+    "description": "Learn German, one clear day at a time: a complete, offline course app from A1 to C2, with mock exams and meanings in English, Bangla, Russian or Polish."
   },
   "header": {
     "skip": "Skip to content",
@@ -34,7 +34,7 @@
     "copyright": "© {year} Sogda"
   },
   "hero": {
-    "kicker": "The road to a new language",
+    "kicker": "Offline German course app\u00a0· A1–C2\u00a0· 36\u00a0mock\u00a0exams",
     "headline": "Learn German, one clear day at a time.",
     "subline": "A complete, offline German course from A1 to C2, with meanings in English, Bangla, Russian or Polish.",
     "pause": "Pause the animation",
@@ -64,7 +64,7 @@
       "body": "Practice sentences made only from words you've already learned. Tap any word for its meaning."
     },
     "done": {
-      "title": "Day complete 🎉",
+      "title": "Tag geschafft! Day complete 🎉",
       "body": "That's today done. Tomorrow's plan is already waiting."
     }
   },

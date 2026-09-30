@@ -13,7 +13,7 @@ const bengali = b64('app/fonts/noto-sans-bengali.woff2');
 const screen = b64('public/screens/today-light-720.webp');
 const mark = readFileSync('public/brand/icon-road-full.svg', 'utf8').replace(
   'width="108" height="108"',
-  'width="150" height="150"',
+  'width="120" height="120"',
 );
 
 const html = (m) => `<!doctype html><html><head><meta charset="utf-8"><style>
@@ -24,7 +24,7 @@ const html = (m) => `<!doctype html><html><head><meta charset="utf-8"><style>
 body{width:1200px;height:630px;background:#00C2B2;color:#15121F;font-family:InterCyr,Inter,Bengali,sans-serif;overflow:hidden;position:relative}
 .text{position:absolute;left:72px;top:72px;width:640px}
 .mark svg{border-radius:26px;display:block}
-.kicker{margin-top:36px;font-size:30px;font-weight:600}
+.kicker{margin-top:24px;font-size:30px;font-weight:600}
 h1{margin-top:12px;font-size:64px;line-height:1.05;font-weight:800;letter-spacing:-0.025em}
 .url{position:absolute;left:72px;bottom:56px;font-size:26px;font-weight:700}
 .phone{position:absolute;right:96px;top:64px;width:300px;padding:12px;background:#15121F;border-radius:44px;box-shadow:10px 10px 0 #FFC61A;transform:rotate(4deg)}

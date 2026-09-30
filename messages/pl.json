@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Sogda — ucz się niemieckiego offline, od A1 do C2",
-    "description": "Ucz się niemieckiego dzień po dniu, z jasnym planem: pełny kurs niemieckiego offline od A1 do C2, ze znaczeniami po polsku."
+    "title": "Sogda: niemiecki od podstaw do C2, offline · aplikacja",
+    "description": "Ucz się niemieckiego dzień po dniu, z jasnym planem: pełny kurs offline od podstaw (A1) do C2, z egzaminami próbnymi i znaczeniami po polsku."
   },
   "header": {
     "skip": "Przejdź do treści",
@@ -34,7 +34,7 @@
     "copyright": "© {year} Sogda"
   },
   "hero": {
-    "kicker": "Droga do nowego języka",
+    "kicker": "Niemiecki offline w aplikacji\u00a0· A1–C2\u00a0· 36\u00a0egzaminów\u00a0próbnych",
     "headline": "Ucz się niemieckiego dzień po dniu, z jasnym planem.",
     "subline": "Pełny kurs niemieckiego offline od A1 do C2, ze znaczeniami po polsku.",
     "pause": "Zatrzymaj animację",
@@ -49,7 +49,7 @@
     },
     "revise": {
       "title": "Powtórz to, co czeka",
-      "body": "Najpierw wracają słowa, które zaraz wypadłyby ci z pamięci. Posłuchaj, pomyśl o znaczeniu, potem odkryj."
+      "body": "Najpierw wracają słowa, które zaraz wypadłyby ci z pamięci. Posłuchaj, pomyśl o znaczeniu, potem odsłoń."
     },
     "learn": {
       "title": "Naucz się kilku nowych słów",
@@ -64,14 +64,14 @@
       "body": "Zdania do ćwiczeń tylko ze słów, które już znasz. Dotknij dowolnego słowa, żeby zobaczyć znaczenie."
     },
     "done": {
-      "title": "Tag geschafft! 🎉",
+      "title": "Tag geschafft! Dzień zaliczony 🎉",
       "body": "Na dziś wszystko. Plan na jutro już czeka."
     }
   },
   "memory": {
     "eyebrow": "Pamięta za ciebie",
-    "title": "Każde słowo wraca tuż przed tym, zanim wypadnie ci z pamięci.",
-    "body": "Sogda planuje każde słowo metodą FSRS, nowoczesną metodą powtórek w odstępach. Za każdym razem, gdy pamiętasz słowo, przerwa do następnej powtórki rośnie: dzień, potem trzy, potem osiem, potem trzy tygodnie. Twoje minuty idą na słowa, które zaraz wypadłyby ci z pamięci.",
+    "title": "Każde słowo wraca tuż zanim wypadnie ci z pamięci.",
+    "body": "Sogda planuje każde słowo według FSRS, nowoczesnej metody powtórek rozłożonych w czasie. Za każdym razem, gdy przypomnisz sobie słowo, przerwa do następnej powtórki rośnie: dzień, potem trzy, potem osiem, potem trzy tygodnie. Czas poświęcasz słowom, które zaraz wypadłyby ci z pamięci.",
     "chart": "Krzywa zapominania: pamięć nowego słowa słabnie, każda powtórka przywraca ją w pełni, a po każdej słabnie wolniej. Powtórki przychodzą po 1 dniu, 3 dniach, 8 dniach i 21 dniach.",
     "axisMemory": "Pamięć",
     "axisTime": "Czas",
@@ -88,8 +88,8 @@
       "grammar": "182 tematy gramatyczne",
       "exams": "Trzy egzaminy próbne na każdy etap"
     },
-    "counter": "słów na drodze",
-    "placement": "Znasz już trochę niemieckiego? Krótki test poziomu zacznie od właściwego etapu.",
+    "counter": "słów po drodze",
+    "placement": "Znasz już trochę niemieckiego? Krótki test poziomu dobierze właściwy etap.",
     "road": "Kurs jako droga z 12 stacjami, od A1.1 do C2.2, przez poziomy A1 Anfänger, A2 Grundstufe, B1 Mittelstufe, B2, C1 i C2."
   },
   "practice": {
@@ -102,10 +102,10 @@
   },
   "features": {
     "eyebrow": "I cała reszta",
-    "title": "Zrobiona z myślą o prawdziwym dniu ucznia.",
+    "title": "Z myślą o prawdziwej codzienności nauki.",
     "offline": {
       "title": "Zawsze offline",
-      "body": "Bez zasięgu: działa w U-Bahnie i w samolocie."
+      "body": "Bez zasięgu: działa w metrze i w samolocie."
     },
     "private": {
       "title": "Prywatność od początku",
@@ -137,10 +137,10 @@
     }
   },
   "looks": {
-    "eyebrow": "Trzy wyglądy",
-    "title": "Jasny, ciemny lub szklany, i czytelny.",
+    "eyebrow": "Trzy motywy",
+    "title": "Jasny, ciemny albo szklany — zawsze czytelny.",
     "body": "Wybierz wygląd, który ci odpowiada. Tekst można powiększyć do 200 %, a Sogda działa z czytnikiem ekranu twojego telefonu.",
-    "legend": "Wygląd",
+    "legend": "Motyw",
     "light": "Jasny",
     "dark": "Ciemny",
     "glass": "Szklany",
