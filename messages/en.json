@@ -215,5 +215,9 @@
     "back": "Back to Sogda",
     "impressumDescription": "Legal notice (Impressum) for sogda.de under § 5 DDG: who provides the site, and how to get in touch.",
     "privacyDescription": "Privacy policy (Datenschutzerklärung) for sogda.de: what the site does with your data, in German with an English translation."
+  },
+  "page": {
+    "breadcrumb": "You are here",
+    "related": "More about Sogda"
   }
 }

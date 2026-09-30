@@ -215,5 +215,9 @@
     "back": "Zurück zu Sogda",
     "impressumDescription": "Impressum von sogda.de nach § 5 DDG: wer die Website anbietet, und der Kontakt.",
     "privacyDescription": "Datenschutzerklärung von sogda.de: welche Daten die Website verarbeitet und wofür."
+  },
+  "page": {
+    "breadcrumb": "Du bist hier",
+    "related": "Mehr über Sogda"
   }
 }
