@@ -5,7 +5,9 @@ test.describe('hero (BRIEF §3.1)', () => {
   test('the message and the store CTA, before the Play link exists', async ({ page }) => {
     await page.goto('/en');
     const hero = page.locator('#hero');
-    await expect(hero.getByText('Offline German course app · A1–C2 · 36 mock exams')).toBeVisible();
+    await expect(
+      hero.getByText('Offline German course app · A1–\u2060C2 · 36 mock exams'),
+    ).toBeVisible();
     await expect(hero.getByRole('heading', { level: 1 })).toHaveText(
       'Learn German, one clear day at a time.',
     );
