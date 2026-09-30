@@ -3,6 +3,7 @@ import { DeviceFrame } from '@/components/ui/DeviceFrame';
 import { Mark } from '@/components/ui/Mark';
 import { Screen } from '@/components/ui/Screen';
 import { StoreBadges } from '@/components/ui/StoreBadges';
+import { factArgs } from '@/i18n/facts';
 import { TERMIN } from './Features';
 import { HeroPause } from './HeroPause';
 
@@ -62,14 +63,15 @@ export async function Hero({ locale }: { locale: string }) {
   const journey = await getTranslations({ locale, namespace: 'journey' });
   const memory = await getTranslations({ locale, namespace: 'memory' });
   // #62: the product in the first screen. The facts are the journey's own
-  // strings (one wording per locale); the card shows der Termin in the
-  // visitor's meaning language, English where the app has none (de).
+  // strings (one wording per locale), their numbers ICU arguments from
+  // content/facts.json (#61); the card shows der Termin in the visitor's
+  // meaning language, English where the app has none (de).
   const facts = [
-    journey('facts.words'),
-    journey('facts.grammar'),
-    t('facts.steps'),
-    journey('facts.exams'),
-    t('facts.offline'),
+    journey('facts.words', factArgs),
+    journey('facts.grammar', factArgs),
+    t('facts.steps', factArgs),
+    journey('facts.exams', factArgs),
+    t('facts.offline', factArgs),
   ];
   const word = TERMIN.find((w) => w.lang === locale) ?? TERMIN[0];
   return (
