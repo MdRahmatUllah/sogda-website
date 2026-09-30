@@ -186,7 +186,7 @@ test('Inter says which characters it has, so /bn asks for its font before the fi
   expect(ranges.length).toBeGreaterThan(0);
   for (const range of ranges) {
     expect(range).not.toBe('U+0-10FFFF');
-    for (const [, from, to = from] of range.matchAll(/U\+([0-9A-F]+)(?:-([0-9A-F]+))?/gi))
+    for (const [, from = '', to = from] of range.matchAll(/U\+([0-9A-F]+)(?:-([0-9A-F]+))?/gi))
       expect(parseInt(from, 16) > 0x9ff || parseInt(to, 16) < 0x980).toBe(true);
   }
 });
