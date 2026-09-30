@@ -15,4 +15,9 @@ export const factArgs = {
   mocks: facts.totals.mock_exams,
   mocksPerStep: facts.totals.mock_exams_per_step,
   android: facts.app.min_android,
+  // The app's schedule (#103): the gaps of Good after Good on each due day.
+  g1: facts.fsrs.good_days[0]!,
+  g2: facts.fsrs.good_days[1]!,
+  g3: facts.fsrs.good_days[2]!,
+  g4: facts.fsrs.good_days[3]!,
 };

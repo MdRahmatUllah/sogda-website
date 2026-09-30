@@ -1,5 +1,12 @@
 import { expect, test } from '@playwright/test';
+import { readFileSync } from 'node:fs';
 import { gotoReady } from './ready';
+
+// The app's schedule (#103): Good after Good, from content/facts.json.
+const GAPS: number[] = JSON.parse(readFileSync('content/facts.json', 'utf8')).fsrs.good_days.slice(
+  0,
+  4,
+);
 
 test.describe('hero (BRIEF §3.1)', () => {
   test('the message and the store CTA, before the Play link exists', async ({ page }) => {
@@ -31,7 +38,7 @@ test.describe('hero (BRIEF §3.1)', () => {
     await expect(card).toContainText('der Termin');
     await expect(card).toContainText('appointment');
     await expect(card).toContainText('/tair-MEEN/');
-    await expect(card.getByRole('listitem')).toHaveText(['1 d', '3 d', '8 d', '21 d']);
+    await expect(card.getByRole('listitem')).toHaveText(GAPS.map((d) => `${d} d`));
   });
 
   test("#62 the card speaks the visitor's meaning language; German visitors get English", async ({

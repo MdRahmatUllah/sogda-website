@@ -36,7 +36,7 @@
     "copyright": "© {year} Sogda"
   },
   "hero": {
-    "kicker": "Offline German course app\u00a0· A1–\u2060C2",
+    "kicker": "Offline German course app · A1–⁠C2",
     "headline": "Learn German, one clear day at a time.",
     "subline": "A complete, offline German course from A1 to C2, with meanings in English, Bangla, Russian or Polish.",
     "pause": "Pause the animation",
@@ -81,14 +81,14 @@
   "memory": {
     "eyebrow": "It remembers for you",
     "title": "Each word comes back just before you'd forget it.",
-    "body": "Sogda schedules every word with FSRS, a modern spaced-repetition method. Each time you remember a word, the wait before it comes back grows: a day, then three, then eight, then three weeks. Your minutes go to the words you're about to forget.",
-    "chart": "A forgetting curve: memory of a new word fades, each revision brings it back to full, and after each one it fades more slowly. The revisions come after 1 day, 3 days, 8 days and 21 days.",
+    "body": "Sogda schedules every word with FSRS, a modern spaced-repetition method. Each time you remember a word, the wait before it comes back grows: {g1, plural, one {# day} other {# days}}, then {g2, number}, then {g3, number}, then {g4, number}. Your minutes go to the words you're about to forget.",
+    "chart": "A forgetting curve: memory of a new word fades, each revision brings it back to full, and after each one it fades more slowly. The gaps between the revisions grow: {g1, plural, one {# day} other {# days}}, then {g2, number}, {g3, number} and {g4, number}.",
     "axisMemory": "Memory",
     "axisTime": "Time",
     "gap": "{days, plural, one {# day} other {# days}}",
-    "gapShort": "{days} d",
+    "gapShort": "{days, number} d",
     "meaning": "appointment",
-    "revisions": "Its revisions: after 1, 3, 8 and 21 days"
+    "revisions": "The gaps before its revisions: {g1, number}, {g2, number}, {g3, number} and {g4, plural, one {# day} other {# days}}"
   },
   "journey": {
     "eyebrow": "The journey",

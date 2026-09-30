@@ -1,5 +1,12 @@
 import { expect, test } from '@playwright/test';
+import { readFileSync } from 'node:fs';
 import { gotoReady } from './ready';
+
+// The app's schedule (#103): Good after Good, from content/facts.json.
+const GAPS: number[] = JSON.parse(readFileSync('content/facts.json', 'utf8')).fsrs.good_days.slice(
+  0,
+  4,
+);
 
 const STEPS = [
   'A1.1',
@@ -25,12 +32,16 @@ test.describe('It remembers for you (BRIEF §3.3)', () => {
     );
     await expect(memory.getByRole('img', { name: /forgetting curve/ })).toBeVisible();
     await expect(memory.locator('.memory-dot')).toHaveCount(5);
-    for (const gap of ['1 day', '3 days', '8 days', '21 days']) {
-      await expect(memory.getByText(gap, { exact: true })).toBeAttached();
+    for (const gap of GAPS) {
+      await expect(memory.getByText(`${gap} days`, { exact: true })).toBeAttached();
     }
+    // The copy names the same gaps (#103), not the old 1, 3, 8, 21.
+    await expect(memory.locator('p', { hasText: 'FSRS' })).toContainText(
+      `${GAPS[0]} days, then ${GAPS[1]}`,
+    );
     await expect(memory.getByText('Termin')).toBeVisible();
     await expect(memory.getByText('appointment')).toBeVisible();
-    await expect(memory.locator('.memory-chip')).toHaveText(['1 d', '3 d', '8 d', '21 d']);
+    await expect(memory.locator('.memory-chip')).toHaveText(GAPS.map((d) => `${d} d`));
   });
 
   test('reduced motion: the curve is drawn and the revisions are there', async ({ page }) => {
