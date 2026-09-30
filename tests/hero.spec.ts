@@ -19,6 +19,51 @@ test.describe('hero (BRIEF §3.1)', () => {
     await expect(hero.getByRole('img', { name: /QR code/ })).toHaveCount(0);
   });
 
+  test('#62 the first screen states the facts and shows a word', async ({ page }) => {
+    await page.goto('/en');
+    const facts = page.getByRole('list', { name: 'Sogda in numbers' });
+    await expect(facts.getByRole('listitem')).toHaveText([
+      '5,069 words',
+      '182 grammar topics',
+      '12 steps, A1 → C2',
+      'Three mock exams for every step',
+      'Offline, no account',
+    ]);
+    const card = page.locator('#hero .hero-word');
+    await expect(card).toContainText('der Termin');
+    await expect(card).toContainText('appointment');
+    await expect(card).toContainText('/tair-MEEN/');
+    await expect(card.getByRole('listitem')).toHaveText(['1 d', '3 d', '8 d', '21 d']);
+  });
+
+  test("#62 the card speaks the visitor's meaning language; German visitors get English", async ({
+    page,
+  }) => {
+    for (const [locale, meaning, say] of [
+      ['bn', 'অ্যাপয়েন্টমেন্ট / নির্ধারিত সময়', '/টের্মিন/'],
+      ['ru', 'запись (к врачу) / встреча', '/тэрмИн/'],
+      ['pl', 'wizyta / termin', '/ter-MIN/'],
+      ['de', 'appointment', '/tair-MEEN/'],
+    ]) {
+      await page.goto(`/${locale}`);
+      const card = page.locator('#hero .hero-word');
+      await expect(card).toContainText(meaning!);
+      await expect(card).toContainText(say!);
+    }
+  });
+
+  test('#62 before the Play link, a visitor can ask to be told by email (O4)', async ({ page }) => {
+    await page.goto('/en');
+    for (const where of ['#hero', '#get']) {
+      const notify = page.locator(where).getByRole('link', { name: "Tell me when it's out" });
+      await expect(notify).toBeVisible();
+      await expect(notify).toHaveAttribute(
+        'href',
+        /^mailto:[^?]+\?subject=Tell%20me%20when%20Sogda%20is%20on%20Google%20Play$/,
+      );
+    }
+  });
+
   test("Today is the phone's first screen and loads first; the loop's others wait", async ({
     page,
   }) => {

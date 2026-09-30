@@ -23,7 +23,9 @@
     "googlePlay": "Pobierz z Google Play",
     "googlePlaySoon": "Wkrótce w Google Play",
     "iphoneSoon": "Wkrótce na iPhone’a",
-    "qr": "Kod QR: zeskanuj go telefonem, żeby otworzyć Sogdę w Google Play"
+    "qr": "Kod QR: zeskanuj go telefonem, żeby otworzyć Sogdę w Google Play",
+    "notify": "Daj mi znać, gdy będzie dostępna",
+    "notifySubject": "Proszę o wiadomość, gdy Sogda będzie w Google Play"
   },
   "footer": {
     "impressum": "Impressum",
@@ -34,11 +36,19 @@
     "copyright": "© {year} Sogda"
   },
   "hero": {
-    "kicker": "Niemiecki offline w aplikacji\u00a0· A1–\u2060C2\u00a0· 36\u00a0egzaminów\u00a0próbnych",
+    "kicker": "Niemiecki offline w aplikacji\u00a0· A1–\u2060C2",
     "headline": "Ucz się niemieckiego dzień po dniu, z jasnym planem.",
     "subline": "Pełny kurs niemieckiego offline od A1 do C2, ze znaczeniami po polsku.",
     "pause": "Zatrzymaj animację",
-    "play": "Włącz animację"
+    "play": "Włącz animację",
+    "facts": {
+      "label": "Sogda w liczbach",
+      "steps": "12 etapów, A1 → C2",
+      "offline": "Offline, bez konta"
+    },
+    "card": {
+      "label": "Słowo z etapu A1.1 tak, jak pokazuje je Sogda, i dni, po których wraca"
+    }
   },
   "day": {
     "eyebrow": "Jak to działa",
@@ -82,15 +92,15 @@
   },
   "journey": {
     "eyebrow": "Droga",
-    "title": "12 etapów od pierwszego „Hallo” do C2.",
+    "title": "{steps, plural, one {# etap} few {# etapy} many {# etapów} other {# etapu}} od pierwszego „Hallo” do C2.",
     "facts": {
-      "words": "5069 słów",
-      "grammar": "182 tematy gramatyczne",
+      "words": "{words, plural, one {# słowo} few {# słowa} many {# słów} other {# słowa}}",
+      "grammar": "{topics, plural, one {# temat gramatyczny} few {# tematy gramatyczne} many {# tematów gramatycznych} other {# tematu gramatycznego}}",
       "exams": "Trzy egzaminy próbne na każdy etap"
     },
     "counter": "słów po drodze",
     "placement": "Znasz już trochę niemieckiego? Krótki test poziomu dobierze właściwy etap.",
-    "road": "Kurs jako droga z 12 stacjami, od A1.1 do C2.2, przez poziomy A1 Anfänger, A2 Grundstufe, B1 Mittelstufe, B2, C1 i C2."
+    "road": "Kurs jako droga z {steps, plural, one {# stacją} other {# stacjami}}, od A1.1 do C2.2, przez poziomy A1 Anfänger, A2 Grundstufe, B1 Mittelstufe, B2, C1 i C2."
   },
   "practice": {
     "eyebrow": "Ćwicz i sprawdzaj się",
@@ -179,7 +189,7 @@
     },
     "android": {
       "q": "Jakiej wersji Androida potrzebuję?",
-      "a": "Android 8.0 lub nowszy."
+      "a": "Android {android} lub nowszy."
     },
     "iphone": {
       "q": "Czy jest wersja na iPhone’a?",
@@ -202,6 +212,8 @@
     "privacy": "Polityka prywatności (Datenschutzerklärung)",
     "binding": "Wiążący jest tekst niemiecki; poniżej jego tłumaczenie na angielski.",
     "translation": "Tłumaczenie na angielski (niewiążące)",
-    "back": "Wróć do Sogdy"
+    "back": "Wróć do Sogdy",
+    "impressumDescription": "Impressum (nota prawna) serwisu sogda.de zgodnie z § 5 DDG: kto prowadzi stronę i jak się skontaktować.",
+    "privacyDescription": "Polityka prywatności (Datenschutzerklärung) serwisu sogda.de: jakie dane przetwarza strona. Tekst niemiecki z tłumaczeniem na angielski."
   }
 }
