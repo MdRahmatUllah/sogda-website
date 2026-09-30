@@ -107,7 +107,7 @@ pnpm lighthouse          # local Lighthouse against `pnpm start` of out/ (budget
 
 ## Deployment (the owner does the account steps; you document and verify)
 1. The owner imports this repo into **Vercel**:
-   - framework Next.js, build command `pnpm build`, output directory `out`;
+   - framework **Other**: `vercel.json` sets `"framework": null`, the build command `pnpm build` and the output directory `out`, so Vercel serves the static export as files (its Next.js preset expects a server build and fails with *routes-manifest.json couldn't be found*);
    - production branch `main`;
    - every PR gets a preview.
 2. The owner adds the domains `sogda.de` and `www.sogda.de` in Vercel, then sets the records Vercel shows in **GoDaddy → DNS**:
