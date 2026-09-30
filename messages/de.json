@@ -1,0 +1,208 @@
+{
+  "meta": {
+    "title": "Sogda — Deutsch offline lernen, von A1 bis C2",
+    "description": "Deutsch lernen, ein klarer Tag nach dem anderen: ein vollständiger Offline-Deutschkurs von A1 bis C2, mit Bedeutungen auf Englisch oder Bangla."
+  },
+  "header": {
+    "skip": "Zum Inhalt springen",
+    "home": "Sogda, Startseite",
+    "nav": "Bereiche",
+    "menu": "Menü",
+    "closeMenu": "Menü schließen",
+    "getApp": "App holen",
+    "darkTheme": "Dunkles Design",
+    "language": "Sprache"
+  },
+  "nav": {
+    "day": "So funktioniert’s",
+    "features": "Funktionen",
+    "screens": "Screenshots",
+    "faq": "FAQ"
+  },
+  "store": {
+    "googlePlay": "Jetzt bei Google Play",
+    "googlePlaySoon": "Bald bei Google Play",
+    "iphoneSoon": "Bald fürs iPhone",
+    "qr": "QR-Code: mit dem Handy scannen, um Sogda bei Google Play zu öffnen"
+  },
+  "footer": {
+    "impressum": "Impressum",
+    "privacy": "Datenschutz",
+    "contact": "Kontakt",
+    "languages": "Sprachen",
+    "trademark": "Google Play und das Google Play-Logo sind Marken von Google LLC.",
+    "copyright": "© {year} Sogda"
+  },
+  "hero": {
+    "kicker": "Der Weg zu einer neuen Sprache",
+    "headline": "Deutsch lernen, ein klarer Tag nach dem anderen.",
+    "subline": "Ein vollständiger Offline-Deutschkurs von A1 bis C2, mit Bedeutungen auf Englisch oder Bangla.",
+    "pause": "Animation anhalten",
+    "play": "Animation abspielen"
+  },
+  "day": {
+    "eyebrow": "So funktioniert’s",
+    "title": "App öffnen, Tagesplan sehen, erledigen, fertig.",
+    "plan": {
+      "title": "Dein Tagesplan steht",
+      "body": "Öffne Sogda, und dein Tag ist geplant: was du wiederholst, die neuen Wörter, ein Grammatikthema und ein paar Sätze. Etwa 10 bis 20 Minuten."
+    },
+    "revise": {
+      "title": "Wiederholen, was fällig ist",
+      "body": "Die Wörter, die du bald vergessen würdest, kommen zuerst. Anhören, an die Bedeutung denken, dann aufdecken."
+    },
+    "learn": {
+      "title": "Ein paar neue Wörter lernen",
+      "body": "Jedes mit Artikel, Aussprache, Beispielen und der Bedeutung auf Englisch oder Bangla. Sag, wie gut du es wusstest, und Sogda wählt den Tag, an dem es wiederkommt."
+    },
+    "grammar": {
+      "title": "Das Grammatikthema der Woche",
+      "body": "Eine kurze Regel und eine schnelle Übung. Liegst du daneben, steht die Regel gleich da."
+    },
+    "sentences": {
+      "title": "Sätze aus Wörtern, die du kennst",
+      "body": "Übungssätze nur aus Wörtern, die du schon gelernt hast. Tippe auf ein Wort, um seine Bedeutung zu sehen."
+    },
+    "done": {
+      "title": "Tag geschafft! 🎉",
+      "body": "Für heute bist du fertig. Der Plan für morgen wartet schon."
+    }
+  },
+  "memory": {
+    "eyebrow": "Sogda merkt es sich für dich",
+    "title": "Jedes Wort kommt wieder, kurz bevor du es vergessen würdest.",
+    "body": "Sogda plant jedes Wort mit FSRS, einer modernen Methode der verteilten Wiederholung. Jedes Mal, wenn du ein Wort weißt, wird die Pause bis zur nächsten Wiederholung länger: ein Tag, dann drei, dann acht, dann drei Wochen. Deine Minuten gehen an die Wörter, die du gerade vergessen würdest.",
+    "chart": "Eine Vergessenskurve: Die Erinnerung an ein neues Wort verblasst, jede Wiederholung holt sie ganz zurück, und danach verblasst sie jedes Mal langsamer. Die Wiederholungen kommen nach 1 Tag, 3 Tagen, 8 Tagen und 21 Tagen.",
+    "axisMemory": "Erinnerung",
+    "axisTime": "Zeit",
+    "gap": "{days, plural, one {# Tag} other {# Tage}}",
+    "gapShort": "{days} T.",
+    "meaning": "appointment",
+    "revisions": "Seine Wiederholungen: nach 1, 3, 8 und 21 Tagen"
+  },
+  "journey": {
+    "eyebrow": "Die Reise",
+    "title": "12 Stufen von deinem ersten „Hallo“ bis C2.",
+    "facts": {
+      "words": "5.069 Wörter",
+      "grammar": "182 Grammatikthemen",
+      "exams": "Drei Probeprüfungen für jede Stufe"
+    },
+    "counter": "Wörter auf dem Weg",
+    "placement": "Du kannst schon etwas Deutsch? Ein kurzer Einstufungstest bringt dich zur passenden Stufe.",
+    "road": "Der Kurs als Weg mit 12 Stationen, von A1.1 bis C2.2, durch die Niveaus A1 Anfänger, A2 Grundstufe, B1 Mittelstufe, B2, C1 und C2."
+  },
+  "practice": {
+    "eyebrow": "Üben und dich selbst prüfen",
+    "title": "Quizze, und eine Probeprüfung, wenn du bereit bist.",
+    "quizzes": "Quizze in jede Richtung: Deutsch nach Englisch oder Bangla, Englisch nach Deutsch, Artikel, Hören und Wortformen.",
+    "exams": "Drei Probeprüfungen für jede Stufe, mit Wortschatz, Grammatik, Hören, Schreiben und Sprechen, und einem Ergebnis für jeden Teil.",
+    "carousel": "Quiz- und Prüfungsbildschirme",
+    "item": "Bildschirm {n} von {total}"
+  },
+  "features": {
+    "eyebrow": "Und alles andere",
+    "title": "Gemacht für den Alltag echter Lernender.",
+    "offline": {
+      "title": "Immer offline",
+      "body": "Kein Netz nötig: Es funktioniert in der U-Bahn und im Flugzeug."
+    },
+    "private": {
+      "title": "Privat von Anfang an",
+      "body": "Kein Konto. Dein Fortschritt bleibt auf deinem Handy."
+    },
+    "voice": {
+      "title": "Jedes Wort hören",
+      "body": "Die deutsche Stimme deines Handys oder die optionale, natürliche Supertonic-Stimme: offline, etwa 400 MB, einmal über WLAN geladen."
+    },
+    "compare": {
+      "title": "Ähnliche Wörter vergleichen",
+      "body": "Sieh dir Wörter wie kennen und wissen nebeneinander an."
+    },
+    "own": {
+      "title": "Eigene Wörter hinzufügen",
+      "body": "Behalte die Wörter aus deinem Alltag zusammen mit dem Rest deines Kurses."
+    },
+    "widget": {
+      "title": "Ein Widget für den Startbildschirm",
+      "body": "Dein Tagesplan auf einen Blick und ein Wort des Tages zum Anhören."
+    },
+    "reminder": {
+      "title": "Eine Erinnerung nur, wenn etwas fällig ist",
+      "body": "Deine Ruhetage wählst du selbst."
+    },
+    "pace": {
+      "title": "Dein Tempo",
+      "body": "Ein Tagesziel, das du festlegst, und Aufholen, wenn du zurückliegst."
+    }
+  },
+  "looks": {
+    "eyebrow": "Drei Designs",
+    "title": "Hell, dunkel oder Glas, und gut lesbar.",
+    "body": "Wähle das Design, das dir gefällt. Text geht bis 200 %, und Sogda funktioniert mit dem Screenreader deines Handys.",
+    "legend": "Design",
+    "light": "Hell",
+    "dark": "Dunkel",
+    "glass": "Glas",
+    "large": "Text in 200 %"
+  },
+  "languages": {
+    "eyebrow": "In deiner Sprache",
+    "title": "Bedeutungen auf Englisch, Bangla oder beidem.",
+    "body": "Jedes Wort kommt mit seiner Bedeutung auf Englisch, Bangla oder beidem, und seine Aussprache steht in bengalischer Schrift daneben. Russische und polnische Bedeutungen kommen bald.",
+    "soon": "bald"
+  },
+  "gallery": {
+    "eyebrow": "Screenshots",
+    "title": "Sieh selbst.",
+    "tablet": "Der Tagesplan auf einem Tablet",
+    "carousel": "App-Bildschirme",
+    "item": "Bildschirm {n} von {total}",
+    "prev": "Vorheriger Bildschirm",
+    "next": "Nächster Bildschirm",
+    "captions": {
+      "welcome": "Ein Willkommen, das sagt, was Sogda ist",
+      "placement": "Ein Einstufungstest für deine Stufe",
+      "learn": "Dein Kurs, Stufe für Stufe",
+      "step-detail": "Alle Wörter einer Stufe",
+      "word-detail": "Ein Wort ganz, mit Beispielen",
+      "compare": "Ähnliche Wörter nebeneinander",
+      "search": "Eine Suche, die Tippfehler verzeiht",
+      "progress": "Dein Fortschritt, Woche für Woche"
+    }
+  },
+  "faq": {
+    "eyebrow": "Fragen",
+    "title": "Fragen, beantwortet.",
+    "internet": {
+      "q": "Brauche ich Internet?",
+      "a": "Nein. Sogda funktioniert komplett offline. Nur die optionale natürliche Stimme wird einmal über WLAN heruntergeladen."
+    },
+    "android": {
+      "q": "Welche Android-Version brauche ich?",
+      "a": "Android 8.0 oder neuer."
+    },
+    "iphone": {
+      "q": "Gibt es eine iPhone-Version?",
+      "a": "Sie kommt bald."
+    },
+    "data": {
+      "q": "Werden meine Daten weitergegeben?",
+      "a": "Nein. Es gibt kein Konto, und dein Fortschritt bleibt auf deinem Handy."
+    },
+    "exams": {
+      "q": "Auf welche Prüfungen bereitet Sogda mich vor?",
+      "a": "Auf die Niveaus von Goethe und telc, von A1 bis C2. Jede Stufe hat drei Probeprüfungen, die ihren Teilen folgen: Wortschatz, Grammatik, Hören, Schreiben und Sprechen. Sie werden aus den Wörtern und der Grammatik der Stufe erzeugt und sind keine offiziellen Prüfungen von Goethe oder telc."
+    }
+  },
+  "cta": {
+    "title": "Starte heute deinen Weg zum Deutsch."
+  },
+  "legal": {
+    "impressum": "Impressum",
+    "privacy": "Datenschutzerklärung",
+    "binding": "Maßgeblich ist der deutsche Text; darunter folgt eine englische Übersetzung.",
+    "translation": "Englische Übersetzung (nicht verbindlich)",
+    "back": "Zurück zu Sogda"
+  }
+}
