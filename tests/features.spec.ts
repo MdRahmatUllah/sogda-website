@@ -86,6 +86,8 @@ test.describe('Three looks (BRIEF §3.7)', () => {
   test('from 320 px up, the text, the picker and both phones stay inside the page padding (#58)', async ({
     page,
   }) => {
+    // 15 page loads: under a full parallel run it needs more than 30 s (#89).
+    test.setTimeout(90_000);
     for (const width of [320, 360, 390]) {
       await page.setViewportSize({ width, height: 640 });
       for (const locale of ['ru', 'pl', 'de', 'bn', 'en']) {
