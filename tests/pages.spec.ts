@@ -66,6 +66,10 @@ test.describe('the page template (#68)', () => {
         (await main.locator('script[type="application/ld+json"]').textContent())!,
       )['@graph'] as GraphNode[];
       const node = (type: string) => graph.find((n) => n['@type'] === type)!;
+      // The shared nodes it points at are on the page too (#60).
+      expect(graph.map((n) => n['@type'])).toEqual(
+        expect.arrayContaining(['Organization', 'WebSite', 'MobileApplication']),
+      );
       expect(node('WebPage')).toMatchObject({
         '@id': `${url}#webpage`,
         url,
