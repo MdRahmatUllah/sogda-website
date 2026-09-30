@@ -1,6 +1,6 @@
 // `pnpm check:launch`: the site may go live on sogda.de only with the
 // Impressum complete (BRIEF §8, §10). Exits non-zero, naming what's missing.
-// next.config.ts runs the same check on Vercel's production builds.
+// next.config.ts runs the same check on Vercel's production builds for sogda.de.
 // vatId is optional: not every seller has one.
 import { readFileSync } from 'node:fs';
 
