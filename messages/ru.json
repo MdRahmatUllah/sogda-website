@@ -215,5 +215,9 @@
     "back": "Вернуться на Sogda",
     "impressumDescription": "Impressum (выходные данные) сайта sogda.de согласно § 5 DDG: кто владелец сайта и как с ним связаться.",
     "privacyDescription": "Политика конфиденциальности (Datenschutzerklärung) сайта sogda.de: какие данные обрабатывает сайт. Текст на немецком с переводом на английский."
+  },
+  "page": {
+    "breadcrumb": "Ты здесь",
+    "related": "Ещё о Sogda"
   }
 }
