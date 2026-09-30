@@ -317,7 +317,7 @@
         },
         "goethe": {
           "q": "Can I prepare for the Goethe A1 exam with it?",
-          "a": "Sogda's steps {a1First} and {a1Last} cover level A1 with {a1Words, number} words, and each step has {mocksPerStep, number} mock exams that follow the exam's sections. They are practice, not official Goethe or telc papers."
+          "a": "Sogda's steps {a1First} and {a1Last} cover level A1 with {a1Words, number} words, and each step has {mocksPerStep, number} mock exams that test listening, writing and speaking like the real exams, plus vocabulary and grammar. They are practice, not official Goethe or telc papers."
         },
         "internet": {
           "q": "Do I need the internet?",
