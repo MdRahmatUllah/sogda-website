@@ -18,6 +18,7 @@ test.describe('/ picks the language', () => {
     ['bn-BD', 'bn'],
     ['de-DE', 'de'],
     ['pl-PL', 'pl'],
+    ['ru-RU', 'ru'],
     ['fr-FR', 'en'],
     ['en-US', 'en'],
   ] as const) {
@@ -133,4 +134,21 @@ test('Polish counts: 1 dzień, 3 dni, 8 dni, 21 dni', async ({ page }) => {
     await expect(chart.getByText(gap, { exact: true })).toBeAttached();
   }
   await expect(page.locator('#journey').getByText('5069 słów')).toBeVisible();
+});
+
+test('Russian counts: 1 день, 3 дня, 8 дней, 21 день; Cyrillic in its own font', async ({
+  page,
+}) => {
+  const fonts: string[] = [];
+  page.on('request', (r) => r.resourceType() === 'font' && fonts.push(r.url()));
+  await page.goto('/ru');
+  const chart = page.locator('#memory svg');
+  for (const gap of ['1 день', '3 дня', '8 дней', '21 день']) {
+    await expect(chart.getByText(gap, { exact: true })).toBeAttached();
+  }
+  await expect(page.locator('#journey').getByText('5 069 слов')).toBeVisible();
+  // Inter Latin, and Inter's Cyrillic face for the Russian text (not a
+  // system fallback); the Bangla font only if the page shows Bangla.
+  await page.waitForLoadState('networkidle');
+  expect(fonts.length).toBeGreaterThanOrEqual(2);
 });

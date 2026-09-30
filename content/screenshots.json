@@ -10,7 +10,8 @@
         "en": "Sogda's Today screen: a ring showing 12 of 20 cards done, about 6 minutes left, then today's plan: revise 10 words, 7 new words, a backlog of 14, 3 practice sentences and the grammar topic of the week.",
         "de": "Die Heute-Seite von Sogda: ein Ring mit 12 von 20 erledigten Karten, noch etwa 6 Minuten, darunter der Tagesplan: 10 Wörter wiederholen, 7 neue Wörter, 14 im Rückstand, 3 Übungssätze und das Grammatikthema der Woche.",
         "bn": "Sogda-র আজকের পাতা: ২০টির মধ্যে ১২টি কার্ড শেষ দেখানো একটি বৃত্ত, প্রায় ৬ মিনিট বাকি, তারপর আজকের পরিকল্পনা: ১০টি শব্দের রিভিশন, ৭টি নতুন শব্দ, ১৪টির ব্যাকলগ, ৩টি অনুশীলনের বাক্য আর এই সপ্তাহের ব্যাকরণ।",
-        "pl": "Ekran „Dziś” w Sogdzie: pierścień z 12 z 20 kart ukończonych, zostało około 6 minut, a pod nim plan na dziś: powtórka 10 słów, 7 nowych słów, 14 zaległości, 3 zdania do ćwiczeń i gramatyka tygodnia."
+        "pl": "Ekran „Dziś” w Sogdzie: pierścień z 12 z 20 kart ukończonych, zostało około 6 minut, a pod nim plan na dziś: powtórka 10 słów, 7 nowych słów, 14 zaległości, 3 zdania do ćwiczeń i gramatyka tygodnia.",
+        "ru": "Экран «Сегодня» в Sogda: кольцо с 12 из 20 выполненных карточек, осталось около 6 минут, а ниже план на сегодня: повторить 10 слов, 7 новых слов, 14 пропущенных, 3 предложения для практики и грамматика недели."
       }
     },
     {
@@ -22,7 +23,8 @@
         "en": "Sogda's Today screen on a tablet: the day's progress ring and today's plan side by side.",
         "de": "Die Heute-Seite von Sogda auf einem Tablet: der Fortschrittsring des Tages und der Tagesplan nebeneinander.",
         "bn": "ট্যাবলেটে Sogda-র আজকের পাতা: দিনের অগ্রগতির বৃত্ত আর আজকের পরিকল্পনা পাশাপাশি।",
-        "pl": "Ekran „Dziś” w Sogdzie na tablecie: pierścień postępu dnia i plan na dziś obok siebie."
+        "pl": "Ekran „Dziś” w Sogdzie na tablecie: pierścień postępu dnia i plan na dziś obok siebie.",
+        "ru": "Экран «Сегодня» в Sogda на планшете: кольцо прогресса дня и план на сегодня рядом."
       }
     },
     {
@@ -33,7 +35,8 @@
         "en": "A revision card showing the German word “die Rechnung” with a speaker button, before its meaning is revealed.",
         "de": "Eine Wiederholungskarte mit dem deutschen Wort „die Rechnung“ und einem Lautsprecher-Knopf, bevor die Bedeutung aufgedeckt ist.",
         "bn": "একটি রিভিশন কার্ড, যাতে জার্মান শব্দ “die Rechnung” আর একটি স্পিকার বোতাম; অর্থ এখনও দেখানো হয়নি।",
-        "pl": "Karta powtórki z niemieckim słowem „die Rechnung” i przyciskiem głośnika, zanim pokaże się znaczenie."
+        "pl": "Karta powtórki z niemieckim słowem „die Rechnung” i przyciskiem głośnika, zanim pokaże się znaczenie.",
+        "ru": "Карточка повторения с немецким словом «die Rechnung» и кнопкой динамика, пока значение ещё не открыто."
       }
     },
     {
@@ -44,7 +47,8 @@
         "en": "The back of the card for “die Rechnung”: the meaning “bill, invoice” in English and Bangla, two example sentences, and the Again, Hard, Good and Easy ratings with their next intervals.",
         "de": "Die Rückseite der Karte „die Rechnung“: die Bedeutung „bill, invoice“ auf Englisch und Bangla, zwei Beispielsätze und die Bewertungen Again, Hard, Good und Easy mit ihren nächsten Abständen.",
         "bn": "“die Rechnung” কার্ডের পেছন দিক: ইংরেজি আর বাংলায় অর্থ “bill, invoice” ও “বিল, চালান”, দুটি উদাহরণ বাক্য, আর পরের বিরতিসহ আবার, কঠিন, ভালো ও সহজ রেটিং।",
-        "pl": "Odwrotna strona karty „die Rechnung”: znaczenie „bill, invoice” po angielsku i bengalsku, dwa przykładowe zdania oraz oceny Again, Hard, Good i Easy z kolejnymi odstępami."
+        "pl": "Odwrotna strona karty „die Rechnung”: znaczenie „bill, invoice” po angielsku i bengalsku, dwa przykładowe zdania oraz oceny Again, Hard, Good i Easy z kolejnymi odstępami.",
+        "ru": "Обратная сторона карточки «die Rechnung»: значение «bill, invoice» на английском и бенгальском, два примера и оценки Again, Hard, Good и Easy со следующими интервалами."
       }
     },
     {
@@ -55,7 +59,8 @@
         "en": "Grammar practice on Konjunktiv II: pick the right form for “… Sie mir bitte das Formular schicken?”, with the answer “Könnten” marked correct and the rule explained.",
         "de": "Grammatikübung zum Konjunktiv II: die richtige Form für „… Sie mir bitte das Formular schicken?“ wählen, die Antwort „Könnten“ ist als richtig markiert und die Regel erklärt.",
         "bn": "Konjunktiv II-এর ব্যাকরণ অনুশীলন: “… Sie mir bitte das Formular schicken?” বাক্যের সঠিক রূপ বাছাই, “Könnten” উত্তরটি সঠিক চিহ্নিত আর নিয়মটি ব্যাখ্যা করা।",
-        "pl": "Ćwiczenie z Konjunktiv II: wybór właściwej formy w „… Sie mir bitte das Formular schicken?”, z odpowiedzią „Könnten” oznaczoną jako poprawna i wyjaśnioną regułą."
+        "pl": "Ćwiczenie z Konjunktiv II: wybór właściwej formy w „… Sie mir bitte das Formular schicken?”, z odpowiedzią „Könnten” oznaczoną jako poprawna i wyjaśnioną regułą.",
+        "ru": "Упражнение по Konjunktiv II: выбрать верную форму в «… Sie mir bitte das Formular schicken?», ответ «Könnten» отмечен как верный, правило объяснено."
       }
     },
     {
@@ -66,7 +71,8 @@
         "en": "A practice sentence, “Der Vermieter hat die Nebenkosten für nächstes Jahr erhöht.”, with a play button, its English translation, and the choices Understood, Partly and Not yet.",
         "de": "Ein Übungssatz, „Der Vermieter hat die Nebenkosten für nächstes Jahr erhöht.“, mit Abspiel-Knopf, der englischen Übersetzung und der Auswahl Understood, Partly und Not yet.",
         "bn": "একটি অনুশীলনের বাক্য, “Der Vermieter hat die Nebenkosten für nächstes Jahr erhöht.”, সঙ্গে প্লে বোতাম, ইংরেজি অনুবাদ আর বুঝেছি, কিছুটা ও এখনও না বাছাই।",
-        "pl": "Zdanie do ćwiczeń, „Der Vermieter hat die Nebenkosten für nächstes Jahr erhöht.”, z przyciskiem odtwarzania, tłumaczeniem na angielski i wyborem Understood, Partly lub Not yet."
+        "pl": "Zdanie do ćwiczeń, „Der Vermieter hat die Nebenkosten für nächstes Jahr erhöht.”, z przyciskiem odtwarzania, tłumaczeniem na angielski i wyborem Understood, Partly lub Not yet.",
+        "ru": "Предложение для практики, «Der Vermieter hat die Nebenkosten für nächstes Jahr erhöht.», с кнопкой воспроизведения, английским переводом и выбором Understood, Partly или Not yet."
       }
     },
     {
@@ -77,7 +83,8 @@
         "en": "The day complete screen, “Tag geschafft!”, with confetti: 17 words in 12 minutes, a 13 day streak, and tomorrow's plan.",
         "de": "Der Abschluss des Tages, „Tag geschafft!“, mit Konfetti: 17 Wörter in 12 Minuten, eine Serie von 13 Tagen und der Plan für morgen.",
         "bn": "দিন শেষের পাতা, “Tag geschafft!”, কনফেটিসহ: ১২ মিনিটে ১৭টি শব্দ, ১৩ দিনের ধারা আর আগামীকালের পরিকল্পনা।",
-        "pl": "Ekran końca dnia, „Tag geschafft!”, z konfetti: 17 słów w 12 minut, seria 13 dni i plan na jutro."
+        "pl": "Ekran końca dnia, „Tag geschafft!”, z konfetti: 17 słów w 12 minut, seria 13 dni i plan na jutro.",
+        "ru": "Экран конца дня, «Tag geschafft!», с конфетти: 17 слов за 12 минут, серия из 13 дней и план на завтра."
       }
     },
     {
@@ -88,7 +95,8 @@
         "en": "An article quiz: pick der, die or das for the word “Vermieter”.",
         "de": "Ein Artikel-Quiz: der, die oder das für das Wort „Vermieter“ wählen.",
         "bn": "আর্টিকেলের কুইজ: “Vermieter” শব্দের জন্য der, die বা das বাছাই করুন।",
-        "pl": "Quiz z rodzajników: wybierz der, die lub das dla słowa „Vermieter”."
+        "pl": "Quiz z rodzajników: wybierz der, die lub das dla słowa „Vermieter”.",
+        "ru": "Тест на артикли: выбери der, die или das для слова «Vermieter»."
       }
     },
     {
@@ -99,7 +107,8 @@
         "en": "A listening quiz: play the word, then type what you hear, with keys for ä, ö, ü and ß.",
         "de": "Ein Hör-Quiz: das Wort abspielen, dann eintippen, was du hörst, mit Tasten für ä, ö, ü und ß.",
         "bn": "শোনার কুইজ: শব্দটি শুনে যা শুনলেন তা লিখুন, ä, ö, ü আর ß-এর বোতামসহ।",
-        "pl": "Quiz ze słuchania: odtwórz słowo i wpisz, co słyszysz, z klawiszami ä, ö, ü i ß."
+        "pl": "Quiz ze słuchania: odtwórz słowo i wpisz, co słyszysz, z klawiszami ä, ö, ü i ß.",
+        "ru": "Тест на аудирование: послушай слово и напиши, что слышишь, с клавишами ä, ö, ü и ß."
       }
     },
     {
@@ -110,7 +119,8 @@
         "en": "The listening section of a mock exam, with a timer, a play button with 3 plays left, and an answer field.",
         "de": "Der Hörteil einer Probeprüfung mit Timer, einem Abspiel-Knopf mit noch 3 Wiedergaben und einem Antwortfeld.",
         "bn": "মক পরীক্ষার শোনার অংশ: টাইমার, ৩ বার শোনার সুযোগসহ প্লে বোতাম আর উত্তরের ঘর।",
-        "pl": "Część ze słuchania w egzaminie próbnym: minutnik, przycisk odtwarzania z 3 pozostałymi odsłuchami i pole odpowiedzi."
+        "pl": "Część ze słuchania w egzaminie próbnym: minutnik, przycisk odtwarzania z 3 pozostałymi odsłuchami i pole odpowiedzi.",
+        "ru": "Часть «Аудирование» пробного экзамена: таймер, кнопка воспроизведения с 3 оставшимися прослушиваниями и поле для ответа."
       }
     },
     {
@@ -121,7 +131,8 @@
         "en": "A mock exam result: passed with 77 %, 37 of 48 points, and a score for each section: vocabulary, reverse, articles, word forms, gap fill, grammar, listening, writing and speaking.",
         "de": "Ein Ergebnis der Probeprüfung: bestanden mit 77 %, 37 von 48 Punkten, und eine Punktzahl für jeden Teil: Wortschatz, Rückrichtung, Artikel, Wortformen, Lückentext, Grammatik, Hören, Schreiben und Sprechen.",
         "bn": "মক পরীক্ষার ফল: ৭৭ % পেয়ে পাস, ৪৮-এর মধ্যে ৩৭ পয়েন্ট, আর প্রতিটি অংশের নম্বর: শব্দভান্ডার, বিপরীত দিক, আর্টিকেল, শব্দের রূপ, শূন্যস্থান, ব্যাকরণ, শোনা, লেখা আর বলা।",
-        "pl": "Wynik egzaminu próbnego: zdany na 77 %, 37 z 48 punktów, z wynikiem dla każdej części: słownictwo, odwrotny kierunek, rodzajniki, formy słów, luki, gramatyka, słuchanie, pisanie i mówienie."
+        "pl": "Wynik egzaminu próbnego: zdany na 77 %, 37 z 48 punktów, z wynikiem dla każdej części: słownictwo, odwrotny kierunek, rodzajniki, formy słów, luki, gramatyka, słuchanie, pisanie i mówienie.",
+        "ru": "Результат пробного экзамена: сдан на 77 %, 37 из 48 баллов, с результатом по каждой части: лексика, обратное направление, артикли, формы слов, пропуски, грамматика, аудирование, письмо и говорение."
       }
     },
     {
@@ -132,7 +143,8 @@
         "en": "The course overview: the steps A1.1 and A1.2 passed, A2.1 current with 11 cards left today, and the later steps still locked.",
         "de": "Die Kursübersicht: die Stufen A1.1 und A1.2 bestanden, A2.1 aktuell mit heute noch 11 Karten, die späteren Stufen noch gesperrt.",
         "bn": "কোর্সের সারসংক্ষেপ: A1.1 আর A1.2 ধাপ পাস, A2.1 চলছে আর আজ ১১টি কার্ড বাকি, পরের ধাপগুলো এখনও বন্ধ।",
-        "pl": "Przegląd kursu: etapy A1.1 i A1.2 zaliczone, A2.1 w toku z 11 kartami na dziś, kolejne etapy jeszcze zablokowane."
+        "pl": "Przegląd kursu: etapy A1.1 i A1.2 zaliczone, A2.1 w toku z 11 kartami na dziś, kolejne etapy jeszcze zablokowane.",
+        "ru": "Обзор курса: этапы A1.1 и A1.2 пройдены, A2.1 текущий, на сегодня осталось 11 карточек, следующие этапы пока закрыты."
       }
     },
     {
@@ -143,7 +155,8 @@
         "en": "Step A2.1: 540 words and 10 grammar topics, with the step's words listed with their articles, meanings and status.",
         "de": "Stufe A2.1: 540 Wörter und 10 Grammatikthemen, die Wörter der Stufe mit Artikel, Bedeutung und Status aufgelistet.",
         "bn": "A2.1 ধাপ: ৫৪০টি শব্দ আর ১০টি ব্যাকরণ বিষয়, ধাপের শব্দগুলো আর্টিকেল, অর্থ আর অবস্থাসহ তালিকায়।",
-        "pl": "Etap A2.1: 540 słów i 10 tematów gramatycznych, z listą słów etapu z rodzajnikiem, znaczeniem i stanem."
+        "pl": "Etap A2.1: 540 słów i 10 tematów gramatycznych, z listą słów etapu z rodzajnikiem, znaczeniem i stanem.",
+        "ru": "Этап A2.1: 540 слов и 10 тем грамматики, слова этапа в списке с артиклем, значением и статусом."
       }
     },
     {
@@ -154,7 +167,8 @@
         "en": "The progress screen: cards per day this week, retention against its target, words per step, study time, reviews and the streak.",
         "de": "Die Fortschrittsseite: Karten pro Tag in dieser Woche, die Behaltensquote gegenüber ihrem Ziel, Wörter pro Stufe, Lernzeit, Wiederholungen und die Serie.",
         "bn": "অগ্রগতির পাতা: এই সপ্তাহে দিনপ্রতি কার্ড, লক্ষ্যের তুলনায় মনে রাখার হার, ধাপপ্রতি শব্দ, পড়ার সময়, রিভিউ আর ধারা।",
-        "pl": "Ekran postępów: karty dziennie w tym tygodniu, zapamiętywanie na tle celu, słowa na etap, czas nauki, powtórki i seria."
+        "pl": "Ekran postępów: karty dziennie w tym tygodniu, zapamiętywanie na tle celu, słowa na etap, czas nauki, powtórki i seria.",
+        "ru": "Экран прогресса: карточки по дням на этой неделе, запоминание относительно цели, слова по этапам, время занятий, повторения и серия."
       }
     },
     {
@@ -165,7 +179,8 @@
         "en": "The word “die Straße”: its meaning in English and Bangla, examples with audio, related words, and links to Duden, DWDS and Wiktionary.",
         "de": "Das Wort „die Straße“: seine Bedeutung auf Englisch und Bangla, Beispiele mit Audio, verwandte Wörter und Links zu Duden, DWDS und Wiktionary.",
         "bn": "“die Straße” শব্দটি: ইংরেজি আর বাংলায় অর্থ, অডিওসহ উদাহরণ, সম্পর্কিত শব্দ, আর Duden, DWDS ও Wiktionary-র লিংক।",
-        "pl": "Słowo „die Straße”: znaczenie po angielsku i bengalsku, przykłady z nagraniem, słowa powiązane i odnośniki do Dudena, DWDS i Wikisłownika."
+        "pl": "Słowo „die Straße”: znaczenie po angielsku i bengalsku, przykłady z nagraniem, słowa powiązane i odnośniki do Dudena, DWDS i Wikisłownika.",
+        "ru": "Слово «die Straße»: значение на английском и бенгальском, примеры с аудио, связанные слова и ссылки на Duden, DWDS и Викисловарь."
       }
     },
     {
@@ -176,7 +191,8 @@
         "en": "Comparing near-synonyms side by side, “der Grund” and “die Ursache”: meaning, register, the words they go with, an example, and when to use each.",
         "de": "Zwei ähnliche Wörter nebeneinander, „der Grund“ und „die Ursache“: Bedeutung, Stilebene, typische Verbindungen, ein Beispiel und wann man welches verwendet.",
         "bn": "কাছাকাছি অর্থের দুটি শব্দ পাশাপাশি তুলনা, “der Grund” আর “die Ursache”: অর্থ, ভাষার স্তর, যে শব্দের সঙ্গে বসে, উদাহরণ আর কখন কোনটি ব্যবহার করবেন।",
-        "pl": "Porównanie dwóch bliskoznacznych słów, „der Grund” i „die Ursache”: znaczenie, rejestr, łączliwość, przykład i to, kiedy którego używać."
+        "pl": "Porównanie dwóch bliskoznacznych słów, „der Grund” i „die Ursache”: znaczenie, rejestr, łączliwość, przykład i to, kiedy którego używać.",
+        "ru": "Сравнение двух близких слов, «der Grund» и «die Ursache»: значение, стиль, сочетаемость, пример и когда какое использовать."
       }
     },
     {
@@ -187,7 +203,8 @@
         "en": "Searching for “strase”: the exact match “die Straße” despite the typo, words starting with it, similar words, and example sentences.",
         "de": "Suche nach „strase“: trotz Tippfehler der Treffer „die Straße“, Wörter, die damit beginnen, ähnliche Wörter und Beispielsätze.",
         "bn": "“strase” দিয়ে খোঁজা: বানান ভুল সত্ত্বেও সঠিক মিল “die Straße”, এই দিয়ে শুরু হওয়া শব্দ, কাছাকাছি শব্দ আর উদাহরণ বাক্য।",
-        "pl": "Wyszukiwanie „strase”: mimo literówki trafienie „die Straße”, słowa zaczynające się tak samo, słowa podobne i zdania z przykładami."
+        "pl": "Wyszukiwanie „strase”: mimo literówki trafienie „die Straße”, słowa zaczynające się tak samo, słowa podobne i zdania z przykładami.",
+        "ru": "Поиск «strase»: несмотря на опечатку, совпадение «die Straße», слова с тем же началом, похожие слова и примеры предложений."
       }
     },
     {
@@ -198,7 +215,8 @@
         "en": "The placement check, question 1 of 20: what does “die Küche” mean? Four answers to choose from.",
         "de": "Der Einstufungstest, Frage 1 von 20: Was bedeutet „die Küche“? Vier Antworten zur Auswahl.",
         "bn": "লেভেল যাচাই, ২০টির মধ্যে ১ নম্বর প্রশ্ন: “die Küche” মানে কী? বেছে নেওয়ার জন্য চারটি উত্তর।",
-        "pl": "Test poziomu, pytanie 1 z 20: co znaczy „die Küche”? Cztery odpowiedzi do wyboru."
+        "pl": "Test poziomu, pytanie 1 z 20: co znaczy „die Küche”? Cztery odpowiedzi do wyboru.",
+        "ru": "Проверка уровня, вопрос 1 из 20: что значит «die Küche»? Четыре варианта ответа."
       }
     },
     {
@@ -209,7 +227,8 @@
         "en": "The welcome screen: “Learn German, one clear day at a time”, works fully offline with no account, 12 steps from A1.1 to C2.2, and your progress stays on your phone.",
         "de": "Die Willkommensseite: „Learn German, one clear day at a time“, komplett offline ohne Konto, 12 Stufen von A1.1 bis C2.2, und dein Fortschritt bleibt auf deinem Handy.",
         "bn": "স্বাগত পাতা: “Learn German, one clear day at a time”, অ্যাকাউন্ট ছাড়া পুরোপুরি অফলাইন, A1.1 থেকে C2.2 পর্যন্ত ১২টি ধাপ, আর আপনার অগ্রগতি থাকে আপনার ফোনেই।",
-        "pl": "Ekran powitalny: „Learn German, one clear day at a time”, całkowicie offline i bez konta, 12 etapów od A1.1 do C2.2, a postępy zostają na telefonie."
+        "pl": "Ekran powitalny: „Learn German, one clear day at a time”, całkowicie offline i bez konta, 12 etapów od A1.1 do C2.2, a postępy zostają na telefonie.",
+        "ru": "Экран приветствия: «Learn German, one clear day at a time», полностью офлайн и без аккаунта, 12 этапов от A1.1 до C2.2, а прогресс остаётся на телефоне."
       }
     },
     {
@@ -220,7 +239,8 @@
         "en": "The revision card for “die Rechnung” with text at 200 %: every line still fits, the long word breaking between syllables.",
         "de": "Die Wiederholungskarte „die Rechnung“ mit Text in 200 %: jede Zeile passt noch, das lange Wort wird nach Silben getrennt.",
         "bn": "২০০ % লেখায় “die Rechnung”-এর রিভিশন কার্ড: প্রতিটি লাইন তবুও এঁটে যায়, লম্বা শব্দটি সিলেবলে ভেঙে।",
-        "pl": "Karta powtórki „die Rechnung” z tekstem powiększonym do 200 %: każda linia nadal się mieści, a długie słowo dzieli się na sylaby."
+        "pl": "Karta powtórki „die Rechnung” z tekstem powiększonym do 200 %: każda linia nadal się mieści, a długie słowo dzieli się na sylaby.",
+        "ru": "Карточка повторения «die Rechnung» с текстом 200 %: каждая строка по-прежнему помещается, длинное слово переносится по слогам."
       }
     }
   ]
