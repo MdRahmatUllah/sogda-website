@@ -37,8 +37,9 @@ for (const slug of SLUGS) {
         await main.locator('section[aria-labelledby^="s-"] ul').count(),
       ).toBeGreaterThanOrEqual(2);
       await expect(main.locator('#s-sources')).toBeVisible();
-      // Features only: no price, rating or "free" (BRIEF).
-      expect(text).not.toMatch(/€|\$|\bfree\b|\bkostenlos|\bgratis|\brating|★/i);
+      // Features only: no price, rating or "free" (BRIEF). FSRS's own name,
+      // the Free Spaced Repetition Scheduler, is not a price.
+      expect(text).not.toMatch(/€|\$|\bfree\b(?! spaced)|\bkostenlos|\bgratis|\brating|★/i);
 
       const graph = JSON.parse(
         (await main.locator('script[type="application/ld+json"]').textContent())!,
