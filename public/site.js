@@ -32,7 +32,7 @@
     var scrolled = function () {
       header.toggleAttribute('data-scrolled', scrollY > 8);
     };
-    scrolled();
+    requestAnimationFrame(scrolled);
     addEventListener('scroll', scrolled, { passive: true });
   }
 
@@ -135,15 +135,20 @@
   // The journey follows the scroll: the traveller moves along the road, the
   // stations it has reached light up, and the counter ticks the words met so
   // far. Reduced motion keeps the finished road the markup draws.
+  // Nothing here measures the page at load: measuring inside a section that
+  // content-visibility skips forces its layout (all its Bangla text) and
+  // starts its lazy images before the hero has painted (#22, live /bn). So
+  // the journey starts once its section is near, and the carousels, whose
+  // first dot the markup already marks, measure only when they scroll.
   var road = document.getElementById('journey-road');
   var traveller = document.getElementById('journey-traveller');
   var count = document.getElementById('journey-count');
   if (road && traveller && count && !reduced) {
     var svg = road.ownerSVGElement;
     var stations = $$('[data-station]');
-    var length = road.getTotalLength();
     var total = Number(count.dataset.total);
     var format = new Intl.NumberFormat(root.lang);
+    var length = 0;
     var journey = function () {
       var box = svg.getBoundingClientRect();
       // Where the road crosses 70 % of the way down the view, so the road's
@@ -156,9 +161,18 @@
       });
       count.textContent = format.format(Math.round(p * total));
     };
-    journey();
-    addEventListener('scroll', perFrame(journey), { passive: true });
-    addEventListener('resize', perFrame(journey));
+    var near = new IntersectionObserver(
+      function (entries) {
+        if (!entries[0].isIntersecting) return;
+        near.disconnect();
+        length = road.getTotalLength();
+        journey();
+        addEventListener('scroll', perFrame(journey), { passive: true });
+        addEventListener('resize', perFrame(journey));
+      },
+      { rootMargin: '100% 0px' },
+    );
+    near.observe(svg.closest('section') || svg);
   }
 
   // Snap carousels: the dots follow the item nearest the track's middle;
@@ -192,7 +206,6 @@
         behavior: 'smooth',
       });
     };
-    update();
     track.addEventListener('scroll', perFrame(update), { passive: true });
     addEventListener('resize', perFrame(update));
     track.addEventListener('keydown', function (e) {
