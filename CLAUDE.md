@@ -16,7 +16,8 @@ A state-of-the-art, animated, fast and accessible one-page site (plus legal page
 |---|---|---|
 | Framework | **Next.js 15 (App Router) + TypeScript (strict)**, `output: 'export'` | Pure static files on Vercel; React server components at build time |
 | Styling | **Tailwind CSS v4**, design tokens as CSS variables (`app/globals.css`) | Brand colours in one place; dark mode via `prefers-color-scheme` + a toggle |
-| Animation | **Motion** (`motion`, formerly Framer Motion) for component and scroll-linked animation (`useScroll`, `useTransform`); plain CSS for simple loops; inline SVG for drawn graphics | Declarative, GPU-friendly, supports reduced motion |
+| Animation | **CSS** (keyframes, transitions, scroll-snap) and inline SVG; the scroll-linked parts are a few lines in `public/site.js` | No animation library: the page ships no framework JS (#22) |
+| Client JS | **None from React or Next.** Components render on the server only; `scripts/strip-next.mjs` removes Next's runtime and RSC payload after the build. Behaviour lives in `public/site.js` (vanilla, keyed on data attributes) | Hydration cost a phone 150–350 ms of blocking time and doubled the HTML (#22) |
 | i18n | **next-intl** with static params: one locale per app language (`/en`, `/bn` today; `/pl`, `/ru` as the app adds them), and `/` follows the visitor's language (see BRIEF, *Languages*) | Works with static export |
 | Fonts | **Inter** (the brand and app typeface) + **Noto Sans Bengali**, both **self-hosted** via `next/font/local` | Loading fonts from Google's CDN is a GDPR problem in Germany |
 | Images | Pre-built **AVIF + WebP** at several widths by a `sharp` script into `public/`; `<picture>` with `srcset` | `next/image` optimisation doesn't run in a static export |
@@ -98,6 +99,7 @@ pnpm lighthouse          # local Lighthouse against `pnpm start` of out/ (budget
 ## Hard rules
 - **Public repo:** no secrets, no personal data. The Impressum details come from the owner, and only into the Impressum page they are for. Never put the owner's details anywhere else.
 - **Static only:** no API routes, no server actions, no middleware that needs a server. `output: 'export'` must keep building.
+- **No `'use client'`:** a client component would render but never run (its JS is stripped). New behaviour goes in `public/site.js`.
 - **Brand:** follow the brand kit exactly (BRIEF, *Brand*). Never recolour the tiles, add gradients to the mark, or stretch it. The name is always **Sogda**.
 - **Store badges:**
   - Google Play uses Google's **official** "Get it on Google Play" badge artwork, unmodified, with Google's trademark line.
