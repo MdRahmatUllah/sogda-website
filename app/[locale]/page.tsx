@@ -5,6 +5,7 @@ import { DayStory } from '@/components/sections/DayStory';
 import { FeatureGrid, Languages, Looks, Practice } from '@/components/sections/Features';
 import { Hero } from '@/components/sections/Hero';
 import { Journey } from '@/components/sections/Journey';
+import { JsonLd } from '@/components/sections/JsonLd';
 import { Memory } from '@/components/sections/Memory';
 
 export default function Home({ params }: { params: Promise<{ locale: string }> }) {
@@ -12,6 +13,7 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
   setRequestLocale(locale);
   return (
     <main id="main">
+      <JsonLd locale={locale} />
       <Hero locale={locale} />
       <DayStory locale={locale} />
       <Memory locale={locale} />
