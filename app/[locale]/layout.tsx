@@ -6,18 +6,10 @@ import type { ReactNode } from 'react';
 import { bengali, inter, interCyrillic } from '@/app/fonts';
 import { Footer } from '@/components/ui/Footer';
 import { Header } from '@/components/ui/Header';
-import { routing } from '@/i18n/routing';
+import { OG_LOCALE, routing } from '@/i18n/routing';
 import { site } from '@/site.config';
 
 type Props = { children: ReactNode; params: Promise<{ locale: string }> };
-
-const OG_LOCALE: Record<string, string> = {
-  en: 'en_US',
-  de: 'de_DE',
-  pl: 'pl_PL',
-  ru: 'ru_RU',
-  bn: 'bn_BD',
-};
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));

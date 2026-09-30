@@ -67,6 +67,11 @@ for (const locale of routing.locales) {
       const canonical = `https://www.sogda.de/de/${path}`;
       await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', canonical);
       expect(await meta('property="og:url"')).toBe(canonical);
+      // The page's openGraph replaces the layout's: the card and the locale
+      // must be there all the same.
+      expect(await meta('property="og:image"')).toBe(`https://www.sogda.de/og/${locale}.png`);
+      expect(await meta('property="og:locale"')).toBeTruthy();
+      expect(await meta('name="twitter:card"')).toBe('summary_large_image');
       // A canonical elsewhere with hreflang here would contradict it.
       await expect(page.locator('link[rel="alternate"][hreflang]')).toHaveCount(0);
     });
