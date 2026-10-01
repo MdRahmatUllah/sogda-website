@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, type Page, test } from '@playwright/test';
 import { readFileSync } from 'node:fs';
 import { routing } from '../i18n/routing';
 import { gotoReady } from './ready';
@@ -215,14 +215,18 @@ const GAPS: number[] = JSON.parse(readFileSync('content/facts.json', 'utf8')).fs
 const counted = (locale: string, forms: Record<string, string>) =>
   GAPS.map((n) => `${n} ${forms[new Intl.PluralRules(locale).select(n)]}`);
 
-test("Polish counts: the chart's gaps take dzień / dni / dnia by their number", async ({
-  page,
-}) => {
+// The chart's first label and the revisions' last count carry the unit
+// (#135): 4 takes the few form and 150 the many form, in Polish and Russian.
+const firstAndLast = async (page: Page, forms: Record<string, string>, locale: string) => {
+  const gaps = counted(locale, forms);
+  await expect(page.locator('#memory .memory-dot text').first()).toHaveText(gaps[0]!);
+  const revisions = await page.locator('#memory ol').getAttribute('aria-label');
+  expect(revisions?.endsWith(gaps.at(-1)!), revisions ?? '').toBe(true);
+};
+
+test('Polish counts: the gaps take dzień / dni / dnia by their number', async ({ page }) => {
   await page.goto('/pl');
-  const chart = page.locator('#memory svg');
-  for (const gap of counted('pl', { one: 'dzień', few: 'dni', many: 'dni', other: 'dnia' })) {
-    await expect(chart.getByText(gap, { exact: true })).toBeAttached();
-  }
+  await firstAndLast(page, { one: 'dzień', few: 'dni', many: 'dni', other: 'dnia' }, 'pl');
   await expect(page.locator('#journey').getByText('5069 słów')).toBeVisible();
 });
 
@@ -242,10 +246,7 @@ test('Russian counts: день / дня / дней by their number; Cyrillic in 
   const fonts: string[] = [];
   page.on('request', (r) => r.resourceType() === 'font' && fonts.push(r.url()));
   await page.goto('/ru');
-  const chart = page.locator('#memory svg');
-  for (const gap of counted('ru', { one: 'день', few: 'дня', many: 'дней', other: 'дня' })) {
-    await expect(chart.getByText(gap, { exact: true })).toBeAttached();
-  }
+  await firstAndLast(page, { one: 'день', few: 'дня', many: 'дней', other: 'дня' }, 'ru');
   await expect(page.locator('#journey').getByText('5 069 слов')).toBeVisible();
   // Inter Latin, and Inter's Cyrillic face for the Russian text (not a
   // system fallback); the Bangla font only if the page shows Bangla.

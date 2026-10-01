@@ -37,6 +37,7 @@ function curve() {
 
 export async function Memory({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: 'memory' });
+  const n = new Intl.NumberFormat(locale);
   // A dot appears as the drawing curve reaches it.
   const at = (day: number) => `${((x(day) - x(0)) / (x(END) - x(0))) * DRAW_S}s`;
   return (
@@ -97,7 +98,10 @@ export async function Memory({ locale }: { locale: string }) {
                       textAnchor="middle"
                       fill="var(--fg)"
                     >
-                      {t('gap', { days: GAPS[k - 1]! })}
+                      {/* The first gap names its unit and the rest are numbers, as the
+                          copy says them ("4 days, then 15, …"): four full labels don't
+                          fit between the first dots (#135). */}
+                      {k === 1 ? t('gap', { days: GAPS[0]! }) : n.format(GAPS[k - 1]!)}
                     </text>
                   )}
                 </g>
