@@ -276,6 +276,116 @@
     }
   },
   "pages": {
+    "spaced-repetition": {
+      "title": "Powtórki w odstępach z FSRS – wyjaśnienie | Sogda",
+      "description": "Jak planer {version} w Sogdzie przywraca każde niemieckie słowo tuż przed tym, zanim wypadnie ci z pamięci: po {g1, plural, one {# dniu} other {# dniach}}, potem po {g2, number}, {g3, number} i {g4, plural, one {# dniu} other {# dniach}}, dopóki je pamiętasz. Powtórki rozłożone w czasie, offline, w telefonie.",
+      "name": "Powtórki w odstępach",
+      "eyebrow": "Jak Sogda pamięta",
+      "h1": "Powtórki w odstępach z FSRS – wyjaśnienie",
+      "answer": "Sogda planuje każdą powtórkę metodą {version}, która przywraca słowo w dniu, w którym szansa, że je sobie przypomnisz, spadłaby do {retention, number, percent}. Nowe słowo ocenione jako „Dobre” wraca po {g1, plural, one {# dniu} other {# dniach}}, a potem po {g2, number}, {g3, number} i {g4, plural, one {# dniu} other {# dniach}}, dopóki oceniasz je jako „Dobre”, więc twoje minuty idą na słowa, które zaraz wypadłyby ci z pamięci.",
+      "what": {
+        "heading": "Czym jest FSRS",
+        "body": "FSRS (Free Spaced Repetition Scheduler) to otwartoźródłowa metoda, która decyduje, kiedy powtarzać. Dla każdego słowa śledzi, jak trwała jest twoja pamięć o nim i jak trudne jest ono dla ciebie, i na tej podstawie wylicza dzień, w którym szansa na przypomnienie spadłaby do twojego celu. Sogda używa {version} z opublikowanymi domyślnymi wagami, w twoim telefonie.",
+        "target": "Twój cel to {retention, number, percent}, dopóki go nie zmienisz: „Docelowa retencja” w Ustawieniach ma zakres od {min, number, percent} do {max, number, percent}. Wyższy cel sprawia, że słowa wracają wcześniej, więc powtórek dziennie jest więcej; niższy rozsuwa je bardziej."
+      },
+      "gaps": {
+        "heading": "Pierwsza przerwa zależy od oceny",
+        "body": "Gdy pojawia się nowe słowo, oceniasz czterema przyciskami aplikacji, jak dobrze je znasz. Przy domyślnym celu ocena wyznacza pierwszą przerwę:",
+        "first": "„{rating}”: wraca za {days, plural, one {# dzień} other {# dni}}"
+      },
+      "rating": {
+        "again": "Znowu",
+        "hard": "Trudne",
+        "good": "Dobre",
+        "easy": "Łatwe"
+      },
+      "chain": {
+        "heading": "Potem przerwy rosną",
+        "body": "Za każdym razem, gdy słowo wraca i oceniasz je jako „Dobre”, twoja pamięć o nim jest trwalsza, a następna przerwa dłuższa: {g1, plural, one {# dzień} other {# dni}}, potem {g2, number}, {g3, number} i {g4, number}, a następnie {g5, plural, one {# dzień} other {# dni}}, czyli ponad rok.",
+        "lapse": "Jeśli wyuczone słowo wypadnie ci z pamięci i ocenisz je jako „Znowu”, FSRS obniża jego trwałość: słowo wraca wcześniej, a jego przerwy znów rosną od tego miejsca."
+      },
+      "plan": {
+        "heading": "Najpierw powtórki, każdego dnia",
+        "body": "Każdy plan dnia zaczyna się od powtórek: słów, na które przyszła pora, od najdawniej zaplanowanych, maksymalnie {revise, plural, one {# powtórka} few {# powtórki} many {# powtórek} other {# powtórki}}. Gdy takich słów jest mniej, resztę uzupełniają słowa, które najpewniej wypadają ci już z pamięci. Dalej: {new, plural, one {# nowe słowo} few {# nowe słowa} many {# nowych słów} other {# nowego słowa}}, gramatyka, na którą przyszła pora, i kilka zdań do ćwiczenia.",
+        "wait": "Obie liczby to ustawienia domyślne, które zmienisz w Ustawieniach. Słowa ponad dzienny limit ({revise, number}) czekają na następny dzień, od najdawniej zaplanowanych, więc opuszczony dzień nigdy nie zamienia się w lawinę powtórek."
+      },
+      "why": {
+        "heading": "Dlaczego twoje minuty idą na słowa, które zaraz wypadłyby ci z pamięci",
+        "body": "Słowo, które dobrze znasz, jest zaplanowane na tygodnie albo miesiące naprzód, więc nie zabiera ci dziś czasu. Słowo, które blednie, wraca teraz, tuż zanim je zapomnisz. Minuty, które masz każdego dnia, idą na słowa, które ich potrzebują, a każda udana powtórka odsuwa następną dalej."
+      },
+      "faq": {
+        "target": {
+          "q": "Czy mogę zmienić, jak często wracają słowa?",
+          "a": "Tak. Ustaw „Docelową retencję” w Ustawieniach, od {min, number, percent} do {max, number, percent}; domyślnie to {retention, number, percent}. Wyższy cel to krótsze przerwy i więcej powtórek dziennie, niższy – dłuższe przerwy i mniej powtórek."
+        },
+        "missed": {
+          "q": "Co się stanie, jeśli opuszczę dzień?",
+          "a": "Słowa, na które przyszła pora, poczekają. Plan następnego dnia bierze najpierw te zaplanowane najdawniej, maksymalnie {revise, plural, one {# powtórka} few {# powtórki} many {# powtórek} other {# powtórki}}, a reszta przychodzi w kolejnych dniach. Gdy oceniasz słowo, FSRS liczy dni, które naprawdę minęły."
+        },
+        "offline": {
+          "q": "Czy planowanie wymaga internetu?",
+          "a": "Nie. Sogda działa całkowicie offline: planer działa w twoim telefonie, bez konta, a twoje postępy zostają w nim."
+        },
+        "grammar": {
+          "q": "Czy Sogda planuje też gramatykę?",
+          "a": "Tak. Każdy temat gramatyczny ma własny plan z tego samego planera i wraca do ćwiczenia, gdy przyjdzie na niego pora."
+        }
+      }
+    },
+    "mock-exams": {
+      "title": "{mocks, plural, one {# egzamin próbny} few {# egzaminy próbne} many {# egzaminów próbnych} other {# egzaminu próbnego}} z niemieckiego, A1–C2, offline | Sogda",
+      "description": "Egzaminy próbne z niemieckiego w Sogdzie: {mocksPerStep, number} na każdy etap od {first} do {last}, po {questions, plural, one {# pytanie} few {# pytania} many {# pytań} other {# pytania}}, zadanie pisemne i ustne oraz wynik dla każdej części. Offline.",
+      "name": "Egzaminy próbne",
+      "eyebrow": "Przygotowanie do egzaminu, offline",
+      "h1": "Egzaminy próbne z niemieckiego od A1 do C2, na telefonie",
+      "answer": "Sogda ma {mocks, plural, one {# egzamin próbny} few {# egzaminy próbne} many {# egzaminów próbnych} other {# egzaminu próbnego}}: {mocksPerStep, number} na każdy z {steps, number} etapów, od {first} do {last}. Każdy ma {questions, plural, one {# pytanie} few {# pytania} many {# pytań} other {# pytania}} oraz zadanie pisemne i ustne, razem {points, plural, one {# punkt} few {# punkty} many {# punktów} other {# punktu}}, z wynikiem dla każdej części; powstają ze słów i gramatyki danego etapu, działają offline i nie są oficjalnymi egzaminami Goethe ani telc.",
+      "paper": {
+        "heading": "Co jest w każdym egzaminie",
+        "body": "Każdy egzamin ma te same części, w tej kolejności, ułożone ze słów i gramatyki danego etapu:",
+        "items": "{name}: {n, plural, one {# pytanie} few {# pytania} many {# pytań} other {# pytania}}",
+        "task": "{name}: jedno zadanie, {points, plural, one {# punkt} few {# punkty} many {# punktów} other {# punktu}}"
+      },
+      "section": {
+        "vocabulary": "Słownictwo",
+        "reverse": "Odwrotnie",
+        "articles": "Rodzajniki",
+        "wordForms": "Formy wyrazów",
+        "gapFill": "Luki",
+        "grammar": "Gramatyka",
+        "listening": "Słuchanie",
+        "writing": "Pisanie",
+        "speaking": "Mówienie"
+      },
+      "levels": {
+        "heading": "Pisanie i mówienie, poziom po poziomie",
+        "body": "Zadanie pisemne wymaga minimalnej długości, a ustne ma limit czasu, oba zależne od poziomu. Przy każdym poziomie podajemy egzamin, pod który ułożono jego etapy:",
+        "item": "{level}: napisz co najmniej {words, plural, one {# słowo} few {# słowa} many {# słów} other {# słowa}}, mów do {seconds, number} sekund. Cel: {target}."
+      },
+      "compare": {
+        "heading": "Jak wypadają na tle egzaminów Goethe i telc",
+        "skills": "Egzaminy Goethe-Zertifikat i telc Deutsch sprawdzają na każdym poziomie czytanie, słuchanie, pisanie i mówienie. Egzaminy w Sogdzie sprawdzają trzy z tych umiejętności: słuchanie, pisanie i mówienie, a do tego słownictwo, gramatykę, rodzajniki i formy wyrazów.",
+        "reading": "Nie ma części z czytania ze zrozumieniem: ćwicz czytanie na dłuższych niemieckich tekstach i na przykładowych testach samych egzaminów.",
+        "official": "To własne egzaminy Sogdy, tworzone ze słów i gramatyki każdego etapu. Nie są oficjalnymi egzaminami Goethe ani telc, a formaty zadań są własne. Goethe-Institut i telc publikują przykładowe testy dla każdego poziomu na goethe.de i telc.net."
+      },
+      "faq": {
+        "official": {
+          "q": "Czy to oficjalne egzaminy Goethe albo telc?",
+          "a": "Nie. To własne egzaminy Sogdy, tworzone ze słów i gramatyki każdego etapu. Mają słuchanie, pisanie i mówienie jak prawdziwe egzaminy, nie mają części z czytania i nie dają certyfikatu."
+        },
+        "count": {
+          "q": "Ile jest egzaminów próbnych?",
+          "a": "{mocks, number}: {mocksPerStep, number} na każdy z {steps, number} etapów, od {first} do {last}."
+        },
+        "offline": {
+          "q": "Czy egzaminy próbne działają offline?",
+          "a": "Tak. Sogda działa całkowicie offline, razem z egzaminami próbnymi: bez konta i bez zasięgu."
+        },
+        "reading": {
+          "q": "Czy jest część z czytania?",
+          "a": "Nie. Egzaminy w Sogdzie mają słownictwo, gramatykę, słuchanie, pisanie i mówienie. Czytanie ćwicz na dłuższych tekstach i na przykładowych testach egzaminów."
+        }
+      }
+    },
     "about": {
       "title": "Sogda w skrócie: aplikacja do nauki niemieckiego offline, A1–C2",
       "description": "Sogda w faktach: kurs niemieckiego offline na Androida, od A1 do C2 w {steps, number} etapach, {words, plural, one {# słowo} few {# słowa} many {# słów} other {# słowa}}, {topics, plural, one {# temat gramatyczny} few {# tematy gramatyczne} many {# tematów gramatycznych} other {# tematu gramatycznego}} i egzaminy próbne.",

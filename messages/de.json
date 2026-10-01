@@ -221,6 +221,116 @@
     "related": "Mehr über Sogda"
   },
   "pages": {
+    "spaced-repetition": {
+      "title": "Verteilte Wiederholung mit FSRS, erklärt | Sogda",
+      "description": "Wie Sogdas {version}-Planer jedes deutsche Wort zurückbringt, kurz bevor du es vergessen würdest: nach {g1, number} Tagen, dann nach {g2, number}, {g3, number} und {g4, number}, solange du dich daran erinnerst. Offline, auf deinem Handy.",
+      "name": "Verteilte Wiederholung",
+      "eyebrow": "Wie Sogda sich erinnert",
+      "h1": "Verteilte Wiederholung mit FSRS, erklärt",
+      "answer": "Sogda plant jede Wiederholung mit {version}, einer Methode der verteilten Wiederholung, die jedes Wort an dem Tag zurückbringt, an dem deine Chance, dich daran zu erinnern, auf {retention, number, percent} sinken würde. Ein neues Wort, das du mit „Good“ bewertest, kommt nach {g1, plural, one {# Tag} other {# Tagen}} wieder, dann nach {g2, number}, {g3, number} und {g4, plural, one {# Tag} other {# Tagen}}, solange du es weiter mit „Good“ bewertest; so fließt deine Zeit in die Wörter, die du gerade vergessen würdest.",
+      "what": {
+        "heading": "Was FSRS ist",
+        "body": "FSRS, der Free Spaced Repetition Scheduler, ist ein Open-Source-Verfahren, das entscheidet, wann du wiederholst. Für jedes Wort verfolgt es, wie stabil deine Erinnerung daran ist und wie schwer dir das Wort fällt, und berechnet daraus den Tag, an dem deine Chance, dich zu erinnern, auf dein Ziel sinken würde. Sogda nutzt {version} mit den veröffentlichten Standardgewichten, direkt auf deinem Handy.",
+        "target": "Dein Ziel liegt bei {retention, number, percent}, solange du es nicht änderst: In der App stellst du es unter „Settings“ → „Target retention“ ein, von {min, number, percent} bis {max, number, percent}. Ein höheres Ziel bringt Wörter früher zurück, also mehr Wiederholungen am Tag; ein niedrigeres verteilt sie weiter."
+      },
+      "gaps": {
+        "heading": "Die erste Pause hängt von deiner Bewertung ab",
+        "body": "Wenn ein neues Wort drankommt, bewertest du mit den vier Tasten der App, wie gut du dich daran erinnert hast. Beim Standardziel legt die Bewertung die erste Pause fest:",
+        "first": "„{rating}“: wieder nach {days, plural, one {# Tag} other {# Tagen}}"
+      },
+      "rating": {
+        "again": "Again",
+        "hard": "Hard",
+        "good": "Good",
+        "easy": "Easy"
+      },
+      "chain": {
+        "heading": "Dann werden die Pausen länger",
+        "body": "Jedes Mal, wenn das Wort wiederkommt und du es mit „Good“ bewertest, ist deine Erinnerung daran stabiler und die nächste Pause länger: {g1, plural, one {# Tag} other {# Tage}}, dann {g2, number}, {g3, number} und {g4, number}, danach {g5, plural, one {# Tag} other {# Tage}}, also mehr als ein Jahr.",
+        "lapse": "Vergisst du ein Wort, das du schon gelernt hattest, und bewertest es mit „Again“, senkt FSRS seine Stabilität: Das Wort kommt früher wieder, und seine Pausen wachsen von dort aus neu."
+      },
+      "plan": {
+        "heading": "Zuerst wird wiederholt, jeden Tag",
+        "body": "Jeder Tagesplan beginnt mit der Wiederholung: die fälligen Wörter, die am frühesten fälligen zuerst, bis zu {revise, number} Stück. Sind weniger fällig, füllt er den Rest mit den Wörtern, die du am ehesten vergessen hast. Danach kommen {new, number} neue Wörter, die fällige Grammatik und ein paar Übungssätze.",
+        "wait": "Beide Zahlen sind Voreinstellungen, die du unter „Settings“ ändern kannst. Fällige Wörter über die {revise, number} des Tages hinaus warten auf den nächsten Tag, die am frühesten fälligen zuerst. So wird aus einem verpassten Tag nie ein Berg von Wiederholungen."
+      },
+      "why": {
+        "heading": "Warum deine Zeit in die Wörter fließt, die du gerade vergessen würdest",
+        "body": "Ein Wort, das du gut kannst, ist Wochen oder Monate im Voraus geplant und kostet dich heute keine Zeit. Ein Wort, das verblasst, ist jetzt dran, kurz bevor du es vergessen würdest. Deine Zeit fließt jeden Tag in die Wörter, die sie brauchen, und jede bestandene Wiederholung schiebt die nächste weiter hinaus."
+      },
+      "faq": {
+        "target": {
+          "q": "Kann ich einstellen, wie oft Wörter wiederkommen?",
+          "a": "Ja, in der App unter „Settings“ → „Target retention“, von {min, number, percent} bis {max, number, percent}; voreingestellt sind {retention, number, percent}. Ein höheres Ziel heißt kürzere Pausen und mehr Wiederholungen am Tag, ein niedrigeres längere Pausen und weniger."
+        },
+        "missed": {
+          "q": "Was passiert, wenn ich einen Tag auslasse?",
+          "a": "Die fälligen Wörter warten auf dich. Der nächste Tagesplan nimmt die am frühesten fälligen zuerst, bis zu {revise, number} Wiederholungen, und der Rest folgt an den Tagen danach. Wenn du ein Wort bewertest, rechnet FSRS mit den Tagen, die wirklich vergangen sind."
+        },
+        "offline": {
+          "q": "Braucht die Planung Internet?",
+          "a": "Nein. Sogda funktioniert komplett offline: Der Planer läuft auf deinem Handy, ohne Konto, und dein Fortschritt bleibt dort."
+        },
+        "grammar": {
+          "q": "Plant Sogda auch die Grammatik?",
+          "a": "Ja. Jedes Grammatikthema hat seinen eigenen Plan mit demselben Verfahren und kommt zum Üben wieder, wenn es fällig ist."
+        }
+      }
+    },
+    "mock-exams": {
+      "title": "{mocks, number} Deutsch-Probeprüfungen, A1 bis C2, offline | Sogda",
+      "description": "{mocks, number} Probeprüfungen, {mocksPerStep, number} pro Stufe von {first} bis {last}: {questions, number} Fragen, eine Schreib- und eine Sprechaufgabe und ein Ergebnis pro Teil. Offline.",
+      "name": "Probeprüfungen",
+      "eyebrow": "Prüfungstraining, offline",
+      "h1": "Deutsch-Probeprüfungen von A1 bis C2 am Handy",
+      "answer": "Sogda hat {mocks, number} Probeprüfungen, {mocksPerStep, number} für jede seiner {steps, number} Stufen von {first} bis {last}. Jede hat {questions, number} Fragen und dazu eine Schreib- und eine Sprechaufgabe, {points, number} Punkte insgesamt, mit einem Ergebnis für jeden Teil; sie entstehen aus den Wörtern und der Grammatik der Stufe, funktionieren offline und sind keine offiziellen Goethe- oder telc-Prüfungen.",
+      "paper": {
+        "heading": "Was in jeder Prüfung steckt",
+        "body": "Jede Prüfung hat dieselben Teile in dieser Reihenfolge, aus den Wörtern und der Grammatik der Stufe:",
+        "items": "{name}: {n, plural, one {# Frage} other {# Fragen}}",
+        "task": "{name}: eine Aufgabe, {points, plural, one {# Punkt} other {# Punkte}}"
+      },
+      "section": {
+        "vocabulary": "Wortschatz",
+        "reverse": "Umgekehrt",
+        "articles": "Artikel",
+        "wordForms": "Wortformen",
+        "gapFill": "Lückentext",
+        "grammar": "Grammatik",
+        "listening": "Hören",
+        "writing": "Schreiben",
+        "speaking": "Sprechen"
+      },
+      "levels": {
+        "heading": "Schreiben und Sprechen, Niveau für Niveau",
+        "body": "Die Schreibaufgabe verlangt eine Mindestlänge, die Sprechaufgabe hat ein Zeitlimit, beides je nach Niveau. Jedes Niveau nennt die Prüfungen, um die seine Stufen aufgebaut sind:",
+        "item": "{level}: mindestens {words, number} Wörter schreiben, bis zu {seconds, number} Sekunden sprechen. Ausgerichtet auf {target}."
+      },
+      "compare": {
+        "heading": "Im Vergleich mit den Goethe- und telc-Prüfungen",
+        "skills": "Die Prüfungen Goethe-Zertifikat und telc Deutsch prüfen auf jedem Niveau Lesen, Hören, Schreiben und Sprechen. Die Prüfungen in Sogda teilen drei dieser Fertigkeiten, Hören, Schreiben und Sprechen, und ergänzen Wortschatz, Grammatik, Artikel und Wortformen.",
+        "reading": "Einen Leseteil gibt es nicht: Übe das Lesen mit längeren deutschen Texten und den Modellsätzen der Prüfungen.",
+        "official": "Die Prüfungen sind Sogdas eigene, aus den Wörtern und der Grammatik jeder Stufe erzeugt. Sie sind keine offiziellen Goethe- oder telc-Prüfungen, und ihre Aufgabenformate sind Sogdas eigene. Das Goethe-Institut und telc veröffentlichen Modellsätze für jedes Niveau auf goethe.de und telc.net."
+      },
+      "faq": {
+        "official": {
+          "q": "Sind das offizielle Goethe- oder telc-Prüfungen?",
+          "a": "Nein. Es sind Sogdas eigene Prüfungen, aus den Wörtern und der Grammatik jeder Stufe erzeugt. Sie teilen Hören, Schreiben und Sprechen mit den echten Prüfungen, haben keinen Leseteil und führen zu keinem Zertifikat."
+        },
+        "count": {
+          "q": "Wie viele Probeprüfungen gibt es?",
+          "a": "{mocks, number}: {mocksPerStep, number} für jede der {steps, number} Stufen, von {first} bis {last}."
+        },
+        "offline": {
+          "q": "Funktionieren die Probeprüfungen offline?",
+          "a": "Ja. Sogda funktioniert komplett offline, auch die Probeprüfungen: kein Konto und kein Netz nötig."
+        },
+        "reading": {
+          "q": "Gibt es einen Leseteil?",
+          "a": "Nein. Die Prüfungen in Sogda haben Wortschatz, Grammatik, Hören, Schreiben und Sprechen. Übe das Lesen mit längeren Texten und den Modellsätzen der Prüfungen."
+        }
+      }
+    },
     "sogda-vs-anki": {
       "title": "Sogda oder Anki für Deutsch: fertiger Kurs oder eigene Stapel",
       "description": "Sogda oder Anki zum Deutschlernen? Beide wiederholen verteilt. Anki lernt deine eigenen oder geladenen Stapel; Sogda ist ein fertiger Kurs A1–C2, offline.",
