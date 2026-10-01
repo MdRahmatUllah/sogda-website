@@ -36,8 +36,8 @@
     "copyright": "© {year} Sogda"
   },
   "hero": {
-    "kicker": "Deutschkurs offline als App · A1 bis C2",
-    "headline": "Deutsch lernen – Tag für Tag, mit klarem Plan.",
+    "kicker": "Deutschkurs offline als App\u00a0· A1\u00a0bis\u00a0C2",
+    "headline": "Deutsch lernen\u00a0– Tag für Tag, mit klarem Plan.",
     "subline": "Ein vollständiger Offline-Deutschkurs von A1 bis C2, mit Bedeutungen auf Englisch, Bangla, Russisch oder Polnisch.",
     "pause": "Animation anhalten",
     "play": "Animation abspielen",
@@ -201,7 +201,7 @@
     },
     "exams": {
       "q": "Auf welche Prüfungen bereitet Sogda mich vor?",
-      "a": "Auf die Niveaus von Goethe und telc, von A1 bis C2. Jede Stufe hat drei Probeprüfungen, die ihren Teilen folgen: Wortschatz, Grammatik, Hören, Schreiben und Sprechen. Sie werden aus den Wörtern und der Grammatik der Stufe erzeugt und sind keine offiziellen Prüfungen von Goethe oder telc."
+      "a": "Auf die Niveaus von Goethe und telc, von A1 bis C2. Jede Stufe hat {mocksPerStep, plural, one {# Probeprüfung} other {# Probeprüfungen}}: Hören, Schreiben und Sprechen wie in den echten Prüfungen, dazu Wortschatz und Grammatik, mit einem Ergebnis für jeden Teil. Einen Teil zum Leseverstehen gibt es nicht. Sie werden aus den Wörtern und der Grammatik der Stufe erzeugt und sind keine offiziellen Prüfungen von Goethe oder telc."
     }
   },
   "cta": {
@@ -333,7 +333,7 @@
         "both": {
           "heading": "Oder beides",
           "body": {
-            "p1": "Nichts spricht dagegen: Viele Lernende nutzen eine App für Abwechslung und eine für die Tiefe. Der Plan von Sogda dauert so lange, wie dein Tagesziel sagt, und passt so neben eine andere App."
+            "p1": "Nichts spricht dagegen: eine App für Abwechslung, eine für die Tiefe. Der Plan von Sogda dauert so lange, wie dein Tagesziel sagt, und passt so neben eine andere App."
           }
         },
         "sources": {
