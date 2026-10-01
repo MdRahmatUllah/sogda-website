@@ -36,7 +36,7 @@
     "copyright": "© {year} Sogda"
   },
   "hero": {
-    "kicker": "Niemiecki offline w aplikacji\u00a0· A1–\u2060C2",
+    "kicker": "Niemiecki offline w aplikacji · A1–⁠C2",
     "headline": "Ucz się niemieckiego dzień po dniu, z jasnym planem.",
     "subline": "Pełny kurs niemieckiego offline od A1 do C2, ze znaczeniami po polsku.",
     "pause": "Zatrzymaj animację",
@@ -624,6 +624,55 @@
         "switch": {
           "q": "Czy mogę przenieść postępy z Duolingo do Sogdy?",
           "a": "Nie, ale krótki test poziomu dobierze właściwy etap."
+        }
+      }
+    },
+    "learn-german-from-scratch": {
+      "title": "Niemiecki od podstaw do C2: kurs offline w aplikacji | Sogda",
+      "description": "Niemiecki od podstaw do C2, po polsku: {words, plural, one {# słowo} few {# słowa} many {# słów} other {# słowa}} ze znaczeniami i przykładami, reguły gramatyki, wymowa polskimi literami i egzaminy próbne. Offline.",
+      "name": "Niemiecki od podstaw",
+      "eyebrow": "Dla osób mówiących po polsku",
+      "h1": "Niemiecki od podstaw do C2 — po polsku",
+      "answer": "Sogda to aplikacja offline, w której uczysz się niemieckiego od podstaw do C2 po polsku: {words, plural, one {# słowo} few {# słowa} many {# słów} other {# słowa}} ze znaczeniami i przykładowymi zdaniami po polsku, {topics, plural, one {# temat gramatyczny} few {# tematy gramatyczne} many {# tematów gramatycznych} other {# tematu gramatycznego}} z regułami po polsku i wymowa zapisana polskimi literami. Samą aplikację też można przełączyć na polski, a każdy z {steps, number} etapów kończy się egzaminami próbnymi: {mocksPerStep, plural, one {# egzamin próbny} few {# egzaminy próbne} many {# egzaminów próbnych} other {# egzaminu próbnego}} na etap.",
+      "sections": {
+        "meanings": {
+          "heading": "Wszystko po polsku: znaczenia, przykłady i gramatyka",
+          "body": {
+            "p1": "Każde słowo ma znaczenie po polsku (samo albo razem z drugim językiem, na przykład angielskim), przykładowe zdania z tłumaczeniem i wymowę zapisaną polskimi literami: der Termin czyta się /{terminGuide}/.",
+            "p2": "Reguły gramatyki też są po polsku, a samą aplikację można przełączyć na polski."
+          }
+        },
+        "path": {
+          "heading": "Od A1 do C2, z myślą o egzaminach",
+          "body": {
+            "p1": "{steps, plural, one {# etap} few {# etapy} many {# etapów} other {# etapu}} od A1.1 do C2.2 odpowiada poziomom CEFR, na których oparte są egzaminy Goethe-Zertifikat i telc. Na końcu każdego etapu czekają egzaminy próbne, po {mocksPerStep, number} na etap: każdy ma {questions, plural, one {# pytanie} few {# pytania} many {# pytań} other {# pytania}}, zadanie pisemne i ustne oraz wynik dla każdej części. Tak jak prawdziwe egzaminy, sprawdzają słuchanie, pisanie i mówienie, a do tego słownictwo i gramatykę; nie ma części z czytaniem. To nie są oficjalne arkusze Goethe ani telc."
+          }
+        },
+        "germany": {
+          "heading": "Słowa na pierwszy rok w Niemczech",
+          "body": {
+            "p1": "W kursie są słowa potrzebne w Ausländerbehörde, przy Anmeldung czy w podaniu o pracę. Oto niektóre z nich, z etapem, na którym się pojawiają:"
+          }
+        },
+        "offline": {
+          "heading": "Offline i prywatnie",
+          "body": {
+            "p1": "Nie potrzebujesz internetu ani konta: twoje postępy zostają na telefonie. Sogda działa na Androidzie {android} i nowszym."
+          }
+        }
+      },
+      "faq": {
+        "polish": {
+          "q": "Czy reguły gramatyki w Sogdzie są po polsku?",
+          "a": "Tak. Znaczenia słów, przykładowe zdania i reguły gramatyki są po polsku, a wymowa zapisana polskimi literami. Samą aplikację też można przełączyć na polski."
+        },
+        "goethe": {
+          "q": "Czy z Sogdą można przygotować się do egzaminu Goethe A1?",
+          "a": "Tak, jako trening. Etapy {a1First} i {a1Last} obejmują poziom A1 — {a1Words, plural, one {# słowo} few {# słowa} many {# słów} other {# słowa}}, a na każdym etapie są egzaminy próbne, które, tak jak prawdziwe egzaminy, sprawdzają słuchanie, pisanie i mówienie, a do tego słownictwo i gramatykę; nie ma części z czytaniem. To trening, a nie oficjalne arkusze Goethe ani telc."
+        },
+        "internet": {
+          "q": "Czy potrzebny jest internet?",
+          "a": "Nie. Sogda działa całkowicie offline. Pobrać trzeba tylko opcjonalny naturalny głos — raz, przez Wi‑Fi."
         }
       }
     }
