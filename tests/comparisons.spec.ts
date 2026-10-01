@@ -27,8 +27,7 @@ for (const slug of SLUGS) {
           `https://www.sogda.de/${l}/${slug}`,
         );
       }
-      const description = await page.locator('meta[name="description"]').getAttribute('content');
-      expect(description!.length).toBeLessThanOrEqual(160);
+      // The title and description lengths: tests/sitemap.spec.ts, for every page.
 
       const main = page.locator('main#main');
       const answer = main.locator('h1 + p[data-answer]');

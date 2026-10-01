@@ -31,8 +31,6 @@ test.describe('Sogda in brief (#70)', () => {
         'https://www.sogda.de/en/about',
       );
       await expect(page.locator('meta[name="robots"][content*="noindex"]')).toHaveCount(0);
-      const description = await page.locator('meta[name="description"]').getAttribute('content');
-      expect(description!.length).toBeLessThanOrEqual(160);
       await expect(page.locator('meta[property="og:image"]')).toHaveAttribute(
         'content',
         new RegExp(`/og/${locale}/about\\.png$`),

@@ -387,7 +387,7 @@
       }
     },
     "about": {
-      "title": "Sogda w skrócie: aplikacja do nauki niemieckiego offline, A1–C2",
+      "title": "Sogda w skrócie: aplikacja do niemieckiego offline, A1–C2",
       "description": "Sogda w faktach: kurs niemieckiego offline na Androida, od A1 do C2 w {steps, number} etapach, {words, plural, one {# słowo} few {# słowa} many {# słów} other {# słowa}}, {topics, plural, one {# temat gramatyczny} few {# tematy gramatyczne} many {# tematów gramatycznych} other {# tematu gramatycznego}} i egzaminy próbne.",
       "name": "Sogda w skrócie",
       "eyebrow": "O Sogdzie",
@@ -558,7 +558,7 @@
       }
     },
     "sogda-vs-duolingo": {
-      "title": "Sogda czy Duolingo do niemieckiego: jak daleko, jak głęboko, czy offline",
+      "title": "Sogda czy Duolingo do niemieckiego: poziomy, zakres, offline",
       "description": "Sogda czy Duolingo do niemieckiego? Kurs niemieckiego w Duolingo sięga B2; Sogda prowadzi od A1 do C2, z gramatyką i egzaminami próbnymi, offline i bez konta.",
       "name": "Sogda czy Duolingo",
       "eyebrow": "Porównanie",
