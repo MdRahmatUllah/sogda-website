@@ -16,9 +16,12 @@ for (const locale of ['bn', 'en'] as const) {
     const answer = page.locator('[data-answer]');
     await expect(answer).toContainText(n.format(facts.totals.words));
     await expect(answer).toContainText(n.format(facts.totals.grammar_topics));
-    // Grammar and examples are English for a Bangla learner: the page says so.
+    // The examples' translations and the grammar are English for a Bangla
+    // learner (the sentences themselves are German): the page says so.
     await expect(page.locator('#s-meanings ~ p').nth(1)).toContainText(
-      locale === 'bn' ? 'ইংরেজিতে' : 'in English',
+      locale === 'bn'
+        ? 'উদাহরণ বাক্যের অনুবাদ আর ব্যাকরণের নিয়ম ইংরেজিতে'
+        : "example sentences' translations and the grammar rules are in English",
     );
     const terms = page.locator('dt[lang="de"]');
     await expect(terms).toHaveCount(facts.featured.length);
