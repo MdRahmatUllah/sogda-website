@@ -3,6 +3,7 @@ import { LEVEL_LOCALES, levelPage, levelSlug } from '@/content/levels';
 import { factArgs, facts } from '@/i18n/facts';
 import { routing } from '@/i18n/routing';
 import { contentFromMessages, type PageContent } from '@/lib/page';
+import { MOCK_EXAMS_LOCALES, MOCK_EXAMS_SLUG, mockExamsPage } from './mockExams';
 
 // Every content page (MASTER-PLAN W3, #68): its URL segment, the locales it
 // exists in (hreflang and the sitemap cover only these), and its copy per
@@ -64,6 +65,8 @@ const PAGES: PageEntry[] = [
     series: 'levels',
     content: (locale: string) => levelPage(locale, s.code),
   })),
+  // #71: the mock exams, what a paper holds and how it compares with Goethe and telc.
+  { slug: MOCK_EXAMS_SLUG, locales: MOCK_EXAMS_LOCALES, content: mockExamsPage },
 ];
 
 const galleryBuild = process.env.NODE_ENV !== 'production' || Boolean(process.env.SOGDA_GALLERY);
