@@ -36,7 +36,7 @@
     "copyright": "© {year} Sogda"
   },
   "hero": {
-    "kicker": "Niemiecki offline w aplikacji · A1–⁠C2",
+    "kicker": "Niemiecki offline w aplikacji\u00a0· A1–\u2060C2",
     "headline": "Ucz się niemieckiego dzień po dniu, z jasnym planem.",
     "subline": "Pełny kurs niemieckiego offline od A1 do C2, ze znaczeniami po polsku.",
     "pause": "Zatrzymaj animację",
@@ -201,7 +201,7 @@
     },
     "exams": {
       "q": "Do jakich egzaminów przygotowuje?",
-      "a": "Do poziomów Goethe i telc od A1 do C2. Każdy etap ma trzy egzaminy próbne, które odpowiadają ich częściom: słownictwo, gramatyka, słuchanie, pisanie i mówienie. Są tworzone ze słów i gramatyki etapu — to nie oficjalne arkusze Goethe ani telc."
+      "a": "Do poziomów Goethe i telc od A1 do C2. Każdy etap ma {mocksPerStep, plural, one {# egzamin próbny} few {# egzaminy próbne} many {# egzaminów próbnych} other {# egzaminu próbnego}} ze słuchaniem, pisaniem i mówieniem, jak na prawdziwych egzaminach, a do tego ze słownictwem i gramatyką, z wynikiem dla każdej części. Nie ma części z czytaniem ze zrozumieniem. Są tworzone ze słów i gramatyki etapu — to nie są oficjalne arkusze Goethe ani telc."
     }
   },
   "cta": {
@@ -272,6 +272,359 @@
       "last": {
         "q": "Co po etapie {step}?",
         "a": "{step} to ostatni etap kursu. Poznane słowa dalej wracają do powtórki — tuż zanim wypadną ci z pamięci."
+      }
+    }
+  },
+  "pages": {
+    "spaced-repetition": {
+      "title": "Powtórki w odstępach z FSRS – wyjaśnienie | Sogda",
+      "description": "Powtórki rozłożone w czasie: planer {version} Sogdy przywraca słowo tuż przed zapomnieniem, z oceną „Dobre” po {g1, plural, one {# dniu} other {# dniach}}, potem po {g2, number}, {g3, number} i {g4, plural, one {# dniu} other {# dniach}}. Offline.",
+      "name": "Powtórki w odstępach",
+      "eyebrow": "Jak Sogda pamięta",
+      "h1": "Powtórki w odstępach z FSRS – wyjaśnienie",
+      "answer": "Sogda planuje każdą powtórkę metodą {version}, która przywraca słowo w dniu, w którym szansa, że je sobie przypomnisz, spadłaby do {retention, number, percent}. Nowe słowo ocenione jako „Dobre” wraca po {g1, plural, one {# dniu} other {# dniach}}, a potem po {g2, number}, {g3, number} i {g4, plural, one {# dniu} other {# dniach}}, dopóki oceniasz je jako „Dobre”, więc twoje minuty idą na słowa, które zaraz wypadłyby ci z pamięci.",
+      "what": {
+        "heading": "Czym jest FSRS",
+        "body": "FSRS (Free Spaced Repetition Scheduler) to otwartoźródłowa metoda, która decyduje, kiedy powtarzać. Dla każdego słowa śledzi, jak trwała jest twoja pamięć o nim i jak trudne jest ono dla ciebie, i na tej podstawie wylicza dzień, w którym szansa na przypomnienie spadłaby do twojego celu. Sogda używa {version} z opublikowanymi domyślnymi wagami, w twoim telefonie.",
+        "target": "Twój cel to {retention, number, percent}, dopóki go nie zmienisz: „Docelowa retencja” w Ustawieniach ma zakres od {min, number, percent} do {max, number, percent}. Wyższy cel sprawia, że słowa wracają wcześniej, więc powtórek dziennie jest więcej; niższy rozsuwa je bardziej."
+      },
+      "gaps": {
+        "heading": "Pierwsza przerwa zależy od oceny",
+        "body": "Gdy pojawia się nowe słowo, oceniasz czterema przyciskami aplikacji, jak dobrze je znasz. Przy domyślnym celu ocena wyznacza pierwszą przerwę:",
+        "first": "„{rating}”: wraca za {days, plural, one {# dzień} other {# dni}}"
+      },
+      "rating": {
+        "again": "Znowu",
+        "hard": "Trudne",
+        "good": "Dobre",
+        "easy": "Łatwe"
+      },
+      "chain": {
+        "heading": "Potem przerwy rosną",
+        "body": "Za każdym razem, gdy słowo wraca i oceniasz je jako „Dobre”, twoja pamięć o nim jest trwalsza, a następna przerwa dłuższa: {g1, plural, one {# dzień} other {# dni}}, potem {g2, number}, {g3, number} i {g4, number}, a następnie {g5, plural, one {# dzień} other {# dni}}, czyli ponad rok.",
+        "lapse": "Jeśli wyuczone słowo wypadnie ci z pamięci i ocenisz je jako „Znowu”, FSRS obniża jego trwałość: słowo wraca wcześniej, a jego przerwy znów rosną od tego miejsca."
+      },
+      "plan": {
+        "heading": "Najpierw powtórki, każdego dnia",
+        "body": "Każdy plan dnia zaczyna się od powtórek: słów, na które przyszła pora, od najdawniej zaplanowanych, maksymalnie {revise, plural, one {# powtórka} few {# powtórki} many {# powtórek} other {# powtórki}}. Gdy takich słów jest mniej, resztę uzupełniają słowa, które najpewniej wypadają ci już z pamięci. Dalej: {new, plural, one {# nowe słowo} few {# nowe słowa} many {# nowych słów} other {# nowego słowa}}, gramatyka, na którą przyszła pora, i kilka zdań do ćwiczenia.",
+        "wait": "Obie liczby to ustawienia domyślne, które zmienisz w Ustawieniach. Słowa ponad dzienny limit ({revise, number}) czekają na następny dzień, od najdawniej zaplanowanych, więc opuszczony dzień nigdy nie zamienia się w lawinę powtórek."
+      },
+      "why": {
+        "heading": "Dlaczego twoje minuty idą na słowa, które zaraz wypadłyby ci z pamięci",
+        "body": "Słowo, które dobrze znasz, jest zaplanowane na tygodnie albo miesiące naprzód, więc nie zabiera ci dziś czasu. Słowo, które blednie, wraca teraz, tuż zanim je zapomnisz. Minuty, które masz każdego dnia, idą na słowa, które ich potrzebują, a każda udana powtórka odsuwa następną dalej."
+      },
+      "faq": {
+        "target": {
+          "q": "Czy mogę zmienić, jak często wracają słowa?",
+          "a": "Tak. Ustaw „Docelową retencję” w Ustawieniach, od {min, number, percent} do {max, number, percent}; domyślnie to {retention, number, percent}. Wyższy cel to krótsze przerwy i więcej powtórek dziennie, niższy – dłuższe przerwy i mniej powtórek."
+        },
+        "missed": {
+          "q": "Co się stanie, jeśli opuszczę dzień?",
+          "a": "Słowa, na które przyszła pora, poczekają. Plan następnego dnia bierze najpierw te zaplanowane najdawniej, maksymalnie {revise, plural, one {# powtórka} few {# powtórki} many {# powtórek} other {# powtórki}}, a reszta przychodzi w kolejnych dniach. Gdy oceniasz słowo, FSRS liczy dni, które naprawdę minęły."
+        },
+        "offline": {
+          "q": "Czy planowanie wymaga internetu?",
+          "a": "Nie. Sogda działa całkowicie offline: planer działa w twoim telefonie, bez konta, a twoje postępy zostają w nim."
+        },
+        "grammar": {
+          "q": "Czy Sogda planuje też gramatykę?",
+          "a": "Tak. Każdy temat gramatyczny ma własny plan z tego samego planera i wraca do ćwiczenia, gdy przyjdzie na niego pora."
+        }
+      }
+    },
+    "mock-exams": {
+      "title": "{mocks, plural, one {# egzamin próbny} few {# egzaminy próbne} many {# egzaminów próbnych} other {# egzaminu próbnego}} z niemieckiego, A1–C2, offline | Sogda",
+      "description": "Egzaminy próbne z niemieckiego w Sogdzie: {mocksPerStep, number} na każdy etap od {first} do {last}, po {questions, plural, one {# pytanie} few {# pytania} many {# pytań} other {# pytania}}, zadanie pisemne i ustne oraz wynik dla każdej części. Offline.",
+      "name": "Egzaminy próbne",
+      "eyebrow": "Przygotowanie do egzaminu, offline",
+      "h1": "Egzaminy próbne z niemieckiego od A1 do C2, na telefonie",
+      "answer": "Sogda ma {mocks, plural, one {# egzamin próbny} few {# egzaminy próbne} many {# egzaminów próbnych} other {# egzaminu próbnego}}: {mocksPerStep, number} na każdy z {steps, number} etapów, od {first} do {last}. Każdy ma {questions, plural, one {# pytanie} few {# pytania} many {# pytań} other {# pytania}} oraz zadanie pisemne i ustne, razem {points, plural, one {# punkt} few {# punkty} many {# punktów} other {# punktu}}, z wynikiem dla każdej części; powstają ze słów i gramatyki danego etapu, działają offline i nie są oficjalnymi egzaminami Goethe ani telc.",
+      "paper": {
+        "heading": "Co jest w każdym egzaminie",
+        "body": "Każdy egzamin ma te same części, w tej kolejności, ułożone ze słów i gramatyki danego etapu:",
+        "items": "{name}: {n, plural, one {# pytanie} few {# pytania} many {# pytań} other {# pytania}}",
+        "task": "{name}: jedno zadanie, {points, plural, one {# punkt} few {# punkty} many {# punktów} other {# punktu}}"
+      },
+      "section": {
+        "vocabulary": "Słownictwo",
+        "reverse": "Odwrotnie",
+        "articles": "Rodzajniki",
+        "wordForms": "Formy wyrazów",
+        "gapFill": "Luki",
+        "grammar": "Gramatyka",
+        "listening": "Słuchanie",
+        "writing": "Pisanie",
+        "speaking": "Mówienie"
+      },
+      "levels": {
+        "heading": "Pisanie i mówienie, poziom po poziomie",
+        "body": "Zadanie pisemne wymaga minimalnej długości, a ustne ma limit czasu, oba zależne od poziomu. Przy każdym poziomie podajemy egzamin, pod który ułożono jego etapy:",
+        "item": "{level}: napisz co najmniej {words, plural, one {# słowo} few {# słowa} many {# słów} other {# słowa}}, mów do {seconds, number} sekund. Cel: {target}."
+      },
+      "compare": {
+        "heading": "Jak wypadają na tle egzaminów Goethe i telc",
+        "skills": "Egzaminy Goethe-Zertifikat i telc Deutsch sprawdzają na każdym poziomie czytanie, słuchanie, pisanie i mówienie. Egzaminy w Sogdzie sprawdzają trzy z tych umiejętności: słuchanie, pisanie i mówienie, a do tego słownictwo, gramatykę, rodzajniki i formy wyrazów.",
+        "reading": "Nie ma części z czytania ze zrozumieniem: ćwicz czytanie na dłuższych niemieckich tekstach i na przykładowych testach samych egzaminów.",
+        "official": "To własne egzaminy Sogdy, tworzone ze słów i gramatyki każdego etapu. Nie są oficjalnymi egzaminami Goethe ani telc, a formaty zadań są własne. Goethe-Institut i telc publikują przykładowe testy dla każdego poziomu na goethe.de i telc.net."
+      },
+      "faq": {
+        "official": {
+          "q": "Czy to oficjalne egzaminy Goethe albo telc?",
+          "a": "Nie. To własne egzaminy Sogdy, tworzone ze słów i gramatyki każdego etapu. Mają słuchanie, pisanie i mówienie jak prawdziwe egzaminy, nie mają części z czytania i nie dają certyfikatu."
+        },
+        "count": {
+          "q": "Ile jest egzaminów próbnych?",
+          "a": "{mocks, number}: {mocksPerStep, number} na każdy z {steps, number} etapów, od {first} do {last}."
+        },
+        "offline": {
+          "q": "Czy egzaminy próbne działają offline?",
+          "a": "Tak. Sogda działa całkowicie offline, razem z egzaminami próbnymi: bez konta i bez zasięgu."
+        },
+        "reading": {
+          "q": "Czy jest część z czytania?",
+          "a": "Nie. Egzaminy w Sogdzie mają słownictwo, gramatykę, słuchanie, pisanie i mówienie. Czytanie ćwicz na dłuższych tekstach i na przykładowych testach egzaminów."
+        }
+      }
+    },
+    "about": {
+      "title": "Sogda w skrócie: aplikacja do niemieckiego offline, A1–C2",
+      "description": "Sogda w faktach: kurs niemieckiego offline na Androida, od A1 do C2 w {steps, number} etapach, {words, plural, one {# słowo} few {# słowa} many {# słów} other {# słowa}}, {topics, plural, one {# temat gramatyczny} few {# tematy gramatyczne} many {# tematów gramatycznych} other {# tematu gramatycznego}} i egzaminy próbne.",
+      "name": "Sogda w skrócie",
+      "eyebrow": "O Sogdzie",
+      "h1": "Sogda w skrócie",
+      "answer": "Sogda to aplikacja z kursem niemieckiego offline na Androida: od A1 do C2 w {steps, number} etapach, z {words, number} słowami, {topics, number} tematami gramatycznymi i {mocksPerStep, number} egzaminami próbnymi na każdy etap. Znaczenia i wskazówki wymowy są po angielsku, bengalsku, rosyjsku lub polsku, a konto nie jest potrzebne.",
+      "sections": {
+        "what": {
+          "heading": "Czym jest Sogda",
+          "body": {
+            "p1": "Pełny kurs niemieckiego, zbudowany wokół egzaminów, od pierwszego „Hallo” (A1.1) do C2.2. Każde słowo ma przykłady, rodzajnik i formy, jeśli je ma, oraz wskazówkę wymowy w twoim języku znaczeń: polskimi, rosyjskimi lub bengalskimi literami albo angielskim zapisem."
+          }
+        },
+        "day": {
+          "heading": "Dzień z Sogdą",
+          "body": {
+            "p1": "Otwierasz aplikację i plan na dziś jest gotowy: powtórz to, co wymaga powtórki, naucz się kilku nowych słów, przećwicz temat gramatyczny tygodnia i przeczytaj zdania złożone tylko ze słów, które już znasz. Dzienny cel i dni wolne ustalasz samodzielnie, a przypomnienie przychodzi tylko wtedy, gdy jest coś do zrobienia."
+          }
+        },
+        "memory": {
+          "heading": "Jak Sogda pamięta",
+          "body": {
+            "p1": "Sogda planuje każde słowo według FSRS, nowoczesnej metody powtórek rozłożonych w czasie. Za każdym razem, gdy przypominasz sobie słowo, przerwa do jego powrotu się wydłuża: od dni do tygodni i miesięcy. Czas poświęcasz słowom, które zaraz wypadłyby ci z pamięci."
+          }
+        },
+        "course": {
+          "heading": "Kurs",
+          "body": {
+            "p1": "{steps, plural, one {# etap} few {# etapy} many {# etapów} other {# etapu}} od A1.1 do C2.2, z {words, number} słowami i {topics, number} tematami gramatycznymi, każdy z regułą i krótkim ćwiczeniem. Krótki test poziomu dobierze właściwy etap."
+          },
+          "list": {
+            "a1": "A1: etapy A1.1 i A1.2",
+            "a2": "A2: etapy A2.1 i A2.2",
+            "b1": "B1: etapy B1.1 i B1.2",
+            "b2": "B2: etapy B2.1 i B2.2",
+            "c1": "C1: etapy C1.1 i C1.2",
+            "c2": "C2: etapy C2.1 i C2.2"
+          }
+        },
+        "exams": {
+          "heading": "Egzaminy próbne",
+          "body": {
+            "p1": "{mocksPerStep, plural, one {# egzamin próbny} few {# egzaminy próbne} many {# egzaminów próbnych} other {# egzaminu próbnego}} na każdy etap, łącznie {mocks, number}, ze słuchaniem, pisaniem i mówieniem jak na prawdziwych egzaminach, a do tego ze słownictwem i gramatyką, z wynikiem dla każdej części. Nie ma części z czytaniem ze zrozumieniem. Powstają ze słów i gramatyki etapu: to nie są oficjalne arkusze Goethe ani telc, a Sogda nie jest powiązana z żadną z tych instytucji."
+          }
+        },
+        "languages": {
+          "heading": "W twoim języku",
+          "body": {
+            "p1": "Znaczenia po angielsku, bengalsku, rosyjsku lub polsku: w jednym języku albo w dwóch naraz. Po polsku i rosyjsku także przykładowe zdania i reguły gramatyczne. Sama aplikacja jest po angielsku, bengalsku, polsku lub rosyjsku."
+          }
+        },
+        "private": {
+          "heading": "Offline i prywatnie",
+          "body": {
+            "p1": "Całkowicie offline i bez konta: twoje postępy zostają na telefonie. Opcjonalny naturalny głos Supertonic to jednorazowe pobranie około 400 MB przez Wi‑Fi; bez niego Sogda używa niemieckiego głosu twojego telefonu."
+          }
+        },
+        "platform": {
+          "heading": "Platforma",
+          "body": {
+            "p1": "Android {android} lub nowszy. iPhone: wkrótce."
+          }
+        },
+        "maker": {
+          "heading": "Kto ją tworzy",
+          "body": {
+            "p1": "Wydawcą jest Sogda. Dane prawne są w Impressum, do którego link jest na dole każdej strony."
+          }
+        },
+        "name": {
+          "heading": "Nie mylić z…",
+          "body": {
+            "p1": "Sogda, aplikacja do nauki niemieckiego, nie ma związku z Sogdianą, historyczną krainą w Azji Środkowej."
+          }
+        }
+      },
+      "faq": {
+        "course": {
+          "q": "Czy Sogda to pełny kurs, czy aplikacja do słówek?",
+          "a": "Pełny kurs: {words, plural, one {# słowo} few {# słowa} many {# słów} other {# słowa}}, {topics, plural, one {# temat gramatyczny} few {# tematy gramatyczne} many {# tematów gramatycznych} other {# tematu gramatycznego}}, plan dnia, quizy i {mocksPerStep, plural, one {# egzamin próbny} few {# egzaminy próbne} many {# egzaminów próbnych} other {# egzaminu próbnego}} na każdy etap, od A1 do C2."
+        },
+        "offline": {
+          "q": "Czy Sogda działa bez internetu?",
+          "a": "Tak, w pełni. Pobrania wymaga tylko opcjonalny naturalny głos, raz, przez Wi‑Fi."
+        },
+        "account": {
+          "q": "Czy potrzebuję konta?",
+          "a": "Nie. Nie ma konta, a twoje postępy zostają na telefonie."
+        },
+        "languages": {
+          "q": "W jakich językach Sogda tłumaczy niemiecki?",
+          "a": "Po angielsku, bengalsku, rosyjsku lub polsku, w jednym języku albo w dwóch naraz."
+        },
+        "official": {
+          "q": "Czy egzaminy próbne w Sogdzie są oficjalne?",
+          "a": "Nie. Sprawdzają słuchanie, pisanie i mówienie jak prawdziwe egzaminy, a do tego słownictwo i gramatykę, bez części z czytaniem. Powstają ze słów i gramatyki etapu, to nie są arkusze Goethe ani telc."
+        }
+      }
+    },
+    "sogda-vs-anki": {
+      "title": "Sogda czy Anki do niemieckiego: gotowy kurs czy własne talie",
+      "description": "Sogda czy Anki do niemieckiego? Obie stosują powtórki rozłożone w czasie. Anki to talie, które tworzysz lub pobierasz; Sogda to gotowy kurs A1–C2, offline.",
+      "name": "Sogda czy Anki",
+      "eyebrow": "Porównanie",
+      "h1": "Sogda czy Anki do niemieckiego?",
+      "answer": "Anki to aplikacja z fiszkami: tworzysz w niej własne talie albo pobierasz talie udostępnione przez innych użytkowników. Sogda to gotowy kurs niemieckiego od A1 do C2: {words, plural, one {# słowo} few {# słowa} many {# słów} other {# słowa}}, {topics, plural, one {# temat gramatyczny} few {# tematy gramatyczne} many {# tematów gramatycznych} other {# tematu gramatycznego}} i {mocksPerStep, plural, one {# egzamin próbny} few {# egzaminy próbne} many {# egzaminów próbnych} other {# egzaminu próbnego}} na każdy etap, a obie aplikacje planują powtórki tak, by słowo wracało tuż zanim je zapomnisz.",
+      "sections": {
+        "same": {
+          "heading": "Co mają wspólnego",
+          "body": {
+            "p1": "Obie przywracają kartę tuż zanim ją zapomnisz. Podręcznik Anki opisuje FSRS (Free Spaced Repetition Scheduler) jako alternatywę dla starszego algorytmu SM-2, którą można włączyć (Anki 23.10 i nowsze, AnkiDroid 2.17 i nowsze). Sogda od początku planuje każde słowo według FSRS."
+          }
+        },
+        "anki": {
+          "heading": "Wybierz Anki, jeśli…",
+          "body": {
+            "p1": "Anki sprawdzi się lepiej, gdy karty mają być twoje:"
+          },
+          "list": {
+            "a": "chcesz tworzyć własne karty, do niemieckiego albo czegokolwiek innego;",
+            "b": "masz już talię, której ufasz, albo chcesz wziąć jedną z talii udostępnionych przez innych;",
+            "c": "chcesz samodzielnie ustawiać każdą opcję planowania;",
+            "d": "uczysz się także na komputerze: Anki działa na Windowsie, macOS i Linuksie, a do tego jest AnkiDroid na Androida i AnkiMobile na iPhone'a."
+          }
+        },
+        "sogda": {
+          "heading": "Wybierz Sogdę, jeśli…",
+          "body": {
+            "p1": "Sogda sprawdzi się lepiej, gdy potrzebujesz kursu, a nie kart:"
+          },
+          "list": {
+            "a": "chcesz mieć cały kurs gotowy, od pierwszego „Hallo” do C2: {words, plural, one {# słowo} few {# słowa} many {# słów} other {# słowa}}, każde z przykładami, rodzajnikiem i formami (jeśli je ma), oraz {topics, plural, one {# temat gramatyczny} few {# tematy gramatyczne} many {# tematów gramatycznych} other {# tematu gramatycznego}}, każdy z regułą i krótkim ćwiczeniem;",
+            "b": "wolisz plan na każdy dzień niż talie, którymi trzeba zarządzać;",
+            "c": "zależy ci na znaczeniach, przykładach i regułach gramatyki po polsku oraz na wskazówkach wymowy zapisanych polskimi literami;",
+            "d": "przygotowujesz się do egzaminu: {mocksPerStep, plural, one {# egzamin próbny} few {# egzaminy próbne} many {# egzaminów próbnych} other {# egzaminu próbnego}} na każdy etap, ze słuchaniem, pisaniem i mówieniem, a do tego ze słownictwem i gramatyką;",
+            "e": "chcesz uczyć się w pełni offline i bez konta, na Androidzie."
+          }
+        },
+        "both": {
+          "heading": "Albo jedno i drugie",
+          "body": {
+            "p1": "Nic nie stoi na przeszkodzie: przerabiaj kurs w Sogdzie, a w Anki trzymaj talię ze słowami z własnej pracy czy studiów, których nie ma w żadnym kursie."
+          }
+        },
+        "sources": {
+          "heading": "Skąd te informacje",
+          "body": {
+            "p1": "Anki: jej własny podręcznik na docs.ankiweb.net (Getting started; Deck options, o FSRS), przeczytany 1 października 2026 r. Sogda: dane kursu w aplikacji. Anki jest tu wymieniona tylko w celu opisu; Sogda nie jest z nią w żaden sposób powiązana."
+          }
+        }
+      },
+      "faq": {
+        "algorithm": {
+          "q": "Czy Sogda planuje powtórki tak jak Anki?",
+          "a": "Sogda używa FSRS, który Anki oferuje jako opcję od wersji 23.10; włącza się go w opcjach talii w Anki. Dopóki go nie włączysz, w Anki działa starszy harmonogram SM-2."
+        },
+        "import": {
+          "q": "Czy mogę zaimportować swoją talię Anki do Sogdy?",
+          "a": "Nie. Sogda uczy według własnego kursu, więc twoje talie zostają w Anki."
+        },
+        "exam": {
+          "q": "Co lepiej przygotuje do egzaminu Goethe lub telc?",
+          "a": "W Anki wszystko zależy od talii. Etapy Sogdy są ułożone pod kątem egzaminów: {mocksPerStep, plural, one {# egzamin próbny} few {# egzaminy próbne} many {# egzaminów próbnych} other {# egzaminu próbnego}} na każdy etap sprawdzają słuchanie, pisanie i mówienie, a do tego słownictwo i gramatykę. To nie są oficjalne arkusze i nie ma części z czytaniem ze zrozumieniem."
+        },
+        "iphone": {
+          "q": "Czy Sogda jest na iPhone'a?",
+          "a": "Jeszcze nie: Sogda działa na Androidzie ({android} lub nowszym), iPhone — wkrótce."
+        }
+      }
+    },
+    "sogda-vs-duolingo": {
+      "title": "Sogda czy Duolingo do niemieckiego: poziomy, zakres, offline",
+      "description": "Sogda czy Duolingo do niemieckiego? Kurs niemieckiego w Duolingo sięga B2; Sogda prowadzi od A1 do C2, z gramatyką i egzaminami próbnymi, offline i bez konta.",
+      "name": "Sogda czy Duolingo",
+      "eyebrow": "Porównanie",
+      "h1": "Sogda czy Duolingo do niemieckiego?",
+      "answer": "Duolingo uczy wielu języków, a jego kurs niemieckiego sięga poziomu B2 w skali CEFR, jak napisał blog Duolingo w kwietniu 2026 r. Sogda uczy tylko niemieckiego, od A1 do C2 w {steps, number} etapach, z {words, number} słowami, {topics, number} tematami gramatycznymi i {mocksPerStep, number} egzaminami próbnymi na każdy etap, w pełni offline i bez konta.",
+      "sections": {
+        "levels": {
+          "heading": "Jak daleko sięga każda",
+          "body": {
+            "p1": "CEFR ma sześć poziomów, od A1 do C2. Kurs niemieckiego w Duolingo sięga B2, poziomu „samodzielnego użytkownika”. {steps, plural, one {# etap} few {# etapy} many {# etapów} other {# etapu}} Sogdy idzie dalej, przez C1 i C2 — poziomy Goethe-Zertifikat C1 i C2."
+          }
+        },
+        "duolingo": {
+          "heading": "Wybierz Duolingo, jeśli…",
+          "body": {
+            "p1": "Duolingo sprawdzi się lepiej, gdy niemiecki jest jednym z kilku języków:"
+          },
+          "list": {
+            "a": "chcesz uczyć się w tej samej aplikacji także innych języków;",
+            "b": "wystarczy ci niemiecki do poziomu B2;",
+            "c": "masz dziś iPhone'a: Sogda jest na razie tylko na Androida."
+          }
+        },
+        "sogda": {
+          "heading": "Wybierz Sogdę, jeśli…",
+          "body": {
+            "p1": "Sogda sprawdzi się lepiej, gdy celem jest niemiecki:"
+          },
+          "list": {
+            "a": "celujesz w C1 lub C2 albo w egzamin Goethe lub telc na dowolnym poziomie: {mocksPerStep, plural, one {# egzamin próbny} few {# egzaminy próbne} many {# egzaminów próbnych} other {# egzaminu próbnego}} na każdy etap;",
+            "b": "potrzebujesz gramatyki w postaci reguł, do których można wrócić: {topics, plural, one {# temat gramatyczny} few {# tematy gramatyczne} many {# tematów gramatycznych} other {# tematu gramatycznego}}, każdy z regułą i krótkim ćwiczeniem;",
+            "c": "chcesz, by każde słowo miało rodzajnik i formy (jeśli je ma), przykłady i wskazówkę wymowy zapisaną polskimi literami;",
+            "d": "zależy ci na znaczeniach, przykładach i regułach po polsku;",
+            "e": "chcesz uczyć się w pełni offline, bez zakładania konta."
+          }
+        },
+        "both": {
+          "heading": "Albo jedno i drugie",
+          "body": {
+            "p1": "Nic nie stoi na przeszkodzie: jedna aplikacja dla urozmaicenia, druga dla głębi. Plan w Sogdzie trwa tyle, ile wyznacza twój dzienny cel, więc zmieści się obok innej aplikacji."
+          }
+        },
+        "sources": {
+          "heading": "Skąd te informacje",
+          "body": {
+            "p1": "Duolingo: wpis na jego blogu „Duolingo Course Content Can Take You to B2 Proficiency” z 22 kwietnia 2026 r., przeczytany 1 października 2026 r. Sogda: dane kursu w aplikacji. Duolingo jest tu wymienione tylko w celu opisu; Sogda nie jest z nim w żaden sposób powiązana."
+          }
+        }
+      },
+      "faq": {
+        "levels": {
+          "q": "Jak daleko sięga kurs niemieckiego w Duolingo?",
+          "a": "Do B2 w skali CEFR, według bloga Duolingo z kwietnia 2026 r. Sogda idzie dalej, do C2."
+        },
+        "exam": {
+          "q": "Co lepiej przygotuje do egzaminu Goethe lub telc?",
+          "a": "Etapy Sogdy są ułożone pod kątem egzaminów: {mocksPerStep, plural, one {# egzamin próbny} few {# egzaminy próbne} many {# egzaminów próbnych} other {# egzaminu próbnego}} na każdy etap sprawdzają słuchanie, pisanie i mówienie, a do tego słownictwo i gramatykę. To nie są oficjalne arkusze i nie ma części z czytaniem ze zrozumieniem."
+        },
+        "offline": {
+          "q": "Czy Sogda działa offline?",
+          "a": "Tak, w pełni i bez konta. Pobrania wymaga tylko opcjonalny naturalny głos, raz, przez Wi‑Fi."
+        },
+        "switch": {
+          "q": "Czy mogę przenieść postępy z Duolingo do Sogdy?",
+          "a": "Nie, ale krótki test poziomu dobierze właściwy etap."
+        }
       }
     }
   }

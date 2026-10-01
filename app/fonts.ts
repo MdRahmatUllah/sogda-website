@@ -22,7 +22,11 @@ export const bengali = localFont({
   src: './fonts/noto-sans-bengali.woff2',
   variable: '--font-bengali',
   weight: '400 700',
-  display: 'swap',
+  // optional, not swap (#116): a face that misses the first ~100 ms is never
+  // swapped in on that view, so a long Bangla heading can't re-wrap and shift
+  // the page; it's cached for the next one. A preload would fix it too, but
+  // costs ~0.5 s of LCP (#110). Android's own Bangla fallback is Noto anyway.
+  display: 'optional',
   // Only a page with Bangla on it downloads this.
   preload: false,
   adjustFontFallback: false,
