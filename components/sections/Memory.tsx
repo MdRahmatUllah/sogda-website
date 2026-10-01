@@ -1,14 +1,17 @@
 import { getTranslations } from 'next-intl/server';
 import type { CSSProperties } from 'react';
 import { Reveal } from '@/components/ui/Reveal';
+import { factArgs, facts } from '@/i18n/facts';
 
 // BRIEF §3.3, in plain language, no maths on the page: memory fades after a
 // word is learned; each revision lifts it back up and it fades more slowly,
-// so the gaps grow (1 day → 3 → 8 → 21, the intervals the app's own card
-// shows for Again, Hard, Good, Easy). An illustration, not data.
-const REVIEWS = [0, 1, 4, 12, 33]; // days: learned, then four revisions
+// so the gaps grow. The gaps are the app's own schedule (#103): Good after
+// Good on each due day, from content/facts.json (DeutschPlan #1182). The
+// curve's shape is an illustration; its gaps are data.
+const GAPS = facts.fsrs.good_days.slice(0, 4);
+const REVIEWS = GAPS.reduce((days, gap) => [...days, days.at(-1)! + gap], [0]); // learned, then four revisions
 const DIPS = [0.55, 0.65, 0.75, 0.85]; // how far memory has faded by each
-const END = 45;
+const END = REVIEWS.at(-1)! * 1.3;
 const DRAW_S = 2.4; // the curve's draw time; the dots keep pace with it
 
 const x = (day: number) => 48 + 560 * Math.sqrt(day / END);
@@ -34,7 +37,7 @@ function curve() {
 
 export async function Memory({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: 'memory' });
-  const gaps = REVIEWS.slice(1).map((day, k) => day - REVIEWS[k]!);
+  const n = new Intl.NumberFormat(locale);
   // A dot appears as the drawing curve reaches it.
   const at = (day: number) => `${((x(day) - x(0)) / (x(END) - x(0))) * DRAW_S}s`;
   return (
@@ -48,13 +51,18 @@ export async function Memory({ locale }: { locale: string }) {
           >
             {t('title')}
           </h2>
-          <p className="mt-5 max-w-xl text-lg text-muted">{t('body')}</p>
+          <p className="mt-5 max-w-xl text-lg text-muted">{t('body', factArgs)}</p>
         </div>
         <Reveal className="grid gap-6">
           <figure className="card p-4 sm:p-6">
-            <svg viewBox="0 0 640 320" role="img" aria-label={t('chart')} className="w-full">
+            <svg
+              viewBox="0 0 640 320"
+              role="img"
+              aria-label={t('chart', factArgs)}
+              className="w-full"
+            >
               <line x1="48" y1="266" x2="620" y2="266" stroke="var(--line)" strokeWidth="2" />
-              <line x1="48" y1="20" x2="48" y2="266" stroke="var(--line)" strokeWidth="2" />
+              <line x1="48" y1="30" x2="48" y2="266" stroke="var(--line)" strokeWidth="2" />
               <text x="30" y="266" fontSize="20" fill="var(--muted)" transform="rotate(-90 30 266)">
                 {t('axisMemory')}
               </text>
@@ -90,7 +98,10 @@ export async function Memory({ locale }: { locale: string }) {
                       textAnchor="middle"
                       fill="var(--fg)"
                     >
-                      {t('gap', { days: gaps[k - 1]! })}
+                      {/* The first gap names its unit and the rest are numbers, as the
+                          copy says them ("4 days, then 15, …"): four full labels don't
+                          fit between the first dots (#135). */}
+                      {k === 1 ? t('gap', { days: GAPS[0]! }) : n.format(GAPS[k - 1]!)}
                     </text>
                   )}
                 </g>
@@ -104,8 +115,8 @@ export async function Memory({ locale }: { locale: string }) {
               </p>
               <p className="text-muted">{t('meaning')}</p>
             </div>
-            <ol className="flex gap-1.5" aria-label={t('revisions')}>
-              {gaps.map((g, k) => (
+            <ol className="flex gap-1.5" aria-label={t('revisions', factArgs)}>
+              {GAPS.map((g, k) => (
                 <li
                   key={g}
                   className="memory-chip grid h-11 min-w-11 place-items-center rounded-full border-2 border-line bg-sun px-2 text-xs font-bold whitespace-nowrap text-ink"

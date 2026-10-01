@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element -- Google's badge artwork, served unmodified */
-import { Play, Smartphone } from 'lucide-react';
+import { Bell, Play, Smartphone } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import { site } from '@/site.config';
 import { QrCode } from './QrCode';
@@ -51,7 +51,20 @@ export async function StoreBadges({
           )}
         </>
       ) : (
-        <Chip icon={<Play aria-hidden="true" className="size-5" />}>{t('googlePlaySoon')}</Chip>
+        <>
+          <Chip icon={<Play aria-hidden="true" className="size-5" />}>{t('googlePlaySoon')}</Chip>
+          {/* #62, the owner's O4 (#56): until the Play link exists, a visitor
+              can ask to be told. A mailto only: the site posts nothing. */}
+          {site.contactEmail && (
+            <a
+              href={`mailto:${site.contactEmail}?subject=${encodeURIComponent(t('notifySubject'))}`}
+              className="inline-flex min-h-12 items-center gap-2 rounded-full border-2 border-ink bg-ink px-4 font-semibold text-paper"
+            >
+              <Bell aria-hidden="true" className="size-5" />
+              {t('notify')}
+            </a>
+          )}
+        </>
       )}
       {site.appStore === 'coming-soon' && (
         <Chip icon={<Smartphone aria-hidden="true" className="size-5" />}>{t('iphoneSoon')}</Chip>

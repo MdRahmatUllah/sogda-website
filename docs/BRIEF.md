@@ -47,7 +47,7 @@ One long page with a sticky header (logo, section links, language switch, theme 
 
 ### 3.3 It remembers for you (spaced repetition)
 - **Message:** *"Each word comes back just before you'd forget it."* A plain-language line about FSRS; no maths on the page.
-- **Visual:** an SVG **forgetting curve** that decays. Each review (a dot) resets it higher and flatter, and the gaps between reviews grow (1 day → 3 → 8 → 21 …).
+- **Visual:** an SVG **forgetting curve** that decays. Each review (a dot) resets it higher and flatter, and the gaps between reviews grow: the app's own schedule, Good after Good on each due day (4 days → 15 → 50 → 150 …, `facts.fsrs.good_days` from `content/facts.json`, #103).
 - **Motion:** the curve draws as it scrolls into view, and each review dot pops in with a tiny *ding* shape (no sound). Next to it, a small card shows one German word (*der Termin*) flipping through its revisions.
 
 ### 3.4 The journey: A1 → C2
@@ -90,7 +90,7 @@ Accordion. Answers only from *Facts* or the owner:
 - Which Android version? (Android 8.0 or newer.)
 - iPhone? (Coming soon.)
 - Is my data shared? (No account; progress stays on the phone.)
-- Which exams does it prepare for? (Goethe/telc levels A1–C2; the app's mock exams follow their sections. Don't claim official endorsement.)
+- Which exams does it prepare for? (Goethe/telc levels A1–C2; each step's three mock exams test listening, writing and speaking, like those exams, plus vocabulary and grammar, with a result by section. No reading-comprehension part. Not official papers: don't claim official endorsement.)
 
 ### 3.11 Final CTA + footer
 - **Final CTA:** a big Lagoon band with the lockup, *"Start your road to German today"*, the Google Play badge + QR code, and the iPhone *coming soon* chip.
@@ -184,6 +184,8 @@ The owner decided (2026-09-29, and 2026-09-30 for the list):
 - The legal pages exist in German (binding) and English (translation, marked as such).
 
 ## 9. SEO and sharing
+*Beyond this section, the plan for search and AI answers is `docs/MASTER-PLAN.md` (2026-09-30). Its W1-b (#59) changes the titles below, and W1-c (#60) the JSON-LD.*
+
 - **Per-locale metadata:**
   - title *"Sogda — Learn German offline, A1 to C2"*;
   - description from the store listing's short description;

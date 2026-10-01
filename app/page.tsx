@@ -1,34 +1,73 @@
+import { readFileSync } from 'node:fs';
+import { LANGUAGE_NAMES } from '@/components/ui/Footer';
+import { Mark } from '@/components/ui/Mark';
 import { routing } from '@/i18n/routing';
+import { site } from '@/site.config';
 
-// `/` (BRIEF §7): the visitor's remembered choice, else the first of the
-// browser's languages the site speaks, else English. A tiny inline script
-// (hashed into the page's CSP); without JS, /en.
-const pick = `(function(){var L=${JSON.stringify(routing.locales)},p;try{p=localStorage.getItem('locale')}catch(e){}if(L.indexOf(p)<0){p='${routing.defaultLocale}';var n=navigator.languages||[navigator.language||''];for(var i=0;i<n.length;i++){var c=String(n[i]).toLowerCase().split('-')[0];if(L.indexOf(c)>=0){p=c;break}}}location.replace('/'+p+location.hash)})()`;
+// `/` (BRIEF §7, #63): the site's x-default, a small page any crawler can
+// index. Browsers never see it: vercel.json sends every request that carries
+// Accept-Language to its language (307, `?from=root`), and the locale page's
+// head script honours a remembered pick. Only a visitor with no
+// Accept-Language (a crawler) lands here, and picks.
+// ponytail: the phone's own sans-serif, as the 404 (next/font's faces don't
+// reach pages outside the locale layout in a static export).
+const messages = Object.fromEntries(
+  routing.locales.map((l) => [
+    l,
+    JSON.parse(readFileSync(`messages/${l}.json`, 'utf8')) as {
+      meta: { title: string; description: string };
+      hero: { headline: string };
+    },
+  ]),
+);
+const en = messages[routing.defaultLocale]!;
 
 export default function RootPage() {
   return (
     <html lang={routing.defaultLocale}>
       <head>
-        <title>Sogda</title>
-        <script dangerouslySetInnerHTML={{ __html: pick }} />
-        <noscript>
-          <meta httpEquiv="refresh" content={`0; url=/${routing.defaultLocale}`} />
-        </noscript>
+        <title>{en.meta.title}</title>
+        <meta name="description" content={en.meta.description} />
+        {/* The page link-preview bots get: they send no Accept-Language, so
+            vercel.json leaves them here (#119). The English card, as /en's. */}
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Sogda" />
+        <meta property="og:title" content={en.meta.title} />
+        <meta property="og:description" content={en.meta.description} />
+        <meta property="og:url" content={site.url} />
+        <meta property="og:image" content={`${site.url}/og/en.png`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content={en.meta.title} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <link rel="canonical" href={site.url} />
         {routing.locales.map((l) => (
-          <link key={l} rel="alternate" hrefLang={l} href={`/${l}`} />
+          <link key={l} rel="alternate" hrefLang={l} href={`${site.url}/${l}`} />
         ))}
-        <link rel="alternate" hrefLang="x-default" href={`/${routing.defaultLocale}`} />
+        <link rel="alternate" hrefLang="x-default" href={site.url} />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
-      <body>
-        <ul>
-          {routing.locales.map((l) => (
-            <li key={l}>
-              <a href={`/${l}`} lang={l}>
-                Sogda ({l})
-              </a>
-            </li>
-          ))}
-        </ul>
+      <body className="grid min-h-dvh place-items-center bg-bg p-6 font-[system-ui,sans-serif] text-fg">
+        <main className="grid w-full max-w-xl justify-items-center gap-6 text-center">
+          <Mark className="size-16" />
+          <h1 className="text-3xl font-extrabold tracking-[-0.02em]">{en.meta.title}</h1>
+          <p className="text-lg text-muted">{en.meta.description}</p>
+          <ul className="grid w-full gap-3">
+            {routing.locales.map((l) => (
+              <li key={l}>
+                <a
+                  href={`/${l}`}
+                  hrefLang={l}
+                  lang={l}
+                  className="card flex min-h-14 flex-col items-start px-5 py-3 text-left"
+                >
+                  <span className="text-lg font-extrabold">{LANGUAGE_NAMES[l] ?? l}</span>
+                  <span className="text-muted">{messages[l]!.hero.headline}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </main>
       </body>
     </html>
   );

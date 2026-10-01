@@ -113,7 +113,10 @@ export async function Looks({ locale }: { locale: string }) {
   return (
     <section id="looks" aria-labelledby="looks-title" className="bg-well py-20 sm:py-28">
       <div className="mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 lg:grid-cols-[1fr_1.2fr] lg:items-center">
-        <div>
+        {/* min-w-0 on both columns: at 320–390 px the two phones' min-content
+            (52vw + 34vw + the gap) widened the grid past the page padding, 11 px
+            at 320 (#58). Now the phones' row shrinks them to fit. */}
+        <div className="min-w-0">
           <Heading id="looks-title" eyebrow={t('eyebrow')} title={t('title')} />
           <p className="mt-5 max-w-xl text-lg text-muted">{t('body')}</p>
           <fieldset className="mt-8">
@@ -122,7 +125,7 @@ export async function Looks({ locale }: { locale: string }) {
               {LOOKS.map((look) => (
                 <label
                   key={look}
-                  className="look-option relative grid min-h-12 cursor-pointer place-items-center rounded-full px-5 font-semibold"
+                  className="look-option relative grid min-h-12 cursor-pointer place-items-center rounded-full px-3.5 font-semibold sm:px-5"
                 >
                   {/* appearance-none: an invisible radio still painted natively
                       held the page's first paint by ~2 s in Chrome on Windows
@@ -140,11 +143,11 @@ export async function Looks({ locale }: { locale: string }) {
             </div>
           </fieldset>
         </div>
-        <div className="flex items-end justify-center gap-6 sm:gap-10">
+        <div className="flex min-w-0 items-end justify-center gap-6 sm:gap-10">
           <DeviceFrame className="w-[min(52vw,16rem)]">
             {LOOKS.map((look) => (
               <div key={look} data-look={look} className="look-screen absolute inset-0">
-                <Screen id="today" locale={locale} theme={look} sizes="256px" />
+                <Screen id="today" locale={locale} theme={look} localize={false} sizes="256px" />
               </div>
             ))}
           </DeviceFrame>
@@ -166,7 +169,7 @@ export async function Looks({ locale }: { locale: string }) {
 // its pronunciation guide, as the app's A1 workbook has it (English and Bangla
 // are in content.db; Russian and Polish ship with app #1100). The lines arrive
 // one after another, once.
-const TERMIN = [
+export const TERMIN = [
   { lang: 'en', name: 'English', meaning: 'appointment', say: 'tair-MEEN' },
   { lang: 'bn', name: 'বাংলা', meaning: 'অ্যাপয়েন্টমেন্ট / নির্ধারিত সময়', say: 'টের্মিন' },
   { lang: 'ru', name: 'Русский', meaning: 'запись (к врачу) / встреча', say: 'тэрмИн' },

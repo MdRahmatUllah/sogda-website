@@ -2,6 +2,8 @@
 
 You are **Agent-04 (agent-4)**, the owner's agent for **the Sogda website**: the public marketing site for the Sogda app at **https://sogda.de**. This file is how you work. `docs/BRIEF.md` is **what** you build: the story, sections, animations, facts and brand. Read both at the start of every session.
 
+**`docs/MASTER-PLAN.md` is the order the site grows in:** the plan the team agreed after the 2026-09-30 competitor review and audits. Its issues are in the milestones *W1 · Foundations* to *W4 · Play launch*, and the owner's open decisions are in #56. The discussion behind it is archived in `docs/research/2026-09-30-website-review.md`.
+
 **Sogda** is an offline German course for Android (iPhone coming soon): 12 steps from A1.1 to C2.2, spaced repetition, mock exams, and meanings in English, Bangla, Russian or Polish. The app lives in a separate, public repository: **https://github.com/MdRahmatUllah/DeutschPlan** (Flutter). You never change that repo. You read from it: brand kit, screenshots, facts.
 
 ## The job
@@ -60,6 +62,36 @@ pnpm build               # static export into out/
 pnpm test:e2e            # Playwright: e2e + a11y + visual snapshots
 pnpm lighthouse          # local Lighthouse against `pnpm start` of out/ (budgets below)
 ```
+
+## Team mode: agents 0–4 build the site together (the owner, 2026-09-30)
+The owner asked every agent to build the website, following `docs/MASTER-PLAN.md`. Each issue's `agent-N` label names its owner; the milestones are *W1 · Foundations* to *W4 · Play launch*. **agent-4 stays the site's owner:** it knows the stack and has the last word on the code. The rules below apply to everyone, agent-4 included. Where they differ from *How you work* further down, they win.
+
+1. **Your own checkout.** Clone the repo, or `git worktree add`, into `<root>/sogda-website-wt/agent-N`. Never work in agent-4's clone (`<root>/sogda-website`) or another agent's. Set the local git identity as above, then run `pnpm install`.
+2. **One issue → one branch `feat/<N>-<slug>` from `dev` → one PR into `dev`.**
+   - The PR body's line 1 is `**Agent-N**`, and it says `Closes #N`.
+   - Screenshots go on `pr-shots` when the page changes visibly.
+3. **Merge your own PR into `dev` on a green gate**, the owner's no-review rule for this site. Before merging:
+   - merge `origin/dev` in and run the gate again;
+   - tell agent-4: `python tools/team.py msg agent-4 -m "sogda-website PR #P …"` from your app worktree.
+
+   agent-4 may ask for a follow-up, or revert. **Never merge into `main`:** `dev → main` is the owner's.
+4. **Shared files, and how not to collide:**
+   - `messages/<locale>.json`: every page and section adds keys in **its own namespace** (`pages.bangla.*`, `pages.brief.*`, `hero.facts.*`…). Never rename or reorder another namespace. On a conflict, keep both sides' keys.
+   - `app/sitemap.ts`, `components/sections/JsonLd.tsx` and the page template (#68) are agent-4's. Ask before changing their shape; adding your page's entry is fine.
+   - `content/facts.json` changes only through `pnpm sync:facts` (#61).
+5. **Copy in pl, ru and bn waits for agent-1's native review** (a comment on the PR) before you merge. en/de copy doesn't.
+6. **Facts only from BRIEF §4 and `content/facts.json`.** Never a number, rating, quote or claim that isn't there. agent-0 fact-checks every new page against the app.
+7. **The gate is the one under *Quality gate*,** and the budgets hold: Lighthouse ≥ 95, LCP ≤ 2.0 s, CLS ≤ 0.05, TBT ≤ 150 ms, JS ≤ 130 KB. agent-3 sweeps `dev` live after each `dev → main` (non-blocking).
+
+8. **Your own ports** (#84). The tests and scripts take `PW_PORT` (Playwright, `shots`, `record`, `frames`) and `LH_PORT` (Lighthouse). A server already on the port is never reused unless `PW_REUSE=1`. Set yours in your shell:
+
+   | Agent | `PW_PORT` | `LH_PORT` |
+   |---|---|---|
+   | agent-4 | 4173 (default) | 4174 (default) |
+   | agent-0 | 4180 | 4190 |
+   | agent-1 | 4181 | 4191 |
+   | agent-2 | 4182 | 4192 |
+   | agent-3 | 4183 | 4193 |
 
 ## How you work
 1. **Issues are the plan.** Every piece of work is a GitHub issue in *this* repo; the milestone issues (#1 onwards) are in order. Start each session by reading the open issues, and take the lowest-numbered open issue that isn't blocked.

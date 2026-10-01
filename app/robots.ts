@@ -3,10 +3,12 @@ import { site } from '@/site.config';
 
 export const dynamic = 'force-static';
 
+// One group for every crawler, AI ones included: a named group would replace
+// it for that bot, so there is none (#58). No Host: line, which only Yandex
+// ever read.
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: { userAgent: '*', allow: '/' },
     sitemap: `${site.url}/sitemap.xml`,
-    host: site.url,
   };
 }

@@ -4,12 +4,14 @@
 //   node scripts/lighthouse.mjs [url ...]   (default: every locale of out/)
 import { spawn } from 'node:child_process';
 import { readdirSync, readFileSync } from 'node:fs';
+import { createServer } from 'node:net';
 import { gzipSync } from 'node:zlib';
 import { chromium } from '@playwright/test';
 import * as chromeLauncher from 'chrome-launcher';
 import lighthouse from 'lighthouse';
 
-const PORT = 4174;
+// #84: each agent measures its own build on its own port (CLAUDE.md, Team mode).
+const PORT = Number(process.env.LH_PORT ?? 4174);
 // Every locale has its messages file (i18n/routing.ts lists the same codes).
 const LOCALES = readdirSync('messages').map((f) => f.replace(/\.json$/, ''));
 
@@ -29,10 +31,25 @@ function initialJsKb(locale) {
   return bytes / 1024;
 }
 
-const server = spawn('pnpm', ['exec', 'serve', 'out', '-l', String(PORT)], {
-  shell: true,
-  stdio: 'ignore',
+// A server already on the port would be measured instead of this build, as
+// serve would quietly take another port (#97): refuse, as Playwright does.
+await new Promise((resolve, reject) => {
+  const probe = createServer()
+    .once('error', () =>
+      reject(new Error(`port ${PORT} is busy: stop the server on it, or set LH_PORT`)),
+    )
+    .once('listening', () => probe.close(resolve))
+    .listen(PORT);
 });
+// serve's own entry, run by node: no shell in between, so kill() stops it
+// (with `shell: true` it orphaned the server on Windows, #97).
+const server = spawn(
+  process.execPath,
+  ['node_modules/serve/build/main.js', 'out', '-l', String(PORT)],
+  {
+    stdio: 'ignore',
+  },
+);
 // The Chromium the e2e tests run (pinned by the lockfile), so the numbers
 // don't move with whatever Chrome this machine has.
 // Headless Chrome has no display to sync to: on Windows its frame clock

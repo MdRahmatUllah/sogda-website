@@ -1,4 +1,5 @@
-import { expect, test } from '@playwright/test';
+import { expect, type Page, test } from '@playwright/test';
+import { readFileSync } from 'node:fs';
 import { routing } from '../i18n/routing';
 import { gotoReady } from './ready';
 
@@ -11,36 +12,114 @@ const NAMES: Record<string, string> = {
   bn: 'বাংলা',
 };
 
-// BRIEF §7: the site's languages are the app's (en, bn today); `/` goes to
-// the visitor's language, English by default; the choice is remembered.
-test.describe('/ picks the language', () => {
-  for (const [browser, expected] of [
-    ['bn-BD', 'bn'],
-    ['de-DE', 'de'],
-    ['pl-PL', 'pl'],
-    ['ru-RU', 'ru'],
-    ['fr-FR', 'en'],
-    ['en-US', 'en'],
+// BRIEF §7, #63: `/` is a chooser any crawler can index; in production
+// vercel.json sends every browser on to its language first (307, ?from=root),
+// and the locale page honours a language picked before.
+test.describe('/ is the language chooser (#63)', () => {
+  test('an indexable page: no redirect, title, canonical, absolute hreflang, five links', async ({
+    page,
+  }) => {
+    const en = JSON.parse(readFileSync('messages/en.json', 'utf8'));
+    const res = await page.goto('/');
+    expect(res!.status()).toBe(200);
+    await page.waitForTimeout(500);
+    await expect(page).toHaveURL(/\/$/);
+    await expect(page.locator('script')).toHaveCount(0);
+    await expect(page).toHaveTitle(en.meta.title);
+    await expect(page.locator('meta[name="description"]')).toHaveAttribute(
+      'content',
+      en.meta.description,
+    );
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
+      'href',
+      'https://www.sogda.de',
+    );
+    await expect(page.locator('link[rel="alternate"][hreflang="x-default"]')).toHaveAttribute(
+      'href',
+      'https://www.sogda.de',
+    );
+    for (const l of routing.locales) {
+      await expect(page.locator(`link[rel="alternate"][hreflang="${l}"]`)).toHaveAttribute(
+        'href',
+        `https://www.sogda.de/${l}`,
+      );
+      const link = page.locator(`main a[hreflang="${l}"]`);
+      await expect(link).toHaveAttribute('href', `/${l}`);
+      await expect(link).toHaveAttribute('lang', l);
+      await expect(link).toContainText(NAMES[l]!);
+    }
+  });
+
+  test('every locale page names / as its x-default', async ({ page }) => {
+    await page.goto('/pl');
+    await expect(page.locator('link[rel="alternate"][hreflang="x-default"]')).toHaveAttribute(
+      'href',
+      'https://www.sogda.de',
+    );
+  });
+});
+
+test.describe('arriving from / (?from=root, #63)', () => {
+  test('a language picked before, if another one, wins', async ({ page }) => {
+    await page.goto('/en');
+    await page.evaluate(() => localStorage.setItem('locale', 'pl'));
+    await page.goto('/de?from=root');
+    await expect(page).toHaveURL(/\/pl$/);
+  });
+
+  test('no pick, or the same one: the page stays, and the parameter goes', async ({ page }) => {
+    await page.goto('/de?from=root');
+    await expect(page).toHaveURL(/\/de$/);
+    await page.evaluate(() => localStorage.setItem('locale', 'de'));
+    await page.goto('/de?from=root#faq');
+    await expect(page).toHaveURL(/\/de#faq$/);
+  });
+});
+
+test.describe('vercel.json sends browsers from / by their first language (#63)', () => {
+  // The local server (serve) doesn't run vercel.json, so this applies its
+  // rules the way Vercel does: in order, the first whose `has` all match. A
+  // header value is read both anchored to the whole header and unanchored, and
+  // the two readings must agree, so the rules hold whichever Vercel uses.
+  type Rule = {
+    source: string;
+    destination: string;
+    permanent: boolean;
+    has: { type: string; key: string; value?: string }[];
+  };
+  const rules = (JSON.parse(readFileSync('vercel.json', 'utf8')).redirects as Rule[]).filter(
+    (r) => r.source === '/',
+  );
+  const route = (header: string | undefined, anchored: boolean) =>
+    rules.find((r) =>
+      r.has.every(
+        (h) =>
+          h.type === 'header' &&
+          h.key === 'accept-language' &&
+          header !== undefined &&
+          (h.value === undefined ||
+            new RegExp(anchored ? `^(?:${h.value})$` : h.value).test(header)),
+      ),
+    );
+  for (const [header, expected] of [
+    ['bn-BD,bn;q=0.9,en-US;q=0.8', 'bn'],
+    ['de-DE,de;q=0.9,en;q=0.8', 'de'],
+    ['pl-PL,pl;q=0.9', 'pl'],
+    ['ru-RU,ru;q=0.9,en-US;q=0.8', 'ru'],
+    ['en-US,en;q=0.9,bn;q=0.8', 'en'], // Bangla second: English wins
+    ['fr-FR,fr;q=0.9,de;q=0.8', 'en'], // German only second: English
+    ['*', 'en'],
+    [undefined, null], // a crawler: the chooser
   ] as const) {
-    test.describe(`a ${browser} browser`, () => {
-      test.use({ locale: browser });
-      test(`goes to /${expected}`, async ({ page }) => {
-        await page.goto('/');
-        await expect(page).toHaveURL(new RegExp(`/${expected}$`));
-        await expect(page.locator('html')).toHaveAttribute('lang', expected);
-      });
+    test(`${header ?? 'no Accept-Language'} → ${expected ? `/${expected}` : 'the chooser'}`, () => {
+      for (const anchored of [true, false]) {
+        const rule = route(header, anchored);
+        expect(rule?.destination ?? null).toBe(expected ? `/${expected}?from=root` : null);
+        // 307: a 308 would be cached as "/ is /bn" for everyone after.
+        if (rule) expect(rule.permanent).toBe(false);
+      }
     });
   }
-
-  test.describe('a remembered choice', () => {
-    test.use({ locale: 'en-US' });
-    test('wins over the browser', async ({ page }) => {
-      await page.goto('/en');
-      await page.evaluate(() => localStorage.setItem('locale', 'bn'));
-      await page.goto('/');
-      await expect(page).toHaveURL(/\/bn$/);
-    });
-  });
 });
 
 test('the header switch changes the language and remembers it', async ({ page }) => {
@@ -94,7 +173,9 @@ test('a page loads only the fonts its own text needs', async ({ page }) => {
   expect(fonts).toHaveLength(1);
 });
 
-test('every page names its other languages (hreflang, x-default → /en)', async ({ page }) => {
+test('every page names its other languages (hreflang, x-default → the chooser at /)', async ({
+  page,
+}) => {
   for (const locale of routing.locales) {
     await page.goto(`/${locale}`);
     for (const lang of routing.locales) {
@@ -105,7 +186,7 @@ test('every page names its other languages (hreflang, x-default → /en)', async
     }
     await expect(page.locator('link[rel="alternate"][hreflang="x-default"]')).toHaveAttribute(
       'href',
-      /\/en$/,
+      'https://www.sogda.de',
     );
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
       'href',
@@ -126,26 +207,46 @@ test('the Bangla page: Bangla copy, Bangla digits, Bangla alt text', async ({ pa
 });
 
 // Counted words agree with their number (Polish one/few/many; the memory
-// chart's gaps are 1, 3, 8 and 21 days).
-test('Polish counts: 1 dzień, 3 dni, 8 dni, 21 dni', async ({ page }) => {
+// chart's gaps are the app's schedule from content/facts.json, #103).
+const GAPS: number[] = JSON.parse(readFileSync('content/facts.json', 'utf8')).fsrs.good_days.slice(
+  0,
+  4,
+);
+const counted = (locale: string, forms: Record<string, string>) =>
+  GAPS.map((n) => `${n} ${forms[new Intl.PluralRules(locale).select(n)]}`);
+
+// The chart's first label and the revisions' last count carry the unit
+// (#135): 4 takes the few form and 150 the many form, in Polish and Russian.
+const firstAndLast = async (page: Page, forms: Record<string, string>, locale: string) => {
+  const gaps = counted(locale, forms);
+  await expect(page.locator('#memory .memory-dot text').first()).toHaveText(gaps[0]!);
+  const revisions = await page.locator('#memory ol').getAttribute('aria-label');
+  expect(revisions?.endsWith(gaps.at(-1)!), revisions ?? '').toBe(true);
+};
+
+test('Polish counts: the gaps take dzień / dni / dnia by their number', async ({ page }) => {
   await page.goto('/pl');
-  const chart = page.locator('#memory svg');
-  for (const gap of ['1 dzień', '3 dni', '8 dni', '21 dni']) {
-    await expect(chart.getByText(gap, { exact: true })).toBeAttached();
-  }
+  await firstAndLast(page, { one: 'dzień', few: 'dni', many: 'dni', other: 'dnia' }, 'pl');
   await expect(page.locator('#journey').getByText('5069 słów')).toBeVisible();
 });
 
-test('Russian counts: 1 день, 3 дня, 8 дней, 21 день; Cyrillic in its own font', async ({
+test('Bangla chips: the gaps in Bengali digits, as the app shows numbers (#103)', async ({
+  page,
+}) => {
+  await page.goto('/bn');
+  const bn = new Intl.NumberFormat('bn');
+  await expect(page.locator('#memory .memory-chip')).toHaveText(
+    GAPS.map((n) => `${bn.format(n)} দিন`),
+  );
+});
+
+test('Russian counts: день / дня / дней by their number; Cyrillic in its own font', async ({
   page,
 }) => {
   const fonts: string[] = [];
   page.on('request', (r) => r.resourceType() === 'font' && fonts.push(r.url()));
   await page.goto('/ru');
-  const chart = page.locator('#memory svg');
-  for (const gap of ['1 день', '3 дня', '8 дней', '21 день']) {
-    await expect(chart.getByText(gap, { exact: true })).toBeAttached();
-  }
+  await firstAndLast(page, { one: 'день', few: 'дня', many: 'дней', other: 'дня' }, 'ru');
   await expect(page.locator('#journey').getByText('5 069 слов')).toBeVisible();
   // Inter Latin, and Inter's Cyrillic face for the Russian text (not a
   // system fallback); the Bangla font only if the page shows Bangla.

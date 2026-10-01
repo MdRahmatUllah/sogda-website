@@ -1,5 +1,12 @@
 import { expect, test } from '@playwright/test';
+import { readFileSync } from 'node:fs';
 import { gotoReady } from './ready';
+
+// The app's schedule (#103): Good after Good, from content/facts.json.
+const GAPS: number[] = JSON.parse(readFileSync('content/facts.json', 'utf8')).fsrs.good_days.slice(
+  0,
+  4,
+);
 
 const STEPS = [
   'A1.1',
@@ -25,13 +32,42 @@ test.describe('It remembers for you (BRIEF §3.3)', () => {
     );
     await expect(memory.getByRole('img', { name: /forgetting curve/ })).toBeVisible();
     await expect(memory.locator('.memory-dot')).toHaveCount(5);
-    for (const gap of ['1 day', '3 days', '8 days', '21 days']) {
-      await expect(memory.getByText(gap, { exact: true })).toBeAttached();
-    }
+    // The first gap with its unit, then numbers, as the copy says them.
+    await expect(memory.locator('.memory-dot text')).toHaveText([
+      `${GAPS[0]} days`,
+      ...GAPS.slice(1).map(String),
+    ]);
+    // The copy names the same gaps (#103), not the old 1, 3, 8, 21.
+    await expect(memory.locator('p', { hasText: 'FSRS' })).toContainText(
+      `${GAPS[0]} days, then ${GAPS[1]}`,
+    );
     await expect(memory.getByText('Termin')).toBeVisible();
     await expect(memory.getByText('appointment')).toBeVisible();
-    await expect(memory.locator('.memory-chip')).toHaveText(['1 d', '3 d', '8 d', '21 d']);
+    await expect(memory.locator('.memory-chip')).toHaveText(GAPS.map((d) => `${d} d`));
   });
+
+  // The gaps are data, so their labels' widths change with the schedule and
+  // the language: neighbours keep 8 viewBox units between them (#135).
+  for (const locale of ['en', 'de', 'pl', 'ru', 'bn']) {
+    test(`/${locale}: the chart's gap labels don't touch`, async ({ page }) => {
+      await page.goto(`/${locale}`);
+      await page.evaluate(() => document.fonts.ready);
+      const boxes = await page
+        .locator('#memory .memory-dot text')
+        .evaluateAll((labels) =>
+          labels
+            .map((l) => (l as SVGTextElement).getBBox())
+            .map((b) => ({ from: b.x, to: b.x + b.width })),
+        );
+      expect(boxes).toHaveLength(GAPS.length);
+      for (let k = 1; k < boxes.length; k++) {
+        expect(
+          boxes[k]!.from - boxes[k - 1]!.to,
+          `${locale}: labels ${k} and ${k + 1}`,
+        ).toBeGreaterThanOrEqual(8);
+      }
+    });
+  }
 
   test('reduced motion: the curve is drawn and the revisions are there', async ({ page }) => {
     await gotoReady(page, '/en');
@@ -104,12 +140,19 @@ test.describe('The journey (BRIEF §3.4)', () => {
       // The script starts the road once its section is within a screen of the
       // view (it measures nothing at load, #22). There, the road's top is
       // still below the traveller's line: back at the start.
-      await page.evaluate(() => {
-        const section = document.getElementById('journey')!;
-        scrollTo(0, section.getBoundingClientRect().top + scrollY - innerHeight - 10);
-      });
+      // The sections above render as they near the view (content-visibility),
+      // which moves the journey, so re-aim until the layout settles (#89).
+      await expect
+        .poll(async () => {
+          await page.evaluate(() => {
+            const section = document.getElementById('journey')!;
+            scrollTo(0, section.getBoundingClientRect().top + scrollY - innerHeight - 10);
+          });
+          await page.waitForTimeout(150);
+          return page.locator('#journey-count').textContent();
+        })
+        .toBe('0');
       await expect(page.locator('.journey-station[data-lit]')).toHaveCount(1);
-      await expect(page.locator('#journey-count')).toHaveText('0');
       // Halfway down the road: about half the stations. Sections around the
       // road render as it scrolls (content-visibility), moving it, so align
       // the road's middle on the traveller's line until the layout settles.

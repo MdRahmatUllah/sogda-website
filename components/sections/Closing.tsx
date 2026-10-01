@@ -1,5 +1,6 @@
 import { ChevronDown } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
+import { factArgs } from '@/i18n/facts';
 import { DeviceFrame } from '@/components/ui/DeviceFrame';
 import { Mark } from '@/components/ui/Mark';
 import { Screen } from '@/components/ui/Screen';
@@ -70,7 +71,7 @@ export async function Gallery({ locale }: { locale: string }) {
 
 // BRIEF §3.10: answers only from BRIEF §4. "Is it free?" waits for the owner
 // (BRIEF §10, 2). Native <details>: no JS, and the browser does the rest.
-const FAQ = ['internet', 'android', 'iphone', 'data', 'exams'] as const;
+export const FAQ = ['internet', 'android', 'iphone', 'data', 'exams'] as const;
 
 export async function Faq({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: 'faq' });
@@ -94,7 +95,7 @@ export async function Faq({ locale }: { locale: string }) {
                   className="shrink-0 transition-transform duration-200 group-open:rotate-180"
                 />
               </summary>
-              <p className="px-6 pb-5 text-lg text-muted">{t(`${key}.a`)}</p>
+              <p className="px-6 pb-5 text-lg text-muted">{t(`${key}.a`, factArgs)}</p>
             </details>
           ))}
         </div>

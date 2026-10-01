@@ -16,7 +16,9 @@ for (const path of paths.length ? paths : ['/en']) {
         colorScheme,
         reducedMotion: 'reduce',
       });
-      await page.goto(`http://localhost:4173${path}`, { waitUntil: 'networkidle' });
+      await page.goto(`http://localhost:${process.env.PW_PORT ?? 4173}${path}`, {
+        waitUntil: 'networkidle',
+      });
       const name = path.replace(/^\/|\/$/g, '').replaceAll('/', '_') || 'root';
       await page.screenshot({
         path: `${outDir}/${name}-${width}-${colorScheme}.png`,
