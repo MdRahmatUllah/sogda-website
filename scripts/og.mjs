@@ -20,7 +20,7 @@ const inter = b64('app/fonts/inter-latin.woff2');
 const cyrillic = b64('app/fonts/inter-cyrillic.woff2');
 const bengali = b64('app/fonts/noto-sans-bengali.woff2');
 // Each locale's Today screen by its hashed name (#66): its own store capture
-// where the app has one (pl, ru), else the default.
+// where the app has one (pl, ru, bn), else the default.
 const screens = JSON.parse(readFileSync('content/screens.generated.json', 'utf8'));
 const todayFor = (locale) => {
   const s = screens[`today-light@${locale}`] ?? screens['today-light'];

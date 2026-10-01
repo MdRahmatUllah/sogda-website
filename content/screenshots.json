@@ -2,19 +2,21 @@
   "$comment": "The real app screens the site shows (BRIEF §6). Each is the app's golden <golden>_<theme>_<device>.png at `ref`, never redrawn. Bump `ref` to the app's release tag when it ships, then `pnpm sync:screens`.",
   "ref": "4b088a18c815355404b1d742302d5a8e204ed77e",
   "store": {
-    "$comment": "The app's Play screenshots (docs/05-dev-guide/store/<set>/<capture>.png) at one pinned app commit (#66). A set's `skip` lists captures that are out of date: English's course screen was shot on 2026-09-26 and says 5,594 words (the course: 5,069); re-shot at app #1123's release, then drop the skip.",
-    "ref": "f14a735efe6249faf489cdc9d3066e2abc42b3b2",
+    "$comment": "The app's Play screenshots (docs/05-dev-guide/store/<set>/<capture>.png) at one pinned app commit (#66). A set's `skip` lists captures that are out of date. Bump `ref` when the app re-shoots a set, then `pnpm sync:screens`: it records that commit's site-facts `content_version`, which must equal content/facts.json's (#61).",
+    "ref": "b98218f650be7bb791e881905417a82d41844b39",
     "sets": {
       "en": {
         "light": "phone-light",
-        "dark": "phone-dark",
-        "skip": ["04-course"]
+        "dark": "phone-dark"
       },
       "pl": {
         "light": "pl-phone-light"
       },
       "ru": {
         "light": "ru-phone-light"
+      },
+      "bn": {
+        "light": "bn-phone-light"
       }
     }
   },

@@ -23,7 +23,7 @@ export function screenAlt(id: string, locale: string): string {
 }
 
 /** The built variant of a screen: the locale's own capture where the app has
- * one (the Polish and Russian store sets, #66), else the default. */
+ * one (the Polish, Russian and Bangla store sets, #66, #114), else the default. */
 function variant(id: string, theme: string, locale: string, localize: boolean) {
   return (
     (localize ? generated[`${id}-${theme}@${locale}`] : undefined) ?? generated[`${id}-${theme}`]
