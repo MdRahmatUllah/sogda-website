@@ -1,5 +1,5 @@
 {
-  "app_ref": "04554cf801c61f450f8a4a245d7d8072a3f4ed2b",
+  "app_ref": "06b4534b16d6d2f131078e7e999bbd8f76a1abc9",
   "schema": 1,
   "content_version": "20260930135630",
   "app": { "version": "1.1.0", "package": "de.sogda.app", "min_sdk": 26, "min_android": "8.0" },
@@ -37,6 +37,13 @@
     ],
     "writing_min_words": { "A1": 30, "A2": 60, "B1": 100, "B2": 150, "C1": 200, "C2": 250 },
     "speaking_seconds": { "A1": 60, "A2": 60, "B1": 90, "B2": 90, "C1": 120, "C2": 120 }
+  },
+  "fsrs": {
+    "version": "FSRS-4.5",
+    "retention": { "default": 0.9, "min": 0.8, "max": 0.97 },
+    "first_days": { "again": 1, "hard": 1, "good": 4, "easy": 14 },
+    "good_days": [4, 15, 50, 150, 409],
+    "plan": { "revise": 10, "new": 7 }
   },
   "levels": [
     { "code": "A1", "name": "Beginner", "exam_target": "Goethe-Zertifikat A1 · Start Deutsch 1" },

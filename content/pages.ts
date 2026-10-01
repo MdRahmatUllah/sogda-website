@@ -1,9 +1,11 @@
 import { getTranslations } from 'next-intl/server';
 import { AUDIENCE_PAGES, audiencePage } from '@/content/audience';
 import { LEVEL_LOCALES, levelPage, levelSlug } from '@/content/levels';
+import { SPACED_REPETITION_SLUG, spacedRepetitionPage } from '@/content/spacedRepetition';
 import { factArgs, facts } from '@/i18n/facts';
 import { routing } from '@/i18n/routing';
 import { contentFromMessages, type PageContent } from '@/lib/page';
+import { MOCK_EXAMS_LOCALES, MOCK_EXAMS_SLUG, mockExamsPage } from './mockExams';
 
 // Every content page (MASTER-PLAN W3, #68): its URL segment, the locales it
 // exists in (hreflang and the sitemap cover only these), and its copy per
@@ -49,11 +51,10 @@ async function sample(locale: string): Promise<PageContent> {
 }
 
 const PAGES: PageEntry[] = [
-  // Fair comparisons, features only (#74): en and de first; pl, ru and bn
-  // join after their native drafts.
+  // Fair comparisons, features only (#74).
   ...['sogda-vs-anki', 'sogda-vs-duolingo'].map((slug) => ({
     slug,
-    locales: ['en', 'de'],
+    locales: routing.locales,
     content: (l: string) => contentFromMessages(l, slug),
   })),
   { slug: 'template-sample', locales: routing.locales, content: sample, gallery: true },
@@ -72,6 +73,14 @@ const PAGES: PageEntry[] = [
     series: 'levels',
     content: (locale: string) => levelPage(locale, s.code),
   })),
+  // #71: the mock exams, what a paper holds and how it compares with Goethe and telc.
+  { slug: MOCK_EXAMS_SLUG, locales: MOCK_EXAMS_LOCALES, content: mockExamsPage },
+  // #73: how Sogda remembers, FSRS with the app's own numbers.
+  {
+    slug: SPACED_REPETITION_SLUG,
+    locales: routing.locales,
+    content: spacedRepetitionPage,
+  },
 ];
 
 const galleryBuild = process.env.NODE_ENV !== 'production' || Boolean(process.env.SOGDA_GALLERY);
