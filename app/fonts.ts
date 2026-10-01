@@ -19,6 +19,8 @@ export const inter = localFont({
   // The subset's own cmap. Without it Chrome can't know Inter has no Bangla
   // until Inter has loaded, so it asked for the Bengali face only after the
   // first paint, and /bn laid itself out again in the TBT window (#104).
+  // Regenerate it whenever the subset changes, or new glyphs stay unused:
+  //   python -c "from fontTools.ttLib import TTFont;from itertools import groupby;c=sorted(TTFont('app/fonts/inter-latin.woff2').getBestCmap());print(', '.join((lambda g:'U+%04X'%g[0][1] if len(g)==1 else 'U+%04X-%04X'%(g[0][1],g[-1][1]))(list(g)) for _,g in groupby(enumerate(c),lambda p:p[1]-p[0])))"
   declarations: [
     {
       prop: 'unicode-range',
