@@ -397,7 +397,7 @@
           },
           "list": {
             "a": "chcesz tworzyć własne karty, do niemieckiego albo czegokolwiek innego;",
-            "b": "masz już talię, której ufasz, albo chcesz wziąć jedną ze wspólnych talii Anki;",
+            "b": "masz już talię, której ufasz, albo chcesz wziąć jedną z talii udostępnionych przez innych;",
             "c": "chcesz samodzielnie ustawiać każdą opcję planowania;",
             "d": "uczysz się także na komputerze: Anki działa na Windowsie, macOS i Linuksie, a do tego jest AnkiDroid na Androida i AnkiMobile na iPhone'a."
           }
@@ -488,7 +488,7 @@
         "both": {
           "heading": "Albo jedno i drugie",
           "body": {
-            "p1": "Nic nie stoi na przeszkodzie: wiele osób ma jedną aplikację dla odmiany, a drugą dla głębi. Plan w Sogdzie trwa tyle, ile wyznacza twój dzienny cel, więc zmieści się obok innej aplikacji."
+            "p1": "Nic nie stoi na przeszkodzie: jedna aplikacja dla urozmaicenia, druga dla głębi. Plan w Sogdzie trwa tyle, ile wyznacza twój dzienny cel, więc zmieści się obok innej aplikacji."
           }
         },
         "sources": {
