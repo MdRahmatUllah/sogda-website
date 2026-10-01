@@ -1,4 +1,5 @@
 import { getTranslations } from 'next-intl/server';
+import screens from '@/content/screens.generated.json';
 import { factArgs, facts } from '@/i18n/facts';
 import { routing } from '@/i18n/routing';
 import { site } from '@/site.config';
@@ -14,9 +15,14 @@ export const ids = {
 
 export type Faq = { q: string; a: string };
 
-// The app's screens the graph names, from the site's own set (English until
-// W2's per-locale screens, #66).
+// The app's screens the graph names, from the site's own set: the locale's
+// own capture where the app has one (#66), under its hashed name.
 const SCREENSHOTS = ['today-light', 'learn-light', 'exam-results-light', 'progress-light'];
+const built = screens as Record<string, { base: string; hash: string }>;
+const screenshot = (key: string, locale: string) => {
+  const g = built[`${key}@${locale}`] ?? built[key]!;
+  return `${site.url}/screens/${g.base}-1080.${g.hash}.webp`;
+};
 
 /** The nodes every page carries (#60), in the page's language: the publisher
  * (O5: the brand itself), the site, and the app. No offers or rating until
@@ -66,7 +72,7 @@ export async function siteNodes(locale: string): Promise<Record<string, unknown>
         hero('facts.offline'),
       ],
       image: `${site.url}/og/${locale}.png`,
-      screenshot: SCREENSHOTS.map((s) => `${site.url}/screens/${s}-1080.webp`),
+      screenshot: SCREENSHOTS.map((s) => screenshot(s, locale)),
       publisher: { '@id': ids.org },
       author: { '@id': ids.org },
       ...(play ? { installUrl: play, downloadUrl: play } : {}),

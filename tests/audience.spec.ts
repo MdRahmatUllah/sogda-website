@@ -9,7 +9,11 @@ const LOCALES = ['en', 'de', 'pl', 'ru', 'bn'];
 const PAGES = [
   {
     slug: 'learn-german-in-bangla',
-    grammar: { bn: 'ইংরেজিতে', en: 'in English' } as Record<string, string>,
+    // The sentences are German; their translations and the grammar are English.
+    grammar: {
+      bn: 'উদাহরণ বাক্যের অনুবাদ আর ব্যাকরণের নিয়ম ইংরেজিতে',
+      en: "example sentences' translations and the grammar rules are in English",
+    } as Record<string, string>,
   },
   {
     slug: 'learn-german-from-scratch',
