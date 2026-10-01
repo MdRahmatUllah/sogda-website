@@ -387,7 +387,7 @@
       }
     },
     "about": {
-      "title": "Sogda кратко: приложение для изучения немецкого офлайн, A1–C2",
+      "title": "Sogda: приложение для изучения немецкого офлайн, A1–C2",
       "description": "Sogda в фактах: офлайн-курс немецкого для Android, от A1 до C2 за {steps, plural, one {# этап} few {# этапа} many {# этапов} other {# этапа}}, {words, plural, one {# слово} few {# слова} many {# слов} other {# слова}}, {topics, plural, one {# тема грамматики} few {# темы грамматики} many {# тем грамматики} other {# темы грамматики}} и пробные экзамены.",
       "name": "Sogda кратко",
       "eyebrow": "О Sogda",

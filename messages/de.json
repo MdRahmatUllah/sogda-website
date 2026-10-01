@@ -332,7 +332,7 @@
       }
     },
     "sogda-vs-anki": {
-      "title": "Sogda oder Anki für Deutsch: fertiger Kurs oder eigene Stapel",
+      "title": "Sogda oder Anki: fertiger Deutschkurs oder eigene Stapel",
       "description": "Sogda oder Anki zum Deutschlernen? Beide wiederholen verteilt. Anki lernt deine eigenen oder geladenen Stapel; Sogda ist ein fertiger Kurs A1–C2, offline.",
       "name": "Sogda oder Anki",
       "eyebrow": "Vergleich",
@@ -403,7 +403,7 @@
       }
     },
     "sogda-vs-duolingo": {
-      "title": "Sogda oder Duolingo für Deutsch: wie weit, wie tief, wie offline",
+      "title": "Sogda oder Duolingo für Deutsch: Niveau, Tiefe, offline",
       "description": "Sogda oder Duolingo für Deutsch? Duolingos Deutschkurs reicht bis B2; Sogda geht von A1 bis C2, mit Grammatik und Probeprüfungen, offline, ohne Konto.",
       "name": "Sogda oder Duolingo",
       "eyebrow": "Vergleich",

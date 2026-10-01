@@ -33,6 +33,8 @@ test.describe('Sogda in brief (#70)', () => {
       await expect(page.locator('meta[name="robots"][content*="noindex"]')).toHaveCount(0);
       const description = await page.locator('meta[name="description"]').getAttribute('content');
       expect(description!.length).toBeLessThanOrEqual(160);
+      // Search results cut a title at about 60 characters (#120).
+      expect((await page.title()).length).toBeLessThanOrEqual(60);
       await expect(page.locator('meta[property="og:image"]')).toHaveAttribute(
         'content',
         new RegExp(`/og/${locale}/about\\.png$`),
