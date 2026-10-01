@@ -48,11 +48,10 @@ async function sample(locale: string): Promise<PageContent> {
 }
 
 const PAGES: PageEntry[] = [
-  // Fair comparisons, features only (#74): en and de first; pl, ru and bn
-  // join after their native drafts.
+  // Fair comparisons, features only (#74).
   ...['sogda-vs-anki', 'sogda-vs-duolingo'].map((slug) => ({
     slug,
-    locales: ['en', 'de'],
+    locales: routing.locales,
     content: (l: string) => contentFromMessages(l, slug),
   })),
   { slug: 'template-sample', locales: routing.locales, content: sample, gallery: true },

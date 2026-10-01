@@ -36,7 +36,7 @@
     "copyright": "© {year} Sogda"
   },
   "hero": {
-    "kicker": "Offline German course app · A1–⁠C2",
+    "kicker": "Offline German course app\u00a0· A1–\u2060C2",
     "headline": "Learn German, one clear day at a time.",
     "subline": "A complete, offline German course from A1 to C2, with meanings in English, Bangla, Russian or Polish.",
     "pause": "Pause the animation",
@@ -201,7 +201,7 @@
     },
     "exams": {
       "q": "Which exams does it prepare me for?",
-      "a": "The Goethe and telc levels from A1 to C2. Each step has three mock exams that follow their sections: vocabulary, grammar, listening, writing and speaking. They are generated from the step’s words and grammar, not official Goethe or telc papers."
+      "a": "The Goethe and telc levels from A1 to C2. Each step has {mocksPerStep, plural, one {# mock exam} other {# mock exams}} with listening, writing and speaking, like the real exams, plus vocabulary and grammar, and a result for each section. There’s no reading-comprehension part. They’re generated from the step’s words and grammar, not official Goethe or telc papers."
     }
   },
   "cta": {
@@ -388,7 +388,7 @@
         "both": {
           "heading": "Or use both",
           "body": {
-            "p1": "Nothing stops you: many learners keep one app for variety and another for depth. Sogda's plan takes as long as the daily goal you set, so it fits beside another app."
+            "p1": "Nothing stops you: one app for variety, another for depth. Sogda's plan takes as long as the daily goal you set, so it fits beside another app."
           }
         },
         "sources": {
