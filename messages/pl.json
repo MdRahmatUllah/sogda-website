@@ -278,14 +278,14 @@
   "pages": {
     "mock-exams": {
       "title": "{mocks, plural, one {# egzamin próbny} few {# egzaminy próbne} many {# egzaminów próbnych} other {# egzaminu próbnego}} z niemieckiego, A1–C2, offline | Sogda",
-      "description": "Egzaminy próbne z niemieckiego w Sogda: {mocksPerStep, number} na każdy etap od {first} do {last}, po {questions, plural, one {# pytanie} few {# pytania} many {# pytań} other {# pytania}}, zadanie pisemne i ustne oraz wynik dla każdej części. Offline.",
+      "description": "Egzaminy próbne z niemieckiego w Sogdzie: {mocksPerStep, number} na każdy etap od {first} do {last}, po {questions, plural, one {# pytanie} few {# pytania} many {# pytań} other {# pytania}}, zadanie pisemne i ustne oraz wynik dla każdej części. Offline.",
       "name": "Egzaminy próbne",
       "eyebrow": "Przygotowanie do egzaminu, offline",
       "h1": "Egzaminy próbne z niemieckiego od A1 do C2, na telefonie",
       "answer": "Sogda ma {mocks, plural, one {# egzamin próbny} few {# egzaminy próbne} many {# egzaminów próbnych} other {# egzaminu próbnego}}: {mocksPerStep, number} na każdy z {steps, number} etapów, od {first} do {last}. Każdy ma {questions, plural, one {# pytanie} few {# pytania} many {# pytań} other {# pytania}} oraz zadanie pisemne i ustne, razem {points, plural, one {# punkt} few {# punkty} many {# punktów} other {# punktu}}, z wynikiem dla każdej części; powstają ze słów i gramatyki danego etapu, działają offline i nie są oficjalnymi egzaminami Goethe ani telc.",
       "paper": {
         "heading": "Co jest w każdym egzaminie",
-        "body": "Każdy egzamin ma te same części, w tej kolejności, ze słów i gramatyki danego etapu:",
+        "body": "Każdy egzamin ma te same części, w tej kolejności, ułożone ze słów i gramatyki danego etapu:",
         "items": "{name}: {n, plural, one {# pytanie} few {# pytania} many {# pytań} other {# pytania}}",
         "task": "{name}: jedno zadanie, {points, plural, one {# punkt} few {# punkty} many {# punktów} other {# punktu}}"
       },
@@ -302,12 +302,12 @@
       },
       "levels": {
         "heading": "Pisanie i mówienie, poziom po poziomie",
-        "body": "Zadanie pisemne wymaga minimalnej długości, a ustne ma limit czasu, oba zależne od poziomu. Każdy poziom podaje egzaminy, pod które ułożono jego etapy:",
-        "item": "{level}: napisz co najmniej {words, number} słów, mów do {seconds, number} sekund. Pod egzamin {target}."
+        "body": "Zadanie pisemne wymaga minimalnej długości, a ustne ma limit czasu, oba zależne od poziomu. Przy każdym poziomie podajemy egzamin, pod który ułożono jego etapy:",
+        "item": "{level}: napisz co najmniej {words, plural, one {# słowo} few {# słowa} many {# słów} other {# słowa}}, mów do {seconds, number} sekund. Cel: {target}."
       },
       "compare": {
         "heading": "Jak wypadają na tle egzaminów Goethe i telc",
-        "skills": "Egzaminy Goethe-Zertifikat i telc Deutsch sprawdzają na każdym poziomie czytanie, słuchanie, pisanie i mówienie. Egzaminy w Sogda mają trzy z tych umiejętności: słuchanie, pisanie i mówienie, a do tego słownictwo, gramatykę, rodzajniki i formy wyrazów.",
+        "skills": "Egzaminy Goethe-Zertifikat i telc Deutsch sprawdzają na każdym poziomie czytanie, słuchanie, pisanie i mówienie. Egzaminy w Sogdzie sprawdzają trzy z tych umiejętności: słuchanie, pisanie i mówienie, a do tego słownictwo, gramatykę, rodzajniki i formy wyrazów.",
         "reading": "Nie ma części z czytania ze zrozumieniem: ćwicz czytanie na dłuższych niemieckich tekstach i na przykładowych testach samych egzaminów.",
         "official": "To własne egzaminy Sogdy, tworzone ze słów i gramatyki każdego etapu. Nie są oficjalnymi egzaminami Goethe ani telc, a formaty zadań są własne. Goethe-Institut i telc publikują przykładowe testy dla każdego poziomu na goethe.de i telc.net."
       },
@@ -326,7 +326,7 @@
         },
         "reading": {
           "q": "Czy jest część z czytania?",
-          "a": "Nie. Egzaminy w Sogda mają słownictwo, gramatykę, słuchanie, pisanie i mówienie. Czytanie ćwicz na dłuższych tekstach i na przykładowych testach egzaminów."
+          "a": "Nie. Egzaminy w Sogdzie mają słownictwo, gramatykę, słuchanie, pisanie i mówienie. Czytanie ćwicz na dłuższych tekstach i na przykładowych testach egzaminów."
         }
       }
     },
