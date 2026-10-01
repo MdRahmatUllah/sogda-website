@@ -223,7 +223,7 @@
   "pages": {
     "spaced-repetition": {
       "title": "Verteilte Wiederholung mit FSRS, erklärt | Sogda",
-      "description": "Wie Sogdas {version}-Planer jedes deutsche Wort zurückbringt, kurz bevor du es vergessen würdest: nach {g1, number} Tagen, dann nach {g2, number}, {g3, number} und {g4, number}. Offline.",
+      "description": "Wie Sogdas {version}-Planer jedes Wort zurückbringt, kurz bevor du es vergessen würdest: mit „Good“ nach {g1, number} Tagen, dann nach {g2, number}, {g3, number} und {g4, number}. Offline.",
       "name": "Verteilte Wiederholung",
       "eyebrow": "Wie Sogda sich erinnert",
       "h1": "Verteilte Wiederholung mit FSRS, erklärt",

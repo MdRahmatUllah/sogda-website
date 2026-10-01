@@ -278,7 +278,7 @@
   "pages": {
     "spaced-repetition": {
       "title": "Powtórki w odstępach z FSRS – wyjaśnienie | Sogda",
-      "description": "Powtórki rozłożone w czasie: planer {version} w Sogdzie przywraca każde słowo tuż przed zapomnieniem, po {g1, plural, one {# dniu} other {# dniach}}, potem po {g2, number}, {g3, number} i {g4, plural, one {# dniu} other {# dniach}}. Offline.",
+      "description": "Powtórki rozłożone w czasie: planer {version} Sogdy przywraca słowo tuż przed zapomnieniem, z oceną „Dobre” po {g1, plural, one {# dniu} other {# dniach}}, potem po {g2, number}, {g3, number} i {g4, plural, one {# dniu} other {# dniach}}. Offline.",
       "name": "Powtórki w odstępach",
       "eyebrow": "Jak Sogda pamięta",
       "h1": "Powtórki w odstępach z FSRS – wyjaśnienie",
