@@ -28,6 +28,18 @@ export default function RootPage() {
       <head>
         <title>{en.meta.title}</title>
         <meta name="description" content={en.meta.description} />
+        {/* The page link-preview bots get: they send no Accept-Language, so
+            vercel.json leaves them here (#119). The English card, as /en's. */}
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Sogda" />
+        <meta property="og:title" content={en.meta.title} />
+        <meta property="og:description" content={en.meta.description} />
+        <meta property="og:url" content={site.url} />
+        <meta property="og:image" content={`${site.url}/og/en.png`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content={en.meta.title} />
+        <meta name="twitter:card" content="summary_large_image" />
         <link rel="canonical" href={site.url} />
         {routing.locales.map((l) => (
           <link key={l} rel="alternate" hrefLang={l} href={`${site.url}/${l}`} />
