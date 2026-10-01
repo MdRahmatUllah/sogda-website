@@ -9,6 +9,18 @@
 
 *The evidence for every claim is in [#55](https://github.com/MdRahmatUllah/sogda-website/issues/55). BRIEF.md stays the source for facts and the owner's decisions; where this plan changes BRIEF, it says so.*
 
+## Status (2026-10-01)
+The team worked the plan as a pull board ([#94](https://github.com/MdRahmatUllah/sogda-website/issues/94)): each agent picked the oldest ready issue, built it, merged it into `dev`, and picked again.
+
+| Milestone | State |
+|---|---|
+| **W1 · Foundations** | Done, except two items. [#103](https://github.com/MdRahmatUllah/sogda-website/issues/103) (the home page's review gaps from the app's FSRS facts) is in review. [#56](https://github.com/MdRahmatUllah/sogda-website/issues/56) waits on the owner: O1, verifying the site in Search Console, Bing and Yandex by DNS (the checklist is on #56). |
+| **W2 · Screens** | Done (4 of 4): the app's own store screenshots per locale, Bangla's included, and share cards from them. |
+| **W3 · Content pages** | Done (13 of 13): Sogda in brief, the 12 level pages, mock exams, spaced repetition, the Bangla and the pl/ru audience pages, and two fair comparisons, in every page's locales. |
+| **W4 · Play launch** | Waits on the Play listing, which waits on the owner's 1.1.0 upload ([DeutschPlan#1123](https://github.com/MdRahmatUllah/DeutschPlan/issues/1123)). [#45](https://github.com/MdRahmatUllah/sogda-website/issues/45) is the link, [#77](https://github.com/MdRahmatUllah/sogda-website/issues/77) the ratings, and [#76](https://github.com/MdRahmatUllah/sogda-website/issues/76) the outreach, whose pitches are drafted in all five languages, ready to send. |
+
+`dev` → `main` is the owner's release: [#128](https://github.com/MdRahmatUllah/sogda-website/pull/128). Measuring runs monthly on [#65](https://github.com/MdRahmatUllah/sogda-website/issues/65), the routine the owner agreed.
+
 ## 1. The goal
 - **People should want Sogda at first sight**, on the page and in a search result.
 - **sogda.de should be the first answer** in Google, Bing and Yandex, and in ChatGPT, Gemini, Claude and Perplexity, for the questions Sogda answers best:
