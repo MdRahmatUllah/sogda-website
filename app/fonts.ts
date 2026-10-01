@@ -15,7 +15,11 @@ export const inter = localFont({
   src: './fonts/inter-latin.woff2',
   variable: '--font-inter',
   weight: '400 800',
-  display: 'swap',
+  // optional, as Bangla's (#116, #126): a swap re-wrapped the hero when Inter
+  // arrived after the first paint (/bn CLS 0.10 at 360 px, /ru 0.03, /pl 0.03),
+  // and a preload costs ~0.6 s of LCP. A slow first view keeps the adjusted
+  // Arial fallback; every later view has Inter from the cache.
+  display: 'optional',
 });
 
 export const bengali = localFont({
@@ -41,6 +45,8 @@ export const interCyrillic = localFont({
   src: './fonts/inter-cyrillic.woff2',
   variable: '--font-inter-cyrillic',
   weight: '400 800',
+  // swap is fine here: a late Cyrillic face moves no home at 360-412 px
+  // (tests/fonts.spec.ts holds it back); /ru's shift was Inter Latin's (#126).
   display: 'swap',
   preload: false,
   adjustFontFallback: false,
