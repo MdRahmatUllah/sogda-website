@@ -11,7 +11,7 @@ const SLUGS = ['sogda-vs-anki', 'sogda-vs-duolingo'];
 // No price, rating or "free" (BRIEF), in any of the site's languages. FSRS's
 // own name, the Free Spaced Repetition Scheduler, is not a price.
 const PRICE =
-  /€|\$|\bfree\b(?! spaced)|kostenlos|gratis|darmo|бесплатн|বিনামূল্যে|ফ্রি|\brating|★/i;
+  /€|\$|\bfree\b(?! spaced)|kostenlos|umsonst|gratis|darmo|bezpłatn|бесплатн|рейтинг|বিনামূল্যে|ফ্রি|রেটিং|\brating|★/i;
 
 for (const slug of SLUGS) {
   for (const locale of routing.locales) {
