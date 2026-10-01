@@ -159,3 +159,13 @@ test('#61 BRIEF §4 and the Play listing state the facts facts.json has', () => 
     }
   }
 });
+
+// Check 5: the store screenshots were shot from the same course content as
+// facts.json. `pnpm sync:screens` records the site-facts `content_version` at
+// the store sets' commit; a content change re-syncs both, or this fails.
+test('#61 the screenshots are no older than the facts: one content version', () => {
+  const source = JSON.parse(readFileSync('content/screens.source.json', 'utf8'));
+  const config = JSON.parse(readFileSync('content/screenshots.json', 'utf8'));
+  expect(source.app_ref).toBe(config.store.ref);
+  expect(source.content_version).toBe(facts.content_version);
+});

@@ -5,10 +5,14 @@
 // public/screens, plus a tiny blur placeholder into
 // content/screens.generated.json.
 //
-// - The store sets are per language: English (light, dark), Polish and Russian
-//   (light). A screen with a Polish or Russian capture gets its own variant
-//   (`<id>-<theme>@pl`), which the site shows on that locale; every other
-//   locale shows the default. A set can skip a capture that's out of date.
+// - The store sets are per language: English (light, dark), Polish, Russian
+//   and Bangla (light). A screen with a capture in another language gets its
+//   own variant (`<id>-<theme>@pl`), which the site shows on that locale;
+//   every other locale shows the default. A set can skip a capture that's out
+//   of date.
+// - content/screens.source.json records the store sets' app commit and its
+//   site-facts `content_version`, so tests/facts.spec.ts can fail screens
+//   shot from other content than content/facts.json's (#61).
 // - A store capture (1:2) is extended at the top and bottom, repeating its
 //   edge rows (the status and navigation bars), to the goldens' 1170:2532, so
 //   every device frame keeps one shape whatever it shows.
@@ -22,6 +26,7 @@ import sharp from 'sharp';
 
 const CONFIG = 'content/screenshots.json';
 const GENERATED = 'content/screens.generated.json';
+const SOURCE = 'content/screens.source.json';
 const OUT = 'public/screens';
 const WIDTHS = { phone: [360, 540, 720, 1080], tablet: [720, 1080, 1440, 2048] };
 const PHONE = { width: 1170, height: 2532 }; // the goldens' phone
@@ -134,8 +139,13 @@ const keep = new Set(
 );
 for (const f of readdirSync(OUT)) if (!keep.has(f)) rmSync(`${OUT}/${f}`);
 
+const facts = JSON.parse(
+  (await download(`${RAW}/${store.ref}/docs/05-dev-guide/site-facts.json`)).toString('utf8'),
+);
 const sorted = Object.fromEntries(Object.entries(generated).sort(([a], [b]) => a.localeCompare(b)));
 writeFileSync(GENERATED, `${JSON.stringify(sorted, null, 2)}\n`);
+const source = { app_ref: store.ref, content_version: facts.content_version };
+writeFileSync(SOURCE, `${JSON.stringify(source, null, 2)}\n`);
 console.log(
   `screens: ${built} built, ${Object.keys(generated).length - built} unchanged (goldens at ${ref.slice(0, 8)}, store sets at ${store.ref.slice(0, 8)})`,
 );

@@ -53,11 +53,11 @@ test.describe('the screenshot pipeline', () => {
     }
   });
 
-  test('Polish and Russian get their own capture where their set has one (#66)', () => {
+  test('Polish, Russian and Bangla get their own capture where their set has one (#66, #114)', () => {
     let count = 0;
     for (const s of config.screens) {
       for (const theme of s.themes) {
-        for (const lang of ['pl', 'ru']) {
+        for (const lang of ['pl', 'ru', 'bn']) {
           const store = storeCapture(s, theme, lang);
           const g = built[`${s.id}-${theme}@${lang}`];
           if (store) {
@@ -69,7 +69,7 @@ test.describe('the screenshot pipeline', () => {
         }
       }
     }
-    expect(count).toBeGreaterThanOrEqual(12);
+    expect(count).toBeGreaterThanOrEqual(18);
   });
 
   test('every file exists under a name that carries its hash, in the goldens’ shape (#66)', () => {
@@ -122,7 +122,7 @@ test.describe('the screens follow the page’s language (#66)', () => {
     ['ru', true],
     ['en', false],
     ['de', false],
-    ['bn', false],
+    ['bn', true],
   ] as const) {
     test(`/${locale}: the hero's Today is ${own ? 'the app in its language' : 'the default'}`, async ({
       page,
@@ -135,7 +135,7 @@ test.describe('the screens follow the page’s language (#66)', () => {
       expect(today.length, srcs.join(' ')).toBeGreaterThan(0);
       for (const s of today) {
         if (own) expect(s).toContain(`today-light-${locale}-`);
-        else expect(s).not.toMatch(/today-light-(pl|ru)-/);
+        else expect(s).not.toMatch(/today-light-(pl|ru|bn)-/);
       }
     });
   }
