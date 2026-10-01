@@ -1,13 +1,9 @@
 import { getTranslations } from 'next-intl/server';
 import { LEVEL_LOCALES, levelPage, levelSlug } from '@/content/levels';
+import { SPACED_REPETITION_SLUG, spacedRepetitionPage } from '@/content/spacedRepetition';
 import { factArgs, facts } from '@/i18n/facts';
 import { routing } from '@/i18n/routing';
 import { contentFromMessages, type PageContent } from '@/lib/page';
-import {
-  SPACED_REPETITION_LOCALES,
-  SPACED_REPETITION_SLUG,
-  spacedRepetitionPage,
-} from './spacedRepetition';
 
 // Every content page (MASTER-PLAN W3, #68): its URL segment, the locales it
 // exists in (hreflang and the sitemap cover only these), and its copy per
@@ -73,7 +69,7 @@ const PAGES: PageEntry[] = [
   // #73: how Sogda remembers, FSRS with the app's own numbers.
   {
     slug: SPACED_REPETITION_SLUG,
-    locales: SPACED_REPETITION_LOCALES,
+    locales: routing.locales,
     content: spacedRepetitionPage,
   },
 ];

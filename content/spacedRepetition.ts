@@ -6,7 +6,6 @@ import type { PageContent } from '@/lib/page';
 // scheduler as facts.json exports it (DeutschPlan #1182), which the app's own
 // fsrs_test.dart checks against its engine.
 export const SPACED_REPETITION_SLUG = 'spaced-repetition';
-export const SPACED_REPETITION_LOCALES = ['en', 'de', 'pl', 'ru', 'bn'] as const;
 
 const RATINGS = ['again', 'hard', 'good', 'easy'] as const;
 
