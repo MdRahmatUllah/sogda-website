@@ -30,7 +30,7 @@ pnpm test:e2e            # against out/: Chromium runs everything; Firefox, WebK
 pnpm lighthouse [urls]   # the CLAUDE.md budgets: every locale of out/, or the URLs given
 pnpm sync:brand          # the app's brand kit (pinned), favicons, manifest, Play badges
 pnpm sync:screens        # the app's goldens (pinned) as AVIF + WebP into public/screens
-pnpm og                  # the Open Graph images, public/og/<locale>.png
+pnpm og                  # the Open Graph images, public/og/<locale>.png; tests/og.spec.ts fails on a stale one
 pnpm check:launch        # fails while the Impressum has a placeholder
 pnpm verify:live [base]  # after deploying: HTTPS, the canonical host, every page, the headers
 ```
