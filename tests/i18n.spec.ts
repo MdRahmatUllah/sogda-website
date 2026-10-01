@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, type Page, test } from '@playwright/test';
 import { readFileSync } from 'node:fs';
 import { routing } from '../i18n/routing';
 import { gotoReady } from './ready';
@@ -207,26 +207,46 @@ test('the Bangla page: Bangla copy, Bangla digits, Bangla alt text', async ({ pa
 });
 
 // Counted words agree with their number (Polish one/few/many; the memory
-// chart's gaps are 1, 3, 8 and 21 days).
-test('Polish counts: 1 dzień, 3 dni, 8 dni, 21 dni', async ({ page }) => {
+// chart's gaps are the app's schedule from content/facts.json, #103).
+const GAPS: number[] = JSON.parse(readFileSync('content/facts.json', 'utf8')).fsrs.good_days.slice(
+  0,
+  4,
+);
+const counted = (locale: string, forms: Record<string, string>) =>
+  GAPS.map((n) => `${n} ${forms[new Intl.PluralRules(locale).select(n)]}`);
+
+// The chart's first label and the revisions' last count carry the unit
+// (#135): 4 takes the few form and 150 the many form, in Polish and Russian.
+const firstAndLast = async (page: Page, forms: Record<string, string>, locale: string) => {
+  const gaps = counted(locale, forms);
+  await expect(page.locator('#memory .memory-dot text').first()).toHaveText(gaps[0]!);
+  const revisions = await page.locator('#memory ol').getAttribute('aria-label');
+  expect(revisions?.endsWith(gaps.at(-1)!), revisions ?? '').toBe(true);
+};
+
+test('Polish counts: the gaps take dzień / dni / dnia by their number', async ({ page }) => {
   await page.goto('/pl');
-  const chart = page.locator('#memory svg');
-  for (const gap of ['1 dzień', '3 dni', '8 dni', '21 dni']) {
-    await expect(chart.getByText(gap, { exact: true })).toBeAttached();
-  }
+  await firstAndLast(page, { one: 'dzień', few: 'dni', many: 'dni', other: 'dnia' }, 'pl');
   await expect(page.locator('#journey').getByText('5069 słów')).toBeVisible();
 });
 
-test('Russian counts: 1 день, 3 дня, 8 дней, 21 день; Cyrillic in its own font', async ({
+test('Bangla chips: the gaps in Bengali digits, as the app shows numbers (#103)', async ({
+  page,
+}) => {
+  await page.goto('/bn');
+  const bn = new Intl.NumberFormat('bn');
+  await expect(page.locator('#memory .memory-chip')).toHaveText(
+    GAPS.map((n) => `${bn.format(n)} দিন`),
+  );
+});
+
+test('Russian counts: день / дня / дней by their number; Cyrillic in its own font', async ({
   page,
 }) => {
   const fonts: string[] = [];
   page.on('request', (r) => r.resourceType() === 'font' && fonts.push(r.url()));
   await page.goto('/ru');
-  const chart = page.locator('#memory svg');
-  for (const gap of ['1 день', '3 дня', '8 дней', '21 день']) {
-    await expect(chart.getByText(gap, { exact: true })).toBeAttached();
-  }
+  await firstAndLast(page, { one: 'день', few: 'дня', many: 'дней', other: 'дня' }, 'ru');
   await expect(page.locator('#journey').getByText('5 069 слов')).toBeVisible();
   // Inter Latin, and Inter's Cyrillic face for the Russian text (not a
   // system fallback); the Bangla font only if the page shows Bangla.

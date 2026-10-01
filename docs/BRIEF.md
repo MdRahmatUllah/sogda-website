@@ -47,7 +47,7 @@ One long page with a sticky header (logo, section links, language switch, theme 
 
 ### 3.3 It remembers for you (spaced repetition)
 - **Message:** *"Each word comes back just before you'd forget it."* A plain-language line about FSRS; no maths on the page.
-- **Visual:** an SVG **forgetting curve** that decays. Each review (a dot) resets it higher and flatter, and the gaps between reviews grow (1 day → 3 → 8 → 21 …).
+- **Visual:** an SVG **forgetting curve** that decays. Each review (a dot) resets it higher and flatter, and the gaps between reviews grow: the app's own schedule, Good after Good on each due day (4 days → 15 → 50 → 150 …, `facts.fsrs.good_days` from `content/facts.json`, #103).
 - **Motion:** the curve draws as it scrolls into view, and each review dot pops in with a tiny *ding* shape (no sound). Next to it, a small card shows one German word (*der Termin*) flipping through its revisions.
 
 ### 3.4 The journey: A1 → C2

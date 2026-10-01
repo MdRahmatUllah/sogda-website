@@ -36,7 +36,7 @@
     "copyright": "© {year} Sogda"
   },
   "hero": {
-    "kicker": "Niemiecki offline w aplikacji · A1–⁠C2",
+    "kicker": "Niemiecki offline w aplikacji\u00a0· A1–\u2060C2",
     "headline": "Ucz się niemieckiego dzień po dniu, z jasnym planem.",
     "subline": "Pełny kurs niemieckiego offline od A1 do C2, ze znaczeniami po polsku.",
     "pause": "Zatrzymaj animację",
@@ -81,14 +81,14 @@
   "memory": {
     "eyebrow": "Pamięta za ciebie",
     "title": "Każde słowo wraca tuż zanim wypadnie ci z pamięci.",
-    "body": "Sogda planuje każde słowo według FSRS, nowoczesnej metody powtórek rozłożonych w czasie. Za każdym razem, gdy przypomnisz sobie słowo, przerwa do następnej powtórki rośnie: dzień, potem trzy, potem osiem, potem trzy tygodnie. Czas poświęcasz słowom, które zaraz wypadłyby ci z pamięci.",
-    "chart": "Krzywa zapominania: pamięć nowego słowa słabnie, każda powtórka przywraca ją w pełni, a po każdej słabnie wolniej. Powtórki przychodzą po 1 dniu, 3 dniach, 8 dniach i 21 dniach.",
+    "body": "Sogda planuje każde słowo według FSRS, nowoczesnej metody powtórek rozłożonych w czasie. Za każdym razem, gdy przypomnisz sobie słowo, przerwa do następnej powtórki rośnie: {g1, plural, one {# dzień} few {# dni} many {# dni} other {# dnia}}, potem {g2, number}, potem {g3, number}, potem {g4, number}. Czas poświęcasz słowom, które zaraz wypadłyby ci z pamięci.",
+    "chart": "Krzywa zapominania: pamięć nowego słowa słabnie, każda powtórka przywraca ją w pełni, a po każdej słabnie wolniej. Odstępy między powtórkami rosną: {g1, plural, one {# dzień} few {# dni} many {# dni} other {# dnia}}, potem {g2, number}, {g3, number} i {g4, number}.",
     "axisMemory": "Pamięć",
     "axisTime": "Czas",
     "gap": "{days, plural, one {# dzień} few {# dni} many {# dni} other {# dnia}}",
-    "gapShort": "{days} d",
+    "gapShort": "{days, number} d",
     "meaning": "wizyta / termin",
-    "revisions": "Jego powtórki: po 1, 3, 8 i 21 dniach"
+    "revisions": "Odstępy do jego powtórek: {g1, number}, {g2, number}, {g3, number} i {g4, plural, one {# dzień} few {# dni} many {# dni} other {# dnia}}"
   },
   "journey": {
     "eyebrow": "Droga",

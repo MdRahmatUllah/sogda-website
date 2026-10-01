@@ -3,13 +3,13 @@ import { DeviceFrame } from '@/components/ui/DeviceFrame';
 import { Mark } from '@/components/ui/Mark';
 import { Screen } from '@/components/ui/Screen';
 import { StoreBadges } from '@/components/ui/StoreBadges';
-import { factArgs } from '@/i18n/facts';
+import { factArgs, facts } from '@/i18n/facts';
 import { TERMIN } from './Features';
 import { HeroPause } from './HeroPause';
 
-// #62: the gaps a new word comes back after, as the Memory section shows them
-// (1 day → 3 → 8 → 21, the app's own Again/Hard/Good/Easy intervals).
-const GAPS = [1, 3, 8, 21];
+// #62: the gaps a word comes back after, as the Memory section shows them:
+// the app's own schedule from content/facts.json (#103).
+const GAPS = facts.fsrs.good_days.slice(0, 4);
 
 // The front phone's loop (BRIEF §3.1): Today, a card's front, its back (the
 // meaning appears), a quiz. 3 s each; globals.css times the cross-fade.
@@ -108,7 +108,7 @@ export async function Hero({ locale }: { locale: string }) {
                 <span className="text-muted">/{word.say}/</span>
               </p>
             </div>
-            <ol className="flex gap-1.5" aria-label={memory('revisions')}>
+            <ol className="flex gap-1.5" aria-label={memory('revisions', factArgs)}>
               {GAPS.map((g) => (
                 <li
                   key={g}

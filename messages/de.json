@@ -81,14 +81,14 @@
   "memory": {
     "eyebrow": "Sogda merkt es sich für dich",
     "title": "Jedes Wort kommt wieder, kurz bevor du es vergessen würdest.",
-    "body": "Sogda plant jedes Wort mit FSRS, einer modernen Methode der verteilten Wiederholung. Jedes Mal, wenn du dich an ein Wort erinnerst, wird die Pause bis zur nächsten Wiederholung länger: ein Tag, dann drei, dann acht, dann drei Wochen. Deine Zeit fließt in die Wörter, die du sonst gleich vergessen würdest.",
-    "chart": "Eine Vergessenskurve: Die Erinnerung an ein neues Wort verblasst, jede Wiederholung holt sie ganz zurück, und danach verblasst sie jedes Mal langsamer. Die Wiederholungen kommen nach 1 Tag, 3 Tagen, 8 Tagen und 21 Tagen.",
+    "body": "Sogda plant jedes Wort mit FSRS, einer modernen Methode der verteilten Wiederholung. Jedes Mal, wenn du dich an ein Wort erinnerst, wird die Pause bis zur nächsten Wiederholung länger: {g1, plural, one {# Tag} other {# Tage}}, dann {g2, number}, dann {g3, number}, dann {g4, number}. Deine Zeit fließt in die Wörter, die du sonst gleich vergessen würdest.",
+    "chart": "Eine Vergessenskurve: Die Erinnerung an ein neues Wort verblasst, jede Wiederholung holt sie ganz zurück, und danach verblasst sie jedes Mal langsamer. Die Abstände zwischen den Wiederholungen wachsen: {g1, plural, one {# Tag} other {# Tage}}, dann {g2, number}, {g3, number} und {g4, number}.",
     "axisMemory": "Erinnerung",
     "axisTime": "Zeit",
     "gap": "{days, plural, one {# Tag} other {# Tage}}",
-    "gapShort": "{days} T.",
+    "gapShort": "{days, number} T.",
     "meaning": "appointment",
-    "revisions": "Seine Wiederholungen: nach 1, 3, 8 und 21 Tagen"
+    "revisions": "Die Abstände bis zu seinen Wiederholungen: {g1, number}, {g2, number}, {g3, number} und {g4, plural, one {# Tag} other {# Tage}}"
   },
   "journey": {
     "eyebrow": "Die Reise",
