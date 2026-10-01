@@ -3,8 +3,9 @@ import { routing } from '../i18n/routing';
 
 // #117: every URL in the sitemap, walked in one pass, with the cheap checks
 // that keep the release sweep true. Each page is served and has one absolute
-// canonical (itself) and well-formed hreflang to pages that exist; its card
-// and every internal link resolve; and its graph only points at nodes it has.
+// canonical (itself) and well-formed hreflang to pages that exist; its
+// description fits a search result; its card and every internal link
+// resolve; and its graph only points at nodes it has.
 const SITE = 'https://www.sogda.de';
 const LOCALES = new Set<string>([...routing.locales, 'x-default']);
 
@@ -49,6 +50,8 @@ test('#117 every sitemap page: served, one canonical, hreflang, its card, its gr
         (l) => [l.getAttribute('hreflang')!, l.getAttribute('href')!] as [string, string],
       ),
       image: document.querySelector('meta[property="og:image"]')?.getAttribute('content'),
+      description:
+        document.querySelector('meta[name="description"]')?.getAttribute('content') ?? '',
       graphs: [...document.querySelectorAll('script[type="application/ld+json"]')].map(
         (s) => s.textContent ?? '',
       ),
@@ -69,6 +72,9 @@ test('#117 every sitemap page: served, one canonical, hreflang, its card, its gr
         problems.push(`${url}: hreflang ${lang} → ${href}, not in the sitemap`);
     }
 
+    // A search result shows about 160 characters of it (#121).
+    if (!head.description || head.description.length > 160)
+      problems.push(`${url}: description ${head.description.length} characters`);
     if (!head.image?.startsWith(`${SITE}/og/`)) problems.push(`${url}: og:image ${head.image}`);
     else cards.add(path(head.image!));
 
