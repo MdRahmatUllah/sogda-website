@@ -276,6 +276,116 @@
     }
   },
   "pages": {
+    "spaced-repetition": {
+      "title": "Spaced repetition with FSRS, explained | Sogda",
+      "description": "How Sogda's {version} scheduler brings each German word back just before you'd forget it: rated Good, after {g1, number} days, then {g2, number}, {g3, number} and {g4, number}. Offline.",
+      "name": "Spaced repetition",
+      "eyebrow": "How Sogda remembers",
+      "h1": "Spaced repetition with FSRS, explained",
+      "answer": "Sogda plans every revision with {version}, a spaced-repetition method that brings each word back on the day your chance of recalling it would drop to {retention, number, percent}. A new word you rate Good comes back after {g1, plural, one {# day} other {# days}}, then after {g2, number}, {g3, number} and {g4, plural, one {# day} other {# days}} as you keep rating it Good, so your minutes go to the words you're about to forget.",
+      "what": {
+        "heading": "What FSRS is",
+        "body": "FSRS, the Free Spaced Repetition Scheduler, is an open-source method for deciding when to revise. For each word it tracks how stable your memory of it is and how hard the word is for you, and from those it works out the day your chance of recalling it would drop to your target. Sogda runs {version} with its published default weights, on your phone.",
+        "target": "Your target is {retention, number, percent} unless you change it: Target retention in Settings goes from {min, number, percent} to {max, number, percent}. A higher target brings words back sooner, so there are more revisions a day; a lower one spaces them further apart."
+      },
+      "gaps": {
+        "heading": "The first gap depends on your rating",
+        "body": "When a new word comes up, you rate how well you knew it with the app's four buttons. At the default target, the rating sets its first gap:",
+        "first": "{rating}: back in {days, plural, one {# day} other {# days}}"
+      },
+      "rating": {
+        "again": "Again",
+        "hard": "Hard",
+        "good": "Good",
+        "easy": "Easy"
+      },
+      "chain": {
+        "heading": "Then the gaps grow",
+        "body": "Each time the word comes back and you rate it Good, your memory of it is more stable and the next gap is longer: {g1, plural, one {# day} other {# days}}, then {g2, number}, {g3, number} and {g4, number}, and after that {g5, plural, one {# day} other {# days}}, more than a year.",
+        "lapse": "Forget a word you'd learned and rate it Again, and FSRS lowers its stability: the word comes back sooner, and its gaps grow again from there."
+      },
+      "plan": {
+        "heading": "Revision comes first, every day",
+        "body": "Each day's plan starts with revision: the words that are due, the earliest first, up to {revise, number} of them. When fewer are due, it fills the rest with the words you're most likely to have forgotten. Then come {new, number} new words, the grammar that's due and a few practice sentences.",
+        "wait": "Both numbers are defaults you can change in Settings. Due words beyond the day's {revise, number} wait for the next day, the earliest first, so a missed day never turns into a wall of revisions."
+      },
+      "why": {
+        "heading": "Why your minutes go to the words you're about to forget",
+        "body": "A word you know well is planned weeks or months ahead, so it takes none of today's time. A word that's fading is planned now, just before you'd forget it. The minutes you have each day go to the words that need them, and each revision you pass pushes the next one further out."
+      },
+      "faq": {
+        "target": {
+          "q": "Can I change how often words come back?",
+          "a": "Yes. Set Target retention in Settings, from {min, number, percent} to {max, number, percent}; the default is {retention, number, percent}. A higher target means shorter gaps and more revisions a day; a lower one, longer gaps and fewer."
+        },
+        "missed": {
+          "q": "What happens if I miss a day?",
+          "a": "The words that were due wait for you. The next day's plan takes the earliest due first, up to {revise, number} revisions, and the rest follow on the days after. When you rate a word, FSRS counts the days that really passed."
+        },
+        "offline": {
+          "q": "Does the scheduling need the internet?",
+          "a": "No. Sogda works fully offline: the scheduler runs on your phone, with no account, and your progress stays there."
+        },
+        "grammar": {
+          "q": "Does Sogda schedule grammar too?",
+          "a": "Yes. Each grammar topic has its own schedule from the same scheduler, and comes back for practice when it's due."
+        }
+      }
+    },
+    "mock-exams": {
+      "title": "{mocks, number} German mock exams, A1 to C2, offline | Sogda",
+      "description": "{mocks, number} German mock exams, {mocksPerStep, number} per step from {first} to {last}: {questions, number} questions, a writing and a speaking task, and a result by section. Offline.",
+      "name": "Mock exams",
+      "eyebrow": "Exam practice, offline",
+      "h1": "German mock exams from A1 to C2, on your phone",
+      "answer": "Sogda has {mocks, number} mock exams, {mocksPerStep, number} for each of its {steps, number} steps from {first} to {last}. Each has {questions, number} questions plus a writing and a speaking task, {points, number} points in all, with a result for each section; they're generated from the step's own words and grammar, work offline, and aren't official Goethe or telc papers.",
+      "paper": {
+        "heading": "What's in each paper",
+        "body": "Every paper has the same sections, in this order, drawn from the step's words and grammar:",
+        "items": "{name}: {n, plural, one {# question} other {# questions}}",
+        "task": "{name}: one task, {points, plural, one {# point} other {# points}}"
+      },
+      "section": {
+        "vocabulary": "Vocabulary",
+        "reverse": "Reverse",
+        "articles": "Articles",
+        "wordForms": "Word forms",
+        "gapFill": "Gap fill",
+        "grammar": "Grammar",
+        "listening": "Listening",
+        "writing": "Writing",
+        "speaking": "Speaking"
+      },
+      "levels": {
+        "heading": "Writing and speaking, level by level",
+        "body": "The writing task asks for a minimum length and the speaking task has a time limit, both set by the level. Each level names the exams its steps are built around:",
+        "item": "{level}: write at least {words, number} words, speak for up to {seconds, number} seconds. Built around {target}."
+      },
+      "compare": {
+        "heading": "How they compare with the Goethe and telc exams",
+        "skills": "The Goethe-Zertifikat and telc Deutsch exams test reading, listening, writing and speaking at each level. Sogda's papers share three of those skills, listening, writing and speaking, and add vocabulary, grammar, articles and word forms.",
+        "reading": "There's no reading-comprehension part: for reading, practise with longer German texts and the exams' own model papers.",
+        "official": "The papers are Sogda's own, generated from each step's words and grammar. They aren't official Goethe or telc papers, and their formats are Sogda's. The Goethe-Institut and telc publish model papers for every level on goethe.de and telc.net."
+      },
+      "faq": {
+        "official": {
+          "q": "Are these official Goethe or telc exams?",
+          "a": "No. They're Sogda's own papers, generated from each step's words and grammar. They share listening, writing and speaking with the real exams, have no reading part, and lead to no certificate."
+        },
+        "count": {
+          "q": "How many mock exams are there?",
+          "a": "{mocks, number}: {mocksPerStep, number} for each of the {steps, number} steps, from {first} to {last}."
+        },
+        "offline": {
+          "q": "Do the mock exams work offline?",
+          "a": "Yes. Sogda works fully offline, the mock exams included: no account and no signal needed."
+        },
+        "reading": {
+          "q": "Is there a reading part?",
+          "a": "No. Sogda's papers have vocabulary, grammar, listening, writing and speaking sections. Practise reading with longer texts and the exams' own model papers."
+        }
+      }
+    },
     "sogda-vs-anki": {
       "title": "Sogda or Anki for German: a ready course or your own decks",
       "description": "Sogda or Anki for German? Both use spaced repetition. Anki runs the decks you make or download; Sogda is a ready course, A1 to C2, offline.",
