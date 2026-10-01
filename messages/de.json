@@ -277,6 +277,60 @@
         }
       }
     },
+    "mock-exams": {
+      "title": "{mocks, number} Deutsch-Probeprüfungen, A1 bis C2, offline | Sogda",
+      "description": "{mocks, number} Probeprüfungen, {mocksPerStep, number} pro Stufe von {first} bis {last}: {questions, number} Fragen, eine Schreib- und eine Sprechaufgabe und ein Ergebnis pro Teil. Offline.",
+      "name": "Probeprüfungen",
+      "eyebrow": "Prüfungstraining, offline",
+      "h1": "Deutsch-Probeprüfungen von A1 bis C2 am Handy",
+      "answer": "Sogda hat {mocks, number} Probeprüfungen, {mocksPerStep, number} für jede seiner {steps, number} Stufen von {first} bis {last}. Jede hat {questions, number} Fragen und dazu eine Schreib- und eine Sprechaufgabe, {points, number} Punkte insgesamt, mit einem Ergebnis für jeden Teil; sie entstehen aus den Wörtern und der Grammatik der Stufe, funktionieren offline und sind keine offiziellen Goethe- oder telc-Prüfungen.",
+      "paper": {
+        "heading": "Was in jeder Prüfung steckt",
+        "body": "Jede Prüfung hat dieselben Teile in dieser Reihenfolge, aus den Wörtern und der Grammatik der Stufe:",
+        "items": "{name}: {n, plural, one {# Frage} other {# Fragen}}",
+        "task": "{name}: eine Aufgabe, {points, plural, one {# Punkt} other {# Punkte}}"
+      },
+      "section": {
+        "vocabulary": "Wortschatz",
+        "reverse": "Umgekehrt",
+        "articles": "Artikel",
+        "wordForms": "Wortformen",
+        "gapFill": "Lückentext",
+        "grammar": "Grammatik",
+        "listening": "Hören",
+        "writing": "Schreiben",
+        "speaking": "Sprechen"
+      },
+      "levels": {
+        "heading": "Schreiben und Sprechen, Niveau für Niveau",
+        "body": "Die Schreibaufgabe verlangt eine Mindestlänge, die Sprechaufgabe hat ein Zeitlimit, beides je nach Niveau. Jedes Niveau nennt die Prüfungen, um die seine Stufen aufgebaut sind:",
+        "item": "{level}: mindestens {words, number} Wörter schreiben, bis zu {seconds, number} Sekunden sprechen. Ausgerichtet auf {target}."
+      },
+      "compare": {
+        "heading": "Im Vergleich mit den Goethe- und telc-Prüfungen",
+        "skills": "Die Prüfungen Goethe-Zertifikat und telc Deutsch prüfen auf jedem Niveau Lesen, Hören, Schreiben und Sprechen. Die Prüfungen in Sogda teilen drei dieser Fertigkeiten, Hören, Schreiben und Sprechen, und ergänzen Wortschatz, Grammatik, Artikel und Wortformen.",
+        "reading": "Einen Leseteil gibt es nicht: Übe das Lesen mit längeren deutschen Texten und den Modellsätzen der Prüfungen.",
+        "official": "Die Prüfungen sind Sogdas eigene, aus den Wörtern und der Grammatik jeder Stufe erzeugt. Sie sind keine offiziellen Goethe- oder telc-Prüfungen, und ihre Aufgabenformate sind Sogdas eigene. Das Goethe-Institut und telc veröffentlichen Modellsätze für jedes Niveau auf goethe.de und telc.net."
+      },
+      "faq": {
+        "official": {
+          "q": "Sind das offizielle Goethe- oder telc-Prüfungen?",
+          "a": "Nein. Es sind Sogdas eigene Prüfungen, aus den Wörtern und der Grammatik jeder Stufe erzeugt. Sie teilen Hören, Schreiben und Sprechen mit den echten Prüfungen, haben keinen Leseteil und führen zu keinem Zertifikat."
+        },
+        "count": {
+          "q": "Wie viele Probeprüfungen gibt es?",
+          "a": "{mocks, number}: {mocksPerStep, number} für jede der {steps, number} Stufen, von {first} bis {last}."
+        },
+        "offline": {
+          "q": "Funktionieren die Probeprüfungen offline?",
+          "a": "Ja. Sogda funktioniert komplett offline, auch die Probeprüfungen: kein Konto und kein Netz nötig."
+        },
+        "reading": {
+          "q": "Gibt es einen Leseteil?",
+          "a": "Nein. Die Prüfungen in Sogda haben Wortschatz, Grammatik, Hören, Schreiben und Sprechen. Übe das Lesen mit längeren Texten und den Modellsätzen der Prüfungen."
+        }
+      }
+    },
     "sogda-vs-anki": {
       "title": "Sogda oder Anki für Deutsch: fertiger Kurs oder eigene Stapel",
       "description": "Sogda oder Anki zum Deutschlernen? Beide wiederholen verteilt. Anki lernt deine eigenen oder geladenen Stapel; Sogda ist ein fertiger Kurs A1–C2, offline.",
