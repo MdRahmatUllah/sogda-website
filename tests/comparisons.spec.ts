@@ -29,6 +29,8 @@ for (const slug of SLUGS) {
       }
       const description = await page.locator('meta[name="description"]').getAttribute('content');
       expect(description!.length).toBeLessThanOrEqual(160);
+      // Search results cut a title at about 60 characters (#120).
+      expect((await page.title()).length).toBeLessThanOrEqual(60);
 
       const main = page.locator('main#main');
       const answer = main.locator('h1 + p[data-answer]');
