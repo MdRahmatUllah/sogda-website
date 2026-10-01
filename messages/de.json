@@ -226,7 +226,7 @@
       "description": "{mocks, number} Probeprüfungen, {mocksPerStep, number} pro Stufe von {first} bis {last}: {questions, number} Fragen, eine Schreib- und eine Sprechaufgabe und ein Ergebnis pro Teil. Offline.",
       "name": "Probeprüfungen",
       "eyebrow": "Prüfungstraining, offline",
-      "h1": "Deutsch-Probeprüfungen von A1 bis C2, auf deinem Handy",
+      "h1": "Deutsch-Probeprüfungen von A1 bis C2 am Handy",
       "answer": "Sogda hat {mocks, number} Probeprüfungen, {mocksPerStep, number} für jede seiner {steps, number} Stufen von {first} bis {last}. Jede hat {questions, number} Fragen und dazu eine Schreib- und eine Sprechaufgabe, {points, number} Punkte insgesamt, mit einem Ergebnis für jeden Teil; sie entstehen aus den Wörtern und der Grammatik der Stufe, funktionieren offline und sind keine offiziellen Goethe- oder telc-Prüfungen.",
       "paper": {
         "heading": "Was in jeder Prüfung steckt",
