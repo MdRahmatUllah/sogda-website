@@ -36,10 +36,53 @@ for (const path of ['/bn', '/bn/spaced-repetition', '/bn/about', '/bn/a1-1', '/b
     await page.goto(path);
     await page.waitForTimeout(3000);
     expect(held, 'the Bengali face was requested, and held back').toBeGreaterThan(0);
-    // /bn's hero also re-wraps when Inter (not Bangla) arrives: #126, within the
-    // 0.05 budget until it's fixed; every other page holds to 0.01.
     expect(await page.evaluate(() => (window as unknown as { cls: number }).cls)).toBeLessThan(
-      path === '/bn' ? 0.05 : 0.01,
+      0.01,
     );
   });
+}
+
+// #126: Inter isn't preloaded either (~0.6 s of LCP), and a swap re-wrapped the
+// hero when it arrived: /bn moved 0.10 at 360 px, /ru and /pl about 0.03. Each
+// home at the common phone widths, with Inter (Latin and Cyrillic) held back.
+for (const path of ['/en', '/de', '/pl', '/ru', '/bn']) {
+  for (const width of [360, 384, 412]) {
+    test(`${path} at ${width} px: a late Inter moves nothing (#126)`, async ({
+      page,
+      request,
+      browserName,
+    }) => {
+      test.skip(browserName !== 'chromium', 'layout-shift entries are Chromium-only');
+      await page.setViewportSize({ width, height: 900 });
+      const html = await (await request.get(path)).text();
+      const faces = [
+        ...html.matchAll(/font-family:(?:inter|interCyrillic);src:url\(([^)]+\.woff2)\)/g),
+      ];
+      expect(faces.length, 'the page declares Inter').toBeGreaterThan(0);
+      let held = 0;
+      for (const [, file] of faces)
+        await page.route(`**${file}`, async (route) => {
+          held += 1;
+          await new Promise((r) => setTimeout(r, 1500));
+          await route.continue();
+        });
+      await page.addInitScript(() => {
+        const w = window as unknown as { cls: number };
+        w.cls = 0;
+        new PerformanceObserver((list) => {
+          for (const e of list.getEntries() as unknown as {
+            value: number;
+            hadRecentInput: boolean;
+          }[])
+            if (!e.hadRecentInput) w.cls += e.value;
+        }).observe({ type: 'layout-shift', buffered: true });
+      });
+      await page.goto(path);
+      await page.waitForTimeout(3000);
+      expect(held, 'Inter was requested, and held back').toBeGreaterThan(0);
+      expect(await page.evaluate(() => (window as unknown as { cls: number }).cls)).toBeLessThan(
+        0.01,
+      );
+    });
+  }
 }
