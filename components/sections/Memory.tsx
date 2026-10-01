@@ -62,7 +62,7 @@ export async function Memory({ locale }: { locale: string }) {
               className="w-full"
             >
               <line x1="48" y1="266" x2="620" y2="266" stroke="var(--line)" strokeWidth="2" />
-              <line x1="48" y1="20" x2="48" y2="266" stroke="var(--line)" strokeWidth="2" />
+              <line x1="48" y1="30" x2="48" y2="266" stroke="var(--line)" strokeWidth="2" />
               <text x="30" y="266" fontSize="20" fill="var(--muted)" transform="rotate(-90 30 266)">
                 {t('axisMemory')}
               </text>
