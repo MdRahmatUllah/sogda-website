@@ -223,11 +223,11 @@
   "pages": {
     "spaced-repetition": {
       "title": "Verteilte Wiederholung mit FSRS, erklärt | Sogda",
-      "description": "Wie Sogdas {version}-Planer jedes deutsche Wort zurückbringt, kurz bevor du es vergessen würdest: nach {g1, number} Tagen, dann nach {g2, number}, {g3, number} und {g4, number}, solange du es weißt. Offline, auf deinem Handy.",
+      "description": "Wie Sogdas {version}-Planer jedes deutsche Wort zurückbringt, kurz bevor du es vergessen würdest: nach {g1, number} Tagen, dann nach {g2, number}, {g3, number} und {g4, number}, solange du dich daran erinnerst. Offline, auf deinem Handy.",
       "name": "Verteilte Wiederholung",
       "eyebrow": "Wie Sogda sich erinnert",
       "h1": "Verteilte Wiederholung mit FSRS, erklärt",
-      "answer": "Sogda plant jede Wiederholung mit {version}, einer Methode der verteilten Wiederholung, die jedes Wort an dem Tag zurückbringt, an dem deine Chance, dich daran zu erinnern, auf {retention, number, percent} sinken würde. Ein neues Wort, das du mit „Good“ bewertest, kommt nach {g1, plural, one {# Tag} other {# Tagen}} wieder, dann nach {g2, number}, {g3, number} und {g4, plural, one {# Tag} other {# Tagen}}, solange du es weiter mit „Good“ bewertest; so gehen deine Minuten an die Wörter, die du gerade vergessen würdest.",
+      "answer": "Sogda plant jede Wiederholung mit {version}, einer Methode der verteilten Wiederholung, die jedes Wort an dem Tag zurückbringt, an dem deine Chance, dich daran zu erinnern, auf {retention, number, percent} sinken würde. Ein neues Wort, das du mit „Good“ bewertest, kommt nach {g1, plural, one {# Tag} other {# Tagen}} wieder, dann nach {g2, number}, {g3, number} und {g4, plural, one {# Tag} other {# Tagen}}, solange du es weiter mit „Good“ bewertest; so fließt deine Zeit in die Wörter, die du gerade vergessen würdest.",
       "what": {
         "heading": "Was FSRS ist",
         "body": "FSRS, der Free Spaced Repetition Scheduler, ist ein Open-Source-Verfahren, das entscheidet, wann du wiederholst. Für jedes Wort verfolgt es, wie stabil deine Erinnerung daran ist und wie schwer dir das Wort fällt, und berechnet daraus den Tag, an dem deine Chance, dich zu erinnern, auf dein Ziel sinken würde. Sogda nutzt {version} mit den veröffentlichten Standardgewichten, direkt auf deinem Handy.",
@@ -235,7 +235,7 @@
       },
       "gaps": {
         "heading": "Die erste Pause hängt von deiner Bewertung ab",
-        "body": "Wenn ein neues Wort drankommt, bewertest du mit den vier Tasten der App, wie gut du es wusstest. Beim Standardziel legt die Bewertung die erste Pause fest:",
+        "body": "Wenn ein neues Wort drankommt, bewertest du mit den vier Tasten der App, wie gut du dich daran erinnert hast. Beim Standardziel legt die Bewertung die erste Pause fest:",
         "first": "„{rating}“: wieder nach {days, plural, one {# Tag} other {# Tagen}}"
       },
       "rating": {
@@ -255,8 +255,8 @@
         "wait": "Beide Zahlen sind Voreinstellungen, die du unter „Settings“ ändern kannst. Fällige Wörter über die {revise, number} des Tages hinaus warten auf den nächsten Tag, die am frühesten fälligen zuerst. So wird aus einem verpassten Tag nie ein Berg von Wiederholungen."
       },
       "why": {
-        "heading": "Warum deine Minuten an die Wörter gehen, die du gerade vergessen würdest",
-        "body": "Ein Wort, das du gut kannst, ist Wochen oder Monate im Voraus geplant und kostet dich heute keine Zeit. Ein Wort, das verblasst, ist jetzt dran, kurz bevor du es vergessen würdest. Die Minuten, die du jeden Tag hast, gehen an die Wörter, die sie brauchen, und jede bestandene Wiederholung schiebt die nächste weiter hinaus."
+        "heading": "Warum deine Zeit in die Wörter fließt, die du gerade vergessen würdest",
+        "body": "Ein Wort, das du gut kannst, ist Wochen oder Monate im Voraus geplant und kostet dich heute keine Zeit. Ein Wort, das verblasst, ist jetzt dran, kurz bevor du es vergessen würdest. Deine Zeit fließt jeden Tag in die Wörter, die sie brauchen, und jede bestandene Wiederholung schiebt die nächste weiter hinaus."
       },
       "faq": {
         "target": {
