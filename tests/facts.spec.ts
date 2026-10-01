@@ -51,3 +51,110 @@ for (const locale of ['en', 'de', 'pl', 'ru', 'bn'] as const) {
     await expect(page.locator('#journey-count')).toHaveAttribute('data-total', String(words));
   });
 }
+
+// The drift checks (#61). A number the site states is either an ICU argument
+// from facts.json or a picture's own content (an alt text says what its
+// screenshot shows); a number that is close to a fact but isn't it is stale.
+const t = facts.totals;
+// The counts a stale copy gets nearly right: the words and topics, in all and
+// per step.
+const near: number[] = [
+  t.words,
+  t.grammar_topics,
+  ...facts.steps.map((s: { words: number }) => s.words),
+];
+// Other facts a page may state that land near a step's count (B1.1 has 194
+// words, C1.1 403): the mock paper's, and BRIEF §4's text scale (200 %) and
+// voice download (~400 MB).
+// ponytail: a hand list; a new BRIEF figure near a step count needs an entry.
+const allowed = new Set<number>([
+  ...near,
+  ...Object.values(facts.mock_exam.writing_min_words as Record<string, number>),
+  ...Object.values(facts.mock_exam.speaking_seconds as Record<string, number>),
+  200,
+  400,
+]);
+const BN = '০১২৩৪৫৬৭৮৯';
+// A number as the site writes it in any locale (5,069 · 5.069 · 5 069 · 5069 ·
+// ৫,০৬৯টি), but not a digit of a level code (A1.1), a version (1.1.0) or a
+// Latin word.
+const NUM =
+  /(?<![\p{Script=Latin}\d.,])\d{1,3}(?:[,.\u00a0\u202f ]\d{3})+(?![\d\p{Script=Latin}])|(?<![\p{Script=Latin}\d.,])\d+(?![\d\p{Script=Latin}]|[.,]\d)/gu;
+const numbers = (s: string) =>
+  [...s.replace(/[০-৯]/g, (d) => String(BN.indexOf(d))).matchAll(NUM)].map((m) =>
+    Number(m[0].replace(/[,.\u00a0\u202f ]/g, '')),
+  );
+/** Numbers within 5 % of a count that aren't any fact: "about 5,000", "540". */
+const nearMisses = (s: string) =>
+  numbers(s).filter((n) => !allowed.has(n) && near.some((v) => Math.abs(n - v) <= v * 0.05));
+
+function* leaves(node: unknown, path: string): Generator<[string, string]> {
+  if (typeof node === 'string') yield [path, node];
+  else if (node && typeof node === 'object')
+    for (const [k, v] of Object.entries(node)) yield* leaves(v, `${path}.${k}`);
+}
+
+test('#61 no message types a fact: the numbers are ICU arguments', () => {
+  // The course-wide counts and each step's words: a literal would outlive
+  // the next content build. (A picture's alt texts may say what it shows.)
+  const counts = new Set<number>([
+    ...Object.values(t as Record<string, number>).filter((n) => n >= 10),
+    ...facts.steps.map((s: { words: number }) => s.words),
+    facts.mock_exam.questions,
+    facts.mock_exam.points,
+  ]);
+  const typed: string[] = [];
+  for (const locale of ['en', 'de', 'pl', 'ru', 'bn']) {
+    const messages = JSON.parse(readFileSync(`messages/${locale}.json`, 'utf8'));
+    for (const [path, text] of leaves(messages, locale)) {
+      // An ICU argument, plural selects included, is not a literal.
+      let bare = text;
+      while (/\{[^{}]*\}/.test(bare)) bare = bare.replace(/\{[^{}]*\}/g, '');
+      for (const n of numbers(bare)) if (counts.has(n)) typed.push(`${path}: ${n} in "${text}"`);
+    }
+  }
+  expect(typed).toEqual([]);
+});
+
+test('#61 no page states a near-miss of a count, in its text or its images’ alt', async ({
+  page,
+  request,
+}) => {
+  const xml = await (await request.get('/sitemap.xml')).text();
+  const paths = [...xml.matchAll(/<loc>https:\/\/www\.sogda\.de([^<]*)<\/loc>/g)].map(
+    (m) => m[1] || '/',
+  );
+  expect(paths.length).toBeGreaterThan(10);
+  const stale: string[] = [];
+  for (const path of paths) {
+    await page.goto(path);
+    const text = await page.evaluate(() =>
+      [
+        document.body.innerText,
+        ...[...document.querySelectorAll('img[alt]')].map((i) => i.getAttribute('alt')),
+        document.querySelector('meta[name="description"]')?.getAttribute('content') ?? '',
+      ].join('\n'),
+    );
+    for (const n of nearMisses(text)) stale.push(`${path}: ${n}`);
+  }
+  expect(stale).toEqual([]);
+});
+
+test('#61 BRIEF §4 and the Play listing state the facts facts.json has', () => {
+  const brief = readFileSync('docs/BRIEF.md', 'utf8');
+  const s4 = brief.slice(brief.indexOf('## 4.'), brief.indexOf('## 5.'));
+  const en = new Intl.NumberFormat('en');
+  expect(s4).toContain(
+    `**${t.steps} steps from ${facts.steps[0].code} to ${facts.steps.at(-1).code}**`,
+  );
+  expect(s4).toContain(`**${en.format(t.words)} words**`);
+  expect(s4).toContain(`**${t.grammar_topics} grammar topics**`);
+  expect(s4).toContain(`Android ${facts.app.min_android}+ (minSdk ${facts.app.min_sdk})`);
+  expect(nearMisses(s4)).toEqual([]);
+  // The store texts come verbatim from the app (store-listing.md).
+  for (const [locale, texts] of Object.entries(facts.listing as Record<string, object>)) {
+    for (const [field, text] of Object.entries(texts as Record<string, string>)) {
+      expect(nearMisses(text), `${locale} ${field}`).toEqual([]);
+    }
+  }
+});
