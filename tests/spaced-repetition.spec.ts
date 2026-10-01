@@ -13,6 +13,14 @@ for (const locale of LOCALES) {
     const n = (x: number) => new Intl.NumberFormat(locale).format(x);
     const pct = (x: number) => new Intl.NumberFormat(locale, { style: 'percent' }).format(x);
 
+    test('its description fits a search result: 160 characters at most (#121)', async ({
+      page,
+    }) => {
+      await page.goto(`/${locale}/spaced-repetition`);
+      const description = await page.locator('meta[name="description"]').getAttribute('content');
+      expect(description!.length).toBeLessThanOrEqual(160);
+    });
+
     test('its answer states the target and the Good chain', async ({ page }) => {
       await page.goto(`/${locale}/spaced-repetition`);
       const answer = (await page.locator('[data-answer]').textContent())!;

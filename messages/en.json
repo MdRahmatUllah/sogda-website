@@ -278,7 +278,7 @@
   "pages": {
     "spaced-repetition": {
       "title": "Spaced repetition with FSRS, explained | Sogda",
-      "description": "How Sogda's {version} scheduler brings each German word back just before you'd forget it: after {g1, number} days, then {g2, number}, {g3, number} and {g4, number} as you keep remembering it. Offline, on your phone.",
+      "description": "How Sogda's {version} scheduler brings each German word back just before you'd forget it: after {g1, number} days, then {g2, number}, {g3, number} and {g4, number}. Offline.",
       "name": "Spaced repetition",
       "eyebrow": "How Sogda remembers",
       "h1": "Spaced repetition with FSRS, explained",
