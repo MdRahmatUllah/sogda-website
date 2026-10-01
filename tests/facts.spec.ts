@@ -64,13 +64,14 @@ const near: number[] = [
   ...facts.steps.map((s: { words: number }) => s.words),
 ];
 // Other facts a page may state that land near a step's count (B1.1 has 194
-// words, C1.1 403): the mock paper's, and BRIEF §4's text scale (200 %) and
-// voice download (~400 MB).
+// words, C1.1 403): the mock paper's, the scheduler's gaps (409 days, #73),
+// and BRIEF §4's text scale (200 %) and voice download (~400 MB).
 // ponytail: a hand list; a new BRIEF figure near a step count needs an entry.
 const allowed = new Set<number>([
   ...near,
   ...Object.values(facts.mock_exam.writing_min_words as Record<string, number>),
   ...Object.values(facts.mock_exam.speaking_seconds as Record<string, number>),
+  ...facts.fsrs.good_days,
   200,
   400,
 ]);
