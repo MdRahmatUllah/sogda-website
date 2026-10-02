@@ -253,3 +253,22 @@ test('Russian counts: день / дня / дней by their number; Cyrillic in 
   await page.waitForLoadState('networkidle');
   expect(fonts.length).toBeGreaterThanOrEqual(2);
 });
+
+// #139: a page translator (Chrome's "Translate to English") ignores `lang`, so
+// the course's German must be marked translate="no" (in SVG, the class
+// notranslate), or /de's word cards turn into English. The Impressum's German
+// stays translatable (not in this list).
+for (const path of ['/de', '/en', '/en/a1-1', '/bn/learn-german-in-bangla']) {
+  test(`${path}: the course's German keeps its German under page translation (#139)`, async ({
+    page,
+  }) => {
+    await page.goto(path);
+    const marks = await page
+      .locator('main [lang="de"]')
+      .evaluateAll((els) =>
+        els.map((e) => [e.textContent?.trim(), !!e.closest('[translate="no"], .notranslate')]),
+      );
+    expect(marks.length, 'the page shows German').toBeGreaterThan(0);
+    expect(marks.filter(([, kept]) => !kept).map(([text]) => text)).toEqual([]);
+  });
+}

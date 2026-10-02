@@ -100,7 +100,9 @@ export async function Hero({ locale }: { locale: string }) {
             <figcaption className="sr-only">{t('card.label')}</figcaption>
             <div className="min-w-0">
               <p className="text-xs font-bold text-muted">A1.1</p>
-              <p className="text-2xl font-extrabold" lang="de">
+              {/* translate="no": a page translator ignores lang, and would turn
+                  the course's German into the reader's language (#139). */}
+              <p className="text-2xl font-extrabold" lang="de" translate="no">
                 <span className="text-der">der</span> Termin
               </p>
               <p lang={word.lang}>

@@ -110,7 +110,7 @@ export async function Memory({ locale }: { locale: string }) {
           </figure>
           <div className="memory-card card mx-auto flex w-full max-w-sm flex-wrap items-center justify-between gap-x-5 gap-y-3 p-5">
             <div className="min-w-0">
-              <p className="text-2xl font-extrabold" lang="de">
+              <p className="text-2xl font-extrabold" lang="de" translate="no">
                 <span className="text-der">der</span> Termin
               </p>
               <p className="text-muted">{t('meaning')}</p>
