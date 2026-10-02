@@ -126,6 +126,8 @@ export async function Journey({ locale }: { locale: string }) {
                       textAnchor="middle"
                       fill="var(--muted)"
                       lang="de"
+                      // SVG has no translate attribute: Chrome's class (#139).
+                      className="notranslate"
                     >
                       {label}
                     </text>

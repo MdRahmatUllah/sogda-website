@@ -186,7 +186,10 @@ export async function Languages({ locale }: { locale: string }) {
           <p className="mt-5 max-w-xl text-lg text-muted">{t('body')}</p>
         </div>
         <Reveal className="mx-auto w-full max-w-md">
-          <div className="card p-6 sm:p-8">
+          {/* The whole card stays as written under page translation (#139): the
+              German word, and its meaning in each of the app's languages under
+              their own names, are the point of it. */}
+          <div className="card p-6 sm:p-8" translate="no">
             <p className="text-sm font-bold text-muted">A1.1</p>
             <p className="mt-2 text-4xl font-extrabold" lang="de">
               <span className="text-der">der</span> Termin
