@@ -110,6 +110,13 @@
     "carousel": "Quiz- und Prüfungsbildschirme",
     "item": "Bildschirm {n} von {total}"
   },
+  "documents": {
+    "eyebrow": "Dein eigenes Deutsch",
+    "title": "Lerne mit dem Deutsch, das dir begegnet.",
+    "read": "Füge einen Text ein oder teile ihn, fotografiere einen Brief oder wähle ein PDF. Sogda liest ihn auf deinem Handy und markiert die Wörter, die du noch nicht kennst, nach Niveau.",
+    "add": "Die Wörter, die du auswählst, kommen mit dem Satz, in dem du sie gefunden hast, in deinen Plan. Unter „My documents“ findest du deine Texte wieder.",
+    "translate": "Optional: Hy-MT2 übersetzt auf dem Handy, etwa Beispielsätze und Wörter außerhalb des Kurses, wenn das Handy genug Speicher hat."
+  },
   "features": {
     "eyebrow": "Und alles andere",
     "title": "Gemacht für den Alltag echter Lernender.",
@@ -185,7 +192,7 @@
     "title": "Fragen, beantwortet.",
     "internet": {
       "q": "Brauche ich Internet?",
-      "a": "Nein. Sogda funktioniert komplett offline. Nur die optionale natürliche Stimme wird einmal über WLAN heruntergeladen."
+      "a": "Nein. Sogda funktioniert komplett offline. Nur zwei optionale Extras werden heruntergeladen: die natürliche Stimme, einmal über WLAN, und Hy-MT2 für die Übersetzung auf dem Handy."
     },
     "android": {
       "q": "Welche Android-Version brauche ich?",
@@ -198,6 +205,14 @@
     "data": {
       "q": "Werden meine Daten weitergegeben?",
       "a": "Nein. Es gibt kein Konto, und dein Fortschritt bleibt auf deinem Handy."
+    },
+    "documents": {
+      "q": "Wohin geht mein Dokument?",
+      "a": "Nirgendwohin: Sogda liest es auf deinem Handy. Ein Foto wird ohne Standort- und Kameradaten gespeichert oder, wenn du willst, gar nicht (Einstellungen), und Dokumente können sich nach 30, 90 oder 365 Tagen selbst löschen."
+    },
+    "translation": {
+      "q": "Ist die Übersetzung online?",
+      "a": "Nein. Hy-MT2 ist ein optionaler Download, der auf deinem Handy übersetzt, wenn es genug Speicher hat: Beispielsätze und Bedeutungen für Wörter außerhalb des Kurses."
     },
     "exams": {
       "q": "Auf welche Prüfungen bereitet Sogda mich vor?",
@@ -464,7 +479,7 @@
         },
         "offline": {
           "q": "Funktioniert Sogda offline?",
-          "a": "Ja, komplett und ohne Konto. Nur die optionale natürliche Stimme ist ein Download, einmal, über WLAN."
+          "a": "Ja, komplett und ohne Konto. Nur zwei optionale Extras sind ein Download: die natürliche Stimme, einmal über WLAN, und Hy-MT2 für die Übersetzung auf dem Handy."
         },
         "switch": {
           "q": "Kann ich meinen Duolingo-Fortschritt zu Sogda mitnehmen?",
@@ -518,6 +533,12 @@
             "p1": "{mocksPerStep, number} Probeprüfungen für jede Stufe, {mocks, number} insgesamt, mit Hören, Schreiben und Sprechen wie in den echten Prüfungen, dazu Wortschatz und Grammatik, und einem Ergebnis für jeden Teil. Einen Leseverstehen-Teil gibt es nicht. Sie werden aus den Wörtern und der Grammatik der Stufe erzeugt: Es sind keine offiziellen Goethe- oder telc-Prüfungen, und Sogda ist mit keinem der beiden verbunden."
           }
         },
+        "documents": {
+          "heading": "Mit dem Deutsch, das dir begegnet",
+          "body": {
+            "p1": "Füge einen Text ein oder teile ihn, fotografiere einen Brief oder wähle ein PDF. Sogda liest ihn auf deinem Handy und markiert die Wörter, die du noch nicht kennst, nach Niveau. Die Wörter, die du auswählst, kommen mit dem Satz, in dem du sie gefunden hast, in deinen Plan. Unter „My documents“ findest du deine Texte wieder. Optional: Hy-MT2 übersetzt auf dem Handy, etwa Beispielsätze und Wörter außerhalb des Kurses, wenn das Handy genug Speicher hat."
+          }
+        },
         "languages": {
           "heading": "In deiner Sprache",
           "body": {
@@ -556,7 +577,7 @@
         },
         "offline": {
           "q": "Funktioniert Sogda ohne Internet?",
-          "a": "Ja, komplett. Nur die optionale natürliche Stimme ist ein Download, einmal, über WLAN."
+          "a": "Ja, komplett. Nur zwei optionale Extras sind ein Download: die natürliche Stimme, einmal über WLAN, und Hy-MT2 für die Übersetzung auf dem Handy."
         },
         "account": {
           "q": "Brauche ich ein Konto?",

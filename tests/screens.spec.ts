@@ -69,6 +69,7 @@ test.describe('the screenshot pipeline', () => {
         }
       }
     }
+    // 21 once the app re-shoots the course (DeutschPlan #1392, skipped in all three).
     expect(count).toBeGreaterThanOrEqual(18);
   });
 

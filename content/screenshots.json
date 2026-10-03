@@ -2,21 +2,25 @@
   "$comment": "The real app screens the site shows (BRIEF §6). Each is the app's golden <golden>_<theme>_<device>.png at `ref`, never redrawn. Bump `ref` to the app's release tag when it ships, then `pnpm sync:screens`.",
   "ref": "4b088a18c815355404b1d742302d5a8e204ed77e",
   "store": {
-    "$comment": "The app's Play screenshots (docs/05-dev-guide/store/<set>/<capture>.png) at one pinned app commit (#66). A set's `skip` lists captures that are out of date. Bump `ref` when the app re-shoots a set, then `pnpm sync:screens`: it records that commit's site-facts `content_version`, which must equal content/facts.json's (#61).",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "$comment": "The app's Play screenshots (docs/05-dev-guide/store/<set>/<capture>.png) at one pinned app commit (#66). A set's `skip` lists captures that are out of date. Bump `ref` when the app re-shoots a set, then `pnpm sync:screens`: it records that commit's site-facts `content_version`, which must equal content/facts.json's (#61). Skipped at this ref: every set's 04-course, still the 1.1.0 shot «0 of 5,069 words» while the course has 5,142 (DeutschPlan #1392). Drop the skip once the app re-shoots it.",
+    "ref": "2bdc9258f1d087944079c175e104dbb14645198e",
     "sets": {
       "en": {
         "light": "phone-light",
-        "dark": "phone-dark"
+        "dark": "phone-dark",
+        "skip": ["04-course"]
       },
       "pl": {
-        "light": "pl-phone-light"
+        "light": "pl-phone-light",
+        "skip": ["04-course"]
       },
       "ru": {
-        "light": "ru-phone-light"
+        "light": "ru-phone-light",
+        "skip": ["04-course"]
       },
       "bn": {
-        "light": "bn-phone-light"
+        "light": "bn-phone-light",
+        "skip": ["04-course"]
       }
     }
   },
@@ -207,6 +211,19 @@
         "bn": "একটি শব্দের নিজের পাতা: তার অর্থ, অডিওসহ উদাহরণ বাক্য, আর Duden, DWDS ও Wiktionary-র লিংক।"
       },
       "store": "06-word"
+    },
+    {
+      "id": "document",
+      "golden": "doc_words",
+      "themes": ["light", "dark"],
+      "alt": {
+        "en": "A German letter, «Nebenkosten 2025», read by Sogda: the words you don't know yet are marked by level, and buttons at the foot add them to your plan.",
+        "de": "Ein deutscher Brief, «Nebenkosten 2025», von Sogda gelesen: Die Wörter, die du noch nicht kennst, sind nach Niveau markiert, und Schaltflächen unten fügen sie deinem Plan hinzu.",
+        "pl": "Niemiecki list „Nebenkosten 2025” odczytany przez Sogdę: słowa, których jeszcze nie znasz, są zaznaczone według poziomu, a przyciski na dole dodają je do planu.",
+        "ru": "Немецкое письмо «Nebenkosten 2025», прочитанное Sogda: слова, которых ты ещё не знаешь, отмечены по уровням, а кнопки внизу добавляют их в план.",
+        "bn": "Sogda-র পড়া একটি জার্মান চিঠি, “Nebenkosten 2025”: যে শব্দগুলো এখনো জানেন না সেগুলো লেভেল অনুযায়ী চিহ্নিত, আর নিচের বোতামগুলো সেগুলো আপনার প্ল্যানে যোগ করে।"
+      },
+      "store": "07-document"
     },
     {
       "id": "compare",

@@ -2,7 +2,7 @@ import { setRequestLocale } from 'next-intl/server';
 import { use } from 'react';
 import { Faq, FinalCta, Gallery } from '@/components/sections/Closing';
 import { DayStory } from '@/components/sections/DayStory';
-import { FeatureGrid, Languages, Looks, Practice } from '@/components/sections/Features';
+import { Documents, FeatureGrid, Languages, Looks, Practice } from '@/components/sections/Features';
 import { Hero } from '@/components/sections/Hero';
 import { Journey } from '@/components/sections/Journey';
 import { JsonLd } from '@/components/sections/JsonLd';
@@ -19,6 +19,7 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
       <Memory locale={locale} />
       <Journey locale={locale} />
       <Practice locale={locale} />
+      <Documents locale={locale} />
       <FeatureGrid locale={locale} />
       <Looks locale={locale} />
       <Languages locale={locale} />
