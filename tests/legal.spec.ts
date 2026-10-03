@@ -41,6 +41,27 @@ test('the privacy policy says what the site does, and nothing it doesn’t', asy
   await expect(page.locator('a[href="https://vercel.com/legal/dpa"]').first()).toBeVisible();
 });
 
+// #145: Play's privacy form takes this page, so it covers the app too, from
+// the app repo's facts (release.md's Data safety, BR-PRIV-01/02, BR-DOC-01/05).
+test('the privacy policy covers the app as well as the website (#145)', async ({ page }) => {
+  await page.goto('/en/datenschutz');
+  const en = await page.locator('article[lang="en"]').innerText();
+  expect(en).not.toContain('This policy covers the website.');
+  for (const fact of [
+    'also covers the Sogda app for Android',
+    'no advertising ID',
+    'Android backup and device transfer are switched off',
+    'Google ML Kit text recognition',
+    'huggingface.co',
+    'Speaking exam',
+    'rating card',
+  ])
+    expect(en, fact).toContain(fact);
+  const de = await page.locator('article[lang="de"]').innerText();
+  expect(de).toContain('gilt auch für die Sogda-App für Android');
+  expect(de).toContain('huggingface.co');
+});
+
 test.describe('until the owner fills in content/legal.json', () => {
   test.skip(complete, 'the Impressum is complete');
 
