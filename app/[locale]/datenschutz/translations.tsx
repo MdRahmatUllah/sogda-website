@@ -39,15 +39,15 @@ export function privacyTranslation(locale: string): ReactNode | undefined {
           </p>
           <h2>2. W skrócie</h2>
           <p>
-            Ta strona internetowa składa się ze statycznych stron. Nie ustawia plików cookie, nie
-            korzysta z narzędzi analitycznych ani śledzących i nie wczytuje niczego od podmiotów
-            trzecich; także czcionki udostępniamy sami. Nie ma formularza, który wysyłałby dane.
+            Ta witryna składa się ze statycznych stron. Nie zapisuje plików cookie, nie korzysta z
+            narzędzi analitycznych ani śledzących i nie wczytuje niczego od podmiotów trzecich;
+            także czcionki udostępniamy sami. Nie ma formularza, który wysyłałby dane.
           </p>
           <h2>3. Hosting</h2>
           <p>
             Stronę udostępnia Vercel Inc., 440 N Barranca Avenue #4133, Covina, CA 91723, USA. Przy
-            wywołaniu strony Vercel przetwarza w logach serwera dane niezbędne technicznie: adres
-            IP, datę i godzinę, wywołaną stronę, stronę, z której Państwo przyszli (referrer), oraz
+            otwarciu strony Vercel przetwarza w logach serwera dane niezbędne technicznie: adres IP,
+            datę i godzinę, otwieraną stronę, stronę, z której Państwo przyszli (referrer), oraz
             identyfikator przeglądarki (user agent). Podstawą prawną jest art. 6 ust. 1 lit. f RODO:
             nasz prawnie uzasadniony interes w bezpiecznym i niezawodnym udostępnianiu strony.
             Vercel przetwarza te dane w naszym imieniu; przekazywanie danych do USA opiera się na
@@ -59,8 +59,8 @@ export function privacyTranslation(locale: string): ReactNode | undefined {
             Jeśli wybiorą Państwo jasny lub ciemny motyw albo język, przeglądarka zapisuje ten wybór
             lokalnie (localStorage), aby obowiązywał przy następnej wizycie. Te informacje nie
             opuszczają Państwa urządzenia i można je w każdej chwili usunąć w przeglądarce.
-            Zapisanie ich jest niezbędne do działania funkcji, o którą Państwo prosili (§ 25 ust. 2
-            pkt 2 TDDDG).
+            Zapisanie ich jest bezwzględnie niezbędne do działania funkcji, o którą Państwo prosili
+            (§ 25 ust. 2 pkt 2 TDDDG).
           </p>
           <h2>5. Kontakt e-mailowy</h2>
           <p>
@@ -254,14 +254,14 @@ export function privacyTranslation(locale: string): ReactNode | undefined {
           </p>
           <h2>৩. হোস্টিং</h2>
           <p>
-            ওয়েবসাইটটি পরিবেশন করে Vercel Inc., 440 N Barranca Avenue #4133, Covina, CA 91723, USA।
-            কোনো পাতা চাওয়া হলে Vercel তার সার্ভার লগে প্রযুক্তিগতভাবে প্রয়োজনীয় তথ্য প্রক্রিয়া
-            করে: IP ঠিকানা, তারিখ ও সময়, চাওয়া পাতা, আপনি যে পাতা থেকে এসেছেন (রেফারার), এবং আপনার
-            ব্রাউজারের পরিচিতি (ইউজার এজেন্ট)। আইনি ভিত্তি হলো Art. 6(1)(f) GDPR: ওয়েবসাইটটি নিরাপদ
-            ও নির্ভরযোগ্যভাবে পৌঁছে দেওয়ায় আমাদের বৈধ স্বার্থ। Vercel আমাদের পক্ষে এই তথ্য
-            প্রক্রিয়া করে; যুক্তরাষ্ট্রে তথ্য স্থানান্তর Vercel-এর ডেটা প্রসেসিং চুক্তির
-            সুরক্ষাব্যবস্থার ওপর নির্ভর করে ({dpa})। আরও জানতে Vercel-এর গোপনীয়তা নীতি দেখুন:{' '}
-            {vercel}।
+            ওয়েবসাইটটি হোস্ট করে Vercel Inc., 440 N Barranca Avenue #4133, Covina, CA 91723, USA।
+            কোনো পাতা খোলা হলে Vercel তার সার্ভার লগে প্রযুক্তিগতভাবে প্রয়োজনীয় তথ্য প্রক্রিয়া
+            করে: IP ঠিকানা, তারিখ ও সময়, যে পাতাটি খোলা হয়েছে, আপনি যে পাতা থেকে এসেছেন (রেফারার),
+            এবং আপনার ব্রাউজারের পরিচিতি (ইউজার এজেন্ট)। আইনি ভিত্তি হলো Art. 6(1)(f) GDPR:
+            ওয়েবসাইটটি নিরাপদ ও নির্ভরযোগ্যভাবে পৌঁছে দেওয়ায় আমাদের বৈধ স্বার্থ। Vercel আমাদের
+            পক্ষে এই তথ্য প্রক্রিয়া করে; যুক্তরাষ্ট্রে তথ্য স্থানান্তর Vercel-এর ডেটা প্রসেসিং
+            চুক্তির সুরক্ষাব্যবস্থার ওপর নির্ভর করে ({dpa})। আরও জানতে Vercel-এর গোপনীয়তা নীতি
+            দেখুন: {vercel}।
           </p>
           <h2>৪. আপনার ব্রাউজার যা সংরক্ষণ করে</h2>
           <p>
@@ -284,8 +284,8 @@ export function privacyTranslation(locale: string): ReactNode | undefined {
           <p>
             এই নীতি Android-এর জন্য Sogda অ্যাপেও প্রযোজ্য। অ্যাপটি আপনার সম্পর্কে কোনো তথ্য সংগ্রহ
             করে না এবং কারও সঙ্গে শেয়ার করে না: কোনো অ্যাকাউন্ট, অ্যানালিটিক্স, বিজ্ঞাপন বা
-            বিজ্ঞাপন আইডি নেই। আপনি এমন কিছু করলে তবেই অ্যাপটি ইন্টারনেটে সংযুক্ত হয়, যার জন্য তা
-            প্রয়োজন।
+            বিজ্ঞাপন আইডি নেই। অ্যাপটি কেবল তখনই ইন্টারনেটে যুক্ত হয়, যখন আপনি এমন কিছু করেন যার
+            জন্য তা দরকার।
           </p>
           <p>
             <strong>আপনার অগ্রগতি</strong> আপনার ডিভাইসে অ্যাপের ভেতরেই থাকে। অ্যাপটির জন্য Android
@@ -300,7 +300,7 @@ export function privacyTranslation(locale: string): ReactNode | undefined {
             ডকুমেন্ট ৩০, ৯০ বা ৩৬৫ দিন পরে নিজে থেকে মুছে যেতে পারে।
           </p>
           <p>
-            <strong>আপনার শুরু করা ডাউনলোড:</strong> স্বাভাবিক ভয়েস (Supertonic) আর অনুবাদক
+            <strong>আপনার শুরু করা ডাউনলোড:</strong> আরও স্বাভাবিক ভয়েস (Supertonic) আর অনুবাদক
             (Hy-MT2) huggingface.co থেকে আনা হয়, ডিফল্টভাবে শুধু ওয়াই-ফাইতে। অ্যাপটি কেবল ফাইলগুলো
             চায়; যেকোনো অনুরোধের মতোই Hugging Face আপনার IP ঠিকানা পায়, আর তার সার্ভারের জন্য
             Hugging Face-এর গোপনীয়তা নীতি প্রযোজ্য।
@@ -321,7 +321,7 @@ export function privacyTranslation(locale: string): ReactNode | undefined {
           </p>
           <p>
             <strong>রেটিং:</strong> আপনার প্রথম পাস করা মক পরীক্ষার পরে Google Play-এর রেটিং কার্ড
-            একবার দেখা যেতে পারে। এটি Play Store অ্যাপের নিজস্ব; Sogda এর সঙ্গে কিছুই পাঠায় না।
+            একবার দেখা যেতে পারে। এটি Play Store অ্যাপের নিজস্ব; এতে Sogda কিছুই পাঠায় না।
           </p>
           <p>নিয়ন্ত্রক (অনুচ্ছেদ ১) আর আপনার অধিকার (অনুচ্ছেদ ৮) অ্যাপের ক্ষেত্রেও প্রযোজ্য।</p>
           <h2>৮. আপনার অধিকার</h2>

@@ -27,7 +27,8 @@ const LABELS: Record<string, Labels> = {
       'Numer identyfikacyjny VAT zgodnie z § 27a niemieckiej ustawy o podatku od towarów i usług',
       'Numer VAT',
     ],
-    responsible: 'Odpowiedzialny za treść zgodnie z § 18 ust. 2 MStV',
+    responsible:
+      'Osoba odpowiedzialna za treść zgodnie z § 18 ust. 2 MStV (umowa krajów związkowych o mediach)',
     asAbove: 'adres jak wyżej.',
   },
   ru: {
@@ -42,7 +43,7 @@ const LABELS: Record<string, Labels> = {
       'Номер НДС',
     ],
     responsible:
-      'Ответственный за содержание согласно § 18 абз. 2 MStV (Межгосударственный договор о СМИ)',
+      'Лицо, ответственное за содержание, согласно § 18 абз. 2 MStV (Межгосударственный договор о СМИ)',
     asAbove: 'адрес см. выше.',
   },
   bn: {
@@ -56,7 +57,7 @@ const LABELS: Record<string, Labels> = {
       'জার্মান মূল্য সংযোজন কর আইনের § 27a অনুযায়ী ভ্যাট শনাক্তকরণ নম্বর',
       'ভ্যাট আইডি',
     ],
-    responsible: '§ 18(2) MStV অনুযায়ী বিষয়বস্তুর জন্য দায়ী',
+    responsible: '§ 18(2) MStV অনুযায়ী বিষয়বস্তুর দায়িত্বপ্রাপ্ত ব্যক্তি',
     asAbove: 'ঠিকানা ওপরের মতো।',
   },
 };
