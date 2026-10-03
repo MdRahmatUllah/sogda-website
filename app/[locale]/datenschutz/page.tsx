@@ -106,9 +106,9 @@ export default async function Datenschutz({ params }: Props) {
           </p>
           <p>
             <strong>Downloads, die Sie starten:</strong> Die natürliche Stimme (Supertonic) und der
-            Übersetzer (Hy-MT2) werden über WLAN von huggingface.co geladen. Die App fragt dabei nur
-            die Dateien an; wie bei jedem Abruf erhält Hugging Face Ihre IP-Adresse, und für seine
-            Server gilt die Datenschutzerklärung von Hugging Face.
+            Übersetzer (Hy-MT2) werden von huggingface.co geladen, standardmäßig nur über WLAN. Die
+            App fragt dabei nur die Dateien an; wie bei jedem Abruf erhält Hugging Face Ihre
+            IP-Adresse, und für seine Server gilt die Datenschutzerklärung von Hugging Face.
           </p>
           <p>
             <strong>Mikrofon:</strong> nur für die Aufnahme in der Sprechprüfung. Die Aufnahme
@@ -218,9 +218,9 @@ export default async function Datenschutz({ params }: Props) {
           </p>
           <p>
             <strong>Downloads you start:</strong> the natural voice (Supertonic) and the translator
-            (Hy-MT2) are fetched over Wi-Fi from huggingface.co. The app only requests the files; as
-            with any request, Hugging Face receives your IP address, and Hugging Face&apos;s privacy
-            policy applies to its servers.
+            (Hy-MT2) are fetched from huggingface.co, over Wi-Fi only by default. The app only
+            requests the files; as with any request, Hugging Face receives your IP address, and
+            Hugging Face&apos;s privacy policy applies to its servers.
           </p>
           <p>
             <strong>Microphone:</strong> only for the Speaking exam&apos;s recording, which stays on
