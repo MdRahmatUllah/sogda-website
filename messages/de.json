@@ -113,7 +113,7 @@
   "documents": {
     "eyebrow": "Dein eigenes Deutsch",
     "title": "Lerne mit dem Deutsch, das dir begegnet.",
-    "read": "Füge einen Text ein oder teile ihn, fotografiere einen Brief oder wähle ein PDF. Sogda liest ihn auf deinem Handy und markiert die Wörter, die du noch nicht kennst, nach Niveau.",
+    "read": "Füge einen Text ein oder teile ihn, fotografiere einen Brief oder wähle ein PDF. Sogda liest ihn auf deinem Handy und markiert die Wörter aus dem Kurs, die du noch nicht kennst, nach Niveau.",
     "add": "Die Wörter, die du auswählst, kommen mit dem Satz, in dem du sie gefunden hast, in deinen Plan. Unter „My documents“ findest du deine Texte wieder.",
     "translate": "Optional: Hy-MT2 übersetzt auf dem Handy, etwa Beispielsätze und Wörter außerhalb des Kurses, wenn das Handy genug Speicher hat."
   },
@@ -536,7 +536,7 @@
         "documents": {
           "heading": "Mit dem Deutsch, das dir begegnet",
           "body": {
-            "p1": "Füge einen Text ein oder teile ihn, fotografiere einen Brief oder wähle ein PDF. Sogda liest ihn auf deinem Handy und markiert die Wörter, die du noch nicht kennst, nach Niveau. Die Wörter, die du auswählst, kommen mit dem Satz, in dem du sie gefunden hast, in deinen Plan. Unter „My documents“ findest du deine Texte wieder. Optional: Hy-MT2 übersetzt auf dem Handy, etwa Beispielsätze und Wörter außerhalb des Kurses, wenn das Handy genug Speicher hat."
+            "p1": "Füge einen Text ein oder teile ihn, fotografiere einen Brief oder wähle ein PDF. Sogda liest ihn auf deinem Handy und markiert die Wörter aus dem Kurs, die du noch nicht kennst, nach Niveau. Die Wörter, die du auswählst, kommen mit dem Satz, in dem du sie gefunden hast, in deinen Plan. Unter „My documents“ findest du deine Texte wieder. Optional: Hy-MT2 übersetzt auf dem Handy, etwa Beispielsätze und Wörter außerhalb des Kurses, wenn das Handy genug Speicher hat."
           }
         },
         "languages": {

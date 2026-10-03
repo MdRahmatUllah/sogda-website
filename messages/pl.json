@@ -113,8 +113,8 @@
   "documents": {
     "eyebrow": "Twój własny niemiecki",
     "title": "Ucz się z niemieckiego, który spotykasz na co dzień.",
-    "read": "Wklej lub udostępnij tekst, zrób zdjęcie listu albo wybierz PDF. Sogda czyta go na telefonie i zaznacza według poziomu słowa, których jeszcze nie znasz.",
-    "add": "Dodaj wybrane do planu razem ze zdaniem, z którego pochodzą. „Moje dokumenty” przechowują twoje teksty na później.",
+    "read": "Wklej lub udostępnij tekst, zrób zdjęcie listu albo wybierz PDF. Sogda czyta go na telefonie i zaznacza słowa z kursu, których jeszcze nie znasz, według poziomu.",
+    "add": "Dodaj wybrane słowa do planu razem ze zdaniem, z którego pochodzą. „Moje dokumenty” przechowują twoje teksty na później.",
     "translate": "Opcjonalnie: Hy-MT2 tłumaczy na telefonie przykładowe zdania i słowa spoza kursu, jeśli telefon ma dość pamięci."
   },
   "features": {
@@ -130,7 +130,7 @@
     },
     "voice": {
       "title": "Usłysz każde słowo",
-      "body": "Niemiecki głos twojego telefonu albo opcjonalny, naturalny głos Supertonic: offline, około 400 MB, pobierany raz przez Wi-Fi."
+      "body": "Niemiecki głos twojego telefonu albo opcjonalny, naturalny głos Supertonic: offline, około 400 MB, pobierany raz przez Wi‑Fi."
     },
     "compare": {
       "title": "Porównuj bliskoznaczne słowa",
@@ -192,7 +192,7 @@
     "title": "Pytania i odpowiedzi.",
     "internet": {
       "q": "Czy potrzebuję internetu?",
-      "a": "Nie. Sogda działa całkowicie offline. Pobrania wymagają tylko dwa opcjonalne dodatki: naturalny głos, raz, przez Wi-Fi, i Hy-MT2 do tłumaczenia na telefonie."
+      "a": "Nie. Sogda działa całkowicie offline. Pobrania wymagają tylko dwa opcjonalne dodatki: naturalny głos, raz, przez Wi‑Fi, i Hy-MT2 do tłumaczenia na telefonie."
     },
     "android": {
       "q": "Jakiej wersji Androida potrzebuję?",
@@ -450,7 +450,7 @@
         "documents": {
           "heading": "Z niemieckiego na co dzień",
           "body": {
-            "p1": "Wklej lub udostępnij tekst, zrób zdjęcie listu albo wybierz PDF. Sogda czyta go na telefonie i zaznacza według poziomu słowa, których jeszcze nie znasz. Dodaj wybrane do planu razem ze zdaniem, z którego pochodzą. „Moje dokumenty” przechowują twoje teksty na później. Opcjonalnie: Hy-MT2 tłumaczy na telefonie przykładowe zdania i słowa spoza kursu, jeśli telefon ma dość pamięci."
+            "p1": "Wklej lub udostępnij tekst, zrób zdjęcie listu albo wybierz PDF. Sogda czyta go na telefonie i zaznacza słowa z kursu, których jeszcze nie znasz, według poziomu. Dodaj wybrane słowa do planu razem ze zdaniem, z którego pochodzą. „Moje dokumenty” przechowują twoje teksty na później. Opcjonalnie: Hy-MT2 tłumaczy na telefonie przykładowe zdania i słowa spoza kursu, jeśli telefon ma dość pamięci."
           }
         },
         "languages": {

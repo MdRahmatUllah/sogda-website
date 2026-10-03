@@ -60,7 +60,7 @@ test.describe('The German you meet (BRIEF §3.5b, v1.2.0, #143)', () => {
     for (const theme of ['light', 'dark'])
       await expect(docs.locator(`img[src*="/document-${theme}-"]`)).toHaveAttribute(
         'alt',
-        /the words you don't know yet are marked by level/,
+        /the course's words you don't know yet are marked by level/,
       );
     await expect(docs).not.toContainText(/free|price|cost/i);
   });

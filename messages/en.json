@@ -113,7 +113,7 @@
   "documents": {
     "eyebrow": "Your own German",
     "title": "Learn from the German you meet.",
-    "read": "Paste or share a text, photograph a letter, or choose a PDF. Sogda reads it on your phone and marks the words you don’t know yet, by level.",
+    "read": "Paste or share a text, photograph a letter, or choose a PDF. Sogda reads it on your phone and marks the course’s words you don’t know yet, by level.",
     "add": "Add the ones you pick to your plan, with the sentence you met them in. My documents keeps your texts to reopen.",
     "translate": "Optional: Hy-MT2 translates on your phone, for example sentences and words outside the course, where the phone has the memory."
   },
@@ -591,7 +591,7 @@
         "documents": {
           "heading": "From the German you meet",
           "body": {
-            "p1": "Paste or share a text, photograph a letter, or choose a PDF. Sogda reads it on your phone and marks the words you don’t know yet, by level. Add the ones you pick to your plan, with the sentence you met them in. My documents keeps your texts to reopen. Optional: Hy-MT2 translates on your phone, for example sentences and words outside the course, where the phone has the memory."
+            "p1": "Paste or share a text, photograph a letter, or choose a PDF. Sogda reads it on your phone and marks the course’s words you don’t know yet, by level. Add the ones you pick to your plan, with the sentence you met them in. My documents keeps your texts to reopen. Optional: Hy-MT2 translates on your phone, for example sentences and words outside the course, where the phone has the memory."
           }
         },
         "languages": {

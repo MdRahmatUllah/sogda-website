@@ -217,11 +217,11 @@
       "golden": "doc_words",
       "themes": ["light", "dark"],
       "alt": {
-        "en": "A German letter, «Nebenkosten 2025», read by Sogda: the words you don't know yet are marked by level, and buttons at the foot add them to your plan.",
-        "de": "Ein deutscher Brief, «Nebenkosten 2025», von Sogda gelesen: Die Wörter, die du noch nicht kennst, sind nach Niveau markiert, und Schaltflächen unten fügen sie deinem Plan hinzu.",
-        "pl": "Niemiecki list „Nebenkosten 2025” odczytany przez Sogdę: słowa, których jeszcze nie znasz, są zaznaczone według poziomu, a przyciski na dole dodają je do planu.",
-        "ru": "Немецкое письмо «Nebenkosten 2025», прочитанное Sogda: слова, которых ты ещё не знаешь, отмечены по уровням, а кнопки внизу добавляют их в план.",
-        "bn": "Sogda-র পড়া একটি জার্মান চিঠি, “Nebenkosten 2025”: যে শব্দগুলো এখনো জানেন না সেগুলো লেভেল অনুযায়ী চিহ্নিত, আর নিচের বোতামগুলো সেগুলো আপনার প্ল্যানে যোগ করে।"
+        "en": "A German letter, «Nebenkosten 2025», read by Sogda: the course's words you don't know yet are marked by level, and buttons at the foot add them to your plan.",
+        "de": "Ein deutscher Brief, «Nebenkosten 2025», von Sogda gelesen: Die Wörter aus dem Kurs, die du noch nicht kennst, sind nach Niveau markiert, und Schaltflächen unten fügen sie deinem Plan hinzu.",
+        "pl": "Niemiecki list „Nebenkosten 2025” odczytany przez Sogdę: słowa z kursu, których jeszcze nie znasz, są zaznaczone według poziomu, a przyciski na dole dodają je do planu.",
+        "ru": "Немецкое письмо «Nebenkosten 2025», прочитанное Sogda: слова из курса, которых ты ещё не знаешь, отмечены по уровням, а кнопки внизу добавляют их в план.",
+        "bn": "Sogda-র পড়া একটি জার্মান চিঠি, “Nebenkosten 2025”: যে শব্দগুলো এখনো জানেন না, কোর্সের সেই শব্দগুলো লেভেল অনুযায়ী চিহ্নিত, আর নিচের বোতামগুলো সেগুলো আপনার প্ল্যানে যোগ করে।"
       },
       "store": "07-document"
     },
