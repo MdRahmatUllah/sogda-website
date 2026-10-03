@@ -110,6 +110,13 @@
     "carousel": "Ekrany quizów i egzaminów",
     "item": "Ekran {n} z {total}"
   },
+  "documents": {
+    "eyebrow": "Twój własny niemiecki",
+    "title": "Ucz się z niemieckiego, który spotykasz na co dzień.",
+    "read": "Wklej lub udostępnij tekst, zrób zdjęcie listu albo wybierz PDF. Sogda czyta go na telefonie i zaznacza według poziomu słowa, których jeszcze nie znasz.",
+    "add": "Dodaj wybrane do planu razem ze zdaniem, z którego pochodzą. „Moje dokumenty” przechowują twoje teksty na później.",
+    "translate": "Opcjonalnie: Hy-MT2 tłumaczy na telefonie przykładowe zdania i słowa spoza kursu, jeśli telefon ma dość pamięci."
+  },
   "features": {
     "eyebrow": "I cała reszta",
     "title": "Z myślą o prawdziwej codzienności nauki.",
@@ -185,7 +192,7 @@
     "title": "Pytania i odpowiedzi.",
     "internet": {
       "q": "Czy potrzebuję internetu?",
-      "a": "Nie. Sogda działa całkowicie offline. Tylko opcjonalny naturalny głos pobiera się raz, przez Wi-Fi."
+      "a": "Nie. Sogda działa całkowicie offline. Pobrania wymagają tylko dwa opcjonalne dodatki: naturalny głos, raz, przez Wi-Fi, i Hy-MT2 do tłumaczenia na telefonie."
     },
     "android": {
       "q": "Jakiej wersji Androida potrzebuję?",
@@ -198,6 +205,14 @@
     "data": {
       "q": "Czy moje dane są komuś przekazywane?",
       "a": "Nie. Nie ma konta, a twoje postępy zostają na twoim telefonie."
+    },
+    "documents": {
+      "q": "Dokąd trafia mój dokument?",
+      "a": "Nigdzie: Sogda czyta go na twoim telefonie. Zdjęcie jest zapisywane bez danych o lokalizacji i aparacie albo, jeśli wolisz, wcale (Ustawienia), a dokumenty mogą same się usuwać po 30, 90 lub 365 dniach."
+    },
+    "translation": {
+      "q": "Czy tłumaczenie działa online?",
+      "a": "Nie. Hy-MT2 to opcjonalne pobranie, które tłumaczy na twoim telefonie, jeśli ma on dość pamięci: przykładowe zdania i znaczenia słów spoza kursu."
     },
     "exams": {
       "q": "Do jakich egzaminów przygotowuje?",
@@ -432,6 +447,12 @@
             "p1": "{mocksPerStep, plural, one {# egzamin próbny} few {# egzaminy próbne} many {# egzaminów próbnych} other {# egzaminu próbnego}} na każdy etap, łącznie {mocks, number}, ze słuchaniem, pisaniem i mówieniem jak na prawdziwych egzaminach, a do tego ze słownictwem i gramatyką, z wynikiem dla każdej części. Nie ma części z czytaniem ze zrozumieniem. Powstają ze słów i gramatyki etapu: to nie są oficjalne arkusze Goethe ani telc, a Sogda nie jest powiązana z żadną z tych instytucji."
           }
         },
+        "documents": {
+          "heading": "Z niemieckiego na co dzień",
+          "body": {
+            "p1": "Wklej lub udostępnij tekst, zrób zdjęcie listu albo wybierz PDF. Sogda czyta go na telefonie i zaznacza według poziomu słowa, których jeszcze nie znasz. Dodaj wybrane do planu razem ze zdaniem, z którego pochodzą. „Moje dokumenty” przechowują twoje teksty na później. Opcjonalnie: Hy-MT2 tłumaczy na telefonie przykładowe zdania i słowa spoza kursu, jeśli telefon ma dość pamięci."
+          }
+        },
         "languages": {
           "heading": "W twoim języku",
           "body": {
@@ -470,7 +491,7 @@
         },
         "offline": {
           "q": "Czy Sogda działa bez internetu?",
-          "a": "Tak, w pełni. Pobrania wymaga tylko opcjonalny naturalny głos, raz, przez Wi‑Fi."
+          "a": "Tak, w pełni. Pobrania wymagają tylko dwa opcjonalne dodatki: naturalny głos, raz, przez Wi‑Fi, i Hy-MT2 do tłumaczenia na telefonie."
         },
         "account": {
           "q": "Czy potrzebuję konta?",
@@ -619,7 +640,7 @@
         },
         "offline": {
           "q": "Czy Sogda działa offline?",
-          "a": "Tak, w pełni i bez konta. Pobrania wymaga tylko opcjonalny naturalny głos, raz, przez Wi‑Fi."
+          "a": "Tak, w pełni i bez konta. Pobrania wymagają tylko dwa opcjonalne dodatki: naturalny głos, raz, przez Wi‑Fi, i Hy-MT2 do tłumaczenia na telefonie."
         },
         "switch": {
           "q": "Czy mogę przenieść postępy z Duolingo do Sogdy?",

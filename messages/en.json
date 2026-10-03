@@ -110,6 +110,13 @@
     "carousel": "Quiz and exam screens",
     "item": "Screen {n} of {total}"
   },
+  "documents": {
+    "eyebrow": "Your own German",
+    "title": "Learn from the German you meet.",
+    "read": "Paste or share a text, photograph a letter, or choose a PDF. Sogda reads it on your phone and marks the words you don’t know yet, by level.",
+    "add": "Add the ones you pick to your plan, with the sentence you met them in. My documents keeps your texts to reopen.",
+    "translate": "Optional: Hy-MT2 translates on your phone, for example sentences and words outside the course, where the phone has the memory."
+  },
   "features": {
     "eyebrow": "And everything else",
     "title": "Made for a real learner’s day.",
@@ -185,7 +192,7 @@
     "title": "Questions, answered.",
     "internet": {
       "q": "Do I need internet?",
-      "a": "No. Sogda works fully offline. Only the optional natural voice is a download, once, over Wi-Fi."
+      "a": "No. Sogda works fully offline. Only two optional extras are downloads: the natural voice, once over Wi-Fi, and Hy-MT2 for translation on your phone."
     },
     "android": {
       "q": "Which Android version do I need?",
@@ -198,6 +205,14 @@
     "data": {
       "q": "Is my data shared?",
       "a": "No. There’s no account, and your progress stays on your phone."
+    },
+    "documents": {
+      "q": "Where does my document go?",
+      "a": "Nowhere: Sogda reads it on your phone. A photo is kept without its location or camera data, or not at all if you choose (Settings), and documents can delete themselves after 30, 90 or 365 days."
+    },
+    "translation": {
+      "q": "Is the translation online?",
+      "a": "No. Hy-MT2 is an optional download that translates on your phone, where the phone has the memory: example sentences, and meanings for words outside the course."
     },
     "exams": {
       "q": "Which exams does it prepare me for?",
@@ -519,7 +534,7 @@
         },
         "offline": {
           "q": "Does Sogda work offline?",
-          "a": "Yes, fully, and with no account. Only the optional natural voice is a download, once, over Wi-Fi."
+          "a": "Yes, fully, and with no account. Only two optional extras are downloads: the natural voice, once over Wi-Fi, and Hy-MT2 for translation on your phone."
         },
         "switch": {
           "q": "Can I move my Duolingo progress to Sogda?",
@@ -573,6 +588,12 @@
             "p1": "{mocksPerStep, number} mock exams for every step, {mocks, number} in all, with listening, writing and speaking like the real exams, plus vocabulary and grammar, and a result for each section. There's no reading-comprehension part. They're generated from the step's words and grammar: they aren't official Goethe or telc papers, and Sogda isn't affiliated with either."
           }
         },
+        "documents": {
+          "heading": "From the German you meet",
+          "body": {
+            "p1": "Paste or share a text, photograph a letter, or choose a PDF. Sogda reads it on your phone and marks the words you don’t know yet, by level. Add the ones you pick to your plan, with the sentence you met them in. My documents keeps your texts to reopen. Optional: Hy-MT2 translates on your phone, for example sentences and words outside the course, where the phone has the memory."
+          }
+        },
         "languages": {
           "heading": "In your language",
           "body": {
@@ -611,7 +632,7 @@
         },
         "offline": {
           "q": "Does Sogda work without internet?",
-          "a": "Yes, fully. Only the optional natural voice is a download, once, over Wi-Fi."
+          "a": "Yes, fully. Only two optional extras are downloads: the natural voice, once over Wi-Fi, and Hy-MT2 for translation on your phone."
         },
         "account": {
           "q": "Do I need an account?",
@@ -672,7 +693,7 @@
         },
         "internet": {
           "q": "Do I need the internet?",
-          "a": "No. Sogda works fully offline. Only the optional natural voice is a download, once, over Wi-Fi."
+          "a": "No. Sogda works fully offline. Only two optional extras are downloads: the natural voice, once over Wi-Fi, and Hy-MT2 for translation on your phone."
         }
       }
     }

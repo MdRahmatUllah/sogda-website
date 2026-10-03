@@ -44,6 +44,28 @@ test.describe('Practise and test yourself (BRIEF §3.5)', () => {
   });
 });
 
+test.describe('The German you meet (BRIEF §3.5b, v1.2.0, #143)', () => {
+  test('read on the phone, added with its sentence, translated on the phone; D2 in the theme', async ({
+    page,
+  }) => {
+    await page.goto('/en');
+    const docs = page.locator('#documents');
+    await expect(docs.getByRole('heading', { level: 2 })).toHaveText(
+      'Learn from the German you meet.',
+    );
+    await expect(docs.getByText('Sogda reads it on your phone')).toBeVisible();
+    await expect(docs.getByText('with the sentence you met them in')).toBeVisible();
+    await expect(docs.getByText('Hy-MT2 translates on your phone')).toBeVisible();
+    // D2's store capture (07-document), light and dark, as the theme picks.
+    for (const theme of ['light', 'dark'])
+      await expect(docs.locator(`img[src*="/document-${theme}-"]`)).toHaveAttribute(
+        'alt',
+        /the words you don't know yet are marked by level/,
+      );
+    await expect(docs).not.toContainText(/free|price|cost/i);
+  });
+});
+
 test.describe('The feature grid (BRIEF §3.6)', () => {
   test('eight features, each with a title and a line', async ({ page }) => {
     await page.goto('/en');

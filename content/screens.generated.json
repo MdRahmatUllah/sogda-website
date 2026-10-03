@@ -49,6 +49,56 @@
     "widths": [360, 540, 720, 1080],
     "placeholder": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAACQBACdASoQACMAPu1aqU2ppKQiNVgIATAdiWwAnS/BbP8BykOT0EOZJ19KgwAA/uqwen0Hjv5Nb6XFWFOB/hS21SCf/gPla1az4/mkkbXnSzWxe/3caaDpZCSrQ+NAYcgckOAugG4Lhhs/VHuOtjyF1R8KHFlMg/Le1seCaev9DAeIvkY5rJT+zfdlJ8AA"
   },
+  "document-dark": {
+    "source": "store:phone-dark/07-document.png",
+    "ref": "2bdc9258f1d087944079c175e104dbb14645198e",
+    "base": "document-dark",
+    "hash": "7719524d",
+    "width": 1080,
+    "height": 2337,
+    "widths": [360, 540, 720, 1080],
+    "placeholder": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAAAwBACdASoQACMAPu1irE2ppaSiKqwBMB2JYgC7AEXtil1GGXmJbIuHSRAA/sMBIVfD+nsWIkvkxyVvnMfUg265CUUFwX/uD819SDdP2uOW7jDQiOk+19ZG6ihgPbO2eSauZheOrkn/0tPOvycP9eqX76nGwyeqPxdRV8e09v5qTARtHvY0AA=="
+  },
+  "document-light": {
+    "source": "store:phone-light/07-document.png",
+    "ref": "2bdc9258f1d087944079c175e104dbb14645198e",
+    "base": "document-light",
+    "hash": "ba7b5585",
+    "width": 1080,
+    "height": 2337,
+    "widths": [360, 540, 720, 1080],
+    "placeholder": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAABQBACdASoQACMAPulip02pJaOiNVgIASAdCWYAs4A9u6et/RMWq2st0DZoAF+2Lx74bLZILkuEdeVsOt9DEcgL2/+SvP/iO8zDKE02sth/jS4nQRuD19s2rrkeJdX+tXyWeQqzH4lfU4zl//wc0/iSk/Rp5YAE8AAAAA=="
+  },
+  "document-light@bn": {
+    "source": "store:bn-phone-light/07-document.png",
+    "ref": "2bdc9258f1d087944079c175e104dbb14645198e",
+    "base": "document-light-bn",
+    "hash": "a31ab7c4",
+    "width": 1080,
+    "height": 2337,
+    "widths": [360, 540, 720, 1080],
+    "placeholder": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAAAwBACdASoQACMAPu1cqE2ppKOiNVgIATAdiWgAtsg9u6fHXWq++HFqyAAAkYsVwk/N5sfb9mJqdcYJcofqRyHUf0pT6a/+Wl5/neiNrkooJycyzPdk1NaH5WBEukJp7zXsBmQmJsGxL3RySDLspK8bPVCrP/Bvdq1uNMkVkaKfAAAA"
+  },
+  "document-light@pl": {
+    "source": "store:pl-phone-light/07-document.png",
+    "ref": "2bdc9258f1d087944079c175e104dbb14645198e",
+    "base": "document-light-pl",
+    "hash": "510177e3",
+    "width": 1080,
+    "height": 2337,
+    "widths": [360, 540, 720, 1080],
+    "placeholder": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAACwBACdASoQACMAPulgqE2pJaOiNVgIASAdCWgAs4A9lk8TZFCa+UClSHQc5PMAAGG0oj0Zkst6NYlEUr5qnyIgajeW9c0f/8lef/Fq5W7QfjseXQ/kudtE+xEJU91WJsL4/oKzaXlw3sDll2Uoqsc7f6X/0OafxK2CV4MFApzQAA=="
+  },
+  "document-light@ru": {
+    "source": "store:ru-phone-light/07-document.png",
+    "ref": "2bdc9258f1d087944079c175e104dbb14645198e",
+    "base": "document-light-ru",
+    "hash": "7710d8b9",
+    "width": 1080,
+    "height": 2337,
+    "widths": [360, 540, 720, 1080],
+    "placeholder": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAAAwBACdASoQACMAPulip02pJaOiNVgIASAdCWgAs4A9lePsmftnNV0X6AAAYbSiPRmSy3o1p5EYK6nN1etx42ncLL9/5K8/+LVyuD76BbYk6/HR6Kp5T3is1HNWFQd9kE0Oez1K6LyXB2sX1OM5f/8HNPjtkVdg30SEAA=="
+  },
   "exam-listening-light": {
     "source": "golden:exam_runner_listening_light_phone.png",
     "ref": "4b088a18c815355404b1d742302d5a8e204ed77e",
@@ -120,14 +170,14 @@
     "placeholder": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAADQBACdASoQACMAPu1kqU6ppaOiKqwBMB2JZACdFQAAS/l/LNoFQkW+gsopWSc7gAD+3/6Mg75xSHWVBo1DCzBDxYyB3rG2I2SUR31j2hDVHgrHSjYllp3agQItjQjHuvmeHHwAn1S9WUVOeJx0osV4YqSd/tK4eBpGkAQkC1KougXiX1PJZVJB1/+TkyySnr/8nJlcYAA="
   },
   "learn-dark": {
-    "source": "store:phone-dark/04-course.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "source": "golden:learn_dark_phone.png",
+    "ref": "4b088a18c815355404b1d742302d5a8e204ed77e",
     "base": "learn-dark",
-    "hash": "621b6035",
-    "width": 1080,
-    "height": 2337,
+    "hash": "1dfb1f5e",
+    "width": 1170,
+    "height": 2532,
     "widths": [360, 540, 720, 1080],
-    "placeholder": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAAAQBACdASoQACMAPuVipk2pJaOiNVgIASAciWYALv/AUUGLXsqAIGmwAAD+3lwtZxK1D051w68s8kVUUbBH/cGLzFnZbJK9JBM1P/8iD+0Bw/uk/MdEokZvDVPxFQw0ZEToN3pLjfgSHfwyIj9KZdFM1ZXcSYrqsFdEjovj0lSBICq0ECeW86+NuZ93XfawcfGAAA=="
+    "placeholder": "data:image/webp;base64,UklGRsoAAABXRUJQVlA4IL4AAAAQBQCdASoQACMAPuVipk2pJiOiNVgIASAciWoAtQkhif43gBLGGSm9VzeUD16vEzoAAP6wty8cH/g1Ckte0z2TdfLVrJmgYRMwpohsQU3XChC2Iv05Tav6vc1Hxl4VNIMxuh4wWerxlzdreT5mbuNefZNa0b8pyXpMrT9d4gii9uPfVX0INkBqFmKSvDnCZW9aQ6HMf3MhxNCCp3Gj2xJvokRTwnxnlK/hyjIVAAgLsTS1eSYLWe7n3ISkE4AA"
   },
   "learn-glass": {
     "source": "golden:learn_glass_phone.png",
@@ -140,44 +190,14 @@
     "placeholder": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAACQBACdASoQACMAPt1apE2opSOiNUgBEBuJbACdAC0IeFNMZKUuSk2ZI1nZ5nAA/rH5xJpRS/j7axAhR+x9NmfnuJerH9V3HnI+cXyGNJ3rxRgVd4xTQiKsj6jO6qrSwiojT2ZWUqnD8PO9cKrPfFRRsSBEalkac+Wd4rCM3ZVXSxA8oADEizj/4BKCpdjW9jFsUIcAAAA="
   },
   "learn-light": {
-    "source": "store:phone-light/04-course.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "source": "golden:learn_light_phone.png",
+    "ref": "4b088a18c815355404b1d742302d5a8e204ed77e",
     "base": "learn-light",
-    "hash": "c8b7e460",
-    "width": 1080,
-    "height": 2337,
+    "hash": "c3d32ab3",
+    "width": 1170,
+    "height": 2532,
     "widths": [360, 540, 720, 1080],
-    "placeholder": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAAAQBQCdASoQACMAPt1apE2opSOiNUgBEBuJagCdOUFSlXWYqtv8CghItnuu1GiO/BXAAP7S/IBB+IM0vEHOGDbGPllDRMcJEkSOVitLsiPyFZX4SrmNiO129YXfUm6+l2X4ywPEHJe+ggmCBw4EHIbGlozynAkbIQs4Xkh9BOKohhSVrVqH4nw4iAAAAA=="
-  },
-  "learn-light@bn": {
-    "source": "store:bn-phone-light/04-course.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
-    "base": "learn-light-bn",
-    "hash": "7923c9f6",
-    "width": 1080,
-    "height": 2337,
-    "widths": [360, 540, 720, 1080],
-    "placeholder": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAAAwBACdASoQACMAPt1apE2opSOiNUgBEBuJagCw/f/gUEXLltj29Y0RuaAA/tLlAbhCelPs+tkbF1hTkHUQM8YC4+rhbzF3/yFOO3+/SRXt5zTCCMnot7wdrVG5PVVLwuHpSNh4FmqbOta0cmyzT/452Qo+YNOgfVsgYL8ZIztQAA=="
-  },
-  "learn-light@pl": {
-    "source": "store:pl-phone-light/04-course.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
-    "base": "learn-light-pl",
-    "hash": "43983d8f",
-    "width": 1080,
-    "height": 2337,
-    "widths": [360, 540, 720, 1080],
-    "placeholder": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAACQBACdASoQACMAPt1YpE2opSOiNUgBEBuJagCdOUFSi7/wKCEi2Qs/8haGeiAA/tL8+7xAKXAWHD40Osy/j2UjPHlqP04hWVLw9aH1L/IU2+ycuR0NEdREGATg+/LRB6lHDcbJudFZRyynk7sFJr27pyAsacVUqyj9Kx0mmg7qm78OkpRPsC7gYAAAAA=="
-  },
-  "learn-light@ru": {
-    "source": "store:ru-phone-light/04-course.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
-    "base": "learn-light-ru",
-    "hash": "6d4a791e",
-    "width": 1080,
-    "height": 2337,
-    "widths": [360, 540, 720, 1080],
-    "placeholder": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAADwBACdASoQACMAPt1apE2opSOiNUgBEBuJagCdOUFSlXWYqtv8CghIu3ji72z4JOAA/tL8gEH6cwdeQLzpx1bZIFZSM8eWo/IaNmrAxP4aJfkKyvwlXMbEdrt6wu+pN19LWtRVW0BOCKwceOEaw21+Xr3LCPdU9M+1Ba7BAkiv50FYGSaOtIvawYAAAA=="
+    "placeholder": "data:image/webp;base64,UklGRroAAABXRUJQVlA4IK4AAADwBACdASoQACMAPt1apE2opSOiNUgBEBuJagC22f/gSfgx+dKulUPuvjTGT3bWFgAA/lesoZdrvUCBMs3xLMb19Jwh+CMVCuhWH3D7F6fhk7ZII9FaAXS/aBxhR9F3Z9yQg8E0XUDqODg2v6ODg2v563kcE5SOPOCVyhngd8cxjuffUWwQaT89Vh0JbQsbXuV4ChU7+Ec9D6C3bSBwJ9qP1cTrWn4Gztu68mMAAAA="
   },
   "placement-dark": {
     "source": "golden:placement_dark_phone.png",
@@ -321,7 +341,7 @@
   },
   "step-detail-dark": {
     "source": "store:phone-dark/05-step.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "2bdc9258f1d087944079c175e104dbb14645198e",
     "base": "step-detail-dark",
     "hash": "ad57519e",
     "width": 1080,
@@ -341,7 +361,7 @@
   },
   "step-detail-light": {
     "source": "store:phone-light/05-step.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "2bdc9258f1d087944079c175e104dbb14645198e",
     "base": "step-detail-light",
     "hash": "a024b21c",
     "width": 1080,
@@ -351,7 +371,7 @@
   },
   "step-detail-light@bn": {
     "source": "store:bn-phone-light/05-step.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "2bdc9258f1d087944079c175e104dbb14645198e",
     "base": "step-detail-light-bn",
     "hash": "d9bb39bb",
     "width": 1080,
@@ -361,7 +381,7 @@
   },
   "step-detail-light@pl": {
     "source": "store:pl-phone-light/05-step.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "2bdc9258f1d087944079c175e104dbb14645198e",
     "base": "step-detail-light-pl",
     "hash": "8598f535",
     "width": 1080,
@@ -371,7 +391,7 @@
   },
   "step-detail-light@ru": {
     "source": "store:ru-phone-light/05-step.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "2bdc9258f1d087944079c175e104dbb14645198e",
     "base": "step-detail-light-ru",
     "hash": "5f8b6917",
     "width": 1080,
@@ -381,7 +401,7 @@
   },
   "study-back-dark": {
     "source": "store:phone-dark/03-card-back.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "2bdc9258f1d087944079c175e104dbb14645198e",
     "base": "study-back-dark",
     "hash": "caa85d87",
     "width": 1080,
@@ -401,7 +421,7 @@
   },
   "study-back-light": {
     "source": "store:phone-light/03-card-back.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "2bdc9258f1d087944079c175e104dbb14645198e",
     "base": "study-back-light",
     "hash": "4e88422b",
     "width": 1080,
@@ -411,7 +431,7 @@
   },
   "study-back-light@bn": {
     "source": "store:bn-phone-light/03-card-back.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "2bdc9258f1d087944079c175e104dbb14645198e",
     "base": "study-back-light-bn",
     "hash": "8178abb7",
     "width": 1080,
@@ -421,7 +441,7 @@
   },
   "study-back-light@pl": {
     "source": "store:pl-phone-light/03-card-back.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "2bdc9258f1d087944079c175e104dbb14645198e",
     "base": "study-back-light-pl",
     "hash": "160e46e7",
     "width": 1080,
@@ -431,7 +451,7 @@
   },
   "study-back-light@ru": {
     "source": "store:ru-phone-light/03-card-back.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "2bdc9258f1d087944079c175e104dbb14645198e",
     "base": "study-back-light-ru",
     "hash": "fa77821f",
     "width": 1080,
@@ -451,7 +471,7 @@
   },
   "study-front-dark": {
     "source": "store:phone-dark/02-card-front.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "2bdc9258f1d087944079c175e104dbb14645198e",
     "base": "study-front-dark",
     "hash": "47d7a2b2",
     "width": 1080,
@@ -471,7 +491,7 @@
   },
   "study-front-light": {
     "source": "store:phone-light/02-card-front.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "2bdc9258f1d087944079c175e104dbb14645198e",
     "base": "study-front-light",
     "hash": "e6a3b6e1",
     "width": 1080,
@@ -481,7 +501,7 @@
   },
   "study-front-light@bn": {
     "source": "store:bn-phone-light/02-card-front.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "2bdc9258f1d087944079c175e104dbb14645198e",
     "base": "study-front-light-bn",
     "hash": "4ec5c5f4",
     "width": 1080,
@@ -491,7 +511,7 @@
   },
   "study-front-light@pl": {
     "source": "store:pl-phone-light/02-card-front.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "2bdc9258f1d087944079c175e104dbb14645198e",
     "base": "study-front-light-pl",
     "hash": "ab20533f",
     "width": 1080,
@@ -501,7 +521,7 @@
   },
   "study-front-light@ru": {
     "source": "store:ru-phone-light/02-card-front.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "2bdc9258f1d087944079c175e104dbb14645198e",
     "base": "study-front-light-ru",
     "hash": "add83506",
     "width": 1080,
@@ -511,7 +531,7 @@
   },
   "today-dark": {
     "source": "store:phone-dark/01-today.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "2bdc9258f1d087944079c175e104dbb14645198e",
     "base": "today-dark",
     "hash": "5e378cb4",
     "width": 1080,
@@ -531,7 +551,7 @@
   },
   "today-light": {
     "source": "store:phone-light/01-today.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "2bdc9258f1d087944079c175e104dbb14645198e",
     "base": "today-light",
     "hash": "0db23659",
     "width": 1080,
@@ -541,7 +561,7 @@
   },
   "today-light@bn": {
     "source": "store:bn-phone-light/01-today.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "2bdc9258f1d087944079c175e104dbb14645198e",
     "base": "today-light-bn",
     "hash": "fdd42d3e",
     "width": 1080,
@@ -551,7 +571,7 @@
   },
   "today-light@pl": {
     "source": "store:pl-phone-light/01-today.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "2bdc9258f1d087944079c175e104dbb14645198e",
     "base": "today-light-pl",
     "hash": "ce014225",
     "width": 1080,
@@ -561,7 +581,7 @@
   },
   "today-light@ru": {
     "source": "store:ru-phone-light/01-today.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "2bdc9258f1d087944079c175e104dbb14645198e",
     "base": "today-light-ru",
     "hash": "7190b1d6",
     "width": 1080,
@@ -611,7 +631,7 @@
   },
   "word-detail-dark": {
     "source": "store:phone-dark/06-word.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "2bdc9258f1d087944079c175e104dbb14645198e",
     "base": "word-detail-dark",
     "hash": "e9b8639c",
     "width": 1080,
@@ -631,7 +651,7 @@
   },
   "word-detail-light": {
     "source": "store:phone-light/06-word.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "2bdc9258f1d087944079c175e104dbb14645198e",
     "base": "word-detail-light",
     "hash": "ce63abe8",
     "width": 1080,
@@ -641,7 +661,7 @@
   },
   "word-detail-light@bn": {
     "source": "store:bn-phone-light/06-word.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "2bdc9258f1d087944079c175e104dbb14645198e",
     "base": "word-detail-light-bn",
     "hash": "33263997",
     "width": 1080,
@@ -651,7 +671,7 @@
   },
   "word-detail-light@pl": {
     "source": "store:pl-phone-light/06-word.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "2bdc9258f1d087944079c175e104dbb14645198e",
     "base": "word-detail-light-pl",
     "hash": "dc1a4766",
     "width": 1080,
@@ -661,7 +681,7 @@
   },
   "word-detail-light@ru": {
     "source": "store:ru-phone-light/06-word.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "2bdc9258f1d087944079c175e104dbb14645198e",
     "base": "word-detail-light-ru",
     "hash": "d8e5bcef",
     "width": 1080,
