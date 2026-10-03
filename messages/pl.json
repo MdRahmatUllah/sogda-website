@@ -210,11 +210,11 @@
   "legal": {
     "impressum": "Impressum",
     "privacy": "Polityka prywatności (Datenschutzerklärung)",
-    "binding": "Wiążący jest tekst niemiecki; poniżej jego tłumaczenie na angielski.",
-    "translation": "Tłumaczenie na angielski (niewiążące)",
+    "binding": "Wiążący jest tekst niemiecki; poniżej jego tłumaczenie na polski.",
+    "translation": "Tłumaczenie na polski (niewiążące)",
     "back": "Wróć do Sogdy",
     "impressumDescription": "Impressum (nota prawna) serwisu sogda.de zgodnie z § 5 DDG: kto prowadzi stronę i jak się skontaktować.",
-    "privacyDescription": "Polityka prywatności (Datenschutzerklärung) serwisu sogda.de: jakie dane przetwarza strona. Tekst niemiecki z tłumaczeniem na angielski."
+    "privacyDescription": "Polityka prywatności (Datenschutzerklärung) serwisu sogda.de: jakie dane przetwarza strona. Tekst niemiecki z tłumaczeniem na polski."
   },
   "page": {
     "breadcrumb": "Jesteś tutaj",

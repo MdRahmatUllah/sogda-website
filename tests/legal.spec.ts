@@ -7,24 +7,30 @@ import { routing } from '../i18n/routing';
 const legal = JSON.parse(readFileSync('content/legal.json', 'utf8')) as Record<string, unknown>;
 const complete = ['name', 'street', 'postcodeCity', 'email', 'phone'].every((k) => legal[k]);
 
-// BRIEF §8: the Impressum and the privacy policy, German (binding) and
-// English, reached from every page's footer.
+// BRIEF §8: the Impressum and the privacy policy, German (binding), then a
+// translation: Polish, Russian and Bangla in their own language (#147),
+// English elsewhere. Reached from every page's footer.
+const OWN = ['pl', 'ru', 'bn'];
 for (const locale of routing.locales) {
   const translation = JSON.parse(readFileSync(`messages/${locale}.json`, 'utf8')).legal
     .translation as string;
+  const lang = OWN.includes(locale) ? locale : 'en';
   test.describe(`/${locale}`, () => {
-    for (const [path, heading] of [
-      ['impressum', 'Angaben gemäß § 5 DDG'],
-      ['datenschutz', '3. Hosting'],
+    for (const [path, heading, fact] of [
+      ['impressum', 'Angaben gemäß § 5 DDG', '§ 5 DDG'],
+      ['datenschutz', '3. Hosting', 'huggingface.co'],
     ] as const) {
-      test(`${path}: German then English, axe-clean`, async ({ page }) => {
+      test(`${path}: German, then the ${lang} translation, axe-clean`, async ({ page }) => {
         await page.goto(`/${locale}`);
         await page.locator(`footer a[href="/${locale}/${path}"]`).click();
         await expect(page).toHaveURL(new RegExp(`/${locale}/${path}$`));
         const german = page.locator('article[lang="de"]');
-        const english = page.locator('article[lang="en"]');
+        const translated = page.locator(`article[lang="${lang}"]`);
         await expect(german.getByRole('heading', { name: heading })).toBeVisible();
-        await expect(english).toContainText(translation);
+        await expect(translated).toContainText(translation);
+        // The translation carries the whole text: the Impressum's § 5 DDG,
+        // and the privacy policy's §7 on the app (#145).
+        await expect(translated).toContainText(fact);
         const { violations } = await new AxeBuilder({ page }).analyze();
         expect(violations.map((v) => `${v.id}: ${v.help}`)).toEqual([]);
       });
@@ -39,6 +45,20 @@ test('the privacy policy says what the site does, and nothing it doesn’t', asy
   expect(text).toContain('Vercel Inc.');
   expect(text).toContain('localStorage');
   await expect(page.locator('a[href="https://vercel.com/legal/dpa"]').first()).toBeVisible();
+});
+
+// #148: the legal pages aren't in the sitemap (only /de's are), so the
+// overflow sweeps don't reach them: every locale's, at a small phone.
+test('every locale’s legal pages fit a 320 px phone (#148)', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 800 });
+  const over: string[] = [];
+  for (const locale of routing.locales)
+    for (const path of ['impressum', 'datenschutz']) {
+      await page.goto(`/${locale}/${path}`);
+      const extra = await page.evaluate(() => document.documentElement.scrollWidth - innerWidth);
+      if (extra > 0) over.push(`/${locale}/${path}: ${extra} px`);
+    }
+  expect(over).toEqual([]);
 });
 
 // #145: Play's privacy form takes this page, so it covers the app too, from
