@@ -2,25 +2,21 @@
   "$comment": "The real app screens the site shows (BRIEF §6). Each is the app's golden <golden>_<theme>_<device>.png at `ref`, never redrawn. Bump `ref` to the app's release tag when it ships, then `pnpm sync:screens`.",
   "ref": "4b088a18c815355404b1d742302d5a8e204ed77e",
   "store": {
-    "$comment": "The app's Play screenshots (docs/05-dev-guide/store/<set>/<capture>.png) at one pinned app commit (#66). A set's `skip` lists captures that are out of date. Bump `ref` when the app re-shoots a set, then `pnpm sync:screens`: it records that commit's site-facts `content_version`, which must equal content/facts.json's (#61). Skipped at this ref: every set's 04-course, still the 1.1.0 shot «0 of 5,069 words» while the course has 5,142 (DeutschPlan #1392). Drop the skip once the app re-shoots it.",
-    "ref": "2bdc9258f1d087944079c175e104dbb14645198e",
+    "$comment": "The app's Play screenshots (docs/05-dev-guide/store/<set>/<capture>.png) at one pinned app commit (#66). A set's `skip` lists captures that are out of date. Bump `ref` when the app re-shoots a set, then `pnpm sync:screens`: it records that commit's site-facts `content_version`, which must equal content/facts.json's (#61).",
+    "ref": "30fc7e7c1f54a592f790c308c2499416f3e9e9e7",
     "sets": {
       "en": {
         "light": "phone-light",
-        "dark": "phone-dark",
-        "skip": ["04-course"]
+        "dark": "phone-dark"
       },
       "pl": {
-        "light": "pl-phone-light",
-        "skip": ["04-course"]
+        "light": "pl-phone-light"
       },
       "ru": {
-        "light": "ru-phone-light",
-        "skip": ["04-course"]
+        "light": "ru-phone-light"
       },
       "bn": {
-        "light": "bn-phone-light",
-        "skip": ["04-course"]
+        "light": "bn-phone-light"
       }
     }
   },

@@ -1,7 +1,7 @@
 {
-  "app_ref": "2bdc9258f1d087944079c175e104dbb14645198e",
+  "app_ref": "30fc7e7c1f54a592f790c308c2499416f3e9e9e7",
   "schema": 1,
-  "content_version": "20261003031139",
+  "content_version": "20261003164457",
   "app": { "version": "1.1.0", "package": "de.sogda.app", "min_sdk": 26, "min_android": "8.0" },
   "totals": {
     "words": 5142,
