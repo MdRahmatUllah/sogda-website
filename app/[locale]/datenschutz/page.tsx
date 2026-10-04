@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { Detail, LegalPage, legalMetadata } from '@/components/legal/Legal';
+import { link, privacyTranslation, VERCEL_DPA, VERCEL_PRIVACY } from './translations';
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -8,10 +9,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   return legalMetadata(locale, 'datenschutz');
 }
-
-const VERCEL_PRIVACY = 'https://vercel.com/legal/privacy-policy';
-const VERCEL_DPA = 'https://vercel.com/legal/dpa';
-const link = 'text-link underline underline-offset-4';
 
 // BRIEF §8: a site that collects nothing: static pages, no cookies, no
 // analytics, no third-party requests (the fonts are self-hosted); Vercel
@@ -27,6 +24,7 @@ export default async function Datenschutz({ params }: Props) {
     <LegalPage
       locale={locale}
       title="privacy"
+      translation={privacyTranslation(locale)}
       german={
         <>
           <p className="text-muted">Stand: 3. Oktober 2026</p>

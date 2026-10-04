@@ -53,31 +53,36 @@ export function Detail({ k, label }: { k: Key; label: string }) {
 
 export const hasVatId = Boolean(legal.vatId);
 
-/** A legal page (BRIEF §8): the German text is binding, the English follows
- * as a translation; the chrome around them speaks the page's language. */
+/** A legal page (BRIEF §8): the German text is binding, and a translation
+ * follows it: the page's own language where there is one (pl, ru, bn, #147),
+ * else English. The chrome around them speaks the page's language. */
 export async function LegalPage({
   locale,
   title,
   german,
   english,
+  translation,
 }: {
   locale: string;
   title: 'impressum' | 'privacy';
   german: ReactNode;
   english: ReactNode;
+  translation?: ReactNode;
 }) {
   const t = await getTranslations({ locale, namespace: 'legal' });
   return (
     <main id="main" className="legal mx-auto max-w-3xl px-4 py-16 sm:px-6">
-      <h1 className="text-4xl font-extrabold tracking-[-0.02em]">{t(title)}</h1>
+      {/* break-words: «(Datenschutzerklärung)» is one long word, and the title
+          overflowed a 390 px phone (#148). */}
+      <h1 className="text-4xl font-extrabold tracking-[-0.02em] break-words">{t(title)}</h1>
       <p className="mt-4 text-muted">{t('binding')}</p>
       <article lang="de" className="mt-10">
         {german}
       </article>
       <hr className="my-12 border-t-2 border-line" />
-      <article lang="en">
+      <article lang={translation ? locale : 'en'}>
         <p className="text-sm font-bold tracking-wide text-muted uppercase">{t('translation')}</p>
-        {english}
+        {translation ?? english}
       </article>
       <p className="mt-12">
         <a className="font-semibold text-link underline underline-offset-4" href={`/${locale}`}>
