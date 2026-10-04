@@ -1,9 +1,9 @@
 {
   "$comment": "The real app screens the site shows (BRIEF §6). Each is the app's golden <golden>_<theme>_<device>.png at `ref`, never redrawn. Bump `ref` to the app's release tag when it ships, then `pnpm sync:screens`.",
-  "ref": "4b088a18c815355404b1d742302d5a8e204ed77e",
+  "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
   "store": {
     "$comment": "The app's Play screenshots (docs/05-dev-guide/store/<set>/<capture>.png) at one pinned app commit (#66). A set's `skip` lists captures that are out of date. Bump `ref` when the app re-shoots a set, then `pnpm sync:screens`: it records that commit's site-facts `content_version`, which must equal content/facts.json's (#61).",
-    "ref": "30fc7e7c1f54a592f790c308c2499416f3e9e9e7",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "sets": {
       "en": {
         "light": "phone-light",
@@ -262,11 +262,11 @@
       "golden": "onboarding_welcome",
       "themes": ["light", "dark", "glass"],
       "alt": {
-        "en": "The welcome screen: “Learn German, one clear day at a time”, works fully offline with no account, 12 steps from A1.1 to C2.2, and your progress stays on your phone.",
-        "de": "Die Willkommensseite: „Learn German, one clear day at a time“, komplett offline ohne Konto, 12 Stufen von A1.1 bis C2.2, und dein Fortschritt bleibt auf deinem Handy.",
-        "bn": "স্বাগত পাতা: “Learn German, one clear day at a time”, অ্যাকাউন্ট ছাড়া পুরোপুরি অফলাইন, A1.1 থেকে C2.2 পর্যন্ত ১২টি ধাপ, আর আপনার অগ্রগতি থাকে আপনার ফোনেই।",
-        "pl": "Ekran powitalny: „Learn German, one clear day at a time”, całkowicie offline i bez konta, 12 etapów od A1.1 do C2.2, a postępy zostają na telefonie.",
-        "ru": "Экран приветствия: «Learn German, one clear day at a time», полностью офлайн и без аккаунта, 12 этапов от A1.1 до C2.2, а прогресс остаётся на телефоне."
+        "en": "The welcome screen: “Learn German, one clear day at a time”, a choice of app language (English, Bangla, Polish or Russian), the whole course offline with no account, 12 steps from A1.1 to C2.2, and your progress stays on your phone.",
+        "de": "Die Willkommensseite: „Learn German, one clear day at a time“, die Wahl der App-Sprache (Englisch, Bangla, Polnisch oder Russisch), der ganze Kurs offline ohne Konto, 12 Stufen von A1.1 bis C2.2, und dein Fortschritt bleibt auf deinem Handy.",
+        "bn": "স্বাগত পাতা: “Learn German, one clear day at a time”, অ্যাপের ভাষা বেছে নেওয়া (ইংরেজি, বাংলা, পোলিশ বা রুশ), অ্যাকাউন্ট ছাড়াই পুরো কোর্স অফলাইনে, A1.1 থেকে C2.2 পর্যন্ত ১২টি ধাপ, আর আপনার অগ্রগতি থাকে আপনার ফোনেই।",
+        "pl": "Ekran powitalny: „Learn German, one clear day at a time”, wybór języka aplikacji (angielski, bengalski, polski lub rosyjski), cały kurs offline i bez konta, 12 etapów od A1.1 do C2.2, a postępy zostają na telefonie.",
+        "ru": "Экран приветствия: «Learn German, one clear day at a time», выбор языка приложения (английский, бенгальский, польский или русский), весь курс офлайн и без аккаунта, 12 этапов от A1.1 до C2.2, а прогресс остаётся на телефоне."
       }
     },
     {
