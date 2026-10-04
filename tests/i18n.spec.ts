@@ -286,3 +286,24 @@ for (const path of ['/de', '/en', '/en/a1-1', '/bn/learn-german-in-bangla']) {
     expect(marks.filter(([, kept]) => !kept).map(([text]) => text)).toEqual([]);
   });
 }
+
+// #150: since v1.2.0 the app promises "the whole course works offline", not
+// the sound (DeutschPlan #1365: the phone's German voice may need installing).
+// No locale may say more: no "fully offline", no "no signal" for all of Sogda.
+test('no locale says Sogda is fully offline, only the whole course (#150)', () => {
+  const over =
+    /fully offline|completely offline|komplett offline|vollständig offline|całkowicie offline|w pełni offline|полностью офлайн|পুরোপুরি অফলাইন|সম্পূর্ণ অফলাইন|^no signal|^kein netz|^bez zasięgu|^связь не нужна|^ইন্টারনেট লাগে না/i;
+  for (const locale of routing.locales) {
+    const found: string[] = [];
+    const walk = (x: unknown, path: string) => {
+      if (typeof x === 'string') {
+        if (over.test(x)) found.push(`${path}: ${x}`);
+      } else if (x && typeof x === 'object') {
+        for (const [k, v] of Object.entries(x)) walk(v, path ? `${path}.${k}` : k);
+      }
+    };
+    walk(JSON.parse(readFileSync(`messages/${locale}.json`, 'utf8')), '');
+    expect(found, locale).toEqual([]);
+  }
+  expect(readFileSync('app/llms.txt/route.ts', 'utf8')).not.toMatch(over);
+});

@@ -31,7 +31,7 @@ Sogda here is a German course app. It is unrelated to the historical region Sogd
 - Meanings in ${meanings}: one language, or two shown together. In Russian and Polish, the example sentences and grammar rules too.
 - A daily plan: revise what is due, learn new words, practise a grammar topic and sentences. Spaced revision with FSRS.
 - ${totals.mock_exams_per_step} mock exams per step (${totals.mock_exams} in all): ${paper.questions} questions plus a writing and a speaking task, ${paper.points} points, with a result by section. They are generated from the step's words and grammar, not official Goethe or telc papers.
-- Fully offline, with no account; progress stays on the phone.
+- The whole course works offline, with no account; progress stays on the phone. Sound uses the phone's German voice (if there is none, the app shows how to install one) or the optional Supertonic voice.
 - Android ${facts.app.min_android} or newer (${facts.app.package}), version ${facts.app.version}. The app itself is in ${list(facts.languages.app_ui)}. iPhone: coming soon.
 
 ## Pages
