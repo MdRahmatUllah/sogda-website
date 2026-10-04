@@ -339,7 +339,7 @@
         },
         "offline": {
           "q": "Czy planowanie wymaga internetu?",
-          "a": "Nie. Cały kurs działa offline: planer działa w twoim telefonie, bez konta, a twoje postępy zostają w nim."
+          "a": "Nie. Cały kurs działa offline: planer pracuje w twoim telefonie, bez konta, a twoje postępy zostają w nim."
         },
         "grammar": {
           "q": "Czy Sogda planuje też gramatykę?",
