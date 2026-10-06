@@ -68,6 +68,34 @@ export async function Practice({ locale }: { locale: string }) {
   );
 }
 
+// v1.2.0 (#143): the learner's own German, read on the phone (D2's store
+// capture), and the optional on-phone translation. The wording is the Play
+// listing's (DeutschPlan store-listing.md, "The German you meet").
+const DOCUMENTS = ['read', 'add', 'translate'] as const;
+
+export async function Documents({ locale }: { locale: string }) {
+  const t = await getTranslations({ locale, namespace: 'documents' });
+  return (
+    <section id="documents" aria-labelledby="documents-title" className="py-20 sm:py-28">
+      <div className="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-[1.2fr_1fr] lg:items-center">
+        <div>
+          <Heading id="documents-title" eyebrow={t('eyebrow')} title={t('title')} />
+          {DOCUMENTS.map((key) => (
+            <p key={key} className="mt-5 max-w-xl text-lg text-muted">
+              {t(key)}
+            </p>
+          ))}
+        </div>
+        <Reveal className="mx-auto">
+          <DeviceFrame className="w-60 sm:w-64">
+            <Screen id="document" locale={locale} theme="auto" sizes="256px" />
+          </DeviceFrame>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 // BRIEF §3.6: everything else, one line each (facts from BRIEF §4 only).
 const FEATURES = [
   { key: 'offline', Icon: WifiOff },
@@ -186,7 +214,10 @@ export async function Languages({ locale }: { locale: string }) {
           <p className="mt-5 max-w-xl text-lg text-muted">{t('body')}</p>
         </div>
         <Reveal className="mx-auto w-full max-w-md">
-          <div className="card p-6 sm:p-8">
+          {/* The whole card stays as written under page translation (#139): the
+              German word, and its meaning in each of the app's languages under
+              their own names, are the point of it. */}
+          <div className="card p-6 sm:p-8" translate="no">
             <p className="text-sm font-bold text-muted">A1.1</p>
             <p className="mt-2 text-4xl font-extrabold" lang="de">
               <span className="text-der">der</span> Termin

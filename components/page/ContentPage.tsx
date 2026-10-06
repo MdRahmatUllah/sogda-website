@@ -96,7 +96,11 @@ export async function ContentPage({
             <dl className="mt-4 grid gap-x-6 gap-y-2 text-lg sm:grid-cols-[auto_1fr]">
               {s.terms.map((term, i) => (
                 <div key={i} className="contents">
-                  <dt lang={term.lang} className="font-bold">
+                  <dt
+                    lang={term.lang}
+                    translate={term.lang === 'de' ? 'no' : undefined}
+                    className="font-bold"
+                  >
                     {term.term}
                   </dt>
                   <dd className="text-muted">{term.detail}</dd>

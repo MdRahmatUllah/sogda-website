@@ -110,12 +110,19 @@
     "carousel": "Quiz and exam screens",
     "item": "Screen {n} of {total}"
   },
+  "documents": {
+    "eyebrow": "Your own German",
+    "title": "Learn from the German you meet.",
+    "read": "Paste or share a text, photograph a letter, or choose a PDF. Sogda reads it on your phone and marks the course’s words you don’t know yet, by level.",
+    "add": "Add the ones you pick to your plan, with the sentence you met them in. My documents keeps your texts to reopen.",
+    "translate": "Optional: Hy-MT2 translates on your phone, for example sentences and words outside the course, where the phone has the memory."
+  },
   "features": {
     "eyebrow": "And everything else",
     "title": "Made for a real learner’s day.",
     "offline": {
       "title": "Offline, always",
-      "body": "No signal needed: it works on the U-Bahn and on a plane."
+      "body": "The whole course works without a signal: on the U-Bahn and on a plane."
     },
     "private": {
       "title": "Private by design",
@@ -185,7 +192,7 @@
     "title": "Questions, answered.",
     "internet": {
       "q": "Do I need internet?",
-      "a": "No. Sogda works fully offline. Only the optional natural voice is a download, once, over Wi-Fi."
+      "a": "No. The whole course works offline. Only two optional extras are downloads: the natural voice, once over Wi-Fi, and Hy-MT2 for translation on your phone. Without the natural voice, Sogda speaks with your phone's German voice; if the phone has none, it shows you how to install one."
     },
     "android": {
       "q": "Which Android version do I need?",
@@ -198,6 +205,14 @@
     "data": {
       "q": "Is my data shared?",
       "a": "No. There’s no account, and your progress stays on your phone."
+    },
+    "documents": {
+      "q": "Where does my document go?",
+      "a": "Nowhere: Sogda reads it on your phone. A photo is kept without its location or camera data, or not at all if you choose (Settings), and documents can delete themselves after 30, 90 or 365 days."
+    },
+    "translation": {
+      "q": "Is the translation online?",
+      "a": "No. Hy-MT2 is an optional download that translates on your phone, where the phone has the memory: example sentences, and meanings for words outside the course."
     },
     "exams": {
       "q": "Which exams does it prepare me for?",
@@ -324,7 +339,7 @@
         },
         "offline": {
           "q": "Does the scheduling need the internet?",
-          "a": "No. Sogda works fully offline: the scheduler runs on your phone, with no account, and your progress stays there."
+          "a": "No. The whole course works offline: the scheduler runs on your phone, with no account, and your progress stays there."
         },
         "grammar": {
           "q": "Does Sogda schedule grammar too?",
@@ -378,7 +393,7 @@
         },
         "offline": {
           "q": "Do the mock exams work offline?",
-          "a": "Yes. Sogda works fully offline, the mock exams included: no account and no signal needed."
+          "a": "Yes. The whole course works offline, the mock exams included, with no account. Listening uses your phone's German voice or the optional natural voice."
         },
         "reading": {
           "q": "Is there a reading part?",
@@ -422,7 +437,7 @@
             "b": "you want a plan for each day rather than decks to manage;",
             "c": "you want the meanings and a pronunciation guide in English, or in Bangla, Russian or Polish letters;",
             "d": "you're preparing for an exam: {mocksPerStep, number} mock exams for every step, with listening, writing and speaking, plus vocabulary and grammar;",
-            "e": "you want it fully offline and with no account, on Android."
+            "e": "you want the whole course offline and with no account, on Android."
           }
         },
         "both": {
@@ -463,7 +478,7 @@
       "name": "Sogda or Duolingo",
       "eyebrow": "Comparison",
       "h1": "Sogda or Duolingo for German?",
-      "answer": "Duolingo teaches many languages, and its German course goes through B2 on the CEFR scale, as Duolingo's blog said in April 2026. Sogda teaches only German, from A1 to C2 in {steps, number} steps, with {words, number} words, {topics, number} grammar topics and {mocksPerStep, number} mock exams for every step, fully offline and with no account.",
+      "answer": "Duolingo teaches many languages, and its German course goes through B2 on the CEFR scale, as Duolingo's blog said in April 2026. Sogda teaches only German, from A1 to C2 in {steps, number} steps, with {words, number} words, {topics, number} grammar topics and {mocksPerStep, number} mock exams for every step, the whole course offline and with no account.",
       "sections": {
         "levels": {
           "heading": "How far each goes",
@@ -492,7 +507,7 @@
             "b": "you want grammar as rules you can look up: {topics, number} topics, each with its rule and a short practice;",
             "c": "you want every word with its article and forms where it has them, examples, and a pronunciation guide in your meaning language's letters;",
             "d": "you learn from Bangla, Russian or Polish and want the meanings in your language;",
-            "e": "you want it fully offline, with no account to make."
+            "e": "you want the whole course offline, with no account to make."
           }
         },
         "both": {
@@ -519,7 +534,7 @@
         },
         "offline": {
           "q": "Does Sogda work offline?",
-          "a": "Yes, fully, and with no account. Only the optional natural voice is a download, once, over Wi-Fi."
+          "a": "Yes, the whole course, and with no account. Only two optional extras are downloads: the natural voice, once over Wi-Fi, and Hy-MT2 for translation on your phone."
         },
         "switch": {
           "q": "Can I move my Duolingo progress to Sogda?",
@@ -573,6 +588,12 @@
             "p1": "{mocksPerStep, number} mock exams for every step, {mocks, number} in all, with listening, writing and speaking like the real exams, plus vocabulary and grammar, and a result for each section. There's no reading-comprehension part. They're generated from the step's words and grammar: they aren't official Goethe or telc papers, and Sogda isn't affiliated with either."
           }
         },
+        "documents": {
+          "heading": "From the German you meet",
+          "body": {
+            "p1": "Paste or share a text, photograph a letter, or choose a PDF. Sogda reads it on your phone and marks the course’s words you don’t know yet, by level. Add the ones you pick to your plan, with the sentence you met them in. My documents keeps your texts to reopen. Optional: Hy-MT2 translates on your phone, for example sentences and words outside the course, where the phone has the memory."
+          }
+        },
         "languages": {
           "heading": "In your language",
           "body": {
@@ -582,7 +603,7 @@
         "private": {
           "heading": "Offline and private",
           "body": {
-            "p1": "Fully offline, with no account: your progress stays on your phone. The optional natural Supertonic voice is a one-time download of about 400 MB over Wi-Fi; otherwise Sogda uses your phone's German voice."
+            "p1": "The whole course works offline, with no account: your progress stays on your phone. The optional natural Supertonic voice is a one-time download of about 400 MB over Wi-Fi; otherwise Sogda uses your phone's German voice, and if the phone has none, it shows you how to install one."
           }
         },
         "platform": {
@@ -611,7 +632,7 @@
         },
         "offline": {
           "q": "Does Sogda work without internet?",
-          "a": "Yes, fully. Only the optional natural voice is a download, once, over Wi-Fi."
+          "a": "Yes, fully. Only two optional extras are downloads: the natural voice, once over Wi-Fi, and Hy-MT2 for translation on your phone."
         },
         "account": {
           "q": "Do I need an account?",
@@ -657,7 +678,7 @@
         "offline": {
           "heading": "Offline, and private",
           "body": {
-            "p1": "No signal and no account needed: your progress stays on your phone. Sogda runs on Android {android} or newer."
+            "p1": "The whole course works with no signal and no account: your progress stays on your phone. Sogda runs on Android {android} or newer."
           }
         }
       },
@@ -672,7 +693,7 @@
         },
         "internet": {
           "q": "Do I need the internet?",
-          "a": "No. Sogda works fully offline. Only the optional natural voice is a download, once, over Wi-Fi."
+          "a": "No. The whole course works offline. Only two optional extras are downloads: the natural voice, once over Wi-Fi, and Hy-MT2 for translation on your phone. Without the natural voice, Sogda speaks with your phone's German voice; if the phone has none, it shows you how to install one."
         }
       }
     }

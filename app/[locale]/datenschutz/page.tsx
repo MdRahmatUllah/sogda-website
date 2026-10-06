@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { Detail, LegalPage, legalMetadata } from '@/components/legal/Legal';
+import { link, privacyTranslation, VERCEL_DPA, VERCEL_PRIVACY } from './translations';
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -9,14 +10,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return legalMetadata(locale, 'datenschutz');
 }
 
-const VERCEL_PRIVACY = 'https://vercel.com/legal/privacy-policy';
-const VERCEL_DPA = 'https://vercel.com/legal/dpa';
-const link = 'text-link underline underline-offset-4';
-
 // BRIEF §8: a site that collects nothing: static pages, no cookies, no
 // analytics, no third-party requests (the fonts are self-hosted); Vercel
 // hosts it and keeps server logs. Two choices (theme, language) stay in the
 // visitor's own browser. If Vercel Web Analytics is ever added, this changes.
+// §7 covers the app too (#145), since Play's privacy form takes this page:
+// every point from the app repo (release.md's Data safety and Permissions,
+// BR-PRIV-01/02, BR-DOC-01/05, BR-RATE-01).
 export default async function Datenschutz({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
@@ -24,9 +24,10 @@ export default async function Datenschutz({ params }: Props) {
     <LegalPage
       locale={locale}
       title="privacy"
+      translation={privacyTranslation(locale)}
       german={
         <>
-          <p className="text-muted">Stand: 30. September 2026</p>
+          <p className="text-muted">Stand: 3. Oktober 2026</p>
           <h2>1. Verantwortlicher</h2>
           <p>
             <Detail k="name" label="Name" />, <Detail k="street" label="Straße und Hausnummer" />,{' '}
@@ -84,8 +85,51 @@ export default async function Datenschutz({ params }: Props) {
           </p>
           <h2>7. Die App</h2>
           <p>
-            Diese Erklärung gilt für die Website. Die Sogda-App funktioniert offline, hat kein
-            Konto, und Ihr Lernfortschritt bleibt auf Ihrem Gerät.
+            Diese Erklärung gilt auch für die Sogda-App für Android. Die App erhebt keine Daten über
+            Sie und gibt keine weiter: Es gibt kein Konto, keine Analyse, keine Werbung und keine
+            Werbe-ID. Ohne eine Handlung von Ihnen stellt die App keine Verbindung ins Internet her.
+          </p>
+          <p>
+            <strong>Ihr Lernfortschritt</strong> bleibt in der App auf Ihrem Gerät.
+            Android-Sicherung und Geräteübertragung sind für die App abgeschaltet. Ein Export ist
+            eine Datei, die Sie selbst teilen.
+          </p>
+          <p>
+            <strong>Ihre Dokumente</strong> (eingefügte oder geteilte Texte, Fotos, PDFs) werden auf
+            dem Gerät gelesen, erkannt (Texterkennung von Google ML Kit, mit dem Modell in der App),
+            ausgewertet und übersetzt; nichts davon wird gesendet. Die Nutzungsstatistik von ML Kit
+            ist in der App abgeschaltet. Fotos werden ohne Standort- und Kameradaten gespeichert
+            oder, wenn Sie es so einstellen, gar nicht, und Dokumente können sich nach 30, 90 oder
+            365 Tagen selbst löschen.
+          </p>
+          <p>
+            <strong>Downloads, die Sie starten:</strong> Die natürliche Stimme (Supertonic) und der
+            Übersetzer (Hy-MT2) werden von huggingface.co geladen, standardmäßig nur über WLAN. Die
+            App fragt dabei nur die Dateien an; wie bei jedem Abruf erhält Hugging Face Ihre
+            IP-Adresse, und für seine Server gilt die Datenschutzerklärung von Hugging Face.
+          </p>
+          <p>
+            <strong>Mikrofon:</strong> nur für die Aufnahme in der Sprechprüfung. Die Aufnahme
+            bleibt auf dem Gerät.
+          </p>
+          <p>
+            <strong>Benachrichtigungen:</strong> die tägliche Erinnerung, wenn Sie sie einschalten,
+            und der Fortschritt eines Downloads.
+          </p>
+          <p>
+            <strong>Links:</strong> Erst wenn Sie tippen, öffnet die App eine Webseite im Browser:
+            „Report a problem“ (ein vorausgefülltes GitHub-Issue, das Sie absenden können oder
+            nicht), Wörterbücher (Duden, DWDS, Wiktionary, Linguee, Google) und den Eintrag bei
+            Google Play. Dort gelten die Datenschutzbestimmungen der jeweiligen Seite.
+          </p>
+          <p>
+            <strong>Bewertung:</strong> Nach Ihrer ersten bestandenen Probeprüfung kann einmal die
+            Bewertungskarte von Google Play erscheinen. Sie gehört zur Play-Store-App; Sogda sendet
+            dabei nichts.
+          </p>
+          <p>
+            Der Verantwortliche (Abschnitt 1) und Ihre Rechte (Abschnitt 8) gelten für die App
+            ebenso.
           </p>
           <h2>8. Ihre Rechte</h2>
           <p>
@@ -100,7 +144,7 @@ export default async function Datenschutz({ params }: Props) {
       }
       english={
         <>
-          <p className="text-muted">As of 30 September 2026</p>
+          <p className="text-muted">As of 3 October 2026</p>
           <h2>1. Controller</h2>
           <p>
             <Detail k="name" label="Name" />, <Detail k="street" label="Street and number" />,{' '}
@@ -155,9 +199,46 @@ export default async function Datenschutz({ params }: Props) {
           </p>
           <h2>7. The app</h2>
           <p>
-            This policy covers the website. The Sogda app works offline, has no account, and your
-            progress stays on your device.
+            This policy also covers the Sogda app for Android. The app collects no data about you
+            and shares none: there is no account, no analytics, no advertising and no advertising
+            ID. The app connects to the internet only when you do something that needs it.
           </p>
+          <p>
+            <strong>Your progress</strong> stays in the app on your device. Android backup and
+            device transfer are switched off for the app. An export is a file you share yourself.
+          </p>
+          <p>
+            <strong>Your documents</strong> (texts you paste or share, photos, PDFs) are read,
+            recognised (Google ML Kit text recognition, with the model inside the app), analysed and
+            translated on the device; none of it is sent. ML Kit&apos;s usage statistics are
+            switched off in the app. Photos are kept without their location or camera data, or not
+            at all if you choose, and documents can delete themselves after 30, 90 or 365 days.
+          </p>
+          <p>
+            <strong>Downloads you start:</strong> the natural voice (Supertonic) and the translator
+            (Hy-MT2) are fetched from huggingface.co, over Wi-Fi only by default. The app only
+            requests the files; as with any request, Hugging Face receives your IP address, and
+            Hugging Face&apos;s privacy policy applies to its servers.
+          </p>
+          <p>
+            <strong>Microphone:</strong> only for the Speaking exam&apos;s recording, which stays on
+            the device.
+          </p>
+          <p>
+            <strong>Notifications:</strong> the daily reminder, if you switch it on, and a
+            download&apos;s progress.
+          </p>
+          <p>
+            <strong>Links:</strong> only when you tap does the app open a web page in your browser:
+            &ldquo;Report a problem&rdquo; (a pre-filled GitHub issue you may send, or not),
+            dictionaries (Duden, DWDS, Wiktionary, Linguee, Google) and the Google Play listing.
+            Each site&apos;s own privacy terms apply there.
+          </p>
+          <p>
+            <strong>Rating:</strong> after your first passed mock exam, Google Play&apos;s rating
+            card may appear once. It belongs to the Play Store app; Sogda sends nothing with it.
+          </p>
+          <p>The controller (section 1) and your rights (section 8) apply to the app as well.</p>
           <h2>8. Your rights</h2>
           <p>
             You have the right of access (Art. 15 GDPR), rectification (Art. 16), erasure (Art. 17),

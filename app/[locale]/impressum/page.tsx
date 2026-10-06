@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { Detail, hasVatId, LegalPage, legalMetadata } from '@/components/legal/Legal';
+import { impressumTranslation } from './translations';
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -29,6 +30,7 @@ export default async function Impressum({ params }: Props) {
     <LegalPage
       locale={locale}
       title="impressum"
+      translation={impressumTranslation(locale)}
       german={
         <>
           <h2>Angaben gemäß § 5 DDG</h2>

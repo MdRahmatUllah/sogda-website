@@ -69,7 +69,7 @@ test.describe('the screenshot pipeline', () => {
         }
       }
     }
-    expect(count).toBeGreaterThanOrEqual(18);
+    expect(count).toBeGreaterThanOrEqual(21);
   });
 
   test('every file exists under a name that carries its hash, in the goldens’ shape (#66)', () => {

@@ -1,7 +1,7 @@
 {
   "compare-dark": {
     "source": "golden:compare_dark_phone.png",
-    "ref": "4b088a18c815355404b1d742302d5a8e204ed77e",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "compare-dark",
     "hash": "eab65942",
     "width": 1170,
@@ -11,17 +11,17 @@
   },
   "compare-glass": {
     "source": "golden:compare_glass_phone.png",
-    "ref": "4b088a18c815355404b1d742302d5a8e204ed77e",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "compare-glass",
-    "hash": "70af4770",
+    "hash": "4866c60e",
     "width": 1170,
     "height": 2532,
     "widths": [360, 540, 720, 1080],
-    "placeholder": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAACwBACdASoQACMAPuVkpk2pJiOiNVgIASAciWwAuwBBROEPf3woFCToYB/VZaAgAP6zocnDwsBDU2gUvAoZRT6zoxonqpbV52DQTDUZRrMOjQKcgvY2w0VK3UMsB3pswr3sYFykh/ditvnfnZ44Akv6nG6+VsloWQCkGidKuHqDIxp8UhjDkqR2jtaB4xvIpAAAAA=="
+    "placeholder": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAACwBACdASoQACMAPuVkp02pJiOiNVgIASAciWwAuwBBRN0o28crgO5BllzS0BAAAP6zocnDwsBDU2gUvAoZRT6zox/yf0IOl/iRePXaDj8k8NeP0eTpEf4RlqGGBZiIy6AF/SyGG4KKTuthdhxsA8Xc2/k43XytktCyAUg0TpVw9QZGNPikMYclSO0drQPGN5FIAAAA"
   },
   "compare-light": {
     "source": "golden:compare_light_phone.png",
-    "ref": "4b088a18c815355404b1d742302d5a8e204ed77e",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "compare-light",
     "hash": "13c1f3e1",
     "width": 1170,
@@ -31,7 +31,7 @@
   },
   "day-complete-dark": {
     "source": "golden:day_complete_confetti_dark_phone.png",
-    "ref": "4b088a18c815355404b1d742302d5a8e204ed77e",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "day-complete-dark",
     "hash": "42bdec72",
     "width": 1170,
@@ -41,7 +41,7 @@
   },
   "day-complete-light": {
     "source": "golden:day_complete_confetti_light_phone.png",
-    "ref": "4b088a18c815355404b1d742302d5a8e204ed77e",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "day-complete-light",
     "hash": "24a45b49",
     "width": 1170,
@@ -49,9 +49,59 @@
     "widths": [360, 540, 720, 1080],
     "placeholder": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAACQBACdASoQACMAPu1aqU2ppKQiNVgIATAdiWwAnS/BbP8BykOT0EOZJ19KgwAA/uqwen0Hjv5Nb6XFWFOB/hS21SCf/gPla1az4/mkkbXnSzWxe/3caaDpZCSrQ+NAYcgckOAugG4Lhhs/VHuOtjyF1R8KHFlMg/Le1seCaev9DAeIvkY5rJT+zfdlJ8AA"
   },
+  "document-dark": {
+    "source": "store:phone-dark/07-document.png",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
+    "base": "document-dark",
+    "hash": "7719524d",
+    "width": 1080,
+    "height": 2337,
+    "widths": [360, 540, 720, 1080],
+    "placeholder": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAAAwBACdASoQACMAPu1irE2ppaSiKqwBMB2JYgC7AEXtil1GGXmJbIuHSRAA/sMBIVfD+nsWIkvkxyVvnMfUg265CUUFwX/uD819SDdP2uOW7jDQiOk+19ZG6ihgPbO2eSauZheOrkn/0tPOvycP9eqX76nGwyeqPxdRV8e09v5qTARtHvY0AA=="
+  },
+  "document-light": {
+    "source": "store:phone-light/07-document.png",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
+    "base": "document-light",
+    "hash": "ba7b5585",
+    "width": 1080,
+    "height": 2337,
+    "widths": [360, 540, 720, 1080],
+    "placeholder": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAABQBACdASoQACMAPulip02pJaOiNVgIASAdCWYAs4A9u6et/RMWq2st0DZoAF+2Lx74bLZILkuEdeVsOt9DEcgL2/+SvP/iO8zDKE02sth/jS4nQRuD19s2rrkeJdX+tXyWeQqzH4lfU4zl//wc0/iSk/Rp5YAE8AAAAA=="
+  },
+  "document-light@bn": {
+    "source": "store:bn-phone-light/07-document.png",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
+    "base": "document-light-bn",
+    "hash": "a31ab7c4",
+    "width": 1080,
+    "height": 2337,
+    "widths": [360, 540, 720, 1080],
+    "placeholder": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAAAwBACdASoQACMAPu1cqE2ppKOiNVgIATAdiWgAtsg9u6fHXWq++HFqyAAAkYsVwk/N5sfb9mJqdcYJcofqRyHUf0pT6a/+Wl5/neiNrkooJycyzPdk1NaH5WBEukJp7zXsBmQmJsGxL3RySDLspK8bPVCrP/Bvdq1uNMkVkaKfAAAA"
+  },
+  "document-light@pl": {
+    "source": "store:pl-phone-light/07-document.png",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
+    "base": "document-light-pl",
+    "hash": "510177e3",
+    "width": 1080,
+    "height": 2337,
+    "widths": [360, 540, 720, 1080],
+    "placeholder": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAACwBACdASoQACMAPulgqE2pJaOiNVgIASAdCWgAs4A9lk8TZFCa+UClSHQc5PMAAGG0oj0Zkst6NYlEUr5qnyIgajeW9c0f/8lef/Fq5W7QfjseXQ/kudtE+xEJU91WJsL4/oKzaXlw3sDll2Uoqsc7f6X/0OafxK2CV4MFApzQAA=="
+  },
+  "document-light@ru": {
+    "source": "store:ru-phone-light/07-document.png",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
+    "base": "document-light-ru",
+    "hash": "7710d8b9",
+    "width": 1080,
+    "height": 2337,
+    "widths": [360, 540, 720, 1080],
+    "placeholder": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAAAwBACdASoQACMAPulip02pJaOiNVgIASAdCWgAs4A9lePsmftnNV0X6AAAYbSiPRmSy3o1p5EYK6nN1etx42ncLL9/5K8/+LVyuD76BbYk6/HR6Kp5T3is1HNWFQd9kE0Oez1K6LyXB2sX1OM5f/8HNPjtkVdg30SEAA=="
+  },
   "exam-listening-light": {
     "source": "golden:exam_runner_listening_light_phone.png",
-    "ref": "4b088a18c815355404b1d742302d5a8e204ed77e",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "exam-listening-light",
     "hash": "8e16d3ac",
     "width": 1170,
@@ -61,7 +111,7 @@
   },
   "exam-results-dark": {
     "source": "golden:exam_results_dark_phone.png",
-    "ref": "4b088a18c815355404b1d742302d5a8e204ed77e",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "exam-results-dark",
     "hash": "eb5afbc6",
     "width": 1170,
@@ -71,17 +121,17 @@
   },
   "exam-results-glass": {
     "source": "golden:exam_results_glass_phone.png",
-    "ref": "4b088a18c815355404b1d742302d5a8e204ed77e",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "exam-results-glass",
-    "hash": "811bfd74",
+    "hash": "75a4be38",
     "width": 1170,
     "height": 2532,
     "widths": [360, 540, 720, 1080],
-    "placeholder": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAACwBACdASoQACMAPu1eqE2ppSOiNVgIATAdiWoAsR8vxvLIVI8Obc+wIpAYo+KAAP7qvWg0VrWA/jHXAjuzDTsTlqdPAbgAueP4X69ghJnyUqdaJawMjvcFfMPw9aAwu0I0Xg0hmekFZxWn7u/hsWFu3bb/4N/ohevK9FWxEgq+44OuxXQugAAA"
+    "placeholder": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAABQBACdASoQACMAPulgp02pJaOiNVgIASAdCWoAqPRFZadFVT/MRxTfisK0AP7qs5cAQ1KnOlvziYq+oWiyB0FH03a0ilWvvrkDNRGH1All0FYoL9Bt2JtbRXrUBofMj3XEn9IXPSem8rT2wt3AxT/ob/RDEL/o7Jhc3ZXB4xHkc71QAAA="
   },
   "exam-results-light": {
     "source": "golden:exam_results_light_phone.png",
-    "ref": "4b088a18c815355404b1d742302d5a8e204ed77e",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "exam-results-light",
     "hash": "269df8ab",
     "width": 1170,
@@ -91,7 +141,7 @@
   },
   "grammar-practice-dark": {
     "source": "golden:grammar_practice_dark_phone.png",
-    "ref": "4b088a18c815355404b1d742302d5a8e204ed77e",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "grammar-practice-dark",
     "hash": "4f2630b3",
     "width": 1170,
@@ -101,17 +151,17 @@
   },
   "grammar-practice-glass": {
     "source": "golden:grammar_practice_glass_phone.png",
-    "ref": "4b088a18c815355404b1d742302d5a8e204ed77e",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "grammar-practice-glass",
-    "hash": "4e310354",
+    "hash": "fbc2060f",
     "width": 1170,
     "height": 2532,
     "widths": [360, 540, 720, 1080],
-    "placeholder": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAACwBACdASoQACMAPtlcpU2oJaOiNUgBABsJbACdMy/EWB44uG0LtkLgdLX3JZ4gAP7nU0hFV9eP2T9ySaY8rT4j7U6MJ5s63/hk3x75UiXA6x89g4q6dqaOEx0xNsYzRsS1E5WJBS+0PGG3UzIvUIjWAFDZzuF3bGNPvbRtVn/yd/u4kv2lV/Vz/kybC/qFQ44AAA=="
+    "placeholder": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAACwBACdASoQACMAPt1epU2opaOiNUgBEBuJbACdMy/EYFLR4F+f7mxt7RMQJxywAP7fG0AVEVGnNwewQspOmD93KuLFESl9L66V507LP6zCQDBtu9DM05Yn3/sgNPF7pSDu0EvCF0fz7c/flrAZJB4IQfSZmBePjJglB6PYu/yd/u4kv2lV/Vz/kybC/qFQ44AAAA=="
   },
   "grammar-practice-light": {
     "source": "golden:grammar_practice_light_phone.png",
-    "ref": "4b088a18c815355404b1d742302d5a8e204ed77e",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "grammar-practice-light",
     "hash": "0b14fdb1",
     "width": 1170,
@@ -121,49 +171,49 @@
   },
   "learn-dark": {
     "source": "store:phone-dark/04-course.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "learn-dark",
-    "hash": "621b6035",
+    "hash": "dd6138ae",
     "width": 1080,
     "height": 2337,
     "widths": [360, 540, 720, 1080],
-    "placeholder": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAAAQBACdASoQACMAPuVipk2pJaOiNVgIASAciWYALv/AUUGLXsqAIGmwAAD+3lwtZxK1D051w68s8kVUUbBH/cGLzFnZbJK9JBM1P/8iD+0Bw/uk/MdEokZvDVPxFQw0ZEToN3pLjfgSHfwyIj9KZdFM1ZXcSYrqsFdEjovj0lSBICq0ECeW86+NuZ93XfawcfGAAA=="
+    "placeholder": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAAAQBACdASoQACMAPuVipk2pJaOiNVgIASAciWYALv/AUUGLXsqAIGmwAAD+3lwtZxK1D051w68s8kVUUbBH/cGLzFnZbJK9JBM1P/8iD+0Bw/uk/MdEokZvDVPxFQw0ZEToN3pLjfgSHfwyIj9KZdFM1ZXcSYrqsFdEjovj0lSBICq0ECeW86+NuZ93XfawcXKAAA=="
   },
   "learn-glass": {
     "source": "golden:learn_glass_phone.png",
-    "ref": "4b088a18c815355404b1d742302d5a8e204ed77e",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "learn-glass",
-    "hash": "12d349f6",
+    "hash": "58a92083",
     "width": 1170,
     "height": 2532,
     "widths": [360, 540, 720, 1080],
-    "placeholder": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAACQBACdASoQACMAPt1apE2opSOiNUgBEBuJbACdAC0IeFNMZKUuSk2ZI1nZ5nAA/rH5xJpRS/j7axAhR+x9NmfnuJerH9V3HnI+cXyGNJ3rxRgVd4xTQiKsj6jO6qrSwiojT2ZWUqnD8PO9cKrPfFRRsSBEalkac+Wd4rCM3ZVXSxA8oADEizj/4BKCpdjW9jFsUIcAAAA="
+    "placeholder": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAACQBACdASoQACMAPt1cpE2opSOiNUgBEBuJbACdAq3Q6AB2u9BDX1+HU/DOdkAA/rH7poO9RGQRryW9V2fnNZ+vldQKZkpQbe4B+pgqLUS+9eKOER68YpvjSHtekHGrL1Vu0JmsZhLIK3lyhEPMV0Uj5MRUOaWCeuvdRH2chOwpRYGyK1v9rQjTc6/PKU7LR6evKH1kPAAAAA=="
   },
   "learn-light": {
     "source": "store:phone-light/04-course.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "learn-light",
-    "hash": "c8b7e460",
+    "hash": "ae963d6a",
     "width": 1080,
     "height": 2337,
     "widths": [360, 540, 720, 1080],
-    "placeholder": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAAAQBQCdASoQACMAPt1apE2opSOiNUgBEBuJagCdOUFSlXWYqtv8CghItnuu1GiO/BXAAP7S/IBB+IM0vEHOGDbGPllDRMcJEkSOVitLsiPyFZX4SrmNiO129YXfUm6+l2X4ywPEHJe+ggmCBw4EHIbGlozynAkbIQs4Xkh9BOKohhSVrVqH4nw4iAAAAA=="
+    "placeholder": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAAAQBQCdASoQACMAPt1apE2opSOiNUgBEBuJagCdOUFSlXWYqtv8CghItnuu1GiO8ZwAAP7S/IBB+IM0vEHOGDbGPllDRMcJEkSOVitLsiPyFZX4SrmNiO129YXfUm6+l2X4ywPEHJe+ggjyWTBRobudmmRuilNOJsgE4+/evd9mStaAndPxyrAA"
   },
   "learn-light@bn": {
     "source": "store:bn-phone-light/04-course.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "learn-light-bn",
-    "hash": "7923c9f6",
+    "hash": "4b6f1523",
     "width": 1080,
     "height": 2337,
     "widths": [360, 540, 720, 1080],
-    "placeholder": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAAAwBACdASoQACMAPt1apE2opSOiNUgBEBuJagCw/f/gUEXLltj29Y0RuaAA/tLlAbhCelPs+tkbF1hTkHUQM8YC4+rhbzF3/yFOO3+/SRXt5zTCCMnot7wdrVG5PVVLwuHpSNh4FmqbOta0cmyzT/452Qo+YNOgfVsgYL8ZIztQAA=="
+    "placeholder": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAAAwBACdASoQACMAPt1apE2opSOiNUgBEBuJagCdEf/gUEXLltj29Y0RuaAA/tLlAbhCelPs+tkbF1hTkHUQM8YC4+rhbzF3/yFOO3+/SRXi7sHAJukBgp9i0QaxVLp1GQLw4jLoJG5Mu3bhIKVQGQkC3kF0gtKBuW6L2qDjOMziAAAA"
   },
   "learn-light@pl": {
     "source": "store:pl-phone-light/04-course.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "learn-light-pl",
-    "hash": "43983d8f",
+    "hash": "075a9a8a",
     "width": 1080,
     "height": 2337,
     "widths": [360, 540, 720, 1080],
@@ -171,17 +221,17 @@
   },
   "learn-light@ru": {
     "source": "store:ru-phone-light/04-course.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "learn-light-ru",
-    "hash": "6d4a791e",
+    "hash": "7eac2e13",
     "width": 1080,
     "height": 2337,
     "widths": [360, 540, 720, 1080],
-    "placeholder": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAADwBACdASoQACMAPt1apE2opSOiNUgBEBuJagCdOUFSlXWYqtv8CghIu3ji72z4JOAA/tL8gEH6cwdeQLzpx1bZIFZSM8eWo/IaNmrAxP4aJfkKyvwlXMbEdrt6wu+pN19LWtRVW0BOCKwceOEaw21+Xr3LCPdU9M+1Ba7BAkiv50FYGSaOtIvawYAAAA=="
+    "placeholder": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAADwBACdASoQACMAPt1apE2opSOiNUgBEBuJagCdOUFSlXWYqtv8CghItnGBFEwymgAA/tL8gEH6cz0fSYkPQ6zMik0WhOxDxG8svP2J/le//kKyvwlXMbEdrt6wu+pN19LsvyPSQCY9KcgQo2WyZhfFmMlXnp1Wt5A3hBsAlOgiOkqumAfYNlfI64A/AAAA"
   },
   "placement-dark": {
     "source": "golden:placement_dark_phone.png",
-    "ref": "4b088a18c815355404b1d742302d5a8e204ed77e",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "placement-dark",
     "hash": "83a81052",
     "width": 1170,
@@ -191,9 +241,9 @@
   },
   "placement-glass": {
     "source": "golden:placement_glass_phone.png",
-    "ref": "4b088a18c815355404b1d742302d5a8e204ed77e",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "placement-glass",
-    "hash": "a18ba963",
+    "hash": "3b85e80e",
     "width": 1170,
     "height": 2532,
     "widths": [360, 540, 720, 1080],
@@ -201,7 +251,7 @@
   },
   "placement-light": {
     "source": "golden:placement_light_phone.png",
-    "ref": "4b088a18c815355404b1d742302d5a8e204ed77e",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "placement-light",
     "hash": "d9b1ef09",
     "width": 1170,
@@ -211,7 +261,7 @@
   },
   "progress-dark": {
     "source": "golden:progress_dark_phone.png",
-    "ref": "4b088a18c815355404b1d742302d5a8e204ed77e",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "progress-dark",
     "hash": "a30be15f",
     "width": 1170,
@@ -221,17 +271,17 @@
   },
   "progress-glass": {
     "source": "golden:progress_glass_phone.png",
-    "ref": "4b088a18c815355404b1d742302d5a8e204ed77e",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "progress-glass",
-    "hash": "3e45ba31",
+    "hash": "4b23fbbd",
     "width": 1170,
     "height": 2532,
     "widths": [360, 540, 720, 1080],
-    "placeholder": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAABwBACdASoQACMAPu1mqk6ppaOiKqwBMB2JZACw7BYelv9NlAtBzclcUUSjgAD+sdDaJW0jjSNMf9NVju+xfaqtE/IbAMHTUQj0MlX5RDR8vgko7zV0ellh7Dn/Vuwm1cT0zalC016AnNT0PBlIbJMRYYzCvI3M3gqYAAAA"
+    "placeholder": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAADQBACdASoQACMAPu1kq04ppaQiKqwBMB2JZACdMxgCJ9nYY6b8e4lWt/QG2mQYkAD+sdDaJW0jjSNMf9NVju+xfaqtGsKgLWU2sKoWD3GA7+XwSUi1UIR55nfIyhig+i0ob/ticvLPKhgOQ8zUT8UOkCpIJGmejpDF9VAA"
   },
   "progress-light": {
     "source": "golden:progress_light_phone.png",
-    "ref": "4b088a18c815355404b1d742302d5a8e204ed77e",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "progress-light",
     "hash": "72dd54cc",
     "width": 1170,
@@ -241,7 +291,7 @@
   },
   "quiz-articles-light": {
     "source": "golden:quiz_runner_articles_light_phone.png",
-    "ref": "4b088a18c815355404b1d742302d5a8e204ed77e",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "quiz-articles-light",
     "hash": "ce334737",
     "width": 1170,
@@ -251,7 +301,7 @@
   },
   "quiz-listening-light": {
     "source": "golden:quiz_runner_listening_light_phone.png",
-    "ref": "4b088a18c815355404b1d742302d5a8e204ed77e",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "quiz-listening-light",
     "hash": "9f6ae75b",
     "width": 1170,
@@ -261,7 +311,7 @@
   },
   "search-dark": {
     "source": "golden:search_dark_phone.png",
-    "ref": "4b088a18c815355404b1d742302d5a8e204ed77e",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "search-dark",
     "hash": "99678f8f",
     "width": 1170,
@@ -271,7 +321,7 @@
   },
   "search-glass": {
     "source": "golden:search_glass_phone.png",
-    "ref": "4b088a18c815355404b1d742302d5a8e204ed77e",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "search-glass",
     "hash": "43eb0c7e",
     "width": 1170,
@@ -281,7 +331,7 @@
   },
   "search-light": {
     "source": "golden:search_light_phone.png",
-    "ref": "4b088a18c815355404b1d742302d5a8e204ed77e",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "search-light",
     "hash": "3868c6ab",
     "width": 1170,
@@ -291,7 +341,7 @@
   },
   "sentences-dark": {
     "source": "golden:sentences_dark_phone.png",
-    "ref": "4b088a18c815355404b1d742302d5a8e204ed77e",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "sentences-dark",
     "hash": "3bbe9f03",
     "width": 1170,
@@ -301,7 +351,7 @@
   },
   "sentences-glass": {
     "source": "golden:sentences_glass_phone.png",
-    "ref": "4b088a18c815355404b1d742302d5a8e204ed77e",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "sentences-glass",
     "hash": "da0fa9ed",
     "width": 1170,
@@ -311,7 +361,7 @@
   },
   "sentences-light": {
     "source": "golden:sentences_light_phone.png",
-    "ref": "4b088a18c815355404b1d742302d5a8e204ed77e",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "sentences-light",
     "hash": "e4c1cabd",
     "width": 1170,
@@ -321,9 +371,9 @@
   },
   "step-detail-dark": {
     "source": "store:phone-dark/05-step.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "step-detail-dark",
-    "hash": "ad57519e",
+    "hash": "772d0285",
     "width": 1080,
     "height": 2337,
     "widths": [360, 540, 720, 1080],
@@ -331,59 +381,59 @@
   },
   "step-detail-glass": {
     "source": "golden:step_detail_glass_phone.png",
-    "ref": "4b088a18c815355404b1d742302d5a8e204ed77e",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "step-detail-glass",
-    "hash": "87096373",
+    "hash": "71e56329",
     "width": 1170,
     "height": 2532,
     "widths": [360, 540, 720, 1080],
-    "placeholder": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAACQBACdASoQACMAPu1irE2ppaSiKqwBMB2JZgCdMuOA2BlrxaZCVh8H5BsMIwAA/sX8e03nE8OSv0KQLX4F/tp+8S7nDAye55j1Bt4XrWOgVRlAAZpPq0tfsdXe/VhvsFE+IgztlbLFa1CupJXAFWL6AfAAQz3VcEfJWNoKHm2acAAA"
+    "placeholder": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAACQBACdASoQACMAPu1irE2ppaSiKqwBMB2JZgCxHzRA2BlrxaZCVh8H5BsMIwAA/sX8e03nE8OSv0KQLX4F/tp+8S7nDAye55j1Bt4XwmBu73xMAIcEx3MpTuFsVSVyfiPiKu7SNbmn+cpoA+XiZINdgYvBacrEoLnfJndJ5X0OOUAA"
   },
   "step-detail-light": {
     "source": "store:phone-light/05-step.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "step-detail-light",
-    "hash": "a024b21c",
+    "hash": "f30706d2",
     "width": 1080,
     "height": 2337,
     "widths": [360, 540, 720, 1080],
-    "placeholder": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAACwAwCdASoQACMAPu1mqU6ppaOiKqwBMB2JQBYdgs1qHOBGSbkzYAD+wxZIQw3porfnrcFHynjTv/4tD/JTM3eOMwP9jTuw6181W1hbhrCMxj9zWYfDOXlOk7etB5U/Mkhiip8YixCf4wOvcFCEtEhPQkddzZngAAA="
+    "placeholder": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAACwAwCdASoQACMAPu1kqU6ppaOiKqwBMB2JQBYdgstQb3bRr53QAAD+wxZIQ3DFriHD1vqLLIZmgP/xaH+SmZu8cZgf7Gndh1r5qtrC3DWEYeWz0U7/IjyoTgZD2Dc51R0nZBgKj54p/jA69wUIS0TGNdWKOHXXAAA="
   },
   "step-detail-light@bn": {
     "source": "store:bn-phone-light/05-step.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "step-detail-light-bn",
-    "hash": "d9bb39bb",
+    "hash": "cb406e69",
     "width": 1080,
     "height": 2337,
     "widths": [360, 540, 720, 1080],
-    "placeholder": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAADwAwCdASoQACMAPu1orFCppaQiqqgBMB2JYgCuHBZrVQgqLyctdSoAAP7DFkhDXlFk6Rd4bFcBYKh4r//Fof5KctODTl38eR2/BAjxGwKLKoONTHwOmHbxxWFGFLry5FS0PazNJumNA7Oxe6VB33LjfdBAIFusGZXqvKtsvi7CygAA"
+    "placeholder": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAADQAwCdASoQACMAPu1qrVCppaQiqqgBMB2JYgCuHBZrVSOVim1aawAA/sMWSENeUWSyZJG2fg9hRv/xaH+SnLTg05d/HkdvwQI6LXMgmwLV8Sp0I5kPX6ijC7YvbFHKzSSZQKeLf/4hdjZiw1h4nFRB0D0N3mtPG3MRqcuAFMAAAA=="
   },
   "step-detail-light@pl": {
     "source": "store:pl-phone-light/05-step.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "step-detail-light-pl",
-    "hash": "8598f535",
+    "hash": "bb608e5e",
     "width": 1080,
     "height": 2337,
     "widths": [360, 540, 720, 1080],
-    "placeholder": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAADQAwCdASoQACMAPu1srlCppiQiqqgBMB2JQBdgAstQqKciYU5IVwAA/sMWSENwxEyTe5rMDdnAf/i0P8lOWnB0R5i9kopLyO34Nvc86L0ck7s96g6Fv4UjfKghiOgzsUkNijg+RT6Y+D6QtxPwHICXaErwzY/nN5CWrG+qhtVjkfrAAAA="
+    "placeholder": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAADQAwCdASoQACMAPu1qrlCppaQiqqgBMB2JQBdgAs2T2IDbOiQRJGAA/sMWSEMNQ90uzjfHKHnf/i0P8lOWnB0R5i9kopLyO34Nvc86L0ck7s96g6Fv4UjfKghiOgzsUkNijg+RT6Y+D6QtxPwHICXaErwzY/nN5CWrG+qhtVjkfrAA"
   },
   "step-detail-light@ru": {
     "source": "store:ru-phone-light/05-step.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "step-detail-light-ru",
-    "hash": "5f8b6917",
+    "hash": "2fc5f4e8",
     "width": 1080,
     "height": 2337,
     "widths": [360, 540, 720, 1080],
-    "placeholder": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAADQAwCdASoQACMAPu1mqU6ppaOiKqwBMB2JQBWAAstQWCtEYEjzSgAA/sMWSENwxa4FyaeFpPgTenX/8Wh/kpmbvHGYH+xp3Ycjt+CS3C7c4NMouhkNFj1lM1CA17DWjVfYMmk0pRfStqNOopCjIl2zZdu7M32dfPA/vkpAAAA="
+    "placeholder": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAADQAwCdASoQACMAPu1kqU6ppaOiKqwBMB2JQBWAAstQWCtEYEjzSgAA/sMWSENwxa4FyaeFpPgTenX/8Wh/kpmbvHGYH+xp3Ycjt+CS3C7c4NMouhkNFj1lM1CA17DWjVfYMmk0pRfStqNOopCjIl2zZdu7M32dfPA/vkpAAAA="
   },
   "study-back-dark": {
     "source": "store:phone-dark/03-card-back.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "study-back-dark",
-    "hash": "caa85d87",
+    "hash": "38dbd116",
     "width": 1080,
     "height": 2337,
     "widths": [360, 540, 720, 1080],
@@ -391,29 +441,29 @@
   },
   "study-back-glass": {
     "source": "golden:study_back_glass_phone.png",
-    "ref": "4b088a18c815355404b1d742302d5a8e204ed77e",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "study-back-glass",
-    "hash": "863a09cd",
+    "hash": "dad54d8d",
     "width": 1170,
     "height": 2532,
     "widths": [360, 540, 720, 1080],
-    "placeholder": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAADwBACdASoQACMAPulgp02pJaOiNVgIASAdCWoAuzlBUwAP90j9iI9nYUS1/DmuX/AA/q8aWIKsIgMuDZe2F3vDL4IszQKyYkfiuJjj7Oxv52GAiEJr+E6bjOYAZ20CDyPmVba3Yth70XE4UXjKWg++kNlXTUOpYAn76AAA"
+    "placeholder": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAAAwBQCdASoQACMAPuVip02pJaOiNVgIASAciWoAuzlBUB4VgL23mByrJWg9KafUDGjcAAD+rxpYhlZffYw3Gnqm6g/8INHokvmqMRKxHOop+NwWHTkxiA00IbB3/PYCtTvOl9JREufWfPCaC34fjWLMu5uqH+pPQDVEBGqETIszQAAA"
   },
   "study-back-light": {
     "source": "store:phone-light/03-card-back.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "study-back-light",
-    "hash": "4e88422b",
+    "hash": "c8d9b8a7",
     "width": 1080,
     "height": 2337,
     "widths": [360, 540, 720, 1080],
-    "placeholder": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAABQBACdASoQACMAPu1eqE2ppSQiNVgIATAdiWUArAAWbZdIxvpqBuBUh+KgAP7xyBoByMSBvt6F+RDFH0FDysfLoE5uDkkyTjxQKu8OJ42Z04ZAfCzgIwffLT/oKG0vvy84urVhdKH4AAAA"
+    "placeholder": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAABwBACdASoQACMAPu1cqE2ppKOiNVgIATAdiWUArAAWbZdIxvpvJ81j2lqgAAD+8cgaAcjEgb7ehfkQxR9BQ8rHy6BObg5KtARFJ3lur/dkWavSJbvBYChWoOQLYxYb+vVt7q75oTvTCAAA"
   },
   "study-back-light@bn": {
     "source": "store:bn-phone-light/03-card-back.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "study-back-light-bn",
-    "hash": "8178abb7",
+    "hash": "9bfc973f",
     "width": 1080,
     "height": 2337,
     "widths": [360, 540, 720, 1080],
@@ -421,27 +471,27 @@
   },
   "study-back-light@pl": {
     "source": "store:pl-phone-light/03-card-back.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "study-back-light-pl",
-    "hash": "160e46e7",
+    "hash": "e7662e81",
     "width": 1080,
     "height": 2337,
     "widths": [360, 540, 720, 1080],
-    "placeholder": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAACwBACdASoQACMAPu1cqE2ppKOiNVgIATAdiWUAtsgWbZdIx5QamwKWjXnH8GAAAP7xyBoHOStkJqKciEbnPPDJB2mgcDbpiWicdcS2BAEgGee5zWHhCIYOzL4UQIP1tBXnVzpkrhRc1ISQAAA="
+    "placeholder": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAACwBACdASoQACMAPu1cqE2ppKQiNVgIATAdiWUAtsgWc8u52k4wpK6ef/Q/mroAAP7xyh7xMrJ0wqofVno9tCmsAnqXhTgI0wF97RKURgISneYNugeDiyuoVqa6lrd2vcCVfz9yGrWiTaBb1AAAAA=="
   },
   "study-back-light@ru": {
     "source": "store:ru-phone-light/03-card-back.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "study-back-light-ru",
-    "hash": "fa77821f",
+    "hash": "00630f2a",
     "width": 1080,
     "height": 2337,
     "widths": [360, 540, 720, 1080],
-    "placeholder": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAACwBACdASoQACMAPulgp02pJaOiNVgIASAdCWUAxNgWbZm+haTjRPbbsUsUnWwAAP7xyBpmP71lWEOAHhMrnwpDl9PA/kAvDwjOEIzZ7ZvkJ5y3EG3fjYL2X0/gGsYkW0zoHbIQ1g3UAAAA"
+    "placeholder": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAABQBACdASoQACMAPuVipk2pJaOiNVgIASAciWUAuwAWc8AziP5Q4OoxuHgAAP7xyw9Or7nz0xDcpDK1VaPTwMCMywXqVgF4eEYwAaoBlP2oodP++lGU8P4UwCDq7UnY8VmuhT+4QrQulmroyAAAAA=="
   },
   "study-front-200-light": {
     "source": "golden:study_front_200_light_phone.png",
-    "ref": "4b088a18c815355404b1d742302d5a8e204ed77e",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "study-front-200-light",
     "hash": "30fcd476",
     "width": 1170,
@@ -451,9 +501,9 @@
   },
   "study-front-dark": {
     "source": "store:phone-dark/02-card-front.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "study-front-dark",
-    "hash": "47d7a2b2",
+    "hash": "2d526ca1",
     "width": 1080,
     "height": 2337,
     "widths": [360, 540, 720, 1080],
@@ -461,29 +511,29 @@
   },
   "study-front-glass": {
     "source": "golden:study_front_glass_phone.png",
-    "ref": "4b088a18c815355404b1d742302d5a8e204ed77e",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "study-front-glass",
-    "hash": "f8fc6063",
+    "hash": "aa34de24",
     "width": 1170,
     "height": 2532,
     "widths": [360, 540, 720, 1080],
-    "placeholder": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAACwBACdASoQACMAPt1apE2opSOiNUgBEBuJagC06C+mY88nZcVe+A9ePTl5NSHAAP7EnuHpiu2ZXBt/hDMUeBAtlK3aoH/x8ixUcsAB67LSOHHFRtivi/VZoK4+/+itu7YS7kOFA5iUQXELnAa6BObwGmx7p029HItsAAAA"
+    "placeholder": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAABwBACdASoQACMAPt1apE2opSOiNUgBEBuJagC06C+mY88nZcNbLxOWTb4EKAD+xJ7h6YrtmVwbf4QzFHgRvHev+znTnbuvMIbKAJ1DZP47UYzBDlkfE/ArUZb56PfC8DBxRG7pk1VE9NJIRtOHzLgw+lZMqOaCeElzAAAA"
   },
   "study-front-light": {
     "source": "store:phone-light/02-card-front.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "study-front-light",
-    "hash": "e6a3b6e1",
+    "hash": "c7a9cf64",
     "width": 1080,
     "height": 2337,
     "widths": [360, 540, 720, 1080],
-    "placeholder": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAADQAwCdASoQACMAPu1kqU6ppaOiKqwBMB2JZQDE2EXtjTBbeSUGxCAA/vlsvHgXT3DNw1SPVSpIhvBTtYq/IOy3bo0xV2OjyxQoaTFcAxiFO4pBZoYWWPwg09NwSz9vWn6khH96YAA="
+    "placeholder": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAADQAwCdASoQACMAPu1kqU6ppaOiKqwBMB2JZQDE2EXtjTBbeSUGxCAA/vlrNZRAWtGKBsNL7JdAJyma2U7beFFlf+dTrrMWWaDGjRxCNJ5adcqxMi6ZrWBhL0Ul9IA7YeKAAA=="
   },
   "study-front-light@bn": {
     "source": "store:bn-phone-light/02-card-front.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "study-front-light-bn",
-    "hash": "4ec5c5f4",
+    "hash": "0613e4b5",
     "width": 1080,
     "height": 2337,
     "widths": [360, 540, 720, 1080],
@@ -491,87 +541,87 @@
   },
   "study-front-light@pl": {
     "source": "store:pl-phone-light/02-card-front.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "study-front-light-pl",
-    "hash": "ab20533f",
+    "hash": "9b57f7d9",
     "width": 1080,
     "height": 2337,
     "widths": [360, 540, 720, 1080],
-    "placeholder": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAADQAwCdASoQACMAPu1mqU6ppaOiKqwBMB2JZQDE2EXtjTDZuyl56AAA/vlrNZRAWtGKBsNysswuy1VyDmW/Br+mZpA3GzHQ59mxqGteKjMJ/MPWrz0Ab58bXSNBvTp3IAA="
+    "placeholder": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAADwAwCdASoQACMAPu1oqE8ppiOiKqwBMB2JZQDKAEXzylk3txVeclwAAP75bAJ3tTAxmNTIViGYEKsrImzoYEPBq+zZxCcit9zaDhhc2zUKq8Zek+33Z6AOI90T0w6Wb1OAAA=="
   },
   "study-front-light@ru": {
     "source": "store:ru-phone-light/02-card-front.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "study-front-light-ru",
-    "hash": "add83506",
+    "hash": "991f7e66",
     "width": 1080,
     "height": 2337,
     "widths": [360, 540, 720, 1080],
-    "placeholder": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAAAQBACdASoQACMAPu1kqk4ppaQiKqwBMB2JZQDH5EXti2U+uRxI5n7hwAD++K4mA8xCBZ3giqXzRvQg/41v7hqgnY+UUvjENA6nJ48cTtpuxowWYladG4Je4A3A4acFBYYAAA=="
+    "placeholder": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAADQAwCdASoQACMAPu1kqU6ppaOiKqwBMB2JZQDE2EXzwgXEX/usLAAA/vlsAne0yZKHzGoWo+9+SkAYmeQdlu3RpirsdLtERCGym3dyYU0NeHlpdAXzwXoA3z42ukZDzd0fgAAA"
   },
   "today-dark": {
     "source": "store:phone-dark/01-today.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "today-dark",
-    "hash": "5e378cb4",
+    "hash": "8dab3f0b",
     "width": 1080,
     "height": 2337,
     "widths": [360, 540, 720, 1080],
-    "placeholder": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAAAQBACdASoQACMAPt1apE2opSOiNUgBEBuJaAC2ydwBRPviROA0cXMaUAD+i1Ha7ZbUDKPRMrjPiurqbUSFJGSA4xbDQLqCa5gJkZV3af/wuhE/5dBnUDeoVRYjYAj2k7YUPBP4Lcgm6+qQ2ZbrlRfaO4MktKQ3UWCk2na2zY53FBtbcb5D1EiMiE5eHpH0awcc/G6AAAA="
+    "placeholder": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAAAQBACdASoQACMAPt1apE2opSOiNUgBEBuJaACo9dwBRPviRKJ+/Y/uAAD+i1FL9QczzPA4jsRJdg9suiWhN2N7mT9KIUc45YHcUCznBlN2/8LoRP+XQgVeHeXLaMEgXUrreiDbYcjqcSfSbgX4bV8qcnUV4DGc9Iunxc5/PiFlILjfHmT1TNfdv5Mv0+Z/tuqP9nyTbfjIgAAA"
   },
   "today-glass": {
     "source": "golden:today_glass_phone.png",
-    "ref": "4b088a18c815355404b1d742302d5a8e204ed77e",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "today-glass",
-    "hash": "88ae7f39",
+    "hash": "b47e025d",
     "width": 1170,
     "height": 2532,
     "widths": [360, 540, 720, 1080],
-    "placeholder": "data:image/webp;base64,UklGRsoAAABXRUJQVlA4IL4AAADQBACdASoQACMAPu1qrVCppaQiqqgBMB2JbACdMoSA4QcgPEx4PWyIwQCAmyb7AAD8i3Wj2AiWvIbDCncYo+sRGoifjOMT/6wtiYoYIR2p6DSsgvpdOTrQ2mh2haRR+cUdR+wP07p3XXF5VSzTzNf1lLUp7IOB+7DlRJxOfIt4KoIcSJ7bkuGtBkKvkTXUq+A7eeNW+b5gcPQj3M4keRs/OVuyifstSVRT9MD3//K6A5ckfk7/ZyZXooGdAAAA"
+    "placeholder": "data:image/webp;base64,UklGRsoAAABXRUJQVlA4IL4AAACwBACdASoQACMAPu1qrVCppaQiqqgBMB2JbACdMyGCJ2eKaYNVLqvCRx8I53qAAPyLgL/QOyX+4UL21guUAirn+39+f5f6xQoFwoNPUrqKJOxwQRhIwnEEPAyP+UK2MqGAgszsxErfm93aA+XyPya7x3faQYcwN9AU9rLJ0F8RgRkVPbcl3hKgpEXyJzuyr4DzTjVvm+YHD0I9hfw/VTxKnL88NGzSrx7++o5//K6A5nCZ/J3+zkyzeyM52gAA"
   },
   "today-light": {
     "source": "store:phone-light/01-today.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "today-light",
-    "hash": "0db23659",
+    "hash": "5840e9fe",
     "width": 1080,
     "height": 2337,
     "widths": [360, 540, 720, 1080],
-    "placeholder": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAADQAwCdASoQACMAPt1cpU2opSOiNUgBEBuJagCdAB1cdfINlutIq8AAXs2tbY1M6V3v+sLx3KvHqEe17cRyrJhLT7beNJu0YehtOuLcJVy7/4uYvn9xj91L64NIjqAiF5SSLvAPRMHLSaJlAjzfssO5qLFdgxMY/+8pFlbeogbq8P2l+qZrwcAa1oErpkefYAAAAA=="
+    "placeholder": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAADQAwCdASoQACMAPt1cpU2opSOiNUgBEBuJbACdAB1cOg6ug4u2/8AAXs2tbY30lFSgxk+vNNX/gmMyl8IsjGsVLiC2x2X3EhgoX12OvTBki//FzF8/uMfupfXBpEdS6RmIF4MIu7im+f6lv2korm56jLWQaQU7lobPgkz4xjEELnlnKtmuN8hz+ZVjbVVZC6oegAAA"
   },
   "today-light@bn": {
     "source": "store:bn-phone-light/01-today.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "today-light-bn",
-    "hash": "fdd42d3e",
+    "hash": "43eb3ca7",
     "width": 1080,
     "height": 2337,
     "widths": [360, 540, 720, 1080],
-    "placeholder": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAADwAwCdASoQACMAPt1apE2opSOiNUgBEBuJagCdAB1GCq8sHs2eBvVgAF7NrW2NHxrnOLJJy5xMjiWZpZxALONgrX6/b/fpwNsFRScKq8/+LmL5/cY/dS+uDSI67OhljeCPc8CjDXHEjAYCBqYY2XIekic1tdoVYwCMWpnhi4J0+BhCQXO4oP8kfBDTz5qmKKUAAA=="
+    "placeholder": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAADwAwCdASoQACMAPt1YpE2opSOiNUgBEBuJbACdAB1GCq8sHs2eBvVgAF7NrW2N9JRUoMZPsPcqjXEszhSxAg9id7joafAGqlhVZFc2ZS8v/i5i+f3GP3Uvrg0iOuzn7eX1reRFzmzdyetEGwO3VJQKtO2XQBx2Ttfilmo/SNP1c0K5HVM1+GRAmyo5BPRkfKAAAA=="
   },
   "today-light@pl": {
     "source": "store:pl-phone-light/01-today.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "today-light-pl",
-    "hash": "ce014225",
+    "hash": "f441bacb",
     "width": 1080,
     "height": 2337,
     "widths": [360, 540, 720, 1080],
-    "placeholder": "data:image/webp;base64,UklGRqgAAABXRUJQVlA4IJwAAAAwBACdASoQACMAPulgp02pJaOiNVgIASAdCWoAnQAOpowY+v6yGfBetYAAXs01Dm1tuq+YH2MvViMUcb08WFFMxaO95NArA9gtzqmCU5URVXn/wuUp/sWAUeJ6A7W0HMzE/q/h1VPVyVLhLosIhjGRqIRsjNLK5J2HnoVxZEpQCWQ/8RJXuieWcq2a/6HG69JIx5jcLWgdl/sSAAA="
+    "placeholder": "data:image/webp;base64,UklGRqgAAABXRUJQVlA4IJwAAAAwBACdASoQACMAPulgp02pJaOiNVgIASAdCWwAnQAOpow49YlEQ8cXlIAAXs01Dm1turW/+nfGBA+Y63aeIkbP6ABUYKQ74A1UsKzf4YvHuCQ3/wuUp/sWAUeJ6A7W0HMzE/q/h1VPTBUqR15Xibi0Dm33JeWVzrImUNoaKsqBtqlaUYxBlBdXh+0v/4ON16SRjzH32hEM5GsEAAA="
   },
   "today-light@ru": {
     "source": "store:ru-phone-light/01-today.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "today-light-ru",
-    "hash": "7190b1d6",
+    "hash": "14323aa8",
     "width": 1080,
     "height": 2337,
     "widths": [360, 540, 720, 1080],
-    "placeholder": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAADwAwCdASoQACMAPulgp02pJaOiNVgIASAdCWoAnQAOpovr7VcUQNfwAF7NNQ5tbbqvmB9jL1YjFHJSdZaDX1HHU6NDWVlUi4Ek3emCQ3/wuUp/sWAUeJ6A7btSEwe2LzPKDfr1m3Rb+YJQclYwc7Y6U/5iyhs+QFDKBbWlGNZPomnV4ftL/+DjdapAOSdQbXKxGm1AAAA="
+    "placeholder": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAADwAwCdASoQACMAPulgp02pJaOiNVgIASAdCWwAnQAOpovr7VcUQNfwAF7NNQ5tbbq1v/p3xgQPmOt3oOXV0F+OIVN4S3pin6lDOsa1KXl/8LlKf7FgFHiegO27UhMHti8zyg369Zt0W/mCUHJWMHO2OlP+YsobPkBQygW1pRjWT6Jp1eH7S//g43WqQDknUG1ysRptQAA="
   },
   "today-tablet-light": {
     "source": "golden:today_light_tablet.png",
-    "ref": "4b088a18c815355404b1d742302d5a8e204ed77e",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "today-tablet-light",
     "hash": "ae20da70",
     "width": 2048,
@@ -581,39 +631,39 @@
   },
   "welcome-dark": {
     "source": "golden:onboarding_welcome_dark_phone.png",
-    "ref": "4b088a18c815355404b1d742302d5a8e204ed77e",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "welcome-dark",
-    "hash": "7f4b1c9c",
+    "hash": "d3d2ab5e",
     "width": 1170,
     "height": 2532,
     "widths": [360, 540, 720, 1080],
-    "placeholder": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAACwAwCdASoQACMAPu1qrlCppaQiqqgBMB2JbACw7BQqay+T8WKESgD8qrr7xQxgKVTKYGynCZROqICsPQmsPjzajSYaqA3gyq8G//CtfysiLmArSW5gK7PT8LEU+c+46IU9HNmnWSr3/XnnMaAnAZGJhQwc1T3fMl4/6bV8xdfQBsVKCnSuCOChZ6TNd99yYAA="
+    "placeholder": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAABQBACdASoQACMAPu1kqU6ppaOiKqwBMB2JbACdMuov/gJHuY+G5ljjG9kAAPyquvvFDGApVMpgbKcIHf8+pjehcFzTnComn2ah8WCfQTP/CtfgzZHfUm9zFKFX52+7zBRNVyT/OQSae/3OvQAp5EXBePpLj/vurBtvm77qCcjjWSTYFflXi719WAdPGIeXqa1fFVKQAAA="
   },
   "welcome-glass": {
     "source": "golden:onboarding_welcome_glass_phone.png",
-    "ref": "4b088a18c815355404b1d742302d5a8e204ed77e",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "welcome-glass",
-    "hash": "077e626b",
+    "hash": "0bc3e1bc",
     "width": 1170,
     "height": 2532,
     "widths": [360, 540, 720, 1080],
-    "placeholder": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAABwBACdASoQACMAPt1epU2opaOiNUgBEBuJbACdOUABLASyFRjus154dAGTUAD+YPSQ+OTmBR0H9X9SARpg/dxqKCtEQDWFpSwBiwuxEyAz6qiulFPIeGJRp6h5MhhKgNldEfNFC6NtzDp0/DCyY7TlNLV5g7gshCrYuCQsNw48cc0bsAAAAA=="
+    "placeholder": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAACwBACdASoQACMAPuVkpk2pJiOiNVgIASAciWwAnTlAAJnFAdnRierOZWBvQAbAAP5g9JD418G+YYmgKitoLVLV04ZU4ClRfpgob1PiP2LrKZ15JfQ30swMfGRb7kayyqXudBDA6+pepCpWYwAkUT66ZEZjIO0Fu6xVlrl4vlabcQb/wV/6exHjjmjdgAAA"
   },
   "welcome-light": {
     "source": "golden:onboarding_welcome_light_phone.png",
-    "ref": "4b088a18c815355404b1d742302d5a8e204ed77e",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "welcome-light",
-    "hash": "ef394277",
+    "hash": "6e5d1686",
     "width": 1170,
     "height": 2532,
     "widths": [360, 540, 720, 1080],
-    "placeholder": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAACwBACdASoQACMAPu1mqU6ppaOiKqwBMB2JbACdMt8lf8PkoAU+mp+vKQta3bEAAPB8Q86Q1MUc2NwamhdwYdBOHChDXBNDv2Pu/8Wh+YI6PNQObvrPlzZTTxS4Qlr908evdH9YAt9NjPj8kjycoS8tioy7vrgjgoWefFO+xaujMCgAAAA="
+    "placeholder": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAABQBACdASoQACMAPu1irU2ppaSiKqwBMB2JbACdMoR/UBvEXq2ASnLwp8PgAPB8Q86Q1MUc2NwYpQGzBa+rdAXPPlGaoL/8Wh1aE5gK0l7Sz5EFnM6TJyBtQPxEvOFV3d5DISavxNS2zuxEIMNV4csca5EMOK/JQ+Kejdpk0Fb5AAAA"
   },
   "word-detail-dark": {
     "source": "store:phone-dark/06-word.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "word-detail-dark",
-    "hash": "e9b8639c",
+    "hash": "007356d2",
     "width": 1080,
     "height": 2337,
     "widths": [360, 540, 720, 1080],
@@ -621,7 +671,7 @@
   },
   "word-detail-glass": {
     "source": "golden:word_detail_glass_phone.png",
-    "ref": "4b088a18c815355404b1d742302d5a8e204ed77e",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "word-detail-glass",
     "hash": "765c957d",
     "width": 1170,
@@ -631,19 +681,19 @@
   },
   "word-detail-light": {
     "source": "store:phone-light/06-word.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "word-detail-light",
-    "hash": "ce63abe8",
+    "hash": "458c6301",
     "width": 1080,
     "height": 2337,
     "widths": [360, 540, 720, 1080],
-    "placeholder": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAACQBACdASoQACMAPuleqE2pJSOiNVgIASAdCUAZGoLM+lx3GFQi1WsJ7Bzq3MAA/m6e0rHjUTzvSsT11FPR/ZgiOxAPwr93q8E8/9r/+LfrWBi7EsbNz3SmAdFqa7ibW0vWM1a7BkojQBTkNq+idayhpVzC/XwVKcAAAA=="
+    "placeholder": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAACQBACdASoQACMAPulep02pJSOiNVgIASAdCUAZGoLM+lx3GFQi1WsJ7Bzq3MAA/m6e0rHjUTzvSsT11FPR/ZgiOxAPwr93q8E8/9r/+LfrWBi7EsbNz3SmAdFqa7ibW0vWM1a7BkojQBTkNq+idayhpVzC/XwVKcAAAA=="
   },
   "word-detail-light@bn": {
     "source": "store:bn-phone-light/06-word.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "word-detail-light-bn",
-    "hash": "33263997",
+    "hash": "8a49f51b",
     "width": 1080,
     "height": 2337,
     "widths": [360, 540, 720, 1080],
@@ -651,22 +701,22 @@
   },
   "word-detail-light@pl": {
     "source": "store:pl-phone-light/06-word.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "word-detail-light-pl",
-    "hash": "dc1a4766",
+    "hash": "32dea3b1",
     "width": 1080,
     "height": 2337,
     "widths": [360, 540, 720, 1080],
-    "placeholder": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAACQBACdASoQACMAPuVip02pJaOiNVgIASAciUAY/ILM+lx0c+VbyGe/tAPSnoAA/m6e0rHyhBa/FkdgaL5TZTHYmWW4yPUM4uoaFgXm/szfZjHNvIPk7dhWXOuXrgVL8Ga3zDUgGJCA2gWgarKntUm5lKLW9FGp4LBhOIAA"
+    "placeholder": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAACQBACdASoQACMAPulip02pJaOiNVgIASAdCUAY/ILM+lx3GFQYnDOSN6Eic5gA/m6e0rHjUTzvSsT11FPR/ZgiOxAPwr93q8E8/9r/+LfrWBi7EsbNz0UNrumArAtCjSJyeYY0Son+tod9TrvO4mkJpQe+GUZ/5gDHQAAA"
   },
   "word-detail-light@ru": {
     "source": "store:ru-phone-light/06-word.png",
-    "ref": "b98218f650be7bb791e881905417a82d41844b39",
+    "ref": "708709ee58668d8cd4148362c2defd0a5e7ead54",
     "base": "word-detail-light-ru",
-    "hash": "d8e5bcef",
+    "hash": "b497a6fb",
     "width": 1080,
     "height": 2337,
     "widths": [360, 540, 720, 1080],
-    "placeholder": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAABQBACdASoQACMAPt1apE2opSOiNUgBEBuJQBm4BZn0psg/733vBpDzuXmAAP6dF3fZ+x4vLEC1WIo3RygcGrBX2WILUfcD/oY9PUOx/z+hJMY5uQmZ3fD40QSC96KFE6eppUsb1wd/EdO58g1v94+C+R4LhAAA"
+    "placeholder": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAABQBACdASoQACMAPt1apU2opSOiNUgBEBuJQBm4BZn0psg/733vBpDzuXmAAP6dF3fZ+x4vLEC1WIo3RygcGrBX2WILUfcD/oY9PUOx/z+hJMY5uQmZ3fD40QSC96KFE6eppUsb1wd/EdO58g1v94+C+R4LhAAA"
   }
 }
