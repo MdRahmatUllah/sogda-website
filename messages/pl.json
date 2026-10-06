@@ -122,7 +122,7 @@
     "title": "Z myślą o prawdziwej codzienności nauki.",
     "offline": {
       "title": "Zawsze offline",
-      "body": "Bez zasięgu: działa w metrze i w samolocie."
+      "body": "Cały kurs działa bez zasięgu: w metrze i w samolocie."
     },
     "private": {
       "title": "Prywatność od początku",
@@ -192,7 +192,7 @@
     "title": "Pytania i odpowiedzi.",
     "internet": {
       "q": "Czy potrzebuję internetu?",
-      "a": "Nie. Sogda działa całkowicie offline. Pobrania wymagają tylko dwa opcjonalne dodatki: naturalny głos, raz, przez Wi‑Fi, i Hy-MT2 do tłumaczenia na telefonie."
+      "a": "Nie. Cały kurs działa offline. Pobrania wymagają tylko dwa opcjonalne dodatki: naturalny głos, raz, przez Wi‑Fi, i Hy-MT2 do tłumaczenia na telefonie. Bez naturalnego głosu Sogda mówi niemieckim głosem twojego telefonu; jeśli telefon go nie ma, Sogda pokaże, jak go zainstalować."
     },
     "android": {
       "q": "Jakiej wersji Androida potrzebuję?",
@@ -339,7 +339,7 @@
         },
         "offline": {
           "q": "Czy planowanie wymaga internetu?",
-          "a": "Nie. Sogda działa całkowicie offline: planer działa w twoim telefonie, bez konta, a twoje postępy zostają w nim."
+          "a": "Nie. Cały kurs działa offline: planer pracuje w twoim telefonie, bez konta, a twoje postępy zostają w nim."
         },
         "grammar": {
           "q": "Czy Sogda planuje też gramatykę?",
@@ -393,7 +393,7 @@
         },
         "offline": {
           "q": "Czy egzaminy próbne działają offline?",
-          "a": "Tak. Sogda działa całkowicie offline, razem z egzaminami próbnymi: bez konta i bez zasięgu."
+          "a": "Tak. Cały kurs działa offline, razem z egzaminami próbnymi, i bez konta. Słuchanie korzysta z niemieckiego głosu twojego telefonu albo z opcjonalnego naturalnego głosu."
         },
         "reading": {
           "q": "Czy jest część z czytania?",
@@ -462,7 +462,7 @@
         "private": {
           "heading": "Offline i prywatnie",
           "body": {
-            "p1": "Całkowicie offline i bez konta: twoje postępy zostają na telefonie. Opcjonalny naturalny głos Supertonic to jednorazowe pobranie około 400 MB przez Wi‑Fi; bez niego Sogda używa niemieckiego głosu twojego telefonu."
+            "p1": "Cały kurs działa offline i bez konta: twoje postępy zostają na telefonie. Opcjonalny naturalny głos Supertonic to jednorazowe pobranie około 400 MB przez Wi‑Fi; bez niego Sogda używa niemieckiego głosu twojego telefonu, a jeśli telefon go nie ma, pokaże, jak go zainstalować."
           }
         },
         "platform": {
@@ -543,7 +543,7 @@
             "b": "wolisz plan na każdy dzień niż talie, którymi trzeba zarządzać;",
             "c": "zależy ci na znaczeniach, przykładach i regułach gramatyki po polsku oraz na wskazówkach wymowy zapisanych polskimi literami;",
             "d": "przygotowujesz się do egzaminu: {mocksPerStep, plural, one {# egzamin próbny} few {# egzaminy próbne} many {# egzaminów próbnych} other {# egzaminu próbnego}} na każdy etap, ze słuchaniem, pisaniem i mówieniem, a do tego ze słownictwem i gramatyką;",
-            "e": "chcesz uczyć się w pełni offline i bez konta, na Androidzie."
+            "e": "chcesz mieć cały kurs offline i bez konta, na Androidzie."
           }
         },
         "both": {
@@ -584,7 +584,7 @@
       "name": "Sogda czy Duolingo",
       "eyebrow": "Porównanie",
       "h1": "Sogda czy Duolingo do niemieckiego?",
-      "answer": "Duolingo uczy wielu języków, a jego kurs niemieckiego sięga poziomu B2 w skali CEFR, jak napisał blog Duolingo w kwietniu 2026 r. Sogda uczy tylko niemieckiego, od A1 do C2 w {steps, number} etapach, z {words, number} słowami, {topics, number} tematami gramatycznymi i {mocksPerStep, number} egzaminami próbnymi na każdy etap, w pełni offline i bez konta.",
+      "answer": "Duolingo uczy wielu języków, a jego kurs niemieckiego sięga poziomu B2 w skali CEFR, jak napisał blog Duolingo w kwietniu 2026 r. Sogda uczy tylko niemieckiego, od A1 do C2 w {steps, number} etapach, z {words, number} słowami, {topics, number} tematami gramatycznymi i {mocksPerStep, number} egzaminami próbnymi na każdy etap, cały kurs offline i bez konta.",
       "sections": {
         "levels": {
           "heading": "Jak daleko sięga każda",
@@ -613,7 +613,7 @@
             "b": "potrzebujesz gramatyki w postaci reguł, do których można wrócić: {topics, plural, one {# temat gramatyczny} few {# tematy gramatyczne} many {# tematów gramatycznych} other {# tematu gramatycznego}}, każdy z regułą i krótkim ćwiczeniem;",
             "c": "chcesz, by każde słowo miało rodzajnik i formy (jeśli je ma), przykłady i wskazówkę wymowy zapisaną polskimi literami;",
             "d": "zależy ci na znaczeniach, przykładach i regułach po polsku;",
-            "e": "chcesz uczyć się w pełni offline, bez zakładania konta."
+            "e": "chcesz mieć cały kurs offline, bez zakładania konta."
           }
         },
         "both": {
@@ -640,7 +640,7 @@
         },
         "offline": {
           "q": "Czy Sogda działa offline?",
-          "a": "Tak, w pełni i bez konta. Pobrania wymagają tylko dwa opcjonalne dodatki: naturalny głos, raz, przez Wi‑Fi, i Hy-MT2 do tłumaczenia na telefonie."
+          "a": "Tak, cały kurs, i bez konta. Pobrania wymagają tylko dwa opcjonalne dodatki: naturalny głos, raz, przez Wi‑Fi, i Hy-MT2 do tłumaczenia na telefonie."
         },
         "switch": {
           "q": "Czy mogę przenieść postępy z Duolingo do Sogdy?",
@@ -678,7 +678,7 @@
         "offline": {
           "heading": "Offline i prywatnie",
           "body": {
-            "p1": "Nie potrzebujesz internetu ani konta: twoje postępy zostają na telefonie. Sogda działa na Androidzie {android} i nowszym."
+            "p1": "Cały kurs działa bez internetu i bez konta: twoje postępy zostają na telefonie. Sogda działa na Androidzie {android} i nowszym."
           }
         }
       },
@@ -693,7 +693,7 @@
         },
         "internet": {
           "q": "Czy potrzebny jest internet?",
-          "a": "Nie. Sogda działa całkowicie offline. Pobrać trzeba tylko opcjonalny naturalny głos — raz, przez Wi‑Fi."
+          "a": "Nie. Cały kurs działa offline. Pobrania wymagają tylko dwa opcjonalne dodatki: naturalny głos, raz, przez Wi‑Fi, i Hy-MT2 do tłumaczenia na telefonie. Bez naturalnego głosu Sogda mówi niemieckim głosem twojego telefonu; jeśli telefon go nie ma, Sogda pokaże, jak go zainstalować."
         }
       }
     }
