@@ -200,7 +200,11 @@ test('the Bangla page: Bangla copy, Bangla digits, Bangla alt text', async ({ pa
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(
     'জার্মান শিখুন, প্রতিদিন একটু একটু করে।',
   );
-  await expect(page.locator('#journey').getByText('৫,০৬৯টি শব্দ')).toBeVisible();
+  await expect(
+    page
+      .locator('#journey')
+      .getByText(`${new Intl.NumberFormat('bn').format(FACTS.totals.words)}টি শব্দ`),
+  ).toBeVisible();
   await expect(page.locator('#hero .hero-screen img').first()).toHaveAttribute('alt', /আজকের পাতা/);
   await expect(page.locator('#day [data-beat="0"] span').first()).toHaveText('১');
   await expect(page.getByText('শিগগিরই Google Play-তে আসছে').first()).toBeVisible();
@@ -208,12 +212,14 @@ test('the Bangla page: Bangla copy, Bangla digits, Bangla alt text', async ({ pa
 
 // Counted words agree with their number (Polish one/few/many; the memory
 // chart's gaps are the app's schedule from content/facts.json, #103).
-const GAPS: number[] = JSON.parse(readFileSync('content/facts.json', 'utf8')).fsrs.good_days.slice(
-  0,
-  4,
-);
+const FACTS = JSON.parse(readFileSync('content/facts.json', 'utf8'));
+const GAPS: number[] = FACTS.fsrs.good_days.slice(0, 4);
 const counted = (locale: string, forms: Record<string, string>) =>
   GAPS.map((n) => `${n} ${forms[new Intl.PluralRules(locale).select(n)]}`);
+// The course's word count as the page writes it (#143): the locale's digits
+// and grouping, and the noun's form for that number.
+const words = (locale: string, forms: Record<string, string>) =>
+  `${new Intl.NumberFormat(locale).format(FACTS.totals.words)} ${forms[new Intl.PluralRules(locale).select(FACTS.totals.words)]}`;
 
 // The chart's first label and the revisions' last count carry the unit
 // (#135): 4 takes the few form and 150 the many form, in Polish and Russian.
@@ -227,7 +233,11 @@ const firstAndLast = async (page: Page, forms: Record<string, string>, locale: s
 test('Polish counts: the gaps take dzień / dni / dnia by their number', async ({ page }) => {
   await page.goto('/pl');
   await firstAndLast(page, { one: 'dzień', few: 'dni', many: 'dni', other: 'dnia' }, 'pl');
-  await expect(page.locator('#journey').getByText('5069 słów')).toBeVisible();
+  await expect(
+    page
+      .locator('#journey')
+      .getByText(words('pl', { one: 'słowo', few: 'słowa', many: 'słów', other: 'słowa' })),
+  ).toBeVisible();
 });
 
 test('Bangla chips: the gaps in Bengali digits, as the app shows numbers (#103)', async ({
@@ -247,7 +257,11 @@ test('Russian counts: день / дня / дней by their number; Cyrillic in 
   page.on('request', (r) => r.resourceType() === 'font' && fonts.push(r.url()));
   await page.goto('/ru');
   await firstAndLast(page, { one: 'день', few: 'дня', many: 'дней', other: 'дня' }, 'ru');
-  await expect(page.locator('#journey').getByText('5 069 слов')).toBeVisible();
+  await expect(
+    page
+      .locator('#journey')
+      .getByText(words('ru', { one: 'слово', few: 'слова', many: 'слов', other: 'слова' })),
+  ).toBeVisible();
   // Inter Latin, and Inter's Cyrillic face for the Russian text (not a
   // system fallback); the Bangla font only if the page shows Bangla.
   await page.waitForLoadState('networkidle');
@@ -272,3 +286,24 @@ for (const path of ['/de', '/en', '/en/a1-1', '/bn/learn-german-in-bangla']) {
     expect(marks.filter(([, kept]) => !kept).map(([text]) => text)).toEqual([]);
   });
 }
+
+// #150: since v1.2.0 the app promises "the whole course works offline", not
+// the sound (DeutschPlan #1365: the phone's German voice may need installing).
+// No locale may say more: no "fully offline", no "no signal" for all of Sogda.
+test('no locale says Sogda is fully offline, only the whole course (#150)', () => {
+  const over =
+    /fully offline|completely offline|komplett offline|vollständig offline|całkowicie offline|w pełni offline|полностью офлайн|পুরোপুরি অফলাইন|সম্পূর্ণ অফলাইন|^no signal|^kein netz|^bez zasięgu|^связь не нужна|^ইন্টারনেট লাগে না/i;
+  for (const locale of routing.locales) {
+    const found: string[] = [];
+    const walk = (x: unknown, path: string) => {
+      if (typeof x === 'string') {
+        if (over.test(x)) found.push(`${path}: ${x}`);
+      } else if (x && typeof x === 'object') {
+        for (const [k, v] of Object.entries(x)) walk(v, path ? `${path}.${k}` : k);
+      }
+    };
+    walk(JSON.parse(readFileSync(`messages/${locale}.json`, 'utf8')), '');
+    expect(found, locale).toEqual([]);
+  }
+  expect(readFileSync('app/llms.txt/route.ts', 'utf8')).not.toMatch(over);
+});

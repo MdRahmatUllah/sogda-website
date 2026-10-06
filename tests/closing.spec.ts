@@ -1,4 +1,6 @@
 import { expect, test } from '@playwright/test';
+import { readFileSync } from 'node:fs';
+import { routing } from '../i18n/routing';
 import { gotoReady } from './ready';
 
 test.describe('The screens gallery (BRIEF §3.9)', () => {
@@ -44,7 +46,7 @@ test.describe('The screens gallery (BRIEF §3.9)', () => {
 });
 
 test.describe('FAQ (BRIEF §3.10)', () => {
-  test('five questions from the facts, opened and closed by keyboard; no pricing', async ({
+  test('seven questions from the facts, opened and closed by keyboard; no pricing', async ({
     page,
   }) => {
     await page.goto('/en');
@@ -55,6 +57,8 @@ test.describe('FAQ (BRIEF §3.10)', () => {
       'Which Android version do I need?',
       'Is there an iPhone version?',
       'Is my data shared?',
+      'Where does my document go?',
+      'Is the translation online?',
       'Which exams does it prepare me for?',
     ]);
     const answer = faq.getByText('Android 8.0 or newer.');
@@ -66,6 +70,27 @@ test.describe('FAQ (BRIEF §3.10)', () => {
     await expect(answer).toBeHidden();
     await expect(faq).not.toContainText(/free|price|cost/i);
   });
+});
+
+// v1.2.0 (#143): the natural voice is no longer the only download. Every
+// answer about working offline names the other one, Hy-MT2.
+test('every "do I need internet" answer names both optional downloads (#143)', () => {
+  const paths = [
+    ['faq', 'internet', 'a'],
+    ['pages', 'about', 'faq', 'offline', 'a'],
+    ['pages', 'sogda-vs-duolingo', 'faq', 'offline', 'a'],
+    ['pages', 'learn-german-in-bangla', 'faq', 'internet', 'a'],
+  ];
+  const missing: string[] = [];
+  for (const locale of routing.locales) {
+    const m = JSON.parse(readFileSync(`messages/${locale}.json`, 'utf8'));
+    for (const path of paths) {
+      const answer = path.reduce((o, k) => o?.[k], m);
+      if (typeof answer === 'string' && !answer.includes('Hy-MT2'))
+        missing.push(`${locale}.${path.join('.')}`);
+    }
+  }
+  expect(missing).toEqual([]);
 });
 
 test.describe('Final CTA (BRIEF §3.11)', () => {

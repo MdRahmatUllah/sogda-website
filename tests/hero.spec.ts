@@ -3,10 +3,10 @@ import { readFileSync } from 'node:fs';
 import { gotoReady } from './ready';
 
 // The app's schedule (#103): Good after Good, from content/facts.json.
-const GAPS: number[] = JSON.parse(readFileSync('content/facts.json', 'utf8')).fsrs.good_days.slice(
-  0,
-  4,
-);
+const FACTS = JSON.parse(readFileSync('content/facts.json', 'utf8'));
+const GAPS: number[] = FACTS.fsrs.good_days.slice(0, 4);
+// The course's word count as the page writes it, never typed (#143).
+const WORDS = new Intl.NumberFormat('en').format(FACTS.totals.words);
 
 test.describe('hero (BRIEF §3.1)', () => {
   test('the message and the store CTA, before the Play link exists', async ({ page }) => {
@@ -28,7 +28,7 @@ test.describe('hero (BRIEF §3.1)', () => {
     await page.goto('/en');
     const facts = page.getByRole('list', { name: 'Sogda in numbers' });
     await expect(facts.getByRole('listitem')).toHaveText([
-      '5,069 words',
+      `${WORDS} words`,
       '182 grammar topics',
       '12 steps, A1 → C2',
       'Three mock exams for every step',

@@ -68,6 +68,34 @@ export async function Practice({ locale }: { locale: string }) {
   );
 }
 
+// v1.2.0 (#143): the learner's own German, read on the phone (D2's store
+// capture), and the optional on-phone translation. The wording is the Play
+// listing's (DeutschPlan store-listing.md, "The German you meet").
+const DOCUMENTS = ['read', 'add', 'translate'] as const;
+
+export async function Documents({ locale }: { locale: string }) {
+  const t = await getTranslations({ locale, namespace: 'documents' });
+  return (
+    <section id="documents" aria-labelledby="documents-title" className="py-20 sm:py-28">
+      <div className="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-[1.2fr_1fr] lg:items-center">
+        <div>
+          <Heading id="documents-title" eyebrow={t('eyebrow')} title={t('title')} />
+          {DOCUMENTS.map((key) => (
+            <p key={key} className="mt-5 max-w-xl text-lg text-muted">
+              {t(key)}
+            </p>
+          ))}
+        </div>
+        <Reveal className="mx-auto">
+          <DeviceFrame className="w-60 sm:w-64">
+            <Screen id="document" locale={locale} theme="auto" sizes="256px" />
+          </DeviceFrame>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 // BRIEF §3.6: everything else, one line each (facts from BRIEF §4 only).
 const FEATURES = [
   { key: 'offline', Icon: WifiOff },

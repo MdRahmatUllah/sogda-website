@@ -3,10 +3,10 @@ import { readFileSync } from 'node:fs';
 import { gotoReady } from './ready';
 
 // The app's schedule (#103): Good after Good, from content/facts.json.
-const GAPS: number[] = JSON.parse(readFileSync('content/facts.json', 'utf8')).fsrs.good_days.slice(
-  0,
-  4,
-);
+const FACTS = JSON.parse(readFileSync('content/facts.json', 'utf8'));
+const GAPS: number[] = FACTS.fsrs.good_days.slice(0, 4);
+// The course's word count as the page writes it, never typed (#143).
+const WORDS = new Intl.NumberFormat('en').format(FACTS.totals.words);
 
 const STEPS = [
   'A1.1',
@@ -118,7 +118,11 @@ test.describe('The journey (BRIEF §3.4)', () => {
     ]) {
       await expect(journey.locator('text', { hasText: level }).first()).toBeAttached();
     }
-    for (const fact of ['5,069 words', '182 grammar topics', 'Three mock exams for every step']) {
+    for (const fact of [
+      `${WORDS} words`,
+      '182 grammar topics',
+      'Three mock exams for every step',
+    ]) {
       await expect(journey.getByText(fact)).toBeVisible();
     }
     await expect(
@@ -129,7 +133,7 @@ test.describe('The journey (BRIEF §3.4)', () => {
   test('reduced motion: the road is travelled, every station lit', async ({ page }) => {
     await gotoReady(page, '/en');
     await expect(page.locator('.journey-station[data-lit]')).toHaveCount(12);
-    await expect(page.locator('#journey-count')).toHaveText('5,069');
+    await expect(page.locator('#journey-count')).toHaveText(WORDS);
   });
 
   test.describe('with motion', () => {
@@ -172,7 +176,7 @@ test.describe('The journey (BRIEF §3.4)', () => {
       // Past the end: the whole road.
       await page.locator('footer').scrollIntoViewIfNeeded();
       await expect(page.locator('.journey-station[data-lit]')).toHaveCount(12);
-      await expect(page.locator('#journey-count')).toHaveText('5,069');
+      await expect(page.locator('#journey-count')).toHaveText(WORDS);
     });
   });
 });

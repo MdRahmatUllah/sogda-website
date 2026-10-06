@@ -51,7 +51,7 @@ One long page with a sticky header (logo, section links, language switch, theme 
 - **Motion:** the curve draws as it scrolls into view, and each review dot pops in with a tiny *ding* shape (no sound). Next to it, a small card shows one German word (*der Termin*) flipping through its revisions.
 
 ### 3.4 The journey: A1 → C2
-- **Message:** *"12 steps from your first 'Hallo' to C2."* 5,069 words, 182 grammar topics, three mock exams for every step.
+- **Message:** *"12 steps from your first 'Hallo' to C2."* 5,142 words, 182 grammar topics, three mock exams for every step.
 - **Visual:** the Silk Road route as a winding path with **12 stations**: A1.1 A1.2 A2.1 A2.2 B1.1 B1.2 B2.1 B2.2 C1.1 C1.2 C2.1 C2.2. Each station shows a tiny badge. The route passes the six level names (A1 … C2) as milestones.
 - **Motion:** a traveller dot (the Sun tile) moves along the path with scroll. The stations light up as it passes, and a counter ticks words learned. A placement check line: *"Already know some German? A short placement check starts you at the right step."*
 
@@ -59,6 +59,10 @@ One long page with a sticky header (logo, section links, language switch, theme 
 - **Message:** quizzes in every direction (German → English/Bangla, English → German, articles, listening, word forms), and **mock exams** with vocabulary, grammar, listening, writing and speaking, with a result by section.
 - **Visual:** a 3-card fan of screens: `quiz_runner_articles`, `exam_runner_listening`, `exam_results`.
 - **Motion:** the cards fan out on enter, and hovering or focusing a card lifts it. On mobile it's a horizontal snap carousel with dots.
+
+### 3.5b The German you meet (v1.2.0, #143)
+- **Message:** paste or share a text, photograph a letter, or choose a PDF: Sogda reads it on the phone and marks the words you don't know yet, by level; add the ones you pick to your plan with the sentence you met them in; *My documents* keeps the texts. Optional: **Hy-MT2** translates on the phone, where the phone has the memory.
+- **Visual:** one phone with D2 over a letter (the store sets' `07-document`), in the site's theme.
 
 ### 3.6 Everything else, in a feature grid
 Short title, one line and an icon each. A card animates in with a small stagger:
@@ -86,10 +90,12 @@ A horizontal, snap-scrolling gallery of 8–10 real screens (phone), with a tabl
 ### 3.10 FAQ
 Accordion. Answers only from *Facts* or the owner:
 - Is it free? **(owner)**
-- Do I need internet? (No; the optional voice download needs Wi-Fi once.)
+- Do I need internet? (No; two optional extras are downloads: the voice, once over Wi-Fi, and Hy-MT2.)
 - Which Android version? (Android 8.0 or newer.)
 - iPhone? (Coming soon.)
 - Is my data shared? (No account; progress stays on the phone.)
+- Where does my document go? (Nowhere: read on the phone. Photos kept without location or camera data, or not at all; documents can delete themselves after 30, 90 or 365 days. App docs: BR-DOC-05, `my-documents.md`.)
+- Is the translation online? (No: Hy-MT2 is an optional download that runs on the phone, where the phone has the memory.)
 - Which exams does it prepare for? (Goethe/telc levels A1–C2; each step's three mock exams test listening, writing and speaking, like those exams, plus vocabulary and grammar, with a result by section. No reading-comprehension part. Not official papers: don't claim official endorsement.)
 
 ### 3.11 Final CTA + footer
@@ -100,7 +106,7 @@ Accordion. Answers only from *Facts* or the owner:
 Source: the app repo's `docs/05-dev-guide/store-listing.md`. Update these if the listing changes.
 - **Course:**
   - A complete German course, **12 steps from A1.1 to C2.2**, built around the exams.
-  - **5,069 words**, each with examples, its article and forms where it has them, and a pronunciation guide in your meaning language: Bangla, Russian or Polish letters, or an English respelling.
+  - **5,142 words**, each with examples, its article and forms where it has them, and a pronunciation guide in your meaning language: Bangla, Russian or Polish letters, or an English respelling.
   - **182 grammar topics**, each with its rule and a short practice.
   - Meanings in **English, Bangla, Russian or Polish**: one language, or two shown together.
   - In Russian and Polish, the example sentences and grammar rules too.
@@ -115,6 +121,7 @@ Source: the app repo's `docs/05-dev-guide/store-listing.md`. Update these if the
   - **Three mock exams per step**: vocabulary, grammar, listening, writing and speaking, with a result by section.
   - Compare near-synonyms; add your own words.
 - **Voice:** your phone's German voice; optional **Supertonic** voice, offline, ~400 MB over Wi-Fi, downloaded once.
+- **Your own German (v1.2.0):** paste or share a text, photograph a letter, or choose a PDF; read on the phone, words marked by level, added with their sentence; *My documents*. Optional on-phone translation with **Hy-MT2** (example sentences, and words outside the course), where the phone has the memory.
 - **Setup and access:**
   - A placement check.
   - **Light, dark and glass** themes, text up to **200 %**, and screen-reader support.

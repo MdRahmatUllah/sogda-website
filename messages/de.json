@@ -110,12 +110,19 @@
     "carousel": "Quiz- und Prüfungsbildschirme",
     "item": "Bildschirm {n} von {total}"
   },
+  "documents": {
+    "eyebrow": "Dein eigenes Deutsch",
+    "title": "Lerne mit dem Deutsch, das dir begegnet.",
+    "read": "Füge einen Text ein oder teile ihn, fotografiere einen Brief oder wähle ein PDF. Sogda liest ihn auf deinem Handy und markiert die Wörter aus dem Kurs, die du noch nicht kennst, nach Niveau.",
+    "add": "Die Wörter, die du auswählst, kommen mit dem Satz, in dem du sie gefunden hast, in deinen Plan. Unter „My documents“ findest du deine Texte wieder.",
+    "translate": "Optional: Hy-MT2 übersetzt auf dem Handy, etwa Beispielsätze und Wörter außerhalb des Kurses, wenn das Handy genug Speicher hat."
+  },
   "features": {
     "eyebrow": "Und alles andere",
     "title": "Gemacht für den Alltag echter Lernender.",
     "offline": {
       "title": "Immer offline",
-      "body": "Kein Netz nötig: Es funktioniert in der U-Bahn und im Flugzeug."
+      "body": "Der ganze Kurs funktioniert ohne Netz: in der U-Bahn und im Flugzeug."
     },
     "private": {
       "title": "Privat von Anfang an",
@@ -185,7 +192,7 @@
     "title": "Fragen, beantwortet.",
     "internet": {
       "q": "Brauche ich Internet?",
-      "a": "Nein. Sogda funktioniert komplett offline. Nur die optionale natürliche Stimme wird einmal über WLAN heruntergeladen."
+      "a": "Nein. Der ganze Kurs funktioniert offline. Nur zwei optionale Extras werden heruntergeladen: die natürliche Stimme, einmal über WLAN, und Hy-MT2 für die Übersetzung auf dem Handy. Ohne die natürliche Stimme spricht Sogda mit der deutschen Stimme deines Handys; fehlt sie, zeigt Sogda dir, wie du sie installierst."
     },
     "android": {
       "q": "Welche Android-Version brauche ich?",
@@ -198,6 +205,14 @@
     "data": {
       "q": "Werden meine Daten weitergegeben?",
       "a": "Nein. Es gibt kein Konto, und dein Fortschritt bleibt auf deinem Handy."
+    },
+    "documents": {
+      "q": "Wohin geht mein Dokument?",
+      "a": "Nirgendwohin: Sogda liest es auf deinem Handy. Ein Foto wird ohne Standort- und Kameradaten gespeichert oder, wenn du willst, gar nicht (Einstellungen), und Dokumente können sich nach 30, 90 oder 365 Tagen selbst löschen."
+    },
+    "translation": {
+      "q": "Ist die Übersetzung online?",
+      "a": "Nein. Hy-MT2 ist ein optionaler Download, der auf deinem Handy übersetzt, wenn es genug Speicher hat: Beispielsätze und Bedeutungen für Wörter außerhalb des Kurses."
     },
     "exams": {
       "q": "Auf welche Prüfungen bereitet Sogda mich vor?",
@@ -269,7 +284,7 @@
         },
         "offline": {
           "q": "Braucht die Planung Internet?",
-          "a": "Nein. Sogda funktioniert komplett offline: Der Planer läuft auf deinem Handy, ohne Konto, und dein Fortschritt bleibt dort."
+          "a": "Nein. Der ganze Kurs funktioniert offline: Der Planer läuft auf deinem Handy, ohne Konto, und dein Fortschritt bleibt dort."
         },
         "grammar": {
           "q": "Plant Sogda auch die Grammatik?",
@@ -323,7 +338,7 @@
         },
         "offline": {
           "q": "Funktionieren die Probeprüfungen offline?",
-          "a": "Ja. Sogda funktioniert komplett offline, auch die Probeprüfungen: kein Konto und kein Netz nötig."
+          "a": "Ja. Der ganze Kurs funktioniert offline, auch die Probeprüfungen, und ohne Konto. Das Hören nutzt die deutsche Stimme deines Handys oder die optionale natürliche Stimme."
         },
         "reading": {
           "q": "Gibt es einen Leseteil?",
@@ -367,7 +382,7 @@
             "b": "du lieber einen Plan für jeden Tag hast als Stapel, die du verwalten musst;",
             "c": "du die Bedeutungen und eine Aussprachehilfe auf Englisch willst, oder in bengalischer, russischer oder polnischer Schrift;",
             "d": "du dich auf eine Prüfung vorbereitest: {mocksPerStep, number} Probeprüfungen für jede Stufe, mit Hören, Schreiben und Sprechen, dazu Wortschatz und Grammatik;",
-            "e": "du alles komplett offline und ohne Konto willst, auf Android."
+            "e": "du den ganzen Kurs offline und ohne Konto willst, auf Android."
           }
         },
         "both": {
@@ -408,7 +423,7 @@
       "name": "Sogda oder Duolingo",
       "eyebrow": "Vergleich",
       "h1": "Sogda oder Duolingo für Deutsch?",
-      "answer": "Duolingo lehrt viele Sprachen, und sein Deutschkurs reicht bis B2 auf der GER-Skala, wie Duolingos Blog im April 2026 schrieb. Sogda lehrt nur Deutsch, von A1 bis C2 in {steps, number} Stufen, mit {words, number} Wörtern, {topics, number} Grammatikthemen und {mocksPerStep, number} Probeprüfungen für jede Stufe, komplett offline und ohne Konto.",
+      "answer": "Duolingo lehrt viele Sprachen, und sein Deutschkurs reicht bis B2 auf der GER-Skala, wie Duolingos Blog im April 2026 schrieb. Sogda lehrt nur Deutsch, von A1 bis C2 in {steps, number} Stufen, mit {words, number} Wörtern, {topics, number} Grammatikthemen und {mocksPerStep, number} Probeprüfungen für jede Stufe, der ganze Kurs offline und ohne Konto.",
       "sections": {
         "levels": {
           "heading": "Wie weit jede reicht",
@@ -437,7 +452,7 @@
             "b": "du Grammatik als Regeln willst, die du nachschlagen kannst: {topics, number} Themen, jedes mit Regel und kurzer Übung;",
             "c": "du jedes Wort mit Artikel und Formen, wo es welche hat, Beispielen und einer Aussprachehilfe in der Schrift deiner Bedeutungssprache willst;",
             "d": "du von Bangla, Russisch oder Polnisch aus lernst und die Bedeutungen in deiner Sprache willst;",
-            "e": "du alles komplett offline willst, ohne ein Konto anzulegen."
+            "e": "du den ganzen Kurs offline willst, ohne ein Konto anzulegen."
           }
         },
         "both": {
@@ -464,7 +479,7 @@
         },
         "offline": {
           "q": "Funktioniert Sogda offline?",
-          "a": "Ja, komplett und ohne Konto. Nur die optionale natürliche Stimme ist ein Download, einmal, über WLAN."
+          "a": "Ja, der ganze Kurs, und ohne Konto. Nur zwei optionale Extras sind ein Download: die natürliche Stimme, einmal über WLAN, und Hy-MT2 für die Übersetzung auf dem Handy."
         },
         "switch": {
           "q": "Kann ich meinen Duolingo-Fortschritt zu Sogda mitnehmen?",
@@ -518,6 +533,12 @@
             "p1": "{mocksPerStep, number} Probeprüfungen für jede Stufe, {mocks, number} insgesamt, mit Hören, Schreiben und Sprechen wie in den echten Prüfungen, dazu Wortschatz und Grammatik, und einem Ergebnis für jeden Teil. Einen Leseverstehen-Teil gibt es nicht. Sie werden aus den Wörtern und der Grammatik der Stufe erzeugt: Es sind keine offiziellen Goethe- oder telc-Prüfungen, und Sogda ist mit keinem der beiden verbunden."
           }
         },
+        "documents": {
+          "heading": "Mit dem Deutsch, das dir begegnet",
+          "body": {
+            "p1": "Füge einen Text ein oder teile ihn, fotografiere einen Brief oder wähle ein PDF. Sogda liest ihn auf deinem Handy und markiert die Wörter aus dem Kurs, die du noch nicht kennst, nach Niveau. Die Wörter, die du auswählst, kommen mit dem Satz, in dem du sie gefunden hast, in deinen Plan. Unter „My documents“ findest du deine Texte wieder. Optional: Hy-MT2 übersetzt auf dem Handy, etwa Beispielsätze und Wörter außerhalb des Kurses, wenn das Handy genug Speicher hat."
+          }
+        },
         "languages": {
           "heading": "In deiner Sprache",
           "body": {
@@ -527,7 +548,7 @@
         "private": {
           "heading": "Offline und privat",
           "body": {
-            "p1": "Komplett offline und ohne Konto: Dein Fortschritt bleibt auf deinem Handy. Die optionale natürliche Supertonic-Stimme ist ein einmaliger Download von etwa 400 MB über WLAN; sonst nutzt Sogda die deutsche Stimme deines Handys."
+            "p1": "Der ganze Kurs funktioniert offline und ohne Konto: Dein Fortschritt bleibt auf deinem Handy. Die optionale natürliche Supertonic-Stimme ist ein einmaliger Download von etwa 400 MB über WLAN; sonst nutzt Sogda die deutsche Stimme deines Handys, und fehlt sie, zeigt Sogda dir, wie du sie installierst."
           }
         },
         "platform": {
@@ -556,7 +577,7 @@
         },
         "offline": {
           "q": "Funktioniert Sogda ohne Internet?",
-          "a": "Ja, komplett. Nur die optionale natürliche Stimme ist ein Download, einmal, über WLAN."
+          "a": "Ja, komplett. Nur zwei optionale Extras sind ein Download: die natürliche Stimme, einmal über WLAN, und Hy-MT2 für die Übersetzung auf dem Handy."
         },
         "account": {
           "q": "Brauche ich ein Konto?",
