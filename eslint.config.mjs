@@ -11,6 +11,7 @@ const config = [
       'next-env.d.ts',
       'playwright-report/',
       'test-results/',
+      'review-shots/',
     ],
   },
   ...compat.extends('next/core-web-vitals', 'next/typescript'),
